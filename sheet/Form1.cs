@@ -20,7 +20,7 @@ namespace sheet
         {
             InitializeComponent();
         }
-        /*something got fucked
+
         //saving sake also not dynamic can only save into one file for now
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace sheet
             fileStream.Close();
             LoadToCurrent();
         }
-        */
+
         private void Form1_Load(object sender, EventArgs e)
         {
             currentChar = new Character();
@@ -46,7 +46,7 @@ namespace sheet
         {
             SaveToCurrent();
         }
-
+        /*
         public void SaveToCurrent()
         {
             currentChar.cName = charNameBox.Text;
@@ -63,6 +63,7 @@ namespace sheet
 
 
         }
+        */
         public void LoadToCurrent()
         {
             charNameBox.Text = currentChar.cName;
