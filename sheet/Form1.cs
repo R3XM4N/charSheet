@@ -25,6 +25,7 @@ namespace sheet
         //saving sake also not dynamic can only save into one file for now
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            SaveToCurrent();
             StreamWriter streamWriter = new StreamWriter("Charakter.xml");
             serializer.Serialize(streamWriter, currentChar);
             streamWriter.Close();
@@ -47,7 +48,7 @@ namespace sheet
         //temp data saving
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
-            //SaveToCurrent();
+            SaveToCurrent();
         }
         
         public void SaveToCurrent()
@@ -70,9 +71,9 @@ namespace sheet
         public void LoadToCurrent()
         {
             charNameBox.Text = currentChar.cName;
-            currentChar.level = ToInt(lvlBox.Text);
-            currentChar.race = raceBox.Text;
-            currentChar._class = classBox.Text;
+            lvlBox.Text = currentChar.level.ToString();
+            raceBox.Text = currentChar.race;
+            classBox.Text = currentChar._class;
 
             strBox.Text = currentChar.stats.Str.ToString();
             dexBox.Text = currentChar.stats.Dex.ToString();
