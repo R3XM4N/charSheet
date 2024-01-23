@@ -44,7 +44,7 @@ namespace sheet
         //temp data saving
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
-            SaveToCurrent();
+            //SaveToCurrent();
         }
         /*
         public void SaveToCurrent()
