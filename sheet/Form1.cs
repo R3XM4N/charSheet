@@ -15,6 +15,7 @@ namespace sheet
     public partial class Form1 : Form
     {
         XmlSerializer serializer = new XmlSerializer(typeof(Character));
+        public Stats stats;
         public Character currentChar;
         public Form1()
         {
@@ -40,13 +41,15 @@ namespace sheet
         private void Form1_Load(object sender, EventArgs e)
         {
             currentChar = new Character();
+            stats = new Stats();
+            currentChar.stats = stats;
         }
         //temp data saving
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             //SaveToCurrent();
         }
-        /*
+        
         public void SaveToCurrent()
         {
             currentChar.cName = charNameBox.Text;
@@ -63,7 +66,7 @@ namespace sheet
 
 
         }
-        */
+        
         public void LoadToCurrent()
         {
             charNameBox.Text = currentChar.cName;
