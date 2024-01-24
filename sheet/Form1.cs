@@ -15,7 +15,6 @@ namespace sheet
     public partial class Form1 : Form
     {
         XmlSerializer serializer = new XmlSerializer(typeof(Character));
-        public Stats stats;
         public Character currentChar;
         public Form1()
         {
@@ -42,8 +41,11 @@ namespace sheet
         private void Form1_Load(object sender, EventArgs e)
         {
             currentChar = new Character();
-            stats = new Stats();
-            currentChar.stats = stats;
+            currentChar.stats = new Stats();
+            currentChar.skills = new Skills();
+            currentChar.savingThrows = new Sthrows();
+            currentChar.charDescription = new CharDescription();
+
         }
         //temp data saving
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
@@ -65,6 +67,12 @@ namespace sheet
             currentChar.stats.Wis = ToInt(wisdBox.Text);
             currentChar.stats.Char = ToInt(charBox.Text);
 
+            currentChar.savingThrows.Strenghth = ToInt(throwStrBox.Text);
+            currentChar.savingThrows.Dexterity = ToInt(throwDexBox.Text);
+            currentChar.savingThrows.Constitution = ToInt(throwConstBox.Text);
+            currentChar.savingThrows.Inteligence = ToInt(throwIntBox.Text);
+            currentChar.savingThrows.Wisdom = ToInt(throwWisdBox.Text);
+            currentChar.savingThrows.Charisma = ToInt(throwCharBox.Text);
 
         }
         
@@ -81,6 +89,14 @@ namespace sheet
             intBox.Text = currentChar.stats.Int.ToString();
             wisdBox.Text = currentChar.stats.Wis.ToString();
             charBox.Text = currentChar.stats.Char.ToString();
+            /*
+             throwStrBox.Text currentChar.savingThrows.Strenghth.;
+            currentChar.savingThrows.Dexterity  throwDexBox.Text;
+            currentChar.savingThrows.Constitution  throwConstBox.Text;
+            currentChar.savingThrows.Inteligence  throwIntBox.Text;
+            currentChar.savingThrows.Wisdom  throwWisdBox.Text;
+            currentChar.savingThrows.Charisma  throwCharBox.Text;
+            */
         }
         public int ToInt(string a)
         {

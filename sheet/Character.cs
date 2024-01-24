@@ -13,6 +13,7 @@ namespace sheet
         public Skills skills;
         public Sthrows savingThrows;
         public List<AnS> attacksAndSpells;
+        public CharDescription charDescription;
 
 
         public string cName;
