@@ -41,7 +41,6 @@ namespace sheet
         public string flaws;
         public string featuresAndTraits;
         public string profAndLanguages;
-
     }
     public class Stats
     {

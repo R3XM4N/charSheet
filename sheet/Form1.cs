@@ -89,14 +89,14 @@ namespace sheet
             intBox.Text = currentChar.stats.Int.ToString();
             wisdBox.Text = currentChar.stats.Wis.ToString();
             charBox.Text = currentChar.stats.Char.ToString();
-            /*
-             throwStrBox.Text currentChar.savingThrows.Strenghth.;
-            currentChar.savingThrows.Dexterity  throwDexBox.Text;
-            currentChar.savingThrows.Constitution  throwConstBox.Text;
-            currentChar.savingThrows.Inteligence  throwIntBox.Text;
-            currentChar.savingThrows.Wisdom  throwWisdBox.Text;
-            currentChar.savingThrows.Charisma  throwCharBox.Text;
-            */
+            
+            throwStrBox.Text = currentChar.savingThrows.Strenghth.ToString();
+            throwDexBox.Text = currentChar.savingThrows.Dexterity.ToString();
+            throwConstBox.Text = currentChar.savingThrows.Constitution.ToString();
+            throwIntBox.Text = currentChar.savingThrows.Inteligence.ToString();
+            throwWisdBox.Text = currentChar.savingThrows.Wisdom.ToString();
+            throwCharBox.Text = currentChar.savingThrows.Charisma.ToString();
+            
         }
         public int ToInt(string a)
         {
