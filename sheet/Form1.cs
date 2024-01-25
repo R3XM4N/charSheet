@@ -21,19 +21,28 @@ namespace sheet
         {
             InitializeComponent();
         }
-
-        //saving sake also not dynamic can only save into one file for now
+        //save sheet
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            StreamWriter streamWriter;
             SaveToCurrent();
-            StreamWriter streamWriter = new StreamWriter("Charakter.xml");
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName.Contains(".xml"))
+            {
+                streamWriter = new StreamWriter(saveFileDialog1.FileName);
+            }
+            else
+            {
+                streamWriter = new StreamWriter($"{saveFileDialog1.FileName}.xml");
+            }
             serializer.Serialize(streamWriter, currentChar);
             streamWriter.Close();
         }
-        //loading also uses the one file for now
+        //load sheet
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            FileStream fileStream = new FileStream("Charakter.xml", FileMode.Open);
+            openFileDialog1.ShowDialog();
+            FileStream fileStream = new FileStream(openFileDialog1.FileName, FileMode.Open);
             currentChar = (Character)serializer.Deserialize(fileStream);
             fileStream.Close();
             LoadToCurrent();
