@@ -13,6 +13,7 @@ namespace sheet
         public Skills skills;
         public Sthrows savingThrows;
         public List<AnS> attacksAndSpells;
+        public CharDescription charDescription;
 
 
         public string cName;
@@ -40,7 +41,6 @@ namespace sheet
         public string flaws;
         public string featuresAndTraits;
         public string profAndLanguages;
-
     }
     public class Stats
     {
