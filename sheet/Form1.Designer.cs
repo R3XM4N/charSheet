@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label38 = new System.Windows.Forms.Label();
+            this.alignBox = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.charBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.strBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.throwCharBox = new System.Windows.Forms.TextBox();
@@ -105,14 +109,10 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.classBox = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.lvlBox = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.alignBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -158,6 +158,33 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Basic";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(266, 48);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(95, 23);
+            this.label38.TabIndex = 14;
+            this.label38.Text = "Alignment";
+            // 
+            // alignBox
+            // 
+            this.alignBox.Location = new System.Drawing.Point(403, 48);
+            this.alignBox.Name = "alignBox";
+            this.alignBox.Size = new System.Drawing.Size(48, 30);
+            this.alignBox.TabIndex = 13;
+            this.alignBox.Text = "0";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Arial", 20F);
+            this.label37.Location = new System.Drawing.Point(60, 13);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(77, 32);
+            this.label37.TabIndex = 12;
+            this.label37.Text = "Stats";
             // 
             // label8
             // 
@@ -320,6 +347,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Stats";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Arial", 18F);
+            this.label34.Location = new System.Drawing.Point(188, 3);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(69, 27);
+            this.label34.TabIndex = 61;
+            this.label34.Text = "Skills";
             // 
             // label33
             // 
@@ -820,37 +857,25 @@
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButton1.Text = "Save";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(53, 22);
+            this.toolStripButton2.Text = "Load";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Arial", 18F);
-            this.label34.Location = new System.Drawing.Point(188, 3);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(69, 27);
-            this.label34.TabIndex = 61;
-            this.label34.Text = "Skills";
             // 
             // label35
             // 
@@ -889,33 +914,6 @@
             this.lvlBox.Size = new System.Drawing.Size(49, 41);
             this.lvlBox.TabIndex = 9;
             this.lvlBox.Text = "0";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Arial", 20F);
-            this.label37.Location = new System.Drawing.Point(60, 13);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(77, 32);
-            this.label37.TabIndex = 12;
-            this.label37.Text = "Stats";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(266, 48);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(95, 23);
-            this.label38.TabIndex = 14;
-            this.label38.Text = "Alignment";
-            // 
-            // alignBox
-            // 
-            this.alignBox.Location = new System.Drawing.Point(403, 48);
-            this.alignBox.Name = "alignBox";
-            this.alignBox.Size = new System.Drawing.Size(48, 30);
-            this.alignBox.TabIndex = 13;
-            this.alignBox.Text = "0";
             // 
             // Form1
             // 
