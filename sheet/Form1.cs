@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace sheet
 {
     public partial class Form1 : Form
     {
+        
         XmlSerializer serializer = new XmlSerializer(typeof(Character));
         public Character currentChar;
         public Form1()
@@ -21,7 +23,7 @@ namespace sheet
             InitializeComponent();
         }
         //save sheet
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void saveAsFile()
         {
             StreamWriter streamWriter;
             SaveToCurrent();
@@ -45,6 +47,10 @@ namespace sheet
             currentChar = (Character)serializer.Deserialize(fileStream);
             fileStream.Close();
             LoadToCurrent();
+        }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            saveAsFile();
         }
 
         private void Form1_Load(object sender, EventArgs e)

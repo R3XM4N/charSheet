@@ -15,17 +15,13 @@ namespace sheet
         public List<AnS> attacksAndSpells;
         public CharDescription charDescription;
 
-
         public string cName;
         public string race;
         public string _class;
 
-        
-
         public int level;
 
         public Character() { }
-
     }
 
     //used these for convenience
@@ -99,6 +95,7 @@ namespace sheet
         public string armorClass;
         public string iniative;
         public string speed;
+        public int maxHP;
         public int hP;
         public int tempHP;
     }
