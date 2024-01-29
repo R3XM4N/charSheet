@@ -30,8 +30,8 @@
         {
             this.btn_nhero = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tb_heroes = new System.Windows.Forms.TableLayoutPanel();
             this.btn_delete = new System.Windows.Forms.Button();
+            this.p_heroes = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,26 +50,12 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.tb_heroes);
+            this.panel1.Controls.Add(this.p_heroes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(584, 297);
             this.panel1.TabIndex = 5;
-            // 
-            // tb_heroes
-            // 
-            this.tb_heroes.ColumnCount = 2;
-            this.tb_heroes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tb_heroes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tb_heroes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_heroes.Location = new System.Drawing.Point(0, 0);
-            this.tb_heroes.Name = "tb_heroes";
-            this.tb_heroes.RowCount = 2;
-            this.tb_heroes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tb_heroes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tb_heroes.Size = new System.Drawing.Size(584, 297);
-            this.tb_heroes.TabIndex = 0;
             // 
             // btn_delete
             // 
@@ -83,6 +69,15 @@
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // p_heroes
+            // 
+            this.p_heroes.AutoScroll = true;
+            this.p_heroes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.p_heroes.Location = new System.Drawing.Point(0, 0);
+            this.p_heroes.Name = "p_heroes";
+            this.p_heroes.Size = new System.Drawing.Size(584, 297);
+            this.p_heroes.TabIndex = 0;
             // 
             // Heroes
             // 
@@ -103,7 +98,7 @@
         #endregion
         private System.Windows.Forms.Button btn_nhero;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tb_heroes;
         private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.FlowLayoutPanel p_heroes;
     }
 }
