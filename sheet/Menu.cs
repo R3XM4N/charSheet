@@ -51,7 +51,7 @@ namespace sheet
             //Application.Exit();
 
             //:)
-            CharSheet form = new CharSheet();
+            sheet form = new sheet();
             form.ShowDialog();
         }
 

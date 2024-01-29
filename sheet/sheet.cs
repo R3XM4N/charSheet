@@ -13,12 +13,12 @@ using System.Xml.Serialization;
 
 namespace sheet
 {
-    public partial class CharSheet : Form
+    public partial class sheet : Form
     {
         
         XmlSerializer serializer = new XmlSerializer(typeof(Character));
         public Character currentChar;
-        public CharSheet()
+        public sheet()
         {
             InitializeComponent();
         }
