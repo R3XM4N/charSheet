@@ -48,11 +48,11 @@ namespace sheet
         private void btn_exit_Click(object sender, EventArgs e)
         {
             // ukončí aplikaci
-            //Application.Exit();
+            Application.Exit();
 
-            //:)
-            Form1 form = new Form1();
-            form.ShowDialog();
+            //temporary yoink pro debug :)
+            //Form1 form = new Form1();
+            //form.ShowDialog();
         }
 
         private void btn_roll_Click(object sender, EventArgs e)

@@ -56,9 +56,18 @@ namespace sheet
         private void Form1_Load(object sender, EventArgs e)
         {
             currentChar = new Character();
-            currentChar.stats = new mainStats();
-            currentChar.skills = new Skills();
+
+            currentChar.apearance = new Apearance();
+            currentChar.personality = new Personality();
+
+            currentChar.mainStats = new mainStats();
             currentChar.savingThrows = new Sthrows();
+            currentChar.skills = new Skills();
+
+            currentChar.inventory = new Inventory();
+            
+           
+
             
 
         }
@@ -82,12 +91,12 @@ namespace sheet
             }
             
 
-            currentChar.stats.Str = ToInt(strBox.Text);
-            currentChar.stats.Dex = ToInt(dexBox.Text);
-            currentChar.stats.Const = ToInt(constBox.Text);
-            currentChar.stats.Int = ToInt(intBox.Text);
-            currentChar.stats.Wis = ToInt(wisdBox.Text);
-            currentChar.stats.Char = ToInt(charBox.Text);
+            currentChar.mainStats.Str = ToInt(strBox.Text);
+            currentChar.mainStats.Dex = ToInt(dexBox.Text);
+            currentChar.mainStats.Const = ToInt(constBox.Text);
+            currentChar.mainStats.Int = ToInt(intBox.Text);
+            currentChar.mainStats.Wis = ToInt(wisdBox.Text);
+            currentChar.mainStats.Char = ToInt(charBox.Text);
 
             currentChar.savingThrows.Strenghth = ToInt(throwStrBox.Text);
             currentChar.savingThrows.Dexterity = ToInt(throwDexBox.Text);
@@ -105,12 +114,12 @@ namespace sheet
             raceBox.Text = currentChar.race;
             classBox.Text = currentChar._class;
 
-            strBox.Text = currentChar.stats.Str.ToString();
-            dexBox.Text = currentChar.stats.Dex.ToString();
-            constBox.Text = currentChar.stats.Const.ToString();
-            intBox.Text = currentChar.stats.Int.ToString();
-            wisdBox.Text = currentChar.stats.Wis.ToString();
-            charBox.Text = currentChar.stats.Char.ToString();
+            strBox.Text = currentChar.mainStats.Str.ToString();
+            dexBox.Text = currentChar.mainStats.Dex.ToString();
+            constBox.Text = currentChar.mainStats.Const.ToString();
+            intBox.Text = currentChar.mainStats.Int.ToString();
+            wisdBox.Text = currentChar.mainStats.Wis.ToString();
+            charBox.Text = currentChar.mainStats.Char.ToString();
             
             throwStrBox.Text = currentChar.savingThrows.Strenghth.ToString();
             throwDexBox.Text = currentChar.savingThrows.Dexterity.ToString();

@@ -25,7 +25,7 @@ namespace sheet
 
         //PAGE 2 STATS
 
-        public mainStats stats;
+        public mainStats mainStats;
         public Skills skills;
         public Sthrows savingThrows;
 
