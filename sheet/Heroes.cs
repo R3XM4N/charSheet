@@ -20,9 +20,52 @@ namespace sheet
         private void Heroes_Load(object sender, EventArgs e)
         {
             // použij form "Hero Short" a vlož ho do tabulky, maybe ještě sortnout podle jména či tak něco (v nastavení by to mělo být)
-            // dynamicky vytvořit tabulku a vložit do ní formy podle počtu hrdinů v databázi
+            // vložit do tabulky všechny hrdiny z databáze přidat event handler na kliknutí na form
             // při kliknutí na form se otevře form "Sheet" s daným hrdinou
 
+            for (int i = 0; i < 10; i++)
+            {
+                add_miniSheet(p_heroes);
+            }
+        }
+
+
+
+        private void add_miniSheet(Panel p)
+        {
+
+            // vytvořit form "Hero Short" a vložit ho do panelu
+            // při kliknutí na form se otevře form "Sheet" s daným hrdinou
+            Sheet_short miniSheet = new Sheet_short();
+            miniSheet.TopLevel = false;
+            miniSheet.Click += new EventHandler(hero_Click);
+            // add this event handler to all controls in miniSheet will evoke click event on miniSheet
+            foreach (Control c in miniSheet.Controls)
+            {
+                c.Click += new EventHandler(subcontrol_Click);
+            }
+            p.Controls.Add(miniSheet);
+            miniSheet.Show();
+        }
+
+        private void hero_Click(object sender, EventArgs e)
+        {
+            // get control from sender
+            Control c = (Control)sender;
+            // get index of control in panel
+            int index = p_heroes.Controls.IndexOf(c);
+
+            MessageBox.Show($"You clicked on hero number {index}");
+        }
+
+        private void subcontrol_Click(object sender, EventArgs e)
+        {
+            // get control from sender
+            Control c = ((Control)sender).Parent;
+            // get index of control in panel
+            int index = p_heroes.Controls.IndexOf(c);
+
+            MessageBox.Show($"You clicked on hero number {index}");
         }
 
         private void putFormToTable(Form form, TableLayoutPanel table)
