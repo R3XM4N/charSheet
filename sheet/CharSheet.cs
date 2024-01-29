@@ -13,12 +13,12 @@ using System.Xml.Serialization;
 
 namespace sheet
 {
-    public partial class Form1 : Form
+    public partial class CharSheet : Form
     {
         
         XmlSerializer serializer = new XmlSerializer(typeof(Character));
         public Character currentChar;
-        public Form1()
+        public CharSheet()
         {
             InitializeComponent();
         }
@@ -56,10 +56,10 @@ namespace sheet
         private void Form1_Load(object sender, EventArgs e)
         {
             currentChar = new Character();
-            currentChar.stats = new Stats();
+            currentChar.stats = new mainStats();
             currentChar.skills = new Skills();
             currentChar.savingThrows = new Sthrows();
-            currentChar.charDescription = new CharDescription();
+            
 
         }
         //temp data saving
@@ -74,6 +74,13 @@ namespace sheet
             currentChar.level = ToInt(lvlBox.Text);
             currentChar.race = raceBox.Text;
             currentChar._class = classBox.Text;
+
+            
+            if (true)
+            {
+
+            }
+            
 
             currentChar.stats.Str = ToInt(strBox.Text);
             currentChar.stats.Dex = ToInt(dexBox.Text);
@@ -116,6 +123,11 @@ namespace sheet
         public int ToInt(string a)
         {
             return Convert.ToInt32(a);
+        }
+
+        private void statStateChange(object sender, EventArgs e)
+        {
+
         }
     }
 }

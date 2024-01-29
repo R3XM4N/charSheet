@@ -51,11 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="CharSheet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CharSheet.Designer.cs">
+      <DependentUpon>CharSheet.cs</DependentUpon>
     </Compile>
     <Compile Include="Heroes.cs">
       <SubType>Form</SubType>
@@ -83,8 +83,8 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="CharSheet.resx">
+      <DependentUpon>CharSheet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Heroes.resx">
       <DependentUpon>Heroes.cs</DependentUpon>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,36 +10,73 @@ namespace sheet
 {
     public class Character
     {
-        public Stats stats;
-        public Skills skills;
-        public Sthrows savingThrows;
-        public List<AnS> attacksAndSpells;
-        public CharDescription charDescription;
+        //BASE
 
         public string cName;
+        public int exp;
+        public int level;
         public string race;
         public string _class;
 
-        public int level;
+        //PAGE 1 CHARACTERISTICS
+
+        public Apearance apearance;
+        public Personality personality;
+
+        //PAGE 2 STATS
+
+        public mainStats stats;
+        public Skills skills;
+        public Sthrows savingThrows;
+
+        public List<int> proficiencies; //each one will have numbah assigned
+
+        //PAGE 3 INVENTORY
+
+        public Inventory inventory;
+
+        //PAGE 4 OTHER
+
+
+
+        //PAGE 5
+
+
+
+        //ELSE
 
         public Character() { }
+
     }
 
-    //used these for convenience
-    public class CharDescription
+    //PAGE 1 Characteristics
+    public class Apearance
     {
-        public string height;
-        public string weigth;
+        public string background;
         public string age;
+        public string height;
+        public string weight;
+        public string skin;
+        public string eye;
+        public string hair;
         public string alignment;
-        public string persTraits;
+    }
+
+    public class Personality
+    {
         public string ideals;
         public string bonds;
-        public string flaws;
-        public string featuresAndTraits;
-        public string profAndLanguages;
+        public string personalTraits;
+        public string featuresTraits;
+        public string profLanguages;
+        public string backstory;
+
+        //put other here
     }
-    public class Stats
+
+    //PAGE 2 Stats
+
+    public class mainStats
     {
         public int Str;
         public int Dex;
@@ -46,7 +84,16 @@ namespace sheet
         public int Int;
         public int Wis;
         public int Char;
+
+        public int rollStat(int stat)
+        {
+            //scuffed but works
+            double temp = ((stat - 10) / 2) * 1.1;
+
+            return Convert.ToInt32(Math.Round(temp));
+        }
     }
+
     public class Skills
     {
         public int Acrobatics;
@@ -83,20 +130,14 @@ namespace sheet
         public int Charisma;
     }
 
-    public class AnS
+    //PAGE 3
+
+    public class Inventory
     {
-        public string aName;
-        public string aBonus;
-        public string damageAndType;
+        public string equipment;
+        public string treasure;
     }
-    //not sure how will you want from the other stuff
-    public class OtherP1
-    {
-        public string armorClass;
-        public string iniative;
-        public string speed;
-        public int maxHP;
-        public int hP;
-        public int tempHP;
-    }
+
+    //PAGE 4 
+  
 }

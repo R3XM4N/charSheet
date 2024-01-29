@@ -48,7 +48,11 @@ namespace sheet
         private void btn_exit_Click(object sender, EventArgs e)
         {
             // ukončí aplikaci
-            Application.Exit();
+            //Application.Exit();
+
+            //:)
+            CharSheet form = new CharSheet();
+            form.ShowDialog();
         }
 
         private void btn_roll_Click(object sender, EventArgs e)
