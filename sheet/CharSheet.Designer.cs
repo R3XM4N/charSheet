@@ -1,6 +1,6 @@
 ﻿namespace sheet
 {
-    partial class Form1
+    partial class CharSheet
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.TextBox weightBox;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CharSheet));
             this.charNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.raceBox = new System.Windows.Forms.TextBox();
@@ -46,11 +46,36 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.invEquip = new System.Windows.Forms.TabPage();
             this.inventoryBox = new System.Windows.Forms.TextBox();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.invTreasure = new System.Windows.Forms.TabPage();
             this.treasureText = new System.Windows.Forms.TextBox();
+            this.invAttacks = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.radio23 = new System.Windows.Forms.RadioButton();
+            this.radio20 = new System.Windows.Forms.RadioButton();
+            this.radio22 = new System.Windows.Forms.RadioButton();
+            this.radio21 = new System.Windows.Forms.RadioButton();
+            this.radio19 = new System.Windows.Forms.RadioButton();
+            this.radio18 = new System.Windows.Forms.RadioButton();
+            this.radio17 = new System.Windows.Forms.RadioButton();
+            this.radio14 = new System.Windows.Forms.RadioButton();
+            this.radio16 = new System.Windows.Forms.RadioButton();
+            this.radio15 = new System.Windows.Forms.RadioButton();
+            this.radio13 = new System.Windows.Forms.RadioButton();
+            this.radio12 = new System.Windows.Forms.RadioButton();
+            this.radio11 = new System.Windows.Forms.RadioButton();
+            this.radio8 = new System.Windows.Forms.RadioButton();
+            this.radio10 = new System.Windows.Forms.RadioButton();
+            this.radio9 = new System.Windows.Forms.RadioButton();
+            this.radio7 = new System.Windows.Forms.RadioButton();
+            this.radio6 = new System.Windows.Forms.RadioButton();
+            this.radio5 = new System.Windows.Forms.RadioButton();
+            this.radio2 = new System.Windows.Forms.RadioButton();
+            this.radio4 = new System.Windows.Forms.RadioButton();
+            this.radio3 = new System.Windows.Forms.RadioButton();
+            this.radio1 = new System.Windows.Forms.RadioButton();
+            this.radio0 = new System.Windows.Forms.RadioButton();
             this.statCheck = new System.Windows.Forms.CheckBox();
             this.label45 = new System.Windows.Forms.Label();
             this.healthTempBox = new System.Windows.Forms.TextBox();
@@ -131,43 +156,22 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.backstoryText = new System.Windows.Forms.TextBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.AlliesText = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.radio0 = new System.Windows.Forms.RadioButton();
-            this.radio1 = new System.Windows.Forms.RadioButton();
-            this.radio2 = new System.Windows.Forms.RadioButton();
-            this.radio3 = new System.Windows.Forms.RadioButton();
-            this.radio4 = new System.Windows.Forms.RadioButton();
-            this.radio5 = new System.Windows.Forms.RadioButton();
-            this.radio11 = new System.Windows.Forms.RadioButton();
-            this.radio8 = new System.Windows.Forms.RadioButton();
-            this.radio10 = new System.Windows.Forms.RadioButton();
-            this.radio9 = new System.Windows.Forms.RadioButton();
-            this.radio7 = new System.Windows.Forms.RadioButton();
-            this.radio6 = new System.Windows.Forms.RadioButton();
-            this.radio17 = new System.Windows.Forms.RadioButton();
-            this.radio14 = new System.Windows.Forms.RadioButton();
-            this.radio16 = new System.Windows.Forms.RadioButton();
-            this.radio15 = new System.Windows.Forms.RadioButton();
-            this.radio13 = new System.Windows.Forms.RadioButton();
-            this.r = new System.Windows.Forms.RadioButton();
-            this.radio23 = new System.Windows.Forms.RadioButton();
-            this.radio20 = new System.Windows.Forms.RadioButton();
-            this.radio22 = new System.Windows.Forms.RadioButton();
-            this.radio21 = new System.Windows.Forms.RadioButton();
-            this.radio19 = new System.Windows.Forms.RadioButton();
-            this.radio18 = new System.Windows.Forms.RadioButton();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
             weightBox = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabControl3.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage8.SuspendLayout();
+            this.invEquip.SuspendLayout();
+            this.invTreasure.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charImage)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.tabPage9.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -297,7 +301,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 32);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(748, 718);
+            this.tabPage5.Size = new System.Drawing.Size(802, 764);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Other";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -315,24 +319,25 @@
             // 
             // tabControl3
             // 
-            this.tabControl3.Controls.Add(this.tabPage3);
-            this.tabControl3.Controls.Add(this.tabPage8);
+            this.tabControl3.Controls.Add(this.invEquip);
+            this.tabControl3.Controls.Add(this.invTreasure);
+            this.tabControl3.Controls.Add(this.invAttacks);
             this.tabControl3.Location = new System.Drawing.Point(7, 7);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(790, 750);
             this.tabControl3.TabIndex = 28;
             // 
-            // tabPage3
+            // invEquip
             // 
-            this.tabPage3.Controls.Add(this.inventoryBox);
-            this.tabPage3.Location = new System.Drawing.Point(4, 32);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(782, 714);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Equipment";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.invEquip.Controls.Add(this.inventoryBox);
+            this.invEquip.Location = new System.Drawing.Point(4, 32);
+            this.invEquip.Name = "invEquip";
+            this.invEquip.Padding = new System.Windows.Forms.Padding(3);
+            this.invEquip.Size = new System.Drawing.Size(782, 714);
+            this.invEquip.TabIndex = 0;
+            this.invEquip.Text = "Equipment";
+            this.invEquip.UseVisualStyleBackColor = true;
             // 
             // inventoryBox
             // 
@@ -345,16 +350,16 @@
             this.inventoryBox.TabIndex = 28;
             this.inventoryBox.Text = "This is your inventory. like what did you expect";
             // 
-            // tabPage8
+            // invTreasure
             // 
-            this.tabPage8.Controls.Add(this.treasureText);
-            this.tabPage8.Location = new System.Drawing.Point(4, 32);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(782, 714);
-            this.tabPage8.TabIndex = 1;
-            this.tabPage8.Text = "Treasures";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.invTreasure.Controls.Add(this.treasureText);
+            this.invTreasure.Location = new System.Drawing.Point(4, 32);
+            this.invTreasure.Name = "invTreasure";
+            this.invTreasure.Padding = new System.Windows.Forms.Padding(3);
+            this.invTreasure.Size = new System.Drawing.Size(782, 714);
+            this.invTreasure.TabIndex = 1;
+            this.invTreasure.Text = "Treasures";
+            this.invTreasure.UseVisualStyleBackColor = true;
             // 
             // treasureText
             // 
@@ -366,6 +371,15 @@
             this.treasureText.Size = new System.Drawing.Size(770, 700);
             this.treasureText.TabIndex = 29;
             this.treasureText.Text = "This is your inventory. like what did you expect";
+            // 
+            // invAttacks
+            // 
+            this.invAttacks.Location = new System.Drawing.Point(4, 32);
+            this.invAttacks.Name = "invAttacks";
+            this.invAttacks.Size = new System.Drawing.Size(782, 714);
+            this.invAttacks.TabIndex = 2;
+            this.invAttacks.Text = "Attacks";
+            this.invAttacks.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -380,7 +394,7 @@
             this.tabPage2.Controls.Add(this.radio16);
             this.tabPage2.Controls.Add(this.radio15);
             this.tabPage2.Controls.Add(this.radio13);
-            this.tabPage2.Controls.Add(this.r);
+            this.tabPage2.Controls.Add(this.radio12);
             this.tabPage2.Controls.Add(this.radio11);
             this.tabPage2.Controls.Add(this.radio8);
             this.tabPage2.Controls.Add(this.radio10);
@@ -452,6 +466,294 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Stats";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // radio23
+            // 
+            this.radio23.AutoSize = true;
+            this.radio23.Location = new System.Drawing.Point(221, 661);
+            this.radio23.Name = "radio23";
+            this.radio23.Size = new System.Drawing.Size(95, 27);
+            this.radio23.TabIndex = 109;
+            this.radio23.TabStop = true;
+            this.radio23.Text = "Survival";
+            this.radio23.UseVisualStyleBackColor = true;
+            this.radio23.CheckedChanged += new System.EventHandler(this.radio23_CheckedChanged);
+            // 
+            // radio20
+            // 
+            this.radio20.AutoSize = true;
+            this.radio20.Location = new System.Drawing.Point(221, 554);
+            this.radio20.Name = "radio20";
+            this.radio20.Size = new System.Drawing.Size(97, 27);
+            this.radio20.TabIndex = 110;
+            this.radio20.TabStop = true;
+            this.radio20.Text = "Religion";
+            this.radio20.UseVisualStyleBackColor = true;
+            this.radio20.CheckedChanged += new System.EventHandler(this.radio20_CheckedChanged);
+            // 
+            // radio22
+            // 
+            this.radio22.AutoSize = true;
+            this.radio22.Location = new System.Drawing.Point(221, 625);
+            this.radio22.Name = "radio22";
+            this.radio22.Size = new System.Drawing.Size(89, 27);
+            this.radio22.TabIndex = 107;
+            this.radio22.TabStop = true;
+            this.radio22.Text = "Stealth";
+            this.radio22.UseVisualStyleBackColor = true;
+            this.radio22.CheckedChanged += new System.EventHandler(this.radio22_CheckedChanged);
+            // 
+            // radio21
+            // 
+            this.radio21.AutoSize = true;
+            this.radio21.Location = new System.Drawing.Point(221, 589);
+            this.radio21.Name = "radio21";
+            this.radio21.Size = new System.Drawing.Size(161, 27);
+            this.radio21.TabIndex = 105;
+            this.radio21.TabStop = true;
+            this.radio21.Text = "Sleight of Hand";
+            this.radio21.UseVisualStyleBackColor = true;
+            this.radio21.CheckedChanged += new System.EventHandler(this.radio21_CheckedChanged);
+            // 
+            // radio19
+            // 
+            this.radio19.AutoSize = true;
+            this.radio19.Location = new System.Drawing.Point(221, 518);
+            this.radio19.Name = "radio19";
+            this.radio19.Size = new System.Drawing.Size(125, 27);
+            this.radio19.TabIndex = 108;
+            this.radio19.TabStop = true;
+            this.radio19.Text = "Persuasion";
+            this.radio19.UseVisualStyleBackColor = true;
+            this.radio19.CheckedChanged += new System.EventHandler(this.radio19_CheckedChanged);
+            // 
+            // radio18
+            // 
+            this.radio18.AutoSize = true;
+            this.radio18.Location = new System.Drawing.Point(221, 482);
+            this.radio18.Name = "radio18";
+            this.radio18.Size = new System.Drawing.Size(141, 27);
+            this.radio18.TabIndex = 106;
+            this.radio18.TabStop = true;
+            this.radio18.Text = "Performance";
+            this.radio18.UseVisualStyleBackColor = true;
+            this.radio18.CheckedChanged += new System.EventHandler(this.radio18_CheckedChanged);
+            // 
+            // radio17
+            // 
+            this.radio17.AutoSize = true;
+            this.radio17.Location = new System.Drawing.Point(221, 444);
+            this.radio17.Name = "radio17";
+            this.radio17.Size = new System.Drawing.Size(122, 27);
+            this.radio17.TabIndex = 103;
+            this.radio17.TabStop = true;
+            this.radio17.Text = "Perception";
+            this.radio17.UseVisualStyleBackColor = true;
+            this.radio17.CheckedChanged += new System.EventHandler(this.radio17_CheckedChanged);
+            // 
+            // radio14
+            // 
+            this.radio14.AutoSize = true;
+            this.radio14.Location = new System.Drawing.Point(221, 337);
+            this.radio14.Name = "radio14";
+            this.radio14.Size = new System.Drawing.Size(137, 27);
+            this.radio14.TabIndex = 104;
+            this.radio14.TabStop = true;
+            this.radio14.Text = "Investigation";
+            this.radio14.UseVisualStyleBackColor = true;
+            this.radio14.CheckedChanged += new System.EventHandler(this.radio14_CheckedChanged);
+            // 
+            // radio16
+            // 
+            this.radio16.AutoSize = true;
+            this.radio16.Location = new System.Drawing.Point(221, 408);
+            this.radio16.Name = "radio16";
+            this.radio16.Size = new System.Drawing.Size(86, 27);
+            this.radio16.TabIndex = 101;
+            this.radio16.TabStop = true;
+            this.radio16.Text = "Nature";
+            this.radio16.UseVisualStyleBackColor = true;
+            this.radio16.CheckedChanged += new System.EventHandler(this.radio16_CheckedChanged);
+            // 
+            // radio15
+            // 
+            this.radio15.AutoSize = true;
+            this.radio15.Location = new System.Drawing.Point(221, 372);
+            this.radio15.Name = "radio15";
+            this.radio15.Size = new System.Drawing.Size(106, 27);
+            this.radio15.TabIndex = 99;
+            this.radio15.TabStop = true;
+            this.radio15.Text = "Medicine";
+            this.radio15.UseVisualStyleBackColor = true;
+            this.radio15.CheckedChanged += new System.EventHandler(this.radio15_CheckedChanged);
+            // 
+            // radio13
+            // 
+            this.radio13.AutoSize = true;
+            this.radio13.Location = new System.Drawing.Point(221, 301);
+            this.radio13.Name = "radio13";
+            this.radio13.Size = new System.Drawing.Size(127, 27);
+            this.radio13.TabIndex = 102;
+            this.radio13.TabStop = true;
+            this.radio13.Text = "Intimidation";
+            this.radio13.UseVisualStyleBackColor = true;
+            this.radio13.CheckedChanged += new System.EventHandler(this.radio13_CheckedChanged);
+            // 
+            // radio12
+            // 
+            this.radio12.AutoSize = true;
+            this.radio12.Location = new System.Drawing.Point(221, 265);
+            this.radio12.Name = "radio12";
+            this.radio12.Size = new System.Drawing.Size(85, 27);
+            this.radio12.TabIndex = 100;
+            this.radio12.TabStop = true;
+            this.radio12.Text = "Insight";
+            this.radio12.UseVisualStyleBackColor = true;
+            this.radio12.CheckedChanged += new System.EventHandler(this.radio12_CheckedChanged);
+            // 
+            // radio11
+            // 
+            this.radio11.AutoSize = true;
+            this.radio11.Location = new System.Drawing.Point(221, 232);
+            this.radio11.Name = "radio11";
+            this.radio11.Size = new System.Drawing.Size(89, 27);
+            this.radio11.TabIndex = 97;
+            this.radio11.TabStop = true;
+            this.radio11.Text = "History";
+            this.radio11.UseVisualStyleBackColor = true;
+            this.radio11.CheckedChanged += new System.EventHandler(this.radio11_CheckedChanged);
+            // 
+            // radio8
+            // 
+            this.radio8.AutoSize = true;
+            this.radio8.Location = new System.Drawing.Point(221, 125);
+            this.radio8.Name = "radio8";
+            this.radio8.Size = new System.Drawing.Size(90, 27);
+            this.radio8.TabIndex = 98;
+            this.radio8.TabStop = true;
+            this.radio8.Text = "Arcana";
+            this.radio8.UseVisualStyleBackColor = true;
+            this.radio8.CheckedChanged += new System.EventHandler(this.radio8_CheckedChanged);
+            // 
+            // radio10
+            // 
+            this.radio10.AutoSize = true;
+            this.radio10.Location = new System.Drawing.Point(221, 196);
+            this.radio10.Name = "radio10";
+            this.radio10.Size = new System.Drawing.Size(116, 27);
+            this.radio10.TabIndex = 95;
+            this.radio10.TabStop = true;
+            this.radio10.Text = "Deception";
+            this.radio10.UseVisualStyleBackColor = true;
+            this.radio10.CheckedChanged += new System.EventHandler(this.radio10_CheckedChanged);
+            // 
+            // radio9
+            // 
+            this.radio9.AutoSize = true;
+            this.radio9.Location = new System.Drawing.Point(221, 160);
+            this.radio9.Name = "radio9";
+            this.radio9.Size = new System.Drawing.Size(102, 27);
+            this.radio9.TabIndex = 93;
+            this.radio9.TabStop = true;
+            this.radio9.Text = "Athletics";
+            this.radio9.UseVisualStyleBackColor = true;
+            this.radio9.CheckedChanged += new System.EventHandler(this.radio9_CheckedChanged);
+            // 
+            // radio7
+            // 
+            this.radio7.AutoSize = true;
+            this.radio7.Location = new System.Drawing.Point(221, 89);
+            this.radio7.Name = "radio7";
+            this.radio7.Size = new System.Drawing.Size(163, 27);
+            this.radio7.TabIndex = 96;
+            this.radio7.TabStop = true;
+            this.radio7.Text = "Animal handling";
+            this.radio7.UseVisualStyleBackColor = true;
+            this.radio7.CheckedChanged += new System.EventHandler(this.radio7_CheckedChanged);
+            // 
+            // radio6
+            // 
+            this.radio6.AutoSize = true;
+            this.radio6.Location = new System.Drawing.Point(221, 53);
+            this.radio6.Name = "radio6";
+            this.radio6.Size = new System.Drawing.Size(121, 27);
+            this.radio6.TabIndex = 94;
+            this.radio6.TabStop = true;
+            this.radio6.Text = "Acrobatics";
+            this.radio6.UseVisualStyleBackColor = true;
+            this.radio6.CheckedChanged += new System.EventHandler(this.radio6_CheckedChanged);
+            // 
+            // radio5
+            // 
+            this.radio5.AutoSize = true;
+            this.radio5.Location = new System.Drawing.Point(18, 492);
+            this.radio5.Name = "radio5";
+            this.radio5.Size = new System.Drawing.Size(111, 27);
+            this.radio5.TabIndex = 92;
+            this.radio5.TabStop = true;
+            this.radio5.Text = "Charisma";
+            this.radio5.UseVisualStyleBackColor = true;
+            this.radio5.CheckedChanged += new System.EventHandler(this.radio5_CheckedChanged);
+            // 
+            // radio2
+            // 
+            this.radio2.AutoSize = true;
+            this.radio2.Location = new System.Drawing.Point(18, 385);
+            this.radio2.Name = "radio2";
+            this.radio2.Size = new System.Drawing.Size(130, 27);
+            this.radio2.TabIndex = 92;
+            this.radio2.TabStop = true;
+            this.radio2.Text = "Constitution";
+            this.radio2.UseVisualStyleBackColor = true;
+            this.radio2.CheckedChanged += new System.EventHandler(this.radio2_CheckedChanged);
+            // 
+            // radio4
+            // 
+            this.radio4.AutoSize = true;
+            this.radio4.Location = new System.Drawing.Point(18, 456);
+            this.radio4.Name = "radio4";
+            this.radio4.Size = new System.Drawing.Size(99, 27);
+            this.radio4.TabIndex = 91;
+            this.radio4.TabStop = true;
+            this.radio4.Text = "Wisdom";
+            this.radio4.UseVisualStyleBackColor = true;
+            this.radio4.CheckedChanged += new System.EventHandler(this.radio4_CheckedChanged);
+            // 
+            // radio3
+            // 
+            this.radio3.AutoSize = true;
+            this.radio3.Location = new System.Drawing.Point(18, 420);
+            this.radio3.Name = "radio3";
+            this.radio3.Size = new System.Drawing.Size(126, 27);
+            this.radio3.TabIndex = 90;
+            this.radio3.TabStop = true;
+            this.radio3.Text = "Intelligence";
+            this.radio3.UseVisualStyleBackColor = true;
+            this.radio3.CheckedChanged += new System.EventHandler(this.radio3_CheckedChanged);
+            // 
+            // radio1
+            // 
+            this.radio1.AutoSize = true;
+            this.radio1.Location = new System.Drawing.Point(18, 349);
+            this.radio1.Name = "radio1";
+            this.radio1.Size = new System.Drawing.Size(106, 27);
+            this.radio1.TabIndex = 91;
+            this.radio1.TabStop = true;
+            this.radio1.Text = "Dexterity";
+            this.radio1.UseVisualStyleBackColor = true;
+            this.radio1.CheckedChanged += new System.EventHandler(this.radio1_CheckedChanged);
+            // 
+            // radio0
+            // 
+            this.radio0.AutoSize = true;
+            this.radio0.Location = new System.Drawing.Point(18, 313);
+            this.radio0.Name = "radio0";
+            this.radio0.Size = new System.Drawing.Size(102, 27);
+            this.radio0.TabIndex = 90;
+            this.radio0.TabStop = true;
+            this.radio0.Text = "Strenght";
+            this.radio0.UseVisualStyleBackColor = true;
+            this.radio0.CheckedChanged += new System.EventHandler(this.radio0_CheckedChanged);
             // 
             // statCheck
             // 
@@ -1176,19 +1478,30 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.AlliesText);
             this.tabPage9.Location = new System.Drawing.Point(4, 32);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(392, 714);
+            this.tabPage9.Size = new System.Drawing.Size(382, 714);
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "Other";
             this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // AlliesText
+            // 
+            this.AlliesText.Location = new System.Drawing.Point(6, 6);
+            this.AlliesText.Multiline = true;
+            this.AlliesText.Name = "AlliesText";
+            this.AlliesText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.AlliesText.Size = new System.Drawing.Size(370, 135);
+            this.AlliesText.TabIndex = 27;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 15F);
             this.tabControl1.Location = new System.Drawing.Point(13, 100);
@@ -1198,269 +1511,14 @@
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
-            // radio0
+            // tabPage10
             // 
-            this.radio0.AutoSize = true;
-            this.radio0.Location = new System.Drawing.Point(18, 313);
-            this.radio0.Name = "radio0";
-            this.radio0.Size = new System.Drawing.Size(102, 27);
-            this.radio0.TabIndex = 90;
-            this.radio0.TabStop = true;
-            this.radio0.Text = "Strenght";
-            this.radio0.UseVisualStyleBackColor = true;
-            // 
-            // radio1
-            // 
-            this.radio1.AutoSize = true;
-            this.radio1.Location = new System.Drawing.Point(18, 349);
-            this.radio1.Name = "radio1";
-            this.radio1.Size = new System.Drawing.Size(106, 27);
-            this.radio1.TabIndex = 91;
-            this.radio1.TabStop = true;
-            this.radio1.Text = "Dexterity";
-            this.radio1.UseVisualStyleBackColor = true;
-            // 
-            // radio2
-            // 
-            this.radio2.AutoSize = true;
-            this.radio2.Location = new System.Drawing.Point(18, 385);
-            this.radio2.Name = "radio2";
-            this.radio2.Size = new System.Drawing.Size(130, 27);
-            this.radio2.TabIndex = 92;
-            this.radio2.TabStop = true;
-            this.radio2.Text = "Constitution";
-            this.radio2.UseVisualStyleBackColor = true;
-            // 
-            // radio3
-            // 
-            this.radio3.AutoSize = true;
-            this.radio3.Location = new System.Drawing.Point(18, 420);
-            this.radio3.Name = "radio3";
-            this.radio3.Size = new System.Drawing.Size(126, 27);
-            this.radio3.TabIndex = 90;
-            this.radio3.TabStop = true;
-            this.radio3.Text = "Intelligence";
-            this.radio3.UseVisualStyleBackColor = true;
-            // 
-            // radio4
-            // 
-            this.radio4.AutoSize = true;
-            this.radio4.Location = new System.Drawing.Point(18, 456);
-            this.radio4.Name = "radio4";
-            this.radio4.Size = new System.Drawing.Size(99, 27);
-            this.radio4.TabIndex = 91;
-            this.radio4.TabStop = true;
-            this.radio4.Text = "Wisdom";
-            this.radio4.UseVisualStyleBackColor = true;
-            // 
-            // radio5
-            // 
-            this.radio5.AutoSize = true;
-            this.radio5.Location = new System.Drawing.Point(18, 492);
-            this.radio5.Name = "radio5";
-            this.radio5.Size = new System.Drawing.Size(111, 27);
-            this.radio5.TabIndex = 92;
-            this.radio5.TabStop = true;
-            this.radio5.Text = "Charisma";
-            this.radio5.UseVisualStyleBackColor = true;
-            // 
-            // radio11
-            // 
-            this.radio11.AutoSize = true;
-            this.radio11.Location = new System.Drawing.Point(221, 232);
-            this.radio11.Name = "radio11";
-            this.radio11.Size = new System.Drawing.Size(89, 27);
-            this.radio11.TabIndex = 97;
-            this.radio11.TabStop = true;
-            this.radio11.Text = "History";
-            this.radio11.UseVisualStyleBackColor = true;
-            // 
-            // radio8
-            // 
-            this.radio8.AutoSize = true;
-            this.radio8.Location = new System.Drawing.Point(221, 125);
-            this.radio8.Name = "radio8";
-            this.radio8.Size = new System.Drawing.Size(90, 27);
-            this.radio8.TabIndex = 98;
-            this.radio8.TabStop = true;
-            this.radio8.Text = "Arcana";
-            this.radio8.UseVisualStyleBackColor = true;
-            // 
-            // radio10
-            // 
-            this.radio10.AutoSize = true;
-            this.radio10.Location = new System.Drawing.Point(221, 196);
-            this.radio10.Name = "radio10";
-            this.radio10.Size = new System.Drawing.Size(116, 27);
-            this.radio10.TabIndex = 95;
-            this.radio10.TabStop = true;
-            this.radio10.Text = "Deception";
-            this.radio10.UseVisualStyleBackColor = true;
-            // 
-            // radio9
-            // 
-            this.radio9.AutoSize = true;
-            this.radio9.Location = new System.Drawing.Point(221, 160);
-            this.radio9.Name = "radio9";
-            this.radio9.Size = new System.Drawing.Size(102, 27);
-            this.radio9.TabIndex = 93;
-            this.radio9.TabStop = true;
-            this.radio9.Text = "Athletics";
-            this.radio9.UseVisualStyleBackColor = true;
-            // 
-            // radio7
-            // 
-            this.radio7.AutoSize = true;
-            this.radio7.Location = new System.Drawing.Point(221, 89);
-            this.radio7.Name = "radio7";
-            this.radio7.Size = new System.Drawing.Size(163, 27);
-            this.radio7.TabIndex = 96;
-            this.radio7.TabStop = true;
-            this.radio7.Text = "Animal handling";
-            this.radio7.UseVisualStyleBackColor = true;
-            // 
-            // radio6
-            // 
-            this.radio6.AutoSize = true;
-            this.radio6.Location = new System.Drawing.Point(221, 53);
-            this.radio6.Name = "radio6";
-            this.radio6.Size = new System.Drawing.Size(121, 27);
-            this.radio6.TabIndex = 94;
-            this.radio6.TabStop = true;
-            this.radio6.Text = "Acrobatics";
-            this.radio6.UseVisualStyleBackColor = true;
-            // 
-            // radio17
-            // 
-            this.radio17.AutoSize = true;
-            this.radio17.Location = new System.Drawing.Point(221, 444);
-            this.radio17.Name = "radio17";
-            this.radio17.Size = new System.Drawing.Size(122, 27);
-            this.radio17.TabIndex = 103;
-            this.radio17.TabStop = true;
-            this.radio17.Text = "Perception";
-            this.radio17.UseVisualStyleBackColor = true;
-            // 
-            // radio14
-            // 
-            this.radio14.AutoSize = true;
-            this.radio14.Location = new System.Drawing.Point(221, 337);
-            this.radio14.Name = "radio14";
-            this.radio14.Size = new System.Drawing.Size(137, 27);
-            this.radio14.TabIndex = 104;
-            this.radio14.TabStop = true;
-            this.radio14.Text = "Investigation";
-            this.radio14.UseVisualStyleBackColor = true;
-            // 
-            // radio16
-            // 
-            this.radio16.AutoSize = true;
-            this.radio16.Location = new System.Drawing.Point(221, 408);
-            this.radio16.Name = "radio16";
-            this.radio16.Size = new System.Drawing.Size(86, 27);
-            this.radio16.TabIndex = 101;
-            this.radio16.TabStop = true;
-            this.radio16.Text = "Nature";
-            this.radio16.UseVisualStyleBackColor = true;
-            // 
-            // radio15
-            // 
-            this.radio15.AutoSize = true;
-            this.radio15.Location = new System.Drawing.Point(221, 372);
-            this.radio15.Name = "radio15";
-            this.radio15.Size = new System.Drawing.Size(106, 27);
-            this.radio15.TabIndex = 99;
-            this.radio15.TabStop = true;
-            this.radio15.Text = "Medicine";
-            this.radio15.UseVisualStyleBackColor = true;
-            // 
-            // radio13
-            // 
-            this.radio13.AutoSize = true;
-            this.radio13.Location = new System.Drawing.Point(221, 301);
-            this.radio13.Name = "radio13";
-            this.radio13.Size = new System.Drawing.Size(127, 27);
-            this.radio13.TabIndex = 102;
-            this.radio13.TabStop = true;
-            this.radio13.Text = "Intimidation";
-            this.radio13.UseVisualStyleBackColor = true;
-            // 
-            // r
-            // 
-            this.r.AutoSize = true;
-            this.r.Location = new System.Drawing.Point(221, 265);
-            this.r.Name = "r";
-            this.r.Size = new System.Drawing.Size(85, 27);
-            this.r.TabIndex = 100;
-            this.r.TabStop = true;
-            this.r.Text = "Insight";
-            this.r.UseVisualStyleBackColor = true;
-            // 
-            // radio23
-            // 
-            this.radio23.AutoSize = true;
-            this.radio23.Location = new System.Drawing.Point(221, 661);
-            this.radio23.Name = "radio23";
-            this.radio23.Size = new System.Drawing.Size(95, 27);
-            this.radio23.TabIndex = 109;
-            this.radio23.TabStop = true;
-            this.radio23.Text = "Survival";
-            this.radio23.UseVisualStyleBackColor = true;
-            // 
-            // radio20
-            // 
-            this.radio20.AutoSize = true;
-            this.radio20.Location = new System.Drawing.Point(221, 554);
-            this.radio20.Name = "radio20";
-            this.radio20.Size = new System.Drawing.Size(97, 27);
-            this.radio20.TabIndex = 110;
-            this.radio20.TabStop = true;
-            this.radio20.Text = "Religion";
-            this.radio20.UseVisualStyleBackColor = true;
-            // 
-            // radio22
-            // 
-            this.radio22.AutoSize = true;
-            this.radio22.Location = new System.Drawing.Point(221, 625);
-            this.radio22.Name = "radio22";
-            this.radio22.Size = new System.Drawing.Size(89, 27);
-            this.radio22.TabIndex = 107;
-            this.radio22.TabStop = true;
-            this.radio22.Text = "Stealth";
-            this.radio22.UseVisualStyleBackColor = true;
-            // 
-            // radio21
-            // 
-            this.radio21.AutoSize = true;
-            this.radio21.Location = new System.Drawing.Point(221, 589);
-            this.radio21.Name = "radio21";
-            this.radio21.Size = new System.Drawing.Size(161, 27);
-            this.radio21.TabIndex = 105;
-            this.radio21.TabStop = true;
-            this.radio21.Text = "Sleight of Hand";
-            this.radio21.UseVisualStyleBackColor = true;
-            // 
-            // radio19
-            // 
-            this.radio19.AutoSize = true;
-            this.radio19.Location = new System.Drawing.Point(221, 518);
-            this.radio19.Name = "radio19";
-            this.radio19.Size = new System.Drawing.Size(125, 27);
-            this.radio19.TabIndex = 108;
-            this.radio19.TabStop = true;
-            this.radio19.Text = "Persuasion";
-            this.radio19.UseVisualStyleBackColor = true;
-            // 
-            // radio18
-            // 
-            this.radio18.AutoSize = true;
-            this.radio18.Location = new System.Drawing.Point(221, 482);
-            this.radio18.Name = "radio18";
-            this.radio18.Size = new System.Drawing.Size(141, 27);
-            this.radio18.TabIndex = 106;
-            this.radio18.TabStop = true;
-            this.radio18.Text = "Performance";
-            this.radio18.UseVisualStyleBackColor = true;
+            this.tabPage10.Location = new System.Drawing.Point(4, 32);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(802, 764);
+            this.tabPage10.TabIndex = 5;
+            this.tabPage10.Text = "Spells";
+            this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // CharSheet
             // 
@@ -1478,6 +1536,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.charNameBox);
             this.Controls.Add(this.tabControl1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1489,10 +1548,10 @@
             this.toolStrip1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage8.ResumeLayout(false);
-            this.tabPage8.PerformLayout();
+            this.invEquip.ResumeLayout(false);
+            this.invEquip.PerformLayout();
+            this.invTreasure.ResumeLayout(false);
+            this.invTreasure.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -1503,6 +1562,8 @@
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1607,9 +1668,9 @@
         private System.Windows.Forms.TextBox backstoryText;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabControl tabControl3;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage invEquip;
         private System.Windows.Forms.TextBox inventoryBox;
-        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.TabPage invTreasure;
         private System.Windows.Forms.TextBox treasureText;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.RadioButton radio2;
@@ -1626,7 +1687,7 @@
         private System.Windows.Forms.RadioButton radio16;
         private System.Windows.Forms.RadioButton radio15;
         private System.Windows.Forms.RadioButton radio13;
-        private System.Windows.Forms.RadioButton r;
+        private System.Windows.Forms.RadioButton radio12;
         private System.Windows.Forms.RadioButton radio11;
         private System.Windows.Forms.RadioButton radio8;
         private System.Windows.Forms.RadioButton radio10;
@@ -1636,6 +1697,9 @@
         private System.Windows.Forms.RadioButton radio5;
         private System.Windows.Forms.RadioButton radio4;
         private System.Windows.Forms.RadioButton radio3;
+        private System.Windows.Forms.TextBox AlliesText;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.TabPage invAttacks;
     }
 }
 

@@ -35,15 +35,17 @@ namespace sheet
 
         public Inventory inventory;
 
-        //PAGE 4 OTHER
+        //PAGE 4 
 
 
 
-        //PAGE 5
+        //PAGE 5 
 
 
 
         //ELSE
+
+        public string notes;
 
         public Character() { }
 
@@ -139,5 +141,14 @@ namespace sheet
     }
 
     //PAGE 4 
-  
+    public class SpellBook
+    {
+        //cantrips
+
+        //spells
+    }
+
+
+    //PAGE 5 
+
 }

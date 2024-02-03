@@ -13,12 +13,14 @@ using System.Xml.Serialization;
 
 namespace sheet
 {
-    public partial class Form1 : Form
+    public partial class CharSheet : Form
     {
+        public List<int> prof;
+        public List<RadioButton> radioButtons;
         
         XmlSerializer serializer = new XmlSerializer(typeof(Character));
         public Character currentChar;
-        public Form1()
+        public CharSheet()
         {
             InitializeComponent();
         }
@@ -55,6 +57,8 @@ namespace sheet
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            prof = new List<int>();
+
             currentChar = new Character();
 
             currentChar.apearance = new Apearance();
@@ -65,11 +69,10 @@ namespace sheet
             currentChar.skills = new Skills();
 
             currentChar.inventory = new Inventory();
-            
-           
 
-            
-
+            radioButtons = new List<RadioButton>{radio0, radio1, radio2, radio3, radio4, radio5, radio6, radio7, radio8, radio9, radio10,
+                radio11, radio12, radio13, radio14, radio15, radio16, radio17, radio18, radio19, radio20,radio21, radio22, radio23
+            };
         }
         //temp data saving
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
@@ -83,13 +86,6 @@ namespace sheet
             currentChar.level = ToInt(lvlBox.Text);
             currentChar.race = raceBox.Text;
             currentChar._class = classBox.Text;
-
-            
-            if (true)
-            {
-
-            }
-            
 
             currentChar.mainStats.Str = ToInt(strBox.Text);
             currentChar.mainStats.Dex = ToInt(dexBox.Text);
@@ -137,6 +133,130 @@ namespace sheet
         private void statStateChange(object sender, EventArgs e)
         {
 
+        }
+
+        /*
+             _          _ _ 
+            | |        | | |
+            | |__   ___| | |
+            | '_ \ / _ \ | |
+            | | | |  __/ | |
+            |_| |_|\___|_|_|
+        */
+
+        private void ListHell(RadioButton radioButton,int a)
+        {
+            if (prof.Contains(a))
+            {
+                if (radioButton.Checked == false)
+                {
+                    prof.Remove(a);
+                }
+            }
+            else
+            {
+                if (radioButton.Checked)
+                {
+                    prof.Add(a);
+                }
+            }
+        }
+        private void radio0_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio0, 0);
+        }
+        private void radio1_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio1, 1);
+        }
+        private void radio2_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio2, 2);
+        }
+        private void radio3_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio3, 3);
+        }
+        private void radio4_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio4, 4);
+        }
+        private void radio5_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio5, 5);
+        }
+        private void radio6_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio6, 6);
+        }
+        private void radio7_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio7, 7);
+        }
+        private void radio8_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio8, 8);
+        }
+        private void radio9_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio9, 9);
+        }
+        private void radio10_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio10, 10);
+        }
+        private void radio11_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio11, 11);
+        }
+        private void radio12_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio12, 12);
+        }
+        private void radio13_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio13, 13);
+        }
+        private void radio14_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio14, 14);
+        }
+        private void radio15_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio15, 15);
+        }
+
+        private void radio16_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio16, 16);
+        }
+        private void radio17_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio17, 17);
+        }
+        private void radio18_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio18, 18);
+        }
+        private void radio19_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio19, 19);
+        }
+        private void radio20_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio20, 20);
+        }
+        private void radio21_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio21, 21);
+        }
+        private void radio22_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio22, 22);
+        }
+        private void radio23_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(radio23, 23);
         }
     }
 }
