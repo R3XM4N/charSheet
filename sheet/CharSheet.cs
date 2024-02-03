@@ -15,6 +15,7 @@ namespace sheet
 {
     public partial class CharSheet : Form
     {
+        #region main
         public List<int> prof;
         public List<RadioButton> radioButtons;
         
@@ -82,8 +83,15 @@ namespace sheet
         
         public int ToInt(string a)
         {
+            //yay fix for a dumb bug made it -404 for obiousity that its a error
+            if (a == null || a == "")
+            {
+                MessageBox.Show("Stat is missing a value");
+                return -404;
+            }
             return Convert.ToInt32(a);
         }
+        #endregion
 
         #region Data-Handle
         /*
@@ -92,16 +100,41 @@ namespace sheet
         sounds just like good way to explode.
         Also i would consider this place Hell2
         */
-        public int mainToFlat(int stat)
+        //shows the roll value +/-
+        private string ShowRoll(int a)
         {
-            //scuffed but works changes from example 17 to the plus 3 
-            double temp = ((stat - 10) / 2) * 1.1;
-
-            return Convert.ToInt32(Math.Round(temp));
+            if (a > 0)
+            {
+                return $"+{a}";
+            }
+            else
+            {
+                return $"{a}";
+            }
+        }
+        private string MainToFlat(int stat)
+        {
+            double temp = stat;
+            double temp2 = (int)Math.Floor((temp - 10) / 2);
+            if (temp2 > 0)
+            {
+                return $"+{temp2}";
+            }
+            else
+            {
+                return $"{temp2}";
+            }
         }
         private void statStateChange(object sender, EventArgs e)
         {
-
+            if (statCheck.Checked)
+            {
+                MainStats(false, true);
+            }
+            else
+            {
+                MainStats(false, false);
+            }
         }
         void MainStats(bool save,bool plusState)
         {
@@ -127,12 +160,12 @@ namespace sheet
             {
                 if (plusState)
                 {
-                    strBox.Text = $"{mainToFlat(stats["str"])}";
-                    dexBox.Text = $"{mainToFlat(stats["dex"])}";
-                    constBox.Text = $"{mainToFlat(stats["const"])}";
-                    intBox.Text = $"{mainToFlat(stats["int"])}";
-                    wisdBox.Text = $"{mainToFlat(stats["wis"])}";
-                    charBox.Text = $"{mainToFlat(stats["char"])}";
+                    strBox.Text = $"{MainToFlat(stats["str"])}";
+                    dexBox.Text = $"{MainToFlat(stats["dex"])}";
+                    constBox.Text = $"{MainToFlat(stats["const"])}";
+                    intBox.Text = $"{MainToFlat(stats["int"])}";
+                    wisdBox.Text = $"{MainToFlat(stats["wis"])}";
+                    charBox.Text = $"{MainToFlat(stats["char"])}";
 
                 }
                 else
@@ -155,51 +188,46 @@ namespace sheet
             else
             {
                 MainStats(false, false);
-            }   
+            }
+            UpdateHeader(false);
         }
         public void UpdateAllSave()
         {
+            UpdateHeader(true);
             MainStats(true, statCheck.Checked);
+        }
+        public void UpdateHeader(bool save)
+        {
+            if (save)
+            {
+                currentChar.cName = charNameBox.Text;
+                currentChar.level = ToInt(lvlBox.Text);
+                currentChar.race = raceBox.Text;
+                currentChar._class = classBox.Text;
+            }
+            else
+            {
+                charNameBox.Text = currentChar.cName;
+                lvlBox.Text = currentChar.level.ToString();
+                raceBox.Text = currentChar.race;
+                classBox.Text = currentChar._class;
+            }
         }
         public void LoadToCurrent()
         {
             UpdateAllLoad();
-            charNameBox.Text = currentChar.cName;
-            lvlBox.Text = currentChar.level.ToString();
-            raceBox.Text = currentChar.race;
-            classBox.Text = currentChar._class;
-
             
-
-            throwStrBox.Text = currentChar.savingThrows.Strenghth.ToString();
-            throwDexBox.Text = currentChar.savingThrows.Dexterity.ToString();
-            throwConstBox.Text = currentChar.savingThrows.Constitution.ToString();
-            throwIntBox.Text = currentChar.savingThrows.Inteligence.ToString();
-            throwWisdBox.Text = currentChar.savingThrows.Wisdom.ToString();
-            throwCharBox.Text = currentChar.savingThrows.Charisma.ToString();
-
         }
 
         public void SaveToCurrent()
         {
             UpdateAllSave();
-            currentChar.cName = charNameBox.Text;
-            currentChar.level = ToInt(lvlBox.Text);
-            currentChar.race = raceBox.Text;
-            currentChar._class = classBox.Text;
 
-            
-
-            currentChar.savingThrows.Strenghth = ToInt(throwStrBox.Text);
-            currentChar.savingThrows.Dexterity = ToInt(throwDexBox.Text);
-            currentChar.savingThrows.Constitution = ToInt(throwConstBox.Text);
-            currentChar.savingThrows.Inteligence = ToInt(throwIntBox.Text);
-            currentChar.savingThrows.Wisdom = ToInt(throwWisdBox.Text);
-            currentChar.savingThrows.Charisma = ToInt(throwCharBox.Text);
 
         }
 
         #endregion
+
         #region hell
         /*
              _          _ _ 

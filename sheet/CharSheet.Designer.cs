@@ -43,15 +43,15 @@
             this.classBox = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.lvlBox = new System.Windows.Forms.TextBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.otherTab = new System.Windows.Forms.TabPage();
+            this.invTab = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.invEquip = new System.Windows.Forms.TabPage();
             this.inventoryBox = new System.Windows.Forms.TextBox();
             this.invTreasure = new System.Windows.Forms.TabPage();
             this.treasureText = new System.Windows.Forms.TextBox();
             this.invAttacks = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.statsTab = new System.Windows.Forms.TabPage();
             this.radio23 = new System.Windows.Forms.RadioButton();
             this.radio20 = new System.Windows.Forms.RadioButton();
             this.radio22 = new System.Windows.Forms.RadioButton();
@@ -128,7 +128,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.charInfoTab = new System.Windows.Forms.TabPage();
             this.label50 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.alignBox = new System.Windows.Forms.TextBox();
@@ -158,15 +158,15 @@
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.AlliesText = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.spellTab = new System.Windows.Forms.TabPage();
             weightBox = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.invTab.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.invEquip.SuspendLayout();
             this.invTreasure.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.statsTab.SuspendLayout();
+            this.charInfoTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charImage)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -296,26 +296,26 @@
             this.lvlBox.TabIndex = 9;
             this.lvlBox.Text = "0";
             // 
-            // tabPage5
+            // otherTab
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 32);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(802, 764);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Other";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.otherTab.Location = new System.Drawing.Point(4, 32);
+            this.otherTab.Name = "otherTab";
+            this.otherTab.Padding = new System.Windows.Forms.Padding(3);
+            this.otherTab.Size = new System.Drawing.Size(802, 764);
+            this.otherTab.TabIndex = 4;
+            this.otherTab.Text = "Other";
+            this.otherTab.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // invTab
             // 
-            this.tabPage4.Controls.Add(this.tabControl3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 32);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(802, 764);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Inventory";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.invTab.Controls.Add(this.tabControl3);
+            this.invTab.Location = new System.Drawing.Point(4, 32);
+            this.invTab.Name = "invTab";
+            this.invTab.Padding = new System.Windows.Forms.Padding(3);
+            this.invTab.Size = new System.Drawing.Size(802, 764);
+            this.invTab.TabIndex = 3;
+            this.invTab.Text = "Inventory";
+            this.invTab.UseVisualStyleBackColor = true;
             // 
             // tabControl3
             // 
@@ -381,91 +381,91 @@
             this.invAttacks.Text = "Attacks";
             this.invAttacks.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // statsTab
             // 
-            this.tabPage2.Controls.Add(this.radio23);
-            this.tabPage2.Controls.Add(this.radio20);
-            this.tabPage2.Controls.Add(this.radio22);
-            this.tabPage2.Controls.Add(this.radio21);
-            this.tabPage2.Controls.Add(this.radio19);
-            this.tabPage2.Controls.Add(this.radio18);
-            this.tabPage2.Controls.Add(this.radio17);
-            this.tabPage2.Controls.Add(this.radio14);
-            this.tabPage2.Controls.Add(this.radio16);
-            this.tabPage2.Controls.Add(this.radio15);
-            this.tabPage2.Controls.Add(this.radio13);
-            this.tabPage2.Controls.Add(this.radio12);
-            this.tabPage2.Controls.Add(this.radio11);
-            this.tabPage2.Controls.Add(this.radio8);
-            this.tabPage2.Controls.Add(this.radio10);
-            this.tabPage2.Controls.Add(this.radio9);
-            this.tabPage2.Controls.Add(this.radio7);
-            this.tabPage2.Controls.Add(this.radio6);
-            this.tabPage2.Controls.Add(this.radio5);
-            this.tabPage2.Controls.Add(this.radio2);
-            this.tabPage2.Controls.Add(this.radio4);
-            this.tabPage2.Controls.Add(this.radio3);
-            this.tabPage2.Controls.Add(this.radio1);
-            this.tabPage2.Controls.Add(this.radio0);
-            this.tabPage2.Controls.Add(this.statCheck);
-            this.tabPage2.Controls.Add(this.label45);
-            this.tabPage2.Controls.Add(this.healthTempBox);
-            this.tabPage2.Controls.Add(this.healthMaxBox);
-            this.tabPage2.Controls.Add(this.healthBox);
-            this.tabPage2.Controls.Add(this.speedBox);
-            this.tabPage2.Controls.Add(this.initiBox);
-            this.tabPage2.Controls.Add(this.armorClassBox);
-            this.tabPage2.Controls.Add(this.charBox);
-            this.tabPage2.Controls.Add(this.wisdBox);
-            this.tabPage2.Controls.Add(this.intBox);
-            this.tabPage2.Controls.Add(this.constBox);
-            this.tabPage2.Controls.Add(this.dexBox);
-            this.tabPage2.Controls.Add(this.strBox);
-            this.tabPage2.Controls.Add(this.throwCharBox);
-            this.tabPage2.Controls.Add(this.throwWisdBox);
-            this.tabPage2.Controls.Add(this.throwIntBox);
-            this.tabPage2.Controls.Add(this.throwConstBox);
-            this.tabPage2.Controls.Add(this.throwDexBox);
-            this.tabPage2.Controls.Add(this.throwStrBox);
-            this.tabPage2.Controls.Add(this.survivalBox);
-            this.tabPage2.Controls.Add(this.stealthBox);
-            this.tabPage2.Controls.Add(this.sofhandBox);
-            this.tabPage2.Controls.Add(this.relBox);
-            this.tabPage2.Controls.Add(this.persBox);
-            this.tabPage2.Controls.Add(this.perfBox);
-            this.tabPage2.Controls.Add(this.percBox);
-            this.tabPage2.Controls.Add(this.natureBox);
-            this.tabPage2.Controls.Add(this.medBox);
-            this.tabPage2.Controls.Add(this.inveBox);
-            this.tabPage2.Controls.Add(this.intimidBox);
-            this.tabPage2.Controls.Add(this.insightBox);
-            this.tabPage2.Controls.Add(this.historyBox);
-            this.tabPage2.Controls.Add(this.deceptionBox);
-            this.tabPage2.Controls.Add(this.athletBox);
-            this.tabPage2.Controls.Add(this.aracanaBox);
-            this.tabPage2.Controls.Add(this.animHandBox);
-            this.tabPage2.Controls.Add(this.acrobaticsBox);
-            this.tabPage2.Controls.Add(this.label43);
-            this.tabPage2.Controls.Add(this.label44);
-            this.tabPage2.Controls.Add(this.label39);
-            this.tabPage2.Controls.Add(this.label40);
-            this.tabPage2.Controls.Add(this.label41);
-            this.tabPage2.Controls.Add(this.label42);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label34);
-            this.tabPage2.Controls.Add(this.label33);
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(802, 764);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Stats";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.statsTab.Controls.Add(this.radio23);
+            this.statsTab.Controls.Add(this.radio20);
+            this.statsTab.Controls.Add(this.radio22);
+            this.statsTab.Controls.Add(this.radio21);
+            this.statsTab.Controls.Add(this.radio19);
+            this.statsTab.Controls.Add(this.radio18);
+            this.statsTab.Controls.Add(this.radio17);
+            this.statsTab.Controls.Add(this.radio14);
+            this.statsTab.Controls.Add(this.radio16);
+            this.statsTab.Controls.Add(this.radio15);
+            this.statsTab.Controls.Add(this.radio13);
+            this.statsTab.Controls.Add(this.radio12);
+            this.statsTab.Controls.Add(this.radio11);
+            this.statsTab.Controls.Add(this.radio8);
+            this.statsTab.Controls.Add(this.radio10);
+            this.statsTab.Controls.Add(this.radio9);
+            this.statsTab.Controls.Add(this.radio7);
+            this.statsTab.Controls.Add(this.radio6);
+            this.statsTab.Controls.Add(this.radio5);
+            this.statsTab.Controls.Add(this.radio2);
+            this.statsTab.Controls.Add(this.radio4);
+            this.statsTab.Controls.Add(this.radio3);
+            this.statsTab.Controls.Add(this.radio1);
+            this.statsTab.Controls.Add(this.radio0);
+            this.statsTab.Controls.Add(this.statCheck);
+            this.statsTab.Controls.Add(this.label45);
+            this.statsTab.Controls.Add(this.healthTempBox);
+            this.statsTab.Controls.Add(this.healthMaxBox);
+            this.statsTab.Controls.Add(this.healthBox);
+            this.statsTab.Controls.Add(this.speedBox);
+            this.statsTab.Controls.Add(this.initiBox);
+            this.statsTab.Controls.Add(this.armorClassBox);
+            this.statsTab.Controls.Add(this.charBox);
+            this.statsTab.Controls.Add(this.wisdBox);
+            this.statsTab.Controls.Add(this.intBox);
+            this.statsTab.Controls.Add(this.constBox);
+            this.statsTab.Controls.Add(this.dexBox);
+            this.statsTab.Controls.Add(this.strBox);
+            this.statsTab.Controls.Add(this.throwCharBox);
+            this.statsTab.Controls.Add(this.throwWisdBox);
+            this.statsTab.Controls.Add(this.throwIntBox);
+            this.statsTab.Controls.Add(this.throwConstBox);
+            this.statsTab.Controls.Add(this.throwDexBox);
+            this.statsTab.Controls.Add(this.throwStrBox);
+            this.statsTab.Controls.Add(this.survivalBox);
+            this.statsTab.Controls.Add(this.stealthBox);
+            this.statsTab.Controls.Add(this.sofhandBox);
+            this.statsTab.Controls.Add(this.relBox);
+            this.statsTab.Controls.Add(this.persBox);
+            this.statsTab.Controls.Add(this.perfBox);
+            this.statsTab.Controls.Add(this.percBox);
+            this.statsTab.Controls.Add(this.natureBox);
+            this.statsTab.Controls.Add(this.medBox);
+            this.statsTab.Controls.Add(this.inveBox);
+            this.statsTab.Controls.Add(this.intimidBox);
+            this.statsTab.Controls.Add(this.insightBox);
+            this.statsTab.Controls.Add(this.historyBox);
+            this.statsTab.Controls.Add(this.deceptionBox);
+            this.statsTab.Controls.Add(this.athletBox);
+            this.statsTab.Controls.Add(this.aracanaBox);
+            this.statsTab.Controls.Add(this.animHandBox);
+            this.statsTab.Controls.Add(this.acrobaticsBox);
+            this.statsTab.Controls.Add(this.label43);
+            this.statsTab.Controls.Add(this.label44);
+            this.statsTab.Controls.Add(this.label39);
+            this.statsTab.Controls.Add(this.label40);
+            this.statsTab.Controls.Add(this.label41);
+            this.statsTab.Controls.Add(this.label42);
+            this.statsTab.Controls.Add(this.label8);
+            this.statsTab.Controls.Add(this.label7);
+            this.statsTab.Controls.Add(this.label6);
+            this.statsTab.Controls.Add(this.label5);
+            this.statsTab.Controls.Add(this.label4);
+            this.statsTab.Controls.Add(this.label3);
+            this.statsTab.Controls.Add(this.label34);
+            this.statsTab.Controls.Add(this.label33);
+            this.statsTab.Location = new System.Drawing.Point(4, 32);
+            this.statsTab.Name = "statsTab";
+            this.statsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.statsTab.Size = new System.Drawing.Size(802, 764);
+            this.statsTab.TabIndex = 1;
+            this.statsTab.Text = "Stats";
+            this.statsTab.UseVisualStyleBackColor = true;
             // 
             // radio23
             // 
@@ -833,6 +833,7 @@
             this.charBox.Size = new System.Drawing.Size(48, 30);
             this.charBox.TabIndex = 72;
             this.charBox.Text = "0";
+            this.charBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // wisdBox
             // 
@@ -841,6 +842,7 @@
             this.wisdBox.Size = new System.Drawing.Size(48, 30);
             this.wisdBox.TabIndex = 70;
             this.wisdBox.Text = "0";
+            this.wisdBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // intBox
             // 
@@ -849,6 +851,7 @@
             this.intBox.Size = new System.Drawing.Size(48, 30);
             this.intBox.TabIndex = 68;
             this.intBox.Text = "0";
+            this.intBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // constBox
             // 
@@ -857,6 +860,7 @@
             this.constBox.Size = new System.Drawing.Size(48, 30);
             this.constBox.TabIndex = 66;
             this.constBox.Text = "0";
+            this.constBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dexBox
             // 
@@ -865,6 +869,7 @@
             this.dexBox.Size = new System.Drawing.Size(48, 30);
             this.dexBox.TabIndex = 64;
             this.dexBox.Text = "0";
+            this.dexBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // strBox
             // 
@@ -873,6 +878,7 @@
             this.strBox.Size = new System.Drawing.Size(48, 30);
             this.strBox.TabIndex = 62;
             this.strBox.Text = "0";
+            this.strBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // throwCharBox
             // 
@@ -881,6 +887,7 @@
             this.throwCharBox.Size = new System.Drawing.Size(48, 30);
             this.throwCharBox.TabIndex = 58;
             this.throwCharBox.Text = "0";
+            this.throwCharBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // throwWisdBox
             // 
@@ -889,6 +896,7 @@
             this.throwWisdBox.Size = new System.Drawing.Size(48, 30);
             this.throwWisdBox.TabIndex = 56;
             this.throwWisdBox.Text = "0";
+            this.throwWisdBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // throwIntBox
             // 
@@ -897,6 +905,7 @@
             this.throwIntBox.Size = new System.Drawing.Size(48, 30);
             this.throwIntBox.TabIndex = 54;
             this.throwIntBox.Text = "0";
+            this.throwIntBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // throwConstBox
             // 
@@ -905,6 +914,7 @@
             this.throwConstBox.Size = new System.Drawing.Size(48, 30);
             this.throwConstBox.TabIndex = 52;
             this.throwConstBox.Text = "0";
+            this.throwConstBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // throwDexBox
             // 
@@ -913,6 +923,7 @@
             this.throwDexBox.Size = new System.Drawing.Size(48, 30);
             this.throwDexBox.TabIndex = 50;
             this.throwDexBox.Text = "0";
+            this.throwDexBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // throwStrBox
             // 
@@ -921,6 +932,7 @@
             this.throwStrBox.Size = new System.Drawing.Size(48, 30);
             this.throwStrBox.TabIndex = 48;
             this.throwStrBox.Text = "0";
+            this.throwStrBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // survivalBox
             // 
@@ -929,6 +941,7 @@
             this.survivalBox.Size = new System.Drawing.Size(48, 30);
             this.survivalBox.TabIndex = 46;
             this.survivalBox.Text = "0";
+            this.survivalBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // stealthBox
             // 
@@ -937,6 +950,7 @@
             this.stealthBox.Size = new System.Drawing.Size(48, 30);
             this.stealthBox.TabIndex = 44;
             this.stealthBox.Text = "0";
+            this.stealthBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // sofhandBox
             // 
@@ -945,6 +959,7 @@
             this.sofhandBox.Size = new System.Drawing.Size(48, 30);
             this.sofhandBox.TabIndex = 42;
             this.sofhandBox.Text = "0";
+            this.sofhandBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // relBox
             // 
@@ -953,6 +968,7 @@
             this.relBox.Size = new System.Drawing.Size(48, 30);
             this.relBox.TabIndex = 40;
             this.relBox.Text = "0";
+            this.relBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // persBox
             // 
@@ -961,6 +977,7 @@
             this.persBox.Size = new System.Drawing.Size(48, 30);
             this.persBox.TabIndex = 38;
             this.persBox.Text = "0";
+            this.persBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // perfBox
             // 
@@ -969,6 +986,7 @@
             this.perfBox.Size = new System.Drawing.Size(48, 30);
             this.perfBox.TabIndex = 36;
             this.perfBox.Text = "0";
+            this.perfBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // percBox
             // 
@@ -977,6 +995,7 @@
             this.percBox.Size = new System.Drawing.Size(48, 30);
             this.percBox.TabIndex = 34;
             this.percBox.Text = "0";
+            this.percBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // natureBox
             // 
@@ -985,6 +1004,7 @@
             this.natureBox.Size = new System.Drawing.Size(48, 30);
             this.natureBox.TabIndex = 32;
             this.natureBox.Text = "0";
+            this.natureBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // medBox
             // 
@@ -993,6 +1013,7 @@
             this.medBox.Size = new System.Drawing.Size(48, 30);
             this.medBox.TabIndex = 30;
             this.medBox.Text = "0";
+            this.medBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // inveBox
             // 
@@ -1001,6 +1022,7 @@
             this.inveBox.Size = new System.Drawing.Size(48, 30);
             this.inveBox.TabIndex = 28;
             this.inveBox.Text = "0";
+            this.inveBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // intimidBox
             // 
@@ -1009,6 +1031,7 @@
             this.intimidBox.Size = new System.Drawing.Size(48, 30);
             this.intimidBox.TabIndex = 26;
             this.intimidBox.Text = "0";
+            this.intimidBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // insightBox
             // 
@@ -1017,6 +1040,7 @@
             this.insightBox.Size = new System.Drawing.Size(48, 30);
             this.insightBox.TabIndex = 24;
             this.insightBox.Text = "0";
+            this.insightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // historyBox
             // 
@@ -1025,6 +1049,7 @@
             this.historyBox.Size = new System.Drawing.Size(48, 30);
             this.historyBox.TabIndex = 22;
             this.historyBox.Text = "0";
+            this.historyBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // deceptionBox
             // 
@@ -1033,6 +1058,7 @@
             this.deceptionBox.Size = new System.Drawing.Size(48, 30);
             this.deceptionBox.TabIndex = 20;
             this.deceptionBox.Text = "0";
+            this.deceptionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // athletBox
             // 
@@ -1041,6 +1067,7 @@
             this.athletBox.Size = new System.Drawing.Size(48, 30);
             this.athletBox.TabIndex = 18;
             this.athletBox.Text = "0";
+            this.athletBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // aracanaBox
             // 
@@ -1049,6 +1076,7 @@
             this.aracanaBox.Size = new System.Drawing.Size(48, 30);
             this.aracanaBox.TabIndex = 16;
             this.aracanaBox.Text = "0";
+            this.aracanaBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // animHandBox
             // 
@@ -1057,6 +1085,7 @@
             this.animHandBox.Size = new System.Drawing.Size(48, 30);
             this.animHandBox.TabIndex = 14;
             this.animHandBox.Text = "0";
+            this.animHandBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // acrobaticsBox
             // 
@@ -1065,6 +1094,7 @@
             this.acrobaticsBox.Size = new System.Drawing.Size(48, 30);
             this.acrobaticsBox.TabIndex = 12;
             this.acrobaticsBox.Text = "0";
+            this.acrobaticsBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label43
             // 
@@ -1195,34 +1225,34 @@
             this.label33.TabIndex = 60;
             this.label33.Text = "Saving Throws";
             // 
-            // tabPage1
+            // charInfoTab
             // 
-            this.tabPage1.Controls.Add(this.label50);
-            this.tabPage1.Controls.Add(this.label37);
-            this.tabPage1.Controls.Add(this.alignBox);
-            this.tabPage1.Controls.Add(this.hairBox);
-            this.tabPage1.Controls.Add(this.eyeBox);
-            this.tabPage1.Controls.Add(this.skinBox);
-            this.tabPage1.Controls.Add(weightBox);
-            this.tabPage1.Controls.Add(this.heightBox);
-            this.tabPage1.Controls.Add(this.ageBox);
-            this.tabPage1.Controls.Add(this.backgroundBox);
-            this.tabPage1.Controls.Add(this.label46);
-            this.tabPage1.Controls.Add(this.label47);
-            this.tabPage1.Controls.Add(this.label48);
-            this.tabPage1.Controls.Add(this.label49);
-            this.tabPage1.Controls.Add(this.label);
-            this.tabPage1.Controls.Add(this.label51);
-            this.tabPage1.Controls.Add(this.label52);
-            this.tabPage1.Controls.Add(this.charImage);
-            this.tabPage1.Controls.Add(this.tabControl2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(802, 764);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Characteristics";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.charInfoTab.Controls.Add(this.label50);
+            this.charInfoTab.Controls.Add(this.label37);
+            this.charInfoTab.Controls.Add(this.alignBox);
+            this.charInfoTab.Controls.Add(this.hairBox);
+            this.charInfoTab.Controls.Add(this.eyeBox);
+            this.charInfoTab.Controls.Add(this.skinBox);
+            this.charInfoTab.Controls.Add(weightBox);
+            this.charInfoTab.Controls.Add(this.heightBox);
+            this.charInfoTab.Controls.Add(this.ageBox);
+            this.charInfoTab.Controls.Add(this.backgroundBox);
+            this.charInfoTab.Controls.Add(this.label46);
+            this.charInfoTab.Controls.Add(this.label47);
+            this.charInfoTab.Controls.Add(this.label48);
+            this.charInfoTab.Controls.Add(this.label49);
+            this.charInfoTab.Controls.Add(this.label);
+            this.charInfoTab.Controls.Add(this.label51);
+            this.charInfoTab.Controls.Add(this.label52);
+            this.charInfoTab.Controls.Add(this.charImage);
+            this.charInfoTab.Controls.Add(this.tabControl2);
+            this.charInfoTab.Location = new System.Drawing.Point(4, 32);
+            this.charInfoTab.Name = "charInfoTab";
+            this.charInfoTab.Padding = new System.Windows.Forms.Padding(3);
+            this.charInfoTab.Size = new System.Drawing.Size(802, 764);
+            this.charInfoTab.TabIndex = 0;
+            this.charInfoTab.Text = "Characteristics";
+            this.charInfoTab.UseVisualStyleBackColor = true;
             // 
             // label50
             // 
@@ -1498,11 +1528,11 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage10);
-            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.charInfoTab);
+            this.tabControl1.Controls.Add(this.statsTab);
+            this.tabControl1.Controls.Add(this.invTab);
+            this.tabControl1.Controls.Add(this.spellTab);
+            this.tabControl1.Controls.Add(this.otherTab);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 15F);
             this.tabControl1.Location = new System.Drawing.Point(13, 100);
             this.tabControl1.Name = "tabControl1";
@@ -1511,14 +1541,14 @@
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
-            // tabPage10
+            // spellTab
             // 
-            this.tabPage10.Location = new System.Drawing.Point(4, 32);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(802, 764);
-            this.tabPage10.TabIndex = 5;
-            this.tabPage10.Text = "Spells";
-            this.tabPage10.UseVisualStyleBackColor = true;
+            this.spellTab.Location = new System.Drawing.Point(4, 32);
+            this.spellTab.Name = "spellTab";
+            this.spellTab.Size = new System.Drawing.Size(802, 764);
+            this.spellTab.TabIndex = 5;
+            this.spellTab.Text = "Spells";
+            this.spellTab.UseVisualStyleBackColor = true;
             // 
             // CharSheet
             // 
@@ -1546,16 +1576,16 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
+            this.invTab.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.invEquip.ResumeLayout(false);
             this.invEquip.PerformLayout();
             this.invTreasure.ResumeLayout(false);
             this.invTreasure.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.statsTab.ResumeLayout(false);
+            this.statsTab.PerformLayout();
+            this.charInfoTab.ResumeLayout(false);
+            this.charInfoTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charImage)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
@@ -1584,9 +1614,9 @@
         private System.Windows.Forms.TextBox classBox;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox lvlBox;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage otherTab;
+        private System.Windows.Forms.TabPage invTab;
+        private System.Windows.Forms.TabPage statsTab;
         private System.Windows.Forms.CheckBox statCheck;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox healthTempBox;
@@ -1639,7 +1669,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage charInfoTab;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox alignBox;
@@ -1698,7 +1728,7 @@
         private System.Windows.Forms.RadioButton radio4;
         private System.Windows.Forms.RadioButton radio3;
         private System.Windows.Forms.TextBox AlliesText;
-        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.TabPage spellTab;
         private System.Windows.Forms.TabPage invAttacks;
     }
 }
