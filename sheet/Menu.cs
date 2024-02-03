@@ -48,17 +48,19 @@ namespace sheet
         private void btn_exit_Click(object sender, EventArgs e)
         {
             // ukončí aplikaci
-            Application.Exit();
-
-            //temporary yoink pro debug :)
-            //Form1 form = new Form1();
-            //form.ShowDialog();
+            Application.Exit();   
         }
 
         private void btn_roll_Click(object sender, EventArgs e)
         {
             // otevře form "Roll" s kostkami a výsledky
             changeFormInPanel(new Roll());
+        }
+        //temporary yoink pro debug :)
+        private void DEBUGSHEET(object sender, EventArgs e)
+        {
+            CharSheet sheeet = new CharSheet();
+            sheeet.Show();
         }
     }
 }

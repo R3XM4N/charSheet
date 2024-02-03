@@ -116,37 +116,54 @@ namespace sheet
 
             if (save && plusState == false)
             {
-                stats["str"] = ToInt(textBoxes["str"]);
-                stats["dex"] = ToInt(textBoxes["dex"]);
-                stats["const"] = ToInt(textBoxes["const"]);
-                stats["int"] = ToInt(textBoxes["int"]);
-                stats["wis"] = ToInt(textBoxes["wis"]);
-                stats["char"] = ToInt(textBoxes["char"]);
+                currentChar.mainStats.Str = ToInt(textBoxes["str"]);
+                currentChar.mainStats.Dex = ToInt(textBoxes["dex"]);
+                currentChar.mainStats.Const = ToInt(textBoxes["const"]);
+                currentChar.mainStats.Int = ToInt(textBoxes["int"]);
+                currentChar.mainStats.Wis = ToInt(textBoxes["wis"]);
+                currentChar.mainStats.Char = ToInt(textBoxes["char"]);
             }
             else
             {
                 if (plusState)
                 {
-                    textBoxes["str"] = $"{mainToFlat(stats["str"])}";
-                    textBoxes["dex"] = $"{mainToFlat(stats["dex"])}";
-                    textBoxes["const"] = $"{mainToFlat(stats["const"])}";
-                    textBoxes["int"] = $"{mainToFlat(stats["int"])}";
-                    textBoxes["wis"] = $"{mainToFlat(stats["wis"])}";
-                    textBoxes["char"] = $"{mainToFlat(stats["char"])}";
+                    strBox.Text = $"{mainToFlat(stats["str"])}";
+                    dexBox.Text = $"{mainToFlat(stats["dex"])}";
+                    constBox.Text = $"{mainToFlat(stats["const"])}";
+                    intBox.Text = $"{mainToFlat(stats["int"])}";
+                    wisdBox.Text = $"{mainToFlat(stats["wis"])}";
+                    charBox.Text = $"{mainToFlat(stats["char"])}";
+
                 }
                 else
                 {
-                    textBoxes["str"] = $"{stats["str"]}";
-                    textBoxes["dex"] = $"{stats["dex"]}";
-                    textBoxes["const"] = $"{stats["const"]}";
-                    textBoxes["int"] = $"{stats["int"]}";
-                    textBoxes["wis"] = $"{stats["wis"]}";
-                    textBoxes["char"] = $"{stats["char"]}";
+                    strBox.Text = $"{stats["str"]}";
+                    dexBox.Text = $"{stats["dex"]}";
+                    constBox.Text = $"{stats["const"]}";
+                    intBox.Text = $"{stats["int"]}";
+                    wisdBox.Text = $"{stats["wis"]}";
+                    charBox.Text = $"{stats["char"]}";
                 }
             }
         }
+        public void UpdateAllLoad()
+        {
+            if (statCheck.Checked)
+            {
+                MainStats(false, true);
+            }
+            else
+            {
+                MainStats(false, false);
+            }   
+        }
+        public void UpdateAllSave()
+        {
+            MainStats(true, statCheck.Checked);
+        }
         public void LoadToCurrent()
         {
+            UpdateAllLoad();
             charNameBox.Text = currentChar.cName;
             lvlBox.Text = currentChar.level.ToString();
             raceBox.Text = currentChar.race;
@@ -165,6 +182,7 @@ namespace sheet
 
         public void SaveToCurrent()
         {
+            UpdateAllSave();
             currentChar.cName = charNameBox.Text;
             currentChar.level = ToInt(lvlBox.Text);
             currentChar.race = raceBox.Text;
