@@ -80,6 +80,89 @@ namespace sheet
             SaveToCurrent();
         }
         
+        public int ToInt(string a)
+        {
+            return Convert.ToInt32(a);
+        }
+
+        #region Data-Handle
+        /*
+        Handling each load and save seperatelly is probably gonna be more efficent,
+        considering all the different loads can be triggered all the time and calling everything all the time,
+        sounds just like good way to explode.
+        Also i would consider this place Hell2
+        */
+        public int mainToFlat(int stat)
+        {
+            //scuffed but works changes from example 17 to the plus 3 
+            double temp = ((stat - 10) / 2) * 1.1;
+
+            return Convert.ToInt32(Math.Round(temp));
+        }
+        private void statStateChange(object sender, EventArgs e)
+        {
+
+        }
+        void MainStats(bool save,bool plusState)
+        {
+            Dictionary<string,int> stats = new Dictionary<string, int>() {
+                {"str",currentChar.mainStats.Str},{"dex",currentChar.mainStats.Dex},{"const",currentChar.mainStats.Const},
+                {"int",currentChar.mainStats.Int},{"wis",currentChar.mainStats.Wis},{"char",currentChar.mainStats.Char}
+            };
+            Dictionary<string, string> textBoxes = new Dictionary<string, string>{
+                {"str",strBox.Text},{"dex",dexBox.Text},{"const",constBox.Text},
+                {"int",intBox.Text},{"wis",wisdBox.Text},{"char",charBox.Text}
+            };
+
+            if (save && plusState == false)
+            {
+                stats["str"] = ToInt(textBoxes["str"]);
+                stats["dex"] = ToInt(textBoxes["dex"]);
+                stats["const"] = ToInt(textBoxes["const"]);
+                stats["int"] = ToInt(textBoxes["int"]);
+                stats["wis"] = ToInt(textBoxes["wis"]);
+                stats["char"] = ToInt(textBoxes["char"]);
+            }
+            else
+            {
+                if (plusState)
+                {
+                    textBoxes["str"] = $"{mainToFlat(stats["str"])}";
+                    textBoxes["dex"] = $"{mainToFlat(stats["dex"])}";
+                    textBoxes["const"] = $"{mainToFlat(stats["const"])}";
+                    textBoxes["int"] = $"{mainToFlat(stats["int"])}";
+                    textBoxes["wis"] = $"{mainToFlat(stats["wis"])}";
+                    textBoxes["char"] = $"{mainToFlat(stats["char"])}";
+                }
+                else
+                {
+                    textBoxes["str"] = $"{stats["str"]}";
+                    textBoxes["dex"] = $"{stats["dex"]}";
+                    textBoxes["const"] = $"{stats["const"]}";
+                    textBoxes["int"] = $"{stats["int"]}";
+                    textBoxes["wis"] = $"{stats["wis"]}";
+                    textBoxes["char"] = $"{stats["char"]}";
+                }
+            }
+        }
+        public void LoadToCurrent()
+        {
+            charNameBox.Text = currentChar.cName;
+            lvlBox.Text = currentChar.level.ToString();
+            raceBox.Text = currentChar.race;
+            classBox.Text = currentChar._class;
+
+            
+
+            throwStrBox.Text = currentChar.savingThrows.Strenghth.ToString();
+            throwDexBox.Text = currentChar.savingThrows.Dexterity.ToString();
+            throwConstBox.Text = currentChar.savingThrows.Constitution.ToString();
+            throwIntBox.Text = currentChar.savingThrows.Inteligence.ToString();
+            throwWisdBox.Text = currentChar.savingThrows.Wisdom.ToString();
+            throwCharBox.Text = currentChar.savingThrows.Charisma.ToString();
+
+        }
+
         public void SaveToCurrent()
         {
             currentChar.cName = charNameBox.Text;
@@ -87,12 +170,7 @@ namespace sheet
             currentChar.race = raceBox.Text;
             currentChar._class = classBox.Text;
 
-            currentChar.mainStats.Str = ToInt(strBox.Text);
-            currentChar.mainStats.Dex = ToInt(dexBox.Text);
-            currentChar.mainStats.Const = ToInt(constBox.Text);
-            currentChar.mainStats.Int = ToInt(intBox.Text);
-            currentChar.mainStats.Wis = ToInt(wisdBox.Text);
-            currentChar.mainStats.Char = ToInt(charBox.Text);
+            
 
             currentChar.savingThrows.Strenghth = ToInt(throwStrBox.Text);
             currentChar.savingThrows.Dexterity = ToInt(throwDexBox.Text);
@@ -102,39 +180,9 @@ namespace sheet
             currentChar.savingThrows.Charisma = ToInt(throwCharBox.Text);
 
         }
-        
-        public void LoadToCurrent()
-        {
-            charNameBox.Text = currentChar.cName;
-            lvlBox.Text = currentChar.level.ToString();
-            raceBox.Text = currentChar.race;
-            classBox.Text = currentChar._class;
 
-            strBox.Text = currentChar.mainStats.Str.ToString();
-            dexBox.Text = currentChar.mainStats.Dex.ToString();
-            constBox.Text = currentChar.mainStats.Const.ToString();
-            intBox.Text = currentChar.mainStats.Int.ToString();
-            wisdBox.Text = currentChar.mainStats.Wis.ToString();
-            charBox.Text = currentChar.mainStats.Char.ToString();
-            
-            throwStrBox.Text = currentChar.savingThrows.Strenghth.ToString();
-            throwDexBox.Text = currentChar.savingThrows.Dexterity.ToString();
-            throwConstBox.Text = currentChar.savingThrows.Constitution.ToString();
-            throwIntBox.Text = currentChar.savingThrows.Inteligence.ToString();
-            throwWisdBox.Text = currentChar.savingThrows.Wisdom.ToString();
-            throwCharBox.Text = currentChar.savingThrows.Charisma.ToString();
-            
-        }
-        public int ToInt(string a)
-        {
-            return Convert.ToInt32(a);
-        }
-
-        private void statStateChange(object sender, EventArgs e)
-        {
-
-        }
-
+        #endregion
+        #region hell
         /*
              _          _ _ 
             | |        | | |
@@ -258,5 +306,6 @@ namespace sheet
         {
             ListHell(radio23, 23);
         }
+        #endregion
     }
 }

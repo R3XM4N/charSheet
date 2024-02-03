@@ -49,6 +49,13 @@ namespace sheet
 
         public Character() { }
 
+        public List<int> statsListed()
+        {
+            return new List<int> { mainStats.Str,mainStats.Dex,mainStats.Const,mainStats.Int,mainStats.Wis,mainStats.Char,skills.Acrobatics,skills.AnimHand, skills.Arcana,
+            skills.Athletics,skills.Deception,skills.History,skills.Insight,skills.Intimidation,skills.Investigation,skills.Medicine,skills.Nature,skills.Nature,
+            skills.Perceprtion,skills.Performance,skills.Persuasion,skills.Religion,skills.SoH,skills.Stealth,skills.Survival};
+        }
+
     }
 
     //PAGE 1 Characteristics
@@ -86,14 +93,6 @@ namespace sheet
         public int Int;
         public int Wis;
         public int Char;
-
-        public int rollStat(int stat)
-        {
-            //scuffed but works
-            double temp = ((stat - 10) / 2) * 1.1;
-
-            return Convert.ToInt32(Math.Round(temp));
-        }
     }
 
     public class Skills
