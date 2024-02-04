@@ -8,7 +8,7 @@ namespace sheet
 {
     public partial class Roll : Form
     {
-        private const string DiscordWebhookUrl = "";
+        private const string DiscordWebhookUrl = "https://discord.com/api/webhooks/1202673367551967263/LrX7jPTLWUwjcmJ2lNS1gvdxKfeAkpJ7fTYUUSXkq0PyeEuGYMY05Hmir6-6F2YtIckf";
 
         readonly Character character;
         public Roll()

@@ -39,6 +39,7 @@ namespace sheet
             Sheet_short miniSheet = new Sheet_short();
             miniSheet.TopLevel = false;
             miniSheet.Click += new EventHandler(hero_Click);
+            miniSheet.Text = "hero" + p_heroes.Controls.Count;
             // add this event handler to all controls in miniSheet will evoke click event on miniSheet
             foreach (Control c in miniSheet.Controls)
             {
@@ -54,8 +55,24 @@ namespace sheet
             Control c = (Control)sender;
             // get index of control in panel
             int index = p_heroes.Controls.IndexOf(c);
-
-            MessageBox.Show($"You clicked on hero number {index}");
+            // add border to control to show it's selected
+            if(c is Sheet_short)
+            {
+                Sheet_short s = (Sheet_short)c;
+                s.FormBorderStyle = FormBorderStyle.FixedSingle;
+            }
+            // remove border from all other controls
+            foreach (Control c2 in p_heroes.Controls)
+            {
+                if (c2 != c)
+                {
+                    if (c2 is Sheet_short)
+                    {
+                        Sheet_short s = (Sheet_short)c2;
+                        s.FormBorderStyle = FormBorderStyle.None;
+                    }
+                }
+            }
         }
 
         private void subcontrol_Click(object sender, EventArgs e)
@@ -65,23 +82,33 @@ namespace sheet
             // get index of control in panel
             int index = p_heroes.Controls.IndexOf(c);
 
-            MessageBox.Show($"You clicked on hero number {index}");
-        }
+            // add border to control to show it's selected
+            if (c is Sheet_short)
+            {
+                Sheet_short s = (Sheet_short)c;
+                s.FormBorderStyle = FormBorderStyle.FixedSingle;
+            }
 
-        private void putFormToTable(Form form, TableLayoutPanel table)
-        {
-            table.Controls.Clear();
-            form.TopLevel = false;
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.Dock = DockStyle.Fill;
-            table.Controls.Add(form);
-            table.Tag = form;
-            form.Show();
+            // remove border from all other controls
+            foreach (Control c2 in p_heroes.Controls)
+            {
+                if (c2 != c)
+                {
+                    if (c2 is Sheet_short)
+                    {
+                        Sheet_short s = (Sheet_short)c2;
+                        s.FormBorderStyle = FormBorderStyle.None;
+                    }
+                }
+            }
+
         }
 
         private void btn_nhero_Click(object sender, EventArgs e)
         {
             // při kliknutí na tlačítko "New Hero" se otevře form "Sheet" s novým hrdinou (předat mu prázdný objekt)
+            CharSheet sheet = new CharSheet();
+            sheet.Show();
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -90,10 +117,23 @@ namespace sheet
             DialogResult res = MessageBox.Show("Are you sure you want to delete this hero?", "Delete Hero", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
-                // smazat hrdinu z databáze
-            } else
-            {
-                // nic nedělat
+                // get selected hero from panel
+                foreach (Control c in p_heroes.Controls)
+                {
+                    if (c is Sheet_short)
+                    {
+                        Sheet_short s = (Sheet_short)c;
+                        if (s.FormBorderStyle == FormBorderStyle.FixedSingle)
+                        {
+                            // delete hero from database
+                            // delete hero from panel
+                            p_heroes.Controls.Remove(s);
+
+                            //delete file from disk later
+                            break;
+                        }
+                    }
+                }
             }
         }
     }
