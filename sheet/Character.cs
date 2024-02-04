@@ -42,7 +42,7 @@ namespace sheet
 
         //PAGE 5 
 
-
+        public Money money;
 
         //ELSE
 
