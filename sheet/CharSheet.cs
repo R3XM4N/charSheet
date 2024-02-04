@@ -353,5 +353,13 @@ namespace sheet
             ListHell(radio23, 23);
         }
         #endregion
+
+        private void btn_sel_pic_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            charImage.Image = Image.FromFile(openFileDialog1.FileName);
+            charImage.ImageLocation = openFileDialog1.FileName;
+            charImage.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
     }
 }
