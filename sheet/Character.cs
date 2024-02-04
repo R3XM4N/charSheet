@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
@@ -18,6 +19,7 @@ namespace sheet
         public int level;
         public string race;
         public string _class;
+        public int pro;
 
         //PAGE 1 CHARACTERISTICS
 
@@ -123,6 +125,36 @@ namespace sheet
         public int SoH;
         public int Stealth;
         public int Survival;
+
+        public int[] skillsLoad() { 
+            return new int[18] {Acrobatics, AnimHand, Arcana, Athletics, Deception, History, Insight,
+                Intimidation, Investigation, Medicine, Nature, Perceprtion, Performance,Persuasion, Religion, SoH, Stealth, Survival
+            };
+        }
+        public void skillsSave(int[] skills)
+        {
+            if (skills.Length == 18)
+            {
+                Acrobatics = skills[0];
+                AnimHand = skills[1];
+                Arcana = skills[2];
+                Athletics = skills[3];
+                Deception = skills[4];
+                History = skills[5];
+                Insight = skills[6];
+                Intimidation = skills[7];
+                Investigation = skills[8];
+                Medicine = skills[9];
+                Nature = skills[10];
+                Perceprtion = skills[11];
+                Performance = skills[12];
+                Persuasion = skills[13];
+                Religion = skills[14];
+                SoH = skills[15];
+                Stealth = skills[16];
+                Survival = skills[17];
+            }
+        }
     }
     public class Sthrows
     {
@@ -132,6 +164,24 @@ namespace sheet
         public int Inteligence;
         public int Wisdom;
         public int Charisma;
+        public int[] throwsLoad()
+        {
+            return new int[]{
+                Strenghth, Dexterity, Constitution, Inteligence, Wisdom, Charisma
+            };
+        }
+        public void throwsSave(int[] throws)
+        {
+            if (throws.Length== 6)
+            {
+                Strenghth = throws[0];
+                Dexterity = throws[1];
+                Constitution = throws[2];
+                Inteligence = throws[3];
+                Wisdom = throws[4];
+                Charisma = throws[5];
+            }
+        }
     }
 
     //PAGE 3

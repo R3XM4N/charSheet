@@ -62,6 +62,30 @@
             this.invAttacks = new System.Windows.Forms.TabPage();
             this.attacksText = new System.Windows.Forms.TextBox();
             this.statsTab = new System.Windows.Forms.TabPage();
+            this.checkBox24 = new System.Windows.Forms.CheckBox();
+            this.checkBox23 = new System.Windows.Forms.CheckBox();
+            this.checkBox22 = new System.Windows.Forms.CheckBox();
+            this.checkBox21 = new System.Windows.Forms.CheckBox();
+            this.checkBox20 = new System.Windows.Forms.CheckBox();
+            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.checkBox18 = new System.Windows.Forms.CheckBox();
+            this.checkBox17 = new System.Windows.Forms.CheckBox();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.statCheck = new System.Windows.Forms.CheckBox();
             this.label45 = new System.Windows.Forms.Label();
             this.healthTempBox = new System.Windows.Forms.TextBox();
@@ -76,30 +100,30 @@
             this.constBox = new System.Windows.Forms.TextBox();
             this.dexBox = new System.Windows.Forms.TextBox();
             this.strBox = new System.Windows.Forms.TextBox();
-            this.throwCharBox = new System.Windows.Forms.TextBox();
-            this.throwWisdBox = new System.Windows.Forms.TextBox();
-            this.throwIntBox = new System.Windows.Forms.TextBox();
-            this.throwConstBox = new System.Windows.Forms.TextBox();
-            this.throwDexBox = new System.Windows.Forms.TextBox();
-            this.throwStrBox = new System.Windows.Forms.TextBox();
-            this.survivalBox = new System.Windows.Forms.TextBox();
-            this.stealthBox = new System.Windows.Forms.TextBox();
-            this.sofhandBox = new System.Windows.Forms.TextBox();
-            this.relBox = new System.Windows.Forms.TextBox();
-            this.persBox = new System.Windows.Forms.TextBox();
-            this.perfBox = new System.Windows.Forms.TextBox();
-            this.percBox = new System.Windows.Forms.TextBox();
-            this.natureBox = new System.Windows.Forms.TextBox();
-            this.medBox = new System.Windows.Forms.TextBox();
-            this.inveBox = new System.Windows.Forms.TextBox();
-            this.intimidBox = new System.Windows.Forms.TextBox();
-            this.insightBox = new System.Windows.Forms.TextBox();
-            this.historyBox = new System.Windows.Forms.TextBox();
-            this.deceptionBox = new System.Windows.Forms.TextBox();
-            this.athletBox = new System.Windows.Forms.TextBox();
-            this.aracanaBox = new System.Windows.Forms.TextBox();
-            this.animHandBox = new System.Windows.Forms.TextBox();
-            this.acrobaticsBox = new System.Windows.Forms.TextBox();
+            this.statBox6 = new System.Windows.Forms.TextBox();
+            this.statBox5 = new System.Windows.Forms.TextBox();
+            this.statBox4 = new System.Windows.Forms.TextBox();
+            this.statBox3 = new System.Windows.Forms.TextBox();
+            this.statBox2 = new System.Windows.Forms.TextBox();
+            this.statBox1 = new System.Windows.Forms.TextBox();
+            this.statBox24 = new System.Windows.Forms.TextBox();
+            this.statBox23 = new System.Windows.Forms.TextBox();
+            this.statBox22 = new System.Windows.Forms.TextBox();
+            this.statBox21 = new System.Windows.Forms.TextBox();
+            this.statBox20 = new System.Windows.Forms.TextBox();
+            this.statBox19 = new System.Windows.Forms.TextBox();
+            this.statBox18 = new System.Windows.Forms.TextBox();
+            this.statBox17 = new System.Windows.Forms.TextBox();
+            this.statBox16 = new System.Windows.Forms.TextBox();
+            this.statBox15 = new System.Windows.Forms.TextBox();
+            this.statBox14 = new System.Windows.Forms.TextBox();
+            this.statBox13 = new System.Windows.Forms.TextBox();
+            this.statBox12 = new System.Windows.Forms.TextBox();
+            this.statBox11 = new System.Windows.Forms.TextBox();
+            this.statBox10 = new System.Windows.Forms.TextBox();
+            this.statBox9 = new System.Windows.Forms.TextBox();
+            this.statBox8 = new System.Windows.Forms.TextBox();
+            this.statBox7 = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -115,6 +139,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.charInfoTab = new System.Windows.Forms.TabPage();
+            this.weightBox = new System.Windows.Forms.TextBox();
             this.btn_sel_pic = new System.Windows.Forms.Button();
             this.label50 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
@@ -146,7 +171,6 @@
             this.AlliesText = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.spellTab = new System.Windows.Forms.TabPage();
-            weightBox = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.otherTab.SuspendLayout();
             this.invTab.SuspendLayout();
@@ -470,6 +494,30 @@
             // 
             // statsTab
             // 
+            this.statsTab.Controls.Add(this.checkBox24);
+            this.statsTab.Controls.Add(this.checkBox23);
+            this.statsTab.Controls.Add(this.checkBox22);
+            this.statsTab.Controls.Add(this.checkBox21);
+            this.statsTab.Controls.Add(this.checkBox20);
+            this.statsTab.Controls.Add(this.checkBox19);
+            this.statsTab.Controls.Add(this.checkBox18);
+            this.statsTab.Controls.Add(this.checkBox17);
+            this.statsTab.Controls.Add(this.checkBox16);
+            this.statsTab.Controls.Add(this.checkBox15);
+            this.statsTab.Controls.Add(this.checkBox14);
+            this.statsTab.Controls.Add(this.checkBox13);
+            this.statsTab.Controls.Add(this.checkBox12);
+            this.statsTab.Controls.Add(this.checkBox11);
+            this.statsTab.Controls.Add(this.checkBox10);
+            this.statsTab.Controls.Add(this.checkBox9);
+            this.statsTab.Controls.Add(this.checkBox8);
+            this.statsTab.Controls.Add(this.checkBox7);
+            this.statsTab.Controls.Add(this.checkBox6);
+            this.statsTab.Controls.Add(this.checkBox5);
+            this.statsTab.Controls.Add(this.checkBox4);
+            this.statsTab.Controls.Add(this.checkBox3);
+            this.statsTab.Controls.Add(this.checkBox2);
+            this.statsTab.Controls.Add(this.checkBox1);
             this.statsTab.Controls.Add(this.statCheck);
             this.statsTab.Controls.Add(this.label45);
             this.statsTab.Controls.Add(this.healthTempBox);
@@ -484,30 +532,30 @@
             this.statsTab.Controls.Add(this.constBox);
             this.statsTab.Controls.Add(this.dexBox);
             this.statsTab.Controls.Add(this.strBox);
-            this.statsTab.Controls.Add(this.throwCharBox);
-            this.statsTab.Controls.Add(this.throwWisdBox);
-            this.statsTab.Controls.Add(this.throwIntBox);
-            this.statsTab.Controls.Add(this.throwConstBox);
-            this.statsTab.Controls.Add(this.throwDexBox);
-            this.statsTab.Controls.Add(this.throwStrBox);
-            this.statsTab.Controls.Add(this.survivalBox);
-            this.statsTab.Controls.Add(this.stealthBox);
-            this.statsTab.Controls.Add(this.sofhandBox);
-            this.statsTab.Controls.Add(this.relBox);
-            this.statsTab.Controls.Add(this.persBox);
-            this.statsTab.Controls.Add(this.perfBox);
-            this.statsTab.Controls.Add(this.percBox);
-            this.statsTab.Controls.Add(this.natureBox);
-            this.statsTab.Controls.Add(this.medBox);
-            this.statsTab.Controls.Add(this.inveBox);
-            this.statsTab.Controls.Add(this.intimidBox);
-            this.statsTab.Controls.Add(this.insightBox);
-            this.statsTab.Controls.Add(this.historyBox);
-            this.statsTab.Controls.Add(this.deceptionBox);
-            this.statsTab.Controls.Add(this.athletBox);
-            this.statsTab.Controls.Add(this.aracanaBox);
-            this.statsTab.Controls.Add(this.animHandBox);
-            this.statsTab.Controls.Add(this.acrobaticsBox);
+            this.statsTab.Controls.Add(this.statBox6);
+            this.statsTab.Controls.Add(this.statBox5);
+            this.statsTab.Controls.Add(this.statBox4);
+            this.statsTab.Controls.Add(this.statBox3);
+            this.statsTab.Controls.Add(this.statBox2);
+            this.statsTab.Controls.Add(this.statBox1);
+            this.statsTab.Controls.Add(this.statBox24);
+            this.statsTab.Controls.Add(this.statBox23);
+            this.statsTab.Controls.Add(this.statBox22);
+            this.statsTab.Controls.Add(this.statBox21);
+            this.statsTab.Controls.Add(this.statBox20);
+            this.statsTab.Controls.Add(this.statBox19);
+            this.statsTab.Controls.Add(this.statBox18);
+            this.statsTab.Controls.Add(this.statBox17);
+            this.statsTab.Controls.Add(this.statBox16);
+            this.statsTab.Controls.Add(this.statBox15);
+            this.statsTab.Controls.Add(this.statBox14);
+            this.statsTab.Controls.Add(this.statBox13);
+            this.statsTab.Controls.Add(this.statBox12);
+            this.statsTab.Controls.Add(this.statBox11);
+            this.statsTab.Controls.Add(this.statBox10);
+            this.statsTab.Controls.Add(this.statBox9);
+            this.statsTab.Controls.Add(this.statBox8);
+            this.statsTab.Controls.Add(this.statBox7);
             this.statsTab.Controls.Add(this.label43);
             this.statsTab.Controls.Add(this.label44);
             this.statsTab.Controls.Add(this.label39);
@@ -529,6 +577,270 @@
             this.statsTab.TabIndex = 1;
             this.statsTab.Text = "Stats";
             this.statsTab.UseVisualStyleBackColor = true;
+            // 
+            // checkBox24
+            // 
+            this.checkBox24.AutoSize = true;
+            this.checkBox24.Location = new System.Drawing.Point(221, 664);
+            this.checkBox24.Name = "checkBox24";
+            this.checkBox24.Size = new System.Drawing.Size(96, 27);
+            this.checkBox24.TabIndex = 137;
+            this.checkBox24.Text = "Survival";
+            this.checkBox24.UseVisualStyleBackColor = true;
+            this.checkBox24.CheckedChanged += new System.EventHandler(this.checkBox24_CheckedChanged);
+            // 
+            // checkBox23
+            // 
+            this.checkBox23.AutoSize = true;
+            this.checkBox23.Location = new System.Drawing.Point(221, 628);
+            this.checkBox23.Name = "checkBox23";
+            this.checkBox23.Size = new System.Drawing.Size(90, 27);
+            this.checkBox23.TabIndex = 136;
+            this.checkBox23.Text = "Stealth";
+            this.checkBox23.UseVisualStyleBackColor = true;
+            this.checkBox23.CheckedChanged += new System.EventHandler(this.checkBox23_CheckedChanged);
+            // 
+            // checkBox22
+            // 
+            this.checkBox22.AutoSize = true;
+            this.checkBox22.Location = new System.Drawing.Point(221, 592);
+            this.checkBox22.Name = "checkBox22";
+            this.checkBox22.Size = new System.Drawing.Size(162, 27);
+            this.checkBox22.TabIndex = 135;
+            this.checkBox22.Text = "Sleight of Hand";
+            this.checkBox22.UseVisualStyleBackColor = true;
+            this.checkBox22.CheckedChanged += new System.EventHandler(this.checkBox22_CheckedChanged);
+            // 
+            // checkBox21
+            // 
+            this.checkBox21.AutoSize = true;
+            this.checkBox21.Location = new System.Drawing.Point(221, 556);
+            this.checkBox21.Name = "checkBox21";
+            this.checkBox21.Size = new System.Drawing.Size(98, 27);
+            this.checkBox21.TabIndex = 134;
+            this.checkBox21.Text = "Religion";
+            this.checkBox21.UseVisualStyleBackColor = true;
+            this.checkBox21.CheckedChanged += new System.EventHandler(this.checkBox21_CheckedChanged);
+            // 
+            // checkBox20
+            // 
+            this.checkBox20.AutoSize = true;
+            this.checkBox20.Location = new System.Drawing.Point(221, 520);
+            this.checkBox20.Name = "checkBox20";
+            this.checkBox20.Size = new System.Drawing.Size(126, 27);
+            this.checkBox20.TabIndex = 133;
+            this.checkBox20.Text = "Persuasion";
+            this.checkBox20.UseVisualStyleBackColor = true;
+            this.checkBox20.CheckedChanged += new System.EventHandler(this.checkBox20_CheckedChanged);
+            // 
+            // checkBox19
+            // 
+            this.checkBox19.AutoSize = true;
+            this.checkBox19.Location = new System.Drawing.Point(221, 484);
+            this.checkBox19.Name = "checkBox19";
+            this.checkBox19.Size = new System.Drawing.Size(142, 27);
+            this.checkBox19.TabIndex = 132;
+            this.checkBox19.Text = "Performance";
+            this.checkBox19.UseVisualStyleBackColor = true;
+            this.checkBox19.CheckedChanged += new System.EventHandler(this.checkBox19_CheckedChanged);
+            // 
+            // checkBox18
+            // 
+            this.checkBox18.AutoSize = true;
+            this.checkBox18.Location = new System.Drawing.Point(221, 448);
+            this.checkBox18.Name = "checkBox18";
+            this.checkBox18.Size = new System.Drawing.Size(123, 27);
+            this.checkBox18.TabIndex = 131;
+            this.checkBox18.Text = "Perception";
+            this.checkBox18.UseVisualStyleBackColor = true;
+            this.checkBox18.CheckedChanged += new System.EventHandler(this.checkBox18_CheckedChanged);
+            // 
+            // checkBox17
+            // 
+            this.checkBox17.AutoSize = true;
+            this.checkBox17.Location = new System.Drawing.Point(221, 412);
+            this.checkBox17.Name = "checkBox17";
+            this.checkBox17.Size = new System.Drawing.Size(87, 27);
+            this.checkBox17.TabIndex = 130;
+            this.checkBox17.Text = "Nature";
+            this.checkBox17.UseVisualStyleBackColor = true;
+            this.checkBox17.CheckedChanged += new System.EventHandler(this.checkBox17_CheckedChanged);
+            // 
+            // checkBox16
+            // 
+            this.checkBox16.AutoSize = true;
+            this.checkBox16.Location = new System.Drawing.Point(221, 376);
+            this.checkBox16.Name = "checkBox16";
+            this.checkBox16.Size = new System.Drawing.Size(107, 27);
+            this.checkBox16.TabIndex = 129;
+            this.checkBox16.Text = "Medicine";
+            this.checkBox16.UseVisualStyleBackColor = true;
+            this.checkBox16.CheckedChanged += new System.EventHandler(this.checkBox16_CheckedChanged);
+            // 
+            // checkBox15
+            // 
+            this.checkBox15.AutoSize = true;
+            this.checkBox15.Location = new System.Drawing.Point(221, 340);
+            this.checkBox15.Name = "checkBox15";
+            this.checkBox15.Size = new System.Drawing.Size(138, 27);
+            this.checkBox15.TabIndex = 128;
+            this.checkBox15.Text = "Investigation";
+            this.checkBox15.UseVisualStyleBackColor = true;
+            this.checkBox15.CheckedChanged += new System.EventHandler(this.checkBox15_CheckedChanged);
+            // 
+            // checkBox14
+            // 
+            this.checkBox14.AutoSize = true;
+            this.checkBox14.Location = new System.Drawing.Point(221, 304);
+            this.checkBox14.Name = "checkBox14";
+            this.checkBox14.Size = new System.Drawing.Size(128, 27);
+            this.checkBox14.TabIndex = 127;
+            this.checkBox14.Text = "Intimidation";
+            this.checkBox14.UseVisualStyleBackColor = true;
+            this.checkBox14.CheckedChanged += new System.EventHandler(this.checkBox14_CheckedChanged);
+            // 
+            // checkBox13
+            // 
+            this.checkBox13.AutoSize = true;
+            this.checkBox13.Location = new System.Drawing.Point(221, 268);
+            this.checkBox13.Name = "checkBox13";
+            this.checkBox13.Size = new System.Drawing.Size(86, 27);
+            this.checkBox13.TabIndex = 126;
+            this.checkBox13.Text = "Insight";
+            this.checkBox13.UseVisualStyleBackColor = true;
+            this.checkBox13.CheckedChanged += new System.EventHandler(this.checkBox13_CheckedChanged);
+            // 
+            // checkBox12
+            // 
+            this.checkBox12.AutoSize = true;
+            this.checkBox12.Location = new System.Drawing.Point(221, 233);
+            this.checkBox12.Name = "checkBox12";
+            this.checkBox12.Size = new System.Drawing.Size(90, 27);
+            this.checkBox12.TabIndex = 125;
+            this.checkBox12.Text = "History";
+            this.checkBox12.UseVisualStyleBackColor = true;
+            this.checkBox12.CheckedChanged += new System.EventHandler(this.checkBox12_CheckedChanged);
+            // 
+            // checkBox11
+            // 
+            this.checkBox11.AutoSize = true;
+            this.checkBox11.Location = new System.Drawing.Point(221, 197);
+            this.checkBox11.Name = "checkBox11";
+            this.checkBox11.Size = new System.Drawing.Size(117, 27);
+            this.checkBox11.TabIndex = 124;
+            this.checkBox11.Text = "Deception";
+            this.checkBox11.UseVisualStyleBackColor = true;
+            this.checkBox11.CheckedChanged += new System.EventHandler(this.checkBox11_CheckedChanged);
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Location = new System.Drawing.Point(221, 161);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(103, 27);
+            this.checkBox10.TabIndex = 123;
+            this.checkBox10.Text = "Athletics";
+            this.checkBox10.UseVisualStyleBackColor = true;
+            this.checkBox10.CheckedChanged += new System.EventHandler(this.checkBox10_CheckedChanged);
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Location = new System.Drawing.Point(221, 125);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(91, 27);
+            this.checkBox9.TabIndex = 122;
+            this.checkBox9.Text = "Arcana";
+            this.checkBox9.UseVisualStyleBackColor = true;
+            this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox9_CheckedChanged);
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(221, 89);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(167, 27);
+            this.checkBox8.TabIndex = 121;
+            this.checkBox8.Text = "Animal Handling";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(221, 53);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(122, 27);
+            this.checkBox7.TabIndex = 120;
+            this.checkBox7.Text = "Acrobatics";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(24, 494);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(112, 27);
+            this.checkBox6.TabIndex = 119;
+            this.checkBox6.Text = "Charisma";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(24, 458);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(100, 27);
+            this.checkBox5.TabIndex = 118;
+            this.checkBox5.Text = "Wisdom";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(24, 422);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(127, 27);
+            this.checkBox4.TabIndex = 117;
+            this.checkBox4.Text = "Intelligence";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(24, 386);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(131, 27);
+            this.checkBox3.TabIndex = 116;
+            this.checkBox3.Text = "Constitution";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(24, 350);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(107, 27);
+            this.checkBox2.TabIndex = 115;
+            this.checkBox2.Text = "Dexterity";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(24, 314);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(103, 27);
+            this.checkBox1.TabIndex = 114;
+            this.checkBox1.Text = "Strenght";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // statCheck
             // 
@@ -655,221 +967,221 @@
             this.strBox.Text = "0";
             this.strBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // throwCharBox
+            // statBox6
             // 
-            this.throwCharBox.Location = new System.Drawing.Point(154, 492);
-            this.throwCharBox.Name = "throwCharBox";
-            this.throwCharBox.Size = new System.Drawing.Size(48, 30);
-            this.throwCharBox.TabIndex = 58;
-            this.throwCharBox.Text = "0";
-            this.throwCharBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox6.Location = new System.Drawing.Point(154, 492);
+            this.statBox6.Name = "statBox6";
+            this.statBox6.Size = new System.Drawing.Size(48, 30);
+            this.statBox6.TabIndex = 58;
+            this.statBox6.Text = "0";
+            this.statBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // throwWisdBox
+            // statBox5
             // 
-            this.throwWisdBox.Location = new System.Drawing.Point(154, 456);
-            this.throwWisdBox.Name = "throwWisdBox";
-            this.throwWisdBox.Size = new System.Drawing.Size(48, 30);
-            this.throwWisdBox.TabIndex = 56;
-            this.throwWisdBox.Text = "0";
-            this.throwWisdBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox5.Location = new System.Drawing.Point(154, 456);
+            this.statBox5.Name = "statBox5";
+            this.statBox5.Size = new System.Drawing.Size(48, 30);
+            this.statBox5.TabIndex = 56;
+            this.statBox5.Text = "0";
+            this.statBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // throwIntBox
+            // statBox4
             // 
-            this.throwIntBox.Location = new System.Drawing.Point(154, 420);
-            this.throwIntBox.Name = "throwIntBox";
-            this.throwIntBox.Size = new System.Drawing.Size(48, 30);
-            this.throwIntBox.TabIndex = 54;
-            this.throwIntBox.Text = "0";
-            this.throwIntBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox4.Location = new System.Drawing.Point(154, 420);
+            this.statBox4.Name = "statBox4";
+            this.statBox4.Size = new System.Drawing.Size(48, 30);
+            this.statBox4.TabIndex = 54;
+            this.statBox4.Text = "0";
+            this.statBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // throwConstBox
+            // statBox3
             // 
-            this.throwConstBox.Location = new System.Drawing.Point(154, 384);
-            this.throwConstBox.Name = "throwConstBox";
-            this.throwConstBox.Size = new System.Drawing.Size(48, 30);
-            this.throwConstBox.TabIndex = 52;
-            this.throwConstBox.Text = "0";
-            this.throwConstBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox3.Location = new System.Drawing.Point(154, 384);
+            this.statBox3.Name = "statBox3";
+            this.statBox3.Size = new System.Drawing.Size(48, 30);
+            this.statBox3.TabIndex = 52;
+            this.statBox3.Text = "0";
+            this.statBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // throwDexBox
+            // statBox2
             // 
-            this.throwDexBox.Location = new System.Drawing.Point(154, 348);
-            this.throwDexBox.Name = "throwDexBox";
-            this.throwDexBox.Size = new System.Drawing.Size(48, 30);
-            this.throwDexBox.TabIndex = 50;
-            this.throwDexBox.Text = "0";
-            this.throwDexBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox2.Location = new System.Drawing.Point(154, 348);
+            this.statBox2.Name = "statBox2";
+            this.statBox2.Size = new System.Drawing.Size(48, 30);
+            this.statBox2.TabIndex = 50;
+            this.statBox2.Text = "0";
+            this.statBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // throwStrBox
+            // statBox1
             // 
-            this.throwStrBox.Location = new System.Drawing.Point(154, 312);
-            this.throwStrBox.Name = "throwStrBox";
-            this.throwStrBox.Size = new System.Drawing.Size(48, 30);
-            this.throwStrBox.TabIndex = 48;
-            this.throwStrBox.Text = "0";
-            this.throwStrBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox1.Location = new System.Drawing.Point(154, 312);
+            this.statBox1.Name = "statBox1";
+            this.statBox1.Size = new System.Drawing.Size(48, 30);
+            this.statBox1.TabIndex = 48;
+            this.statBox1.Text = "0";
+            this.statBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // survivalBox
+            // statBox24
             // 
-            this.survivalBox.Location = new System.Drawing.Point(385, 661);
-            this.survivalBox.Name = "survivalBox";
-            this.survivalBox.Size = new System.Drawing.Size(48, 30);
-            this.survivalBox.TabIndex = 46;
-            this.survivalBox.Text = "0";
-            this.survivalBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox24.Location = new System.Drawing.Point(385, 661);
+            this.statBox24.Name = "statBox24";
+            this.statBox24.Size = new System.Drawing.Size(48, 30);
+            this.statBox24.TabIndex = 46;
+            this.statBox24.Text = "0";
+            this.statBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // stealthBox
+            // statBox23
             // 
-            this.stealthBox.Location = new System.Drawing.Point(385, 625);
-            this.stealthBox.Name = "stealthBox";
-            this.stealthBox.Size = new System.Drawing.Size(48, 30);
-            this.stealthBox.TabIndex = 44;
-            this.stealthBox.Text = "0";
-            this.stealthBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox23.Location = new System.Drawing.Point(385, 625);
+            this.statBox23.Name = "statBox23";
+            this.statBox23.Size = new System.Drawing.Size(48, 30);
+            this.statBox23.TabIndex = 44;
+            this.statBox23.Text = "0";
+            this.statBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // sofhandBox
+            // statBox22
             // 
-            this.sofhandBox.Location = new System.Drawing.Point(385, 589);
-            this.sofhandBox.Name = "sofhandBox";
-            this.sofhandBox.Size = new System.Drawing.Size(48, 30);
-            this.sofhandBox.TabIndex = 42;
-            this.sofhandBox.Text = "0";
-            this.sofhandBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox22.Location = new System.Drawing.Point(385, 589);
+            this.statBox22.Name = "statBox22";
+            this.statBox22.Size = new System.Drawing.Size(48, 30);
+            this.statBox22.TabIndex = 42;
+            this.statBox22.Text = "0";
+            this.statBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // relBox
+            // statBox21
             // 
-            this.relBox.Location = new System.Drawing.Point(385, 553);
-            this.relBox.Name = "relBox";
-            this.relBox.Size = new System.Drawing.Size(48, 30);
-            this.relBox.TabIndex = 40;
-            this.relBox.Text = "0";
-            this.relBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox21.Location = new System.Drawing.Point(385, 553);
+            this.statBox21.Name = "statBox21";
+            this.statBox21.Size = new System.Drawing.Size(48, 30);
+            this.statBox21.TabIndex = 40;
+            this.statBox21.Text = "0";
+            this.statBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // persBox
+            // statBox20
             // 
-            this.persBox.Location = new System.Drawing.Point(385, 517);
-            this.persBox.Name = "persBox";
-            this.persBox.Size = new System.Drawing.Size(48, 30);
-            this.persBox.TabIndex = 38;
-            this.persBox.Text = "0";
-            this.persBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox20.Location = new System.Drawing.Point(385, 517);
+            this.statBox20.Name = "statBox20";
+            this.statBox20.Size = new System.Drawing.Size(48, 30);
+            this.statBox20.TabIndex = 38;
+            this.statBox20.Text = "0";
+            this.statBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // perfBox
+            // statBox19
             // 
-            this.perfBox.Location = new System.Drawing.Point(385, 481);
-            this.perfBox.Name = "perfBox";
-            this.perfBox.Size = new System.Drawing.Size(48, 30);
-            this.perfBox.TabIndex = 36;
-            this.perfBox.Text = "0";
-            this.perfBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox19.Location = new System.Drawing.Point(385, 481);
+            this.statBox19.Name = "statBox19";
+            this.statBox19.Size = new System.Drawing.Size(48, 30);
+            this.statBox19.TabIndex = 36;
+            this.statBox19.Text = "0";
+            this.statBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // percBox
+            // statBox18
             // 
-            this.percBox.Location = new System.Drawing.Point(385, 445);
-            this.percBox.Name = "percBox";
-            this.percBox.Size = new System.Drawing.Size(48, 30);
-            this.percBox.TabIndex = 34;
-            this.percBox.Text = "0";
-            this.percBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox18.Location = new System.Drawing.Point(385, 445);
+            this.statBox18.Name = "statBox18";
+            this.statBox18.Size = new System.Drawing.Size(48, 30);
+            this.statBox18.TabIndex = 34;
+            this.statBox18.Text = "0";
+            this.statBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // natureBox
+            // statBox17
             // 
-            this.natureBox.Location = new System.Drawing.Point(385, 409);
-            this.natureBox.Name = "natureBox";
-            this.natureBox.Size = new System.Drawing.Size(48, 30);
-            this.natureBox.TabIndex = 32;
-            this.natureBox.Text = "0";
-            this.natureBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox17.Location = new System.Drawing.Point(385, 409);
+            this.statBox17.Name = "statBox17";
+            this.statBox17.Size = new System.Drawing.Size(48, 30);
+            this.statBox17.TabIndex = 32;
+            this.statBox17.Text = "0";
+            this.statBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // medBox
+            // statBox16
             // 
-            this.medBox.Location = new System.Drawing.Point(385, 373);
-            this.medBox.Name = "medBox";
-            this.medBox.Size = new System.Drawing.Size(48, 30);
-            this.medBox.TabIndex = 30;
-            this.medBox.Text = "0";
-            this.medBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox16.Location = new System.Drawing.Point(385, 373);
+            this.statBox16.Name = "statBox16";
+            this.statBox16.Size = new System.Drawing.Size(48, 30);
+            this.statBox16.TabIndex = 30;
+            this.statBox16.Text = "0";
+            this.statBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // inveBox
+            // statBox15
             // 
-            this.inveBox.Location = new System.Drawing.Point(385, 337);
-            this.inveBox.Name = "inveBox";
-            this.inveBox.Size = new System.Drawing.Size(48, 30);
-            this.inveBox.TabIndex = 28;
-            this.inveBox.Text = "0";
-            this.inveBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox15.Location = new System.Drawing.Point(385, 337);
+            this.statBox15.Name = "statBox15";
+            this.statBox15.Size = new System.Drawing.Size(48, 30);
+            this.statBox15.TabIndex = 28;
+            this.statBox15.Text = "0";
+            this.statBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // intimidBox
+            // statBox14
             // 
-            this.intimidBox.Location = new System.Drawing.Point(385, 301);
-            this.intimidBox.Name = "intimidBox";
-            this.intimidBox.Size = new System.Drawing.Size(48, 30);
-            this.intimidBox.TabIndex = 26;
-            this.intimidBox.Text = "0";
-            this.intimidBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox14.Location = new System.Drawing.Point(385, 301);
+            this.statBox14.Name = "statBox14";
+            this.statBox14.Size = new System.Drawing.Size(48, 30);
+            this.statBox14.TabIndex = 26;
+            this.statBox14.Text = "0";
+            this.statBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // insightBox
+            // statBox13
             // 
-            this.insightBox.Location = new System.Drawing.Point(385, 265);
-            this.insightBox.Name = "insightBox";
-            this.insightBox.Size = new System.Drawing.Size(48, 30);
-            this.insightBox.TabIndex = 24;
-            this.insightBox.Text = "0";
-            this.insightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox13.Location = new System.Drawing.Point(385, 265);
+            this.statBox13.Name = "statBox13";
+            this.statBox13.Size = new System.Drawing.Size(48, 30);
+            this.statBox13.TabIndex = 24;
+            this.statBox13.Text = "0";
+            this.statBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // historyBox
+            // statBox12
             // 
-            this.historyBox.Location = new System.Drawing.Point(385, 231);
-            this.historyBox.Name = "historyBox";
-            this.historyBox.Size = new System.Drawing.Size(48, 30);
-            this.historyBox.TabIndex = 22;
-            this.historyBox.Text = "0";
-            this.historyBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox12.Location = new System.Drawing.Point(385, 231);
+            this.statBox12.Name = "statBox12";
+            this.statBox12.Size = new System.Drawing.Size(48, 30);
+            this.statBox12.TabIndex = 22;
+            this.statBox12.Text = "0";
+            this.statBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // deceptionBox
+            // statBox11
             // 
-            this.deceptionBox.Location = new System.Drawing.Point(385, 195);
-            this.deceptionBox.Name = "deceptionBox";
-            this.deceptionBox.Size = new System.Drawing.Size(48, 30);
-            this.deceptionBox.TabIndex = 20;
-            this.deceptionBox.Text = "0";
-            this.deceptionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox11.Location = new System.Drawing.Point(385, 195);
+            this.statBox11.Name = "statBox11";
+            this.statBox11.Size = new System.Drawing.Size(48, 30);
+            this.statBox11.TabIndex = 20;
+            this.statBox11.Text = "0";
+            this.statBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // athletBox
+            // statBox10
             // 
-            this.athletBox.Location = new System.Drawing.Point(385, 159);
-            this.athletBox.Name = "athletBox";
-            this.athletBox.Size = new System.Drawing.Size(48, 30);
-            this.athletBox.TabIndex = 18;
-            this.athletBox.Text = "0";
-            this.athletBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox10.Location = new System.Drawing.Point(385, 159);
+            this.statBox10.Name = "statBox10";
+            this.statBox10.Size = new System.Drawing.Size(48, 30);
+            this.statBox10.TabIndex = 18;
+            this.statBox10.Text = "0";
+            this.statBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // aracanaBox
+            // statBox9
             // 
-            this.aracanaBox.Location = new System.Drawing.Point(385, 123);
-            this.aracanaBox.Name = "aracanaBox";
-            this.aracanaBox.Size = new System.Drawing.Size(48, 30);
-            this.aracanaBox.TabIndex = 16;
-            this.aracanaBox.Text = "0";
-            this.aracanaBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox9.Location = new System.Drawing.Point(385, 123);
+            this.statBox9.Name = "statBox9";
+            this.statBox9.Size = new System.Drawing.Size(48, 30);
+            this.statBox9.TabIndex = 16;
+            this.statBox9.Text = "0";
+            this.statBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // animHandBox
+            // statBox8
             // 
-            this.animHandBox.Location = new System.Drawing.Point(385, 87);
-            this.animHandBox.Name = "animHandBox";
-            this.animHandBox.Size = new System.Drawing.Size(48, 30);
-            this.animHandBox.TabIndex = 14;
-            this.animHandBox.Text = "0";
-            this.animHandBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox8.Location = new System.Drawing.Point(385, 87);
+            this.statBox8.Name = "statBox8";
+            this.statBox8.Size = new System.Drawing.Size(48, 30);
+            this.statBox8.TabIndex = 14;
+            this.statBox8.Text = "0";
+            this.statBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // acrobaticsBox
+            // statBox7
             // 
-            this.acrobaticsBox.Location = new System.Drawing.Point(385, 51);
-            this.acrobaticsBox.Name = "acrobaticsBox";
-            this.acrobaticsBox.Size = new System.Drawing.Size(48, 30);
-            this.acrobaticsBox.TabIndex = 12;
-            this.acrobaticsBox.Text = "0";
-            this.acrobaticsBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statBox7.Location = new System.Drawing.Point(385, 51);
+            this.statBox7.Name = "statBox7";
+            this.statBox7.Size = new System.Drawing.Size(48, 30);
+            this.statBox7.TabIndex = 12;
+            this.statBox7.Text = "0";
+            this.statBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label43
             // 
@@ -984,7 +1296,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Arial", 18F);
-            this.label34.Location = new System.Drawing.Point(295, 17);
+            this.label34.Location = new System.Drawing.Point(305, 17);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(69, 27);
             this.label34.TabIndex = 61;
@@ -1002,6 +1314,7 @@
             // 
             // charInfoTab
             // 
+            this.charInfoTab.Controls.Add(this.weightBox);
             this.charInfoTab.Controls.Add(this.btn_sel_pic);
             this.charInfoTab.Controls.Add(this.label50);
             this.charInfoTab.Controls.Add(this.label37);
@@ -1009,7 +1322,6 @@
             this.charInfoTab.Controls.Add(this.hairBox);
             this.charInfoTab.Controls.Add(this.eyeBox);
             this.charInfoTab.Controls.Add(this.skinBox);
-            this.charInfoTab.Controls.Add(weightBox);
             this.charInfoTab.Controls.Add(this.heightBox);
             this.charInfoTab.Controls.Add(this.ageBox);
             this.charInfoTab.Controls.Add(this.backgroundBox);
@@ -1029,6 +1341,15 @@
             this.charInfoTab.TabIndex = 0;
             this.charInfoTab.Text = "Characteristics";
             this.charInfoTab.UseVisualStyleBackColor = true;
+            // 
+            // weightBox
+            // 
+            this.weightBox.Font = new System.Drawing.Font("Arial", 16F);
+            this.weightBox.Location = new System.Drawing.Point(193, 147);
+            this.weightBox.Name = "weightBox";
+            this.weightBox.Size = new System.Drawing.Size(162, 32);
+            this.weightBox.TabIndex = 64;
+            this.weightBox.Text = "0";
             // 
             // btn_sel_pic
             // 
@@ -1096,15 +1417,6 @@
             this.skinBox.Size = new System.Drawing.Size(162, 32);
             this.skinBox.TabIndex = 36;
             this.skinBox.Text = "0";
-            // 
-            // weightBox
-            // 
-            weightBox.Font = new System.Drawing.Font("Arial", 16F);
-            weightBox.Location = new System.Drawing.Point(193, 146);
-            weightBox.Name = "weightBox";
-            weightBox.Size = new System.Drawing.Size(162, 32);
-            weightBox.TabIndex = 34;
-            weightBox.Text = "0";
             // 
             // heightBox
             // 
@@ -1410,7 +1722,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox weightBox;
         private System.Windows.Forms.TextBox charNameBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox raceBox;
@@ -1441,30 +1752,30 @@
         private System.Windows.Forms.TextBox constBox;
         private System.Windows.Forms.TextBox dexBox;
         private System.Windows.Forms.TextBox strBox;
-        private System.Windows.Forms.TextBox throwCharBox;
-        private System.Windows.Forms.TextBox throwWisdBox;
-        private System.Windows.Forms.TextBox throwIntBox;
-        private System.Windows.Forms.TextBox throwConstBox;
-        private System.Windows.Forms.TextBox throwDexBox;
-        private System.Windows.Forms.TextBox throwStrBox;
-        private System.Windows.Forms.TextBox survivalBox;
-        private System.Windows.Forms.TextBox stealthBox;
-        private System.Windows.Forms.TextBox sofhandBox;
-        private System.Windows.Forms.TextBox relBox;
-        private System.Windows.Forms.TextBox persBox;
-        private System.Windows.Forms.TextBox perfBox;
-        private System.Windows.Forms.TextBox percBox;
-        private System.Windows.Forms.TextBox natureBox;
-        private System.Windows.Forms.TextBox medBox;
-        private System.Windows.Forms.TextBox inveBox;
-        private System.Windows.Forms.TextBox intimidBox;
-        private System.Windows.Forms.TextBox insightBox;
-        private System.Windows.Forms.TextBox historyBox;
-        private System.Windows.Forms.TextBox deceptionBox;
-        private System.Windows.Forms.TextBox athletBox;
-        private System.Windows.Forms.TextBox aracanaBox;
-        private System.Windows.Forms.TextBox animHandBox;
-        private System.Windows.Forms.TextBox acrobaticsBox;
+        private System.Windows.Forms.TextBox statBox6;
+        private System.Windows.Forms.TextBox statBox5;
+        private System.Windows.Forms.TextBox statBox4;
+        private System.Windows.Forms.TextBox statBox3;
+        private System.Windows.Forms.TextBox statBox2;
+        private System.Windows.Forms.TextBox statBox1;
+        private System.Windows.Forms.TextBox statBox24;
+        private System.Windows.Forms.TextBox statBox23;
+        private System.Windows.Forms.TextBox statBox22;
+        private System.Windows.Forms.TextBox statBox21;
+        private System.Windows.Forms.TextBox statBox20;
+        private System.Windows.Forms.TextBox statBox19;
+        private System.Windows.Forms.TextBox statBox18;
+        private System.Windows.Forms.TextBox statBox17;
+        private System.Windows.Forms.TextBox statBox16;
+        private System.Windows.Forms.TextBox statBox15;
+        private System.Windows.Forms.TextBox statBox14;
+        private System.Windows.Forms.TextBox statBox13;
+        private System.Windows.Forms.TextBox statBox12;
+        private System.Windows.Forms.TextBox statBox11;
+        private System.Windows.Forms.TextBox statBox10;
+        private System.Windows.Forms.TextBox statBox9;
+        private System.Windows.Forms.TextBox statBox8;
+        private System.Windows.Forms.TextBox statBox7;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label39;
@@ -1528,6 +1839,31 @@
         private System.Windows.Forms.TextBox gpText;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox epText;
+        private System.Windows.Forms.TextBox weightBox;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox24;
+        private System.Windows.Forms.CheckBox checkBox23;
+        private System.Windows.Forms.CheckBox checkBox22;
+        private System.Windows.Forms.CheckBox checkBox21;
+        private System.Windows.Forms.CheckBox checkBox20;
+        private System.Windows.Forms.CheckBox checkBox19;
+        private System.Windows.Forms.CheckBox checkBox18;
+        private System.Windows.Forms.CheckBox checkBox17;
+        private System.Windows.Forms.CheckBox checkBox16;
+        private System.Windows.Forms.CheckBox checkBox15;
+        private System.Windows.Forms.CheckBox checkBox14;
+        private System.Windows.Forms.CheckBox checkBox13;
+        private System.Windows.Forms.CheckBox checkBox12;
+        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 

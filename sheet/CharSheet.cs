@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,10 @@ namespace sheet
     {
         #region main
         public List<int> prof;
-        public List<CheckBox> checkBoxes;
+        CheckBox[] checkBoxesThrow;
+        CheckBox[] checkBoxesSkills;
+        TextBox[] statBoxesThrow;
+        TextBox[] statBoxesSkills;
         
         XmlSerializer serializer = new XmlSerializer(typeof(Character));
         public Character currentChar;
@@ -73,8 +77,12 @@ namespace sheet
 
             currentChar.money = new Money();
 
-            checkBoxes = new List<CheckBox>{
-            };
+            checkBoxesThrow = new CheckBox[6] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
+            checkBoxesSkills = new CheckBox[18] { checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16, checkBox17, checkBox18, checkBox19, checkBox20, checkBox21, checkBox22, checkBox23, checkBox24 };
+
+            statBoxesThrow = new TextBox[6] { statBox1, statBox2, statBox3, statBox4, statBox5, statBox6 };
+            statBoxesSkills = new TextBox[18] { statBox7, statBox8, statBox9, statBox10, statBox11, statBox12, statBox13, statBox14, statBox15, statBox16, statBox17, statBox18, statBox19, statBox20, statBox21, statBox22, statBox23, statBox24 };
+
         }
         //temp data saving
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
@@ -163,7 +171,7 @@ namespace sheet
             }
         }
         //PAGE 2
-        void MainStats(bool save, bool plusState)
+        void MainStatsUpdate(bool save, bool plusState)
         {
             Dictionary<string, int> stats = new Dictionary<string, int>() {
                 {"str",currentChar.mainStats.Str},{"dex",currentChar.mainStats.Dex},{"const",currentChar.mainStats.Const},
@@ -206,6 +214,81 @@ namespace sheet
                 }
             }
         }
+
+        void ThrowsUpdate(bool save)
+        {
+            if (save)
+            {
+                int[] ints = new int[6];
+                int i = 1;
+                foreach (TextBox box in statBoxesThrow)
+                {
+                    if (prof.Contains(i))
+                    {
+                        ints[i-1] = ToInt(box.Text) - currentChar.pro;
+                    }
+                    else
+                    {
+                        ints[i - 1] = ToInt(box.Text);
+                    }
+                    i++;
+                }
+                currentChar.savingThrows.throwsSave(ints);
+            }
+            else
+            {
+                int i = 1;
+                foreach (TextBox box in statBoxesThrow)
+                {
+                    if (prof.Contains(i))
+                    {
+                        box.Text = (currentChar.savingThrows.throwsLoad()[i - 1] + currentChar.pro).ToString();
+                    }
+                    else
+                    {
+                        box.Text = currentChar.savingThrows.throwsLoad()[i - 1].ToString();
+                    }
+                    i++;
+                }
+            } 
+        }
+        void SkillsUpdate(bool save)
+        {
+            if (save)
+            {
+                int[] ints = new int[18];
+                int i = 1;
+                foreach (TextBox box in statBoxesSkills)
+                {
+                    if (prof.Contains(i + 6))
+                    {
+                        ints[i - 1] = ToInt(box.Text) - currentChar.pro;
+                    }
+                    else
+                    {
+                        ints[i - 1] = ToInt(box.Text);
+                    }
+                    i++;
+                }
+                currentChar.skills.skillsSave(ints);
+            }
+            else
+            {
+                int i = 1;
+                foreach (TextBox box in statBoxesSkills)
+                {
+                    if (prof.Contains(i + 6))
+                    {
+                        box.Text = (currentChar.skills.skillsLoad()[i - 1] + currentChar.pro).ToString();
+                    }
+                    else
+                    {
+                        box.Text = currentChar.skills.skillsLoad()[i - 1].ToString();
+                    }
+                    i++;
+                }
+            }
+        }
         //PAGE 3
         void InvUpdate(bool save)
         {
@@ -224,7 +307,7 @@ namespace sheet
 
         //PAGE 5
 
-        void UpdateMoney(bool save)
+        void MoneyUpdate(bool save)
         {
             if (save)
             {
@@ -249,20 +332,53 @@ namespace sheet
         {
             if (statCheck.Checked)
             {
-                MainStats(false, true);
+                MainStatsUpdate(false, true);
             }
             else
             {
-                MainStats(false, false);
+                MainStatsUpdate(false, false);
             }
             UpdateHeader(false);
             CharInfoUpdate(false);
+            prof = currentChar.proficiencies;
+            ThrowsUpdate(false);
+            SkillsUpdate(false);
+            int i = 1;
+            foreach (CheckBox check in checkBoxesThrow)
+            {
+                if (prof.Contains(i))
+                {
+                    check.Checked = true;
+                }
+                else
+                {
+                    check.Checked = false;
+                }
+                i++;
+            }
+            i = 1;
+            foreach (CheckBox check in checkBoxesSkills)
+            {
+                if (prof.Contains(i+6))
+                {
+                    check.Checked = true;
+                }
+                else
+                {
+                    check.Checked = false;
+                }
+                i++;
+            }
         }
         void UpdateAllSave()
         {
             UpdateHeader(true);
-            MainStats(true, statCheck.Checked);
+            MainStatsUpdate(true, statCheck.Checked);
             CharInfoUpdate(true);
+            currentChar.proficiencies = prof;
+            ThrowsUpdate(true);
+            SkillsUpdate(true);
+            
         }
         void LoadToCurrent()
         {
@@ -304,11 +420,11 @@ namespace sheet
         {
             if (statCheck.Checked)
             {
-                MainStats(false, true);
+                MainStatsUpdate(false, true);
             }
             else
             {
-                MainStats(false, false);
+                MainStatsUpdate(false, false);
             }
         }
         int ToInt(string a)
@@ -355,24 +471,122 @@ namespace sheet
             |_| |_|\___|_|_|
         */
 
-        private void ListHell(RadioButton radioButton,int a)
+        private void ListHell(CheckBox checkBox,int a)
         {
             if (prof.Contains(a))
             {
-                if (radioButton.Checked == false)
+                if (checkBox.Checked == false)
                 {
                     prof.Remove(a);
                 }
             }
             else
             {
-                if (radioButton.Checked)
+                if (checkBox.Checked)
                 {
                     prof.Add(a);
                 }
             }
+            ThrowsUpdate(false);
+            SkillsUpdate(false);
         }
-        
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox1, 1);
+        }
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox2, 2);
+        }
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox3, 3);
+        }
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox4, 4);
+        }
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox5, 5);
+        }
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox6, 6);
+        }
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox7, 7);
+        }
+        private void checkBox8_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox8, 8);
+        }
+        private void checkBox9_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox9, 9);
+        }
+        private void checkBox10_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox10, 10);
+        }
+        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox11, 11);
+        }
+        private void checkBox12_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox12, 12);
+        }
+        private void checkBox13_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox13, 13);
+        }
+        private void checkBox14_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox14, 14);
+        }
+        private void checkBox15_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox15, 15);
+        }
+        private void checkBox16_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox16, 16);
+        }
+        private void checkBox17_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox17, 17);
+        }
+        private void checkBox18_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox18, 18);
+        }
+        private void checkBox19_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox19, 19);
+        }
+        private void checkBox20_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox20, 20);
+        }
+        private void checkBox21_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox21, 21);
+        }
+        private void checkBox22_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox22, 22);
+        }
+        private void checkBox23_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox23, 23);
+        }
+        private void checkBox24_CheckedChanged(object sender, EventArgs e)
+        {
+            ListHell(checkBox24, 24);
+        }
+
         #endregion
 
         private void btn_sel_pic_Click(object sender, EventArgs e)
