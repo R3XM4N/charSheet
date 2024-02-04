@@ -79,6 +79,7 @@ namespace sheet
         public string featuresTraits;
         public string profLanguages;
         public string backstory;
+        public string allies;
 
         //put other here
     }

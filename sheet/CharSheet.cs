@@ -80,17 +80,6 @@ namespace sheet
         {
             SaveToCurrent();
         }
-        
-        public int ToInt(string a)
-        {
-            //yay fix for a dumb bug made it -404 for obiousity that its a error
-            if (a == null || a == "")
-            {
-                MessageBox.Show("Stat is missing a value");
-                return -404;
-            }
-            return Convert.ToInt32(a);
-        }
         #endregion
 
         #region Data-Handle
@@ -101,44 +90,53 @@ namespace sheet
         Also i would consider this place Hell2
         */
         //shows the roll value +/-
-        private string ShowRoll(int a)
+
+        //HEADER
+        void UpdateHeader(bool save)
         {
-            if (a > 0)
+            if (save)
             {
-                return $"+{a}";
+                currentChar.cName = charNameBox.Text;
+                currentChar.level = ToInt(lvlBox.Text);
+                currentChar.race = raceBox.Text;
+                currentChar._class = classBox.Text;
             }
             else
             {
-                return $"{a}";
+                charNameBox.Text = currentChar.cName;
+                lvlBox.Text = currentChar.level.ToString();
+                raceBox.Text = currentChar.race;
+                classBox.Text = currentChar._class;
             }
         }
-        private string MainToFlat(int stat)
+        //PAGE 1
+        void CharInfoLoad(bool save)
         {
-            double temp = stat;
-            double temp2 = (int)Math.Floor((temp - 10) / 2);
-            if (temp2 > 0)
+            if (save)
             {
-                return $"+{temp2}";
+                currentChar.personality.bonds = bondsText.Text;
+                currentChar.personality.backstory = backstoryText.Text;
+                currentChar.personality.ideals = idealsText.Text;
+                currentChar.personality.featuresTraits = featuresText.Text;
+                currentChar.personality.personalTraits = perTraitText.Text;
+                currentChar.personality.profLanguages = profnLanguagesText.Text;
+                currentChar.personality.allies = AlliesText.Text;
             }
             else
             {
-                return $"{temp2}";
+                bondsText.Text = currentChar.personality.bonds;
+                backstoryText.Text = currentChar.personality.backstory;
+                idealsText.Text = currentChar.personality.ideals;
+                featuresText.Text = currentChar.personality.featuresTraits;
+                perTraitText.Text = currentChar.personality.personalTraits;
+                profnLanguagesText.Text = currentChar.personality.profLanguages;
+                AlliesText.Text = currentChar.personality.allies;
             }
         }
-        private void statStateChange(object sender, EventArgs e)
+        //PAGE 2
+        void MainStats(bool save, bool plusState)
         {
-            if (statCheck.Checked)
-            {
-                MainStats(false, true);
-            }
-            else
-            {
-                MainStats(false, false);
-            }
-        }
-        void MainStats(bool save,bool plusState)
-        {
-            Dictionary<string,int> stats = new Dictionary<string, int>() {
+            Dictionary<string, int> stats = new Dictionary<string, int>() {
                 {"str",currentChar.mainStats.Str},{"dex",currentChar.mainStats.Dex},{"const",currentChar.mainStats.Const},
                 {"int",currentChar.mainStats.Int},{"wis",currentChar.mainStats.Wis},{"char",currentChar.mainStats.Char}
             };
@@ -179,7 +177,14 @@ namespace sheet
                 }
             }
         }
-        public void UpdateAllLoad()
+        //PAGE 3
+
+        //PAGE 4
+
+        //PAGE 5
+
+        //UPDATES
+        void UpdateAllLoad()
         {
             if (statCheck.Checked)
             {
@@ -191,39 +196,78 @@ namespace sheet
             }
             UpdateHeader(false);
         }
-        public void UpdateAllSave()
+        void UpdateAllSave()
         {
             UpdateHeader(true);
             MainStats(true, statCheck.Checked);
         }
-        public void UpdateHeader(bool save)
-        {
-            if (save)
-            {
-                currentChar.cName = charNameBox.Text;
-                currentChar.level = ToInt(lvlBox.Text);
-                currentChar.race = raceBox.Text;
-                currentChar._class = classBox.Text;
-            }
-            else
-            {
-                charNameBox.Text = currentChar.cName;
-                lvlBox.Text = currentChar.level.ToString();
-                raceBox.Text = currentChar.race;
-                classBox.Text = currentChar._class;
-            }
-        }
-        public void LoadToCurrent()
+        void LoadToCurrent()
         {
             UpdateAllLoad();
-            
-        }
 
-        public void SaveToCurrent()
+        }
+        void SaveToCurrent()
         {
             UpdateAllSave();
 
 
+        }
+        //OTHER
+        private string ShowRollStr(int a)
+        {
+            if (a > 0)
+            {
+                return $"+{a}";
+            }
+            else
+            {
+                return $"{a}";
+            }
+        }
+        private string MainToFlat(int stat)
+        {
+            double temp = stat;
+            double temp2 = (int)Math.Floor((temp - 10) / 2);
+            if (temp2 > 0)
+            {
+                return $"+{temp2}";
+            }
+            else
+            {
+                return $"{temp2}";
+            }
+        }
+        private void statStateChange(object sender, EventArgs e)
+        {
+            if (statCheck.Checked)
+            {
+                MainStats(false, true);
+            }
+            else
+            {
+                MainStats(false, false);
+            }
+        }
+        int ToInt(string a)
+        {
+            //yay fix for a dumb bug made it -404 for obiousity that its a error
+            if (a == null || a == "")
+            {
+                MessageBox.Show("Stat is missing a value");
+                return -404;
+            }
+            return Convert.ToInt32(a);
+        }
+        private string StringCheck(string a)
+        {
+            if (a == null || a == "")
+            {
+                return "";
+            }
+            else
+            {
+                return a;
+            }
         }
 
         #endregion
