@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TextBox weightBox;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CharSheet));
             this.charNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +43,16 @@
             this.label36 = new System.Windows.Forms.Label();
             this.lvlBox = new System.Windows.Forms.TextBox();
             this.otherTab = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.ppText = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.gpText = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.epText = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.spText = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cpText = new System.Windows.Forms.TextBox();
             this.invTab = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.invEquip = new System.Windows.Forms.TabPage();
@@ -51,6 +60,7 @@
             this.invTreasure = new System.Windows.Forms.TabPage();
             this.treasureText = new System.Windows.Forms.TextBox();
             this.invAttacks = new System.Windows.Forms.TabPage();
+            this.attacksText = new System.Windows.Forms.TextBox();
             this.statsTab = new System.Windows.Forms.TabPage();
             this.radio23 = new System.Windows.Forms.RadioButton();
             this.radio20 = new System.Windows.Forms.RadioButton();
@@ -129,6 +139,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.charInfoTab = new System.Windows.Forms.TabPage();
+            this.btn_sel_pic = new System.Windows.Forms.Button();
             this.label50 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.alignBox = new System.Windows.Forms.TextBox();
@@ -159,18 +170,6 @@
             this.AlliesText = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.spellTab = new System.Windows.Forms.TabPage();
-            this.btn_sel_pic = new System.Windows.Forms.Button();
-            this.attacksText = new System.Windows.Forms.TextBox();
-            this.cpText = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.spText = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.epText = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.gpText = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.ppText = new System.Windows.Forms.TextBox();
             weightBox = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.otherTab.SuspendLayout();
@@ -189,21 +188,12 @@
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // weightBox
-            // 
-            weightBox.Font = new System.Drawing.Font("Arial", 16F);
-            weightBox.Location = new System.Drawing.Point(193, 146);
-            weightBox.Name = "weightBox";
-            weightBox.Size = new System.Drawing.Size(162, 44);
-            weightBox.TabIndex = 34;
-            weightBox.Text = "0";
-            // 
             // charNameBox
             // 
             this.charNameBox.Font = new System.Drawing.Font("Arial", 22F);
             this.charNameBox.Location = new System.Drawing.Point(12, 53);
             this.charNameBox.Name = "charNameBox";
-            this.charNameBox.Size = new System.Drawing.Size(309, 58);
+            this.charNameBox.Size = new System.Drawing.Size(309, 41);
             this.charNameBox.TabIndex = 1;
             this.charNameBox.Text = "Sir tom tommington";
             // 
@@ -213,7 +203,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 12F);
             this.label1.Location = new System.Drawing.Point(13, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 27);
+            this.label1.Size = new System.Drawing.Size(124, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Character name:";
             // 
@@ -222,7 +212,7 @@
             this.raceBox.Font = new System.Drawing.Font("Arial", 22F);
             this.raceBox.Location = new System.Drawing.Point(327, 53);
             this.raceBox.Name = "raceBox";
-            this.raceBox.Size = new System.Drawing.Size(187, 58);
+            this.raceBox.Size = new System.Drawing.Size(187, 41);
             this.raceBox.TabIndex = 4;
             this.raceBox.Text = "Human";
             // 
@@ -232,7 +222,7 @@
             this.label2.Font = new System.Drawing.Font("Arial", 12F);
             this.label2.Location = new System.Drawing.Point(327, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 27);
+            this.label2.Size = new System.Drawing.Size(45, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "Race";
             // 
@@ -245,7 +235,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(834, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(834, 32);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -255,7 +245,7 @@
             this.toolStripButton1.Image = global::sheet.Properties.Resources.save;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(177, 42);
+            this.toolStripButton1.Size = new System.Drawing.Size(129, 29);
             this.toolStripButton1.Text = "Save sheet";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -265,7 +255,7 @@
             this.toolStripButton2.Image = global::sheet.Properties.Resources.load;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(179, 42);
+            this.toolStripButton2.Size = new System.Drawing.Size(131, 29);
             this.toolStripButton2.Text = "Load sheet";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -279,7 +269,7 @@
             this.label35.Font = new System.Drawing.Font("Arial", 12F);
             this.label35.Location = new System.Drawing.Point(636, 34);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(72, 27);
+            this.label35.Size = new System.Drawing.Size(48, 18);
             this.label35.TabIndex = 8;
             this.label35.Text = "Class";
             // 
@@ -288,7 +278,7 @@
             this.classBox.Font = new System.Drawing.Font("Arial", 22F);
             this.classBox.Location = new System.Drawing.Point(639, 53);
             this.classBox.Name = "classBox";
-            this.classBox.Size = new System.Drawing.Size(180, 58);
+            this.classBox.Size = new System.Drawing.Size(180, 41);
             this.classBox.TabIndex = 7;
             this.classBox.Text = "test man";
             // 
@@ -298,7 +288,7 @@
             this.label36.Font = new System.Drawing.Font("Arial", 12F);
             this.label36.Location = new System.Drawing.Point(578, 34);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(51, 27);
+            this.label36.Size = new System.Drawing.Size(36, 18);
             this.label36.TabIndex = 10;
             this.label36.Text = "LVL";
             // 
@@ -307,7 +297,7 @@
             this.lvlBox.Font = new System.Drawing.Font("Arial", 22F);
             this.lvlBox.Location = new System.Drawing.Point(581, 53);
             this.lvlBox.Name = "lvlBox";
-            this.lvlBox.Size = new System.Drawing.Size(49, 58);
+            this.lvlBox.Size = new System.Drawing.Size(49, 41);
             this.lvlBox.TabIndex = 9;
             this.lvlBox.Text = "0";
             // 
@@ -323,21 +313,106 @@
             this.otherTab.Controls.Add(this.spText);
             this.otherTab.Controls.Add(this.label9);
             this.otherTab.Controls.Add(this.cpText);
-            this.otherTab.Location = new System.Drawing.Point(4, 44);
+            this.otherTab.Location = new System.Drawing.Point(4, 32);
             this.otherTab.Name = "otherTab";
             this.otherTab.Padding = new System.Windows.Forms.Padding(3);
-            this.otherTab.Size = new System.Drawing.Size(802, 752);
+            this.otherTab.Size = new System.Drawing.Size(802, 764);
             this.otherTab.TabIndex = 4;
             this.otherTab.Text = "Other";
             this.otherTab.UseVisualStyleBackColor = true;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(13, 251);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 23);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "PP";
+            // 
+            // ppText
+            // 
+            this.ppText.Location = new System.Drawing.Point(76, 248);
+            this.ppText.Name = "ppText";
+            this.ppText.Size = new System.Drawing.Size(136, 30);
+            this.ppText.TabIndex = 8;
+            this.ppText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(13, 188);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(39, 23);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "GP";
+            // 
+            // gpText
+            // 
+            this.gpText.Location = new System.Drawing.Point(76, 185);
+            this.gpText.Name = "gpText";
+            this.gpText.Size = new System.Drawing.Size(136, 30);
+            this.gpText.TabIndex = 6;
+            this.gpText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(13, 127);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 23);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "EP";
+            // 
+            // epText
+            // 
+            this.epText.Location = new System.Drawing.Point(76, 124);
+            this.epText.Name = "epText";
+            this.epText.Size = new System.Drawing.Size(136, 30);
+            this.epText.TabIndex = 4;
+            this.epText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 67);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 23);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "SP";
+            // 
+            // spText
+            // 
+            this.spText.Location = new System.Drawing.Point(76, 64);
+            this.spText.Name = "spText";
+            this.spText.Size = new System.Drawing.Size(136, 30);
+            this.spText.TabIndex = 2;
+            this.spText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 23);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "CP";
+            // 
+            // cpText
+            // 
+            this.cpText.Location = new System.Drawing.Point(76, 6);
+            this.cpText.Name = "cpText";
+            this.cpText.Size = new System.Drawing.Size(136, 30);
+            this.cpText.TabIndex = 0;
+            this.cpText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // invTab
             // 
             this.invTab.Controls.Add(this.tabControl3);
-            this.invTab.Location = new System.Drawing.Point(4, 44);
+            this.invTab.Location = new System.Drawing.Point(4, 32);
             this.invTab.Name = "invTab";
             this.invTab.Padding = new System.Windows.Forms.Padding(3);
-            this.invTab.Size = new System.Drawing.Size(802, 752);
+            this.invTab.Size = new System.Drawing.Size(802, 764);
             this.invTab.TabIndex = 3;
             this.invTab.Text = "Inventory";
             this.invTab.UseVisualStyleBackColor = true;
@@ -356,10 +431,10 @@
             // invEquip
             // 
             this.invEquip.Controls.Add(this.inventoryBox);
-            this.invEquip.Location = new System.Drawing.Point(4, 44);
+            this.invEquip.Location = new System.Drawing.Point(4, 32);
             this.invEquip.Name = "invEquip";
             this.invEquip.Padding = new System.Windows.Forms.Padding(3);
-            this.invEquip.Size = new System.Drawing.Size(782, 702);
+            this.invEquip.Size = new System.Drawing.Size(782, 714);
             this.invEquip.TabIndex = 0;
             this.invEquip.Text = "Equipment";
             this.invEquip.UseVisualStyleBackColor = true;
@@ -378,10 +453,10 @@
             // invTreasure
             // 
             this.invTreasure.Controls.Add(this.treasureText);
-            this.invTreasure.Location = new System.Drawing.Point(4, 44);
+            this.invTreasure.Location = new System.Drawing.Point(4, 32);
             this.invTreasure.Name = "invTreasure";
             this.invTreasure.Padding = new System.Windows.Forms.Padding(3);
-            this.invTreasure.Size = new System.Drawing.Size(782, 702);
+            this.invTreasure.Size = new System.Drawing.Size(782, 714);
             this.invTreasure.TabIndex = 1;
             this.invTreasure.Text = "Treasures";
             this.invTreasure.UseVisualStyleBackColor = true;
@@ -400,12 +475,22 @@
             // invAttacks
             // 
             this.invAttacks.Controls.Add(this.attacksText);
-            this.invAttacks.Location = new System.Drawing.Point(4, 44);
+            this.invAttacks.Location = new System.Drawing.Point(4, 32);
             this.invAttacks.Name = "invAttacks";
-            this.invAttacks.Size = new System.Drawing.Size(782, 702);
+            this.invAttacks.Size = new System.Drawing.Size(782, 714);
             this.invAttacks.TabIndex = 2;
             this.invAttacks.Text = "Attacks";
             this.invAttacks.UseVisualStyleBackColor = true;
+            // 
+            // attacksText
+            // 
+            this.attacksText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attacksText.Location = new System.Drawing.Point(0, 0);
+            this.attacksText.Multiline = true;
+            this.attacksText.Name = "attacksText";
+            this.attacksText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.attacksText.Size = new System.Drawing.Size(782, 714);
+            this.attacksText.TabIndex = 0;
             // 
             // statsTab
             // 
@@ -485,10 +570,10 @@
             this.statsTab.Controls.Add(this.label3);
             this.statsTab.Controls.Add(this.label34);
             this.statsTab.Controls.Add(this.label33);
-            this.statsTab.Location = new System.Drawing.Point(4, 44);
+            this.statsTab.Location = new System.Drawing.Point(4, 32);
             this.statsTab.Name = "statsTab";
             this.statsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.statsTab.Size = new System.Drawing.Size(802, 752);
+            this.statsTab.Size = new System.Drawing.Size(802, 764);
             this.statsTab.TabIndex = 1;
             this.statsTab.Text = "Stats";
             this.statsTab.UseVisualStyleBackColor = true;
@@ -498,7 +583,7 @@
             this.radio23.AutoSize = true;
             this.radio23.Location = new System.Drawing.Point(221, 661);
             this.radio23.Name = "radio23";
-            this.radio23.Size = new System.Drawing.Size(147, 39);
+            this.radio23.Size = new System.Drawing.Size(95, 27);
             this.radio23.TabIndex = 109;
             this.radio23.Text = "Survival";
             this.radio23.UseVisualStyleBackColor = true;
@@ -509,7 +594,7 @@
             this.radio20.AutoSize = true;
             this.radio20.Location = new System.Drawing.Point(221, 554);
             this.radio20.Name = "radio20";
-            this.radio20.Size = new System.Drawing.Size(149, 39);
+            this.radio20.Size = new System.Drawing.Size(97, 27);
             this.radio20.TabIndex = 110;
             this.radio20.Text = "Religion";
             this.radio20.UseVisualStyleBackColor = true;
@@ -520,7 +605,7 @@
             this.radio22.AutoSize = true;
             this.radio22.Location = new System.Drawing.Point(221, 625);
             this.radio22.Name = "radio22";
-            this.radio22.Size = new System.Drawing.Size(132, 39);
+            this.radio22.Size = new System.Drawing.Size(89, 27);
             this.radio22.TabIndex = 107;
             this.radio22.Text = "Stealth";
             this.radio22.UseVisualStyleBackColor = true;
@@ -531,7 +616,7 @@
             this.radio21.AutoSize = true;
             this.radio21.Location = new System.Drawing.Point(221, 589);
             this.radio21.Name = "radio21";
-            this.radio21.Size = new System.Drawing.Size(244, 39);
+            this.radio21.Size = new System.Drawing.Size(161, 27);
             this.radio21.TabIndex = 105;
             this.radio21.Text = "Sleight of Hand";
             this.radio21.UseVisualStyleBackColor = true;
@@ -542,7 +627,7 @@
             this.radio19.AutoSize = true;
             this.radio19.Location = new System.Drawing.Point(221, 518);
             this.radio19.Name = "radio19";
-            this.radio19.Size = new System.Drawing.Size(189, 39);
+            this.radio19.Size = new System.Drawing.Size(125, 27);
             this.radio19.TabIndex = 108;
             this.radio19.Text = "Persuasion";
             this.radio19.UseVisualStyleBackColor = true;
@@ -553,7 +638,7 @@
             this.radio18.AutoSize = true;
             this.radio18.Location = new System.Drawing.Point(221, 482);
             this.radio18.Name = "radio18";
-            this.radio18.Size = new System.Drawing.Size(209, 39);
+            this.radio18.Size = new System.Drawing.Size(141, 27);
             this.radio18.TabIndex = 106;
             this.radio18.Text = "Performance";
             this.radio18.UseVisualStyleBackColor = true;
@@ -564,7 +649,7 @@
             this.radio17.AutoSize = true;
             this.radio17.Location = new System.Drawing.Point(221, 444);
             this.radio17.Name = "radio17";
-            this.radio17.Size = new System.Drawing.Size(182, 39);
+            this.radio17.Size = new System.Drawing.Size(122, 27);
             this.radio17.TabIndex = 103;
             this.radio17.Text = "Perception";
             this.radio17.UseVisualStyleBackColor = true;
@@ -575,7 +660,7 @@
             this.radio14.AutoSize = true;
             this.radio14.Location = new System.Drawing.Point(221, 337);
             this.radio14.Name = "radio14";
-            this.radio14.Size = new System.Drawing.Size(206, 39);
+            this.radio14.Size = new System.Drawing.Size(137, 27);
             this.radio14.TabIndex = 104;
             this.radio14.Text = "Investigation";
             this.radio14.UseVisualStyleBackColor = true;
@@ -586,7 +671,7 @@
             this.radio16.AutoSize = true;
             this.radio16.Location = new System.Drawing.Point(221, 408);
             this.radio16.Name = "radio16";
-            this.radio16.Size = new System.Drawing.Size(129, 39);
+            this.radio16.Size = new System.Drawing.Size(86, 27);
             this.radio16.TabIndex = 101;
             this.radio16.Text = "Nature";
             this.radio16.UseVisualStyleBackColor = true;
@@ -597,7 +682,7 @@
             this.radio15.AutoSize = true;
             this.radio15.Location = new System.Drawing.Point(221, 372);
             this.radio15.Name = "radio15";
-            this.radio15.Size = new System.Drawing.Size(160, 39);
+            this.radio15.Size = new System.Drawing.Size(106, 27);
             this.radio15.TabIndex = 99;
             this.radio15.Text = "Medicine";
             this.radio15.UseVisualStyleBackColor = true;
@@ -608,7 +693,7 @@
             this.radio13.AutoSize = true;
             this.radio13.Location = new System.Drawing.Point(221, 301);
             this.radio13.Name = "radio13";
-            this.radio13.Size = new System.Drawing.Size(192, 39);
+            this.radio13.Size = new System.Drawing.Size(127, 27);
             this.radio13.TabIndex = 102;
             this.radio13.Text = "Intimidation";
             this.radio13.UseVisualStyleBackColor = true;
@@ -619,7 +704,7 @@
             this.radio12.AutoSize = true;
             this.radio12.Location = new System.Drawing.Point(221, 265);
             this.radio12.Name = "radio12";
-            this.radio12.Size = new System.Drawing.Size(128, 39);
+            this.radio12.Size = new System.Drawing.Size(85, 27);
             this.radio12.TabIndex = 100;
             this.radio12.Text = "Insight";
             this.radio12.UseVisualStyleBackColor = true;
@@ -630,7 +715,7 @@
             this.radio11.AutoSize = true;
             this.radio11.Location = new System.Drawing.Point(221, 232);
             this.radio11.Name = "radio11";
-            this.radio11.Size = new System.Drawing.Size(133, 39);
+            this.radio11.Size = new System.Drawing.Size(89, 27);
             this.radio11.TabIndex = 97;
             this.radio11.Text = "History";
             this.radio11.UseVisualStyleBackColor = true;
@@ -641,7 +726,7 @@
             this.radio8.AutoSize = true;
             this.radio8.Location = new System.Drawing.Point(221, 125);
             this.radio8.Name = "radio8";
-            this.radio8.Size = new System.Drawing.Size(133, 39);
+            this.radio8.Size = new System.Drawing.Size(90, 27);
             this.radio8.TabIndex = 98;
             this.radio8.Text = "Arcana";
             this.radio8.UseVisualStyleBackColor = true;
@@ -652,7 +737,7 @@
             this.radio10.AutoSize = true;
             this.radio10.Location = new System.Drawing.Point(221, 196);
             this.radio10.Name = "radio10";
-            this.radio10.Size = new System.Drawing.Size(174, 39);
+            this.radio10.Size = new System.Drawing.Size(116, 27);
             this.radio10.TabIndex = 95;
             this.radio10.Text = "Deception";
             this.radio10.UseVisualStyleBackColor = true;
@@ -663,7 +748,7 @@
             this.radio9.AutoSize = true;
             this.radio9.Location = new System.Drawing.Point(221, 160);
             this.radio9.Name = "radio9";
-            this.radio9.Size = new System.Drawing.Size(152, 39);
+            this.radio9.Size = new System.Drawing.Size(102, 27);
             this.radio9.TabIndex = 93;
             this.radio9.Text = "Athletics";
             this.radio9.UseVisualStyleBackColor = true;
@@ -674,7 +759,7 @@
             this.radio7.AutoSize = true;
             this.radio7.Location = new System.Drawing.Point(221, 89);
             this.radio7.Name = "radio7";
-            this.radio7.Size = new System.Drawing.Size(254, 39);
+            this.radio7.Size = new System.Drawing.Size(163, 27);
             this.radio7.TabIndex = 96;
             this.radio7.Text = "Animal handling";
             this.radio7.UseVisualStyleBackColor = true;
@@ -685,7 +770,7 @@
             this.radio6.AutoSize = true;
             this.radio6.Location = new System.Drawing.Point(221, 53);
             this.radio6.Name = "radio6";
-            this.radio6.Size = new System.Drawing.Size(178, 39);
+            this.radio6.Size = new System.Drawing.Size(121, 27);
             this.radio6.TabIndex = 94;
             this.radio6.Text = "Acrobatics";
             this.radio6.UseVisualStyleBackColor = true;
@@ -696,7 +781,7 @@
             this.radio5.AutoSize = true;
             this.radio5.Location = new System.Drawing.Point(18, 492);
             this.radio5.Name = "radio5";
-            this.radio5.Size = new System.Drawing.Size(168, 39);
+            this.radio5.Size = new System.Drawing.Size(111, 27);
             this.radio5.TabIndex = 92;
             this.radio5.Text = "Charisma";
             this.radio5.UseVisualStyleBackColor = true;
@@ -707,7 +792,7 @@
             this.radio2.AutoSize = true;
             this.radio2.Location = new System.Drawing.Point(18, 385);
             this.radio2.Name = "radio2";
-            this.radio2.Size = new System.Drawing.Size(198, 39);
+            this.radio2.Size = new System.Drawing.Size(130, 27);
             this.radio2.TabIndex = 92;
             this.radio2.Text = "Constitution";
             this.radio2.UseVisualStyleBackColor = true;
@@ -718,7 +803,7 @@
             this.radio4.AutoSize = true;
             this.radio4.Location = new System.Drawing.Point(18, 456);
             this.radio4.Name = "radio4";
-            this.radio4.Size = new System.Drawing.Size(150, 39);
+            this.radio4.Size = new System.Drawing.Size(99, 27);
             this.radio4.TabIndex = 91;
             this.radio4.Text = "Wisdom";
             this.radio4.UseVisualStyleBackColor = true;
@@ -729,7 +814,7 @@
             this.radio3.AutoSize = true;
             this.radio3.Location = new System.Drawing.Point(18, 420);
             this.radio3.Name = "radio3";
-            this.radio3.Size = new System.Drawing.Size(190, 39);
+            this.radio3.Size = new System.Drawing.Size(126, 27);
             this.radio3.TabIndex = 90;
             this.radio3.Text = "Intelligence";
             this.radio3.UseVisualStyleBackColor = true;
@@ -740,7 +825,7 @@
             this.radio1.AutoSize = true;
             this.radio1.Location = new System.Drawing.Point(18, 349);
             this.radio1.Name = "radio1";
-            this.radio1.Size = new System.Drawing.Size(156, 39);
+            this.radio1.Size = new System.Drawing.Size(106, 27);
             this.radio1.TabIndex = 91;
             this.radio1.Text = "Dexterity";
             this.radio1.UseVisualStyleBackColor = true;
@@ -751,7 +836,7 @@
             this.radio0.AutoSize = true;
             this.radio0.Location = new System.Drawing.Point(18, 313);
             this.radio0.Name = "radio0";
-            this.radio0.Size = new System.Drawing.Size(153, 39);
+            this.radio0.Size = new System.Drawing.Size(102, 27);
             this.radio0.TabIndex = 90;
             this.radio0.Text = "Strenght";
             this.radio0.UseVisualStyleBackColor = true;
@@ -764,7 +849,7 @@
             this.statCheck.Font = new System.Drawing.Font("Arial", 20F);
             this.statCheck.Location = new System.Drawing.Point(63, 10);
             this.statCheck.Name = "statCheck";
-            this.statCheck.Size = new System.Drawing.Size(131, 49);
+            this.statCheck.Size = new System.Drawing.Size(93, 36);
             this.statCheck.TabIndex = 89;
             this.statCheck.Text = "Stats";
             this.statCheck.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -776,7 +861,7 @@
             this.label45.AutoSize = true;
             this.label45.Location = new System.Drawing.Point(649, 55);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(23, 35);
+            this.label45.Size = new System.Drawing.Size(16, 23);
             this.label45.TabIndex = 88;
             this.label45.Text = "/";
             // 
@@ -784,7 +869,7 @@
             // 
             this.healthTempBox.Location = new System.Drawing.Point(739, 51);
             this.healthTempBox.Name = "healthTempBox";
-            this.healthTempBox.Size = new System.Drawing.Size(32, 42);
+            this.healthTempBox.Size = new System.Drawing.Size(32, 30);
             this.healthTempBox.TabIndex = 87;
             this.healthTempBox.Text = "0";
             // 
@@ -792,7 +877,7 @@
             // 
             this.healthMaxBox.Location = new System.Drawing.Point(671, 50);
             this.healthMaxBox.Name = "healthMaxBox";
-            this.healthMaxBox.Size = new System.Drawing.Size(34, 42);
+            this.healthMaxBox.Size = new System.Drawing.Size(34, 30);
             this.healthMaxBox.TabIndex = 86;
             this.healthMaxBox.Text = "0";
             // 
@@ -800,7 +885,7 @@
             // 
             this.healthBox.Location = new System.Drawing.Point(609, 51);
             this.healthBox.Name = "healthBox";
-            this.healthBox.Size = new System.Drawing.Size(34, 42);
+            this.healthBox.Size = new System.Drawing.Size(34, 30);
             this.healthBox.TabIndex = 82;
             this.healthBox.Text = "0";
             // 
@@ -808,7 +893,7 @@
             // 
             this.speedBox.Location = new System.Drawing.Point(609, 159);
             this.speedBox.Name = "speedBox";
-            this.speedBox.Size = new System.Drawing.Size(34, 42);
+            this.speedBox.Size = new System.Drawing.Size(34, 30);
             this.speedBox.TabIndex = 79;
             this.speedBox.Text = "0";
             // 
@@ -816,7 +901,7 @@
             // 
             this.initiBox.Location = new System.Drawing.Point(609, 123);
             this.initiBox.Name = "initiBox";
-            this.initiBox.Size = new System.Drawing.Size(34, 42);
+            this.initiBox.Size = new System.Drawing.Size(34, 30);
             this.initiBox.TabIndex = 77;
             this.initiBox.Text = "0";
             // 
@@ -824,7 +909,7 @@
             // 
             this.armorClassBox.Location = new System.Drawing.Point(609, 87);
             this.armorClassBox.Name = "armorClassBox";
-            this.armorClassBox.Size = new System.Drawing.Size(34, 42);
+            this.armorClassBox.Size = new System.Drawing.Size(34, 30);
             this.armorClassBox.TabIndex = 75;
             this.armorClassBox.Text = "0";
             // 
@@ -832,7 +917,7 @@
             // 
             this.charBox.Location = new System.Drawing.Point(144, 232);
             this.charBox.Name = "charBox";
-            this.charBox.Size = new System.Drawing.Size(48, 42);
+            this.charBox.Size = new System.Drawing.Size(48, 30);
             this.charBox.TabIndex = 72;
             this.charBox.Text = "0";
             this.charBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -841,7 +926,7 @@
             // 
             this.wisdBox.Location = new System.Drawing.Point(144, 196);
             this.wisdBox.Name = "wisdBox";
-            this.wisdBox.Size = new System.Drawing.Size(48, 42);
+            this.wisdBox.Size = new System.Drawing.Size(48, 30);
             this.wisdBox.TabIndex = 70;
             this.wisdBox.Text = "0";
             this.wisdBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -850,7 +935,7 @@
             // 
             this.intBox.Location = new System.Drawing.Point(144, 160);
             this.intBox.Name = "intBox";
-            this.intBox.Size = new System.Drawing.Size(48, 42);
+            this.intBox.Size = new System.Drawing.Size(48, 30);
             this.intBox.TabIndex = 68;
             this.intBox.Text = "0";
             this.intBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -859,7 +944,7 @@
             // 
             this.constBox.Location = new System.Drawing.Point(144, 124);
             this.constBox.Name = "constBox";
-            this.constBox.Size = new System.Drawing.Size(48, 42);
+            this.constBox.Size = new System.Drawing.Size(48, 30);
             this.constBox.TabIndex = 66;
             this.constBox.Text = "0";
             this.constBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -868,7 +953,7 @@
             // 
             this.dexBox.Location = new System.Drawing.Point(144, 88);
             this.dexBox.Name = "dexBox";
-            this.dexBox.Size = new System.Drawing.Size(48, 42);
+            this.dexBox.Size = new System.Drawing.Size(48, 30);
             this.dexBox.TabIndex = 64;
             this.dexBox.Text = "0";
             this.dexBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -877,7 +962,7 @@
             // 
             this.strBox.Location = new System.Drawing.Point(144, 52);
             this.strBox.Name = "strBox";
-            this.strBox.Size = new System.Drawing.Size(48, 42);
+            this.strBox.Size = new System.Drawing.Size(48, 30);
             this.strBox.TabIndex = 62;
             this.strBox.Text = "0";
             this.strBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -886,7 +971,7 @@
             // 
             this.throwCharBox.Location = new System.Drawing.Point(154, 492);
             this.throwCharBox.Name = "throwCharBox";
-            this.throwCharBox.Size = new System.Drawing.Size(48, 42);
+            this.throwCharBox.Size = new System.Drawing.Size(48, 30);
             this.throwCharBox.TabIndex = 58;
             this.throwCharBox.Text = "0";
             this.throwCharBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -895,7 +980,7 @@
             // 
             this.throwWisdBox.Location = new System.Drawing.Point(154, 456);
             this.throwWisdBox.Name = "throwWisdBox";
-            this.throwWisdBox.Size = new System.Drawing.Size(48, 42);
+            this.throwWisdBox.Size = new System.Drawing.Size(48, 30);
             this.throwWisdBox.TabIndex = 56;
             this.throwWisdBox.Text = "0";
             this.throwWisdBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -904,7 +989,7 @@
             // 
             this.throwIntBox.Location = new System.Drawing.Point(154, 420);
             this.throwIntBox.Name = "throwIntBox";
-            this.throwIntBox.Size = new System.Drawing.Size(48, 42);
+            this.throwIntBox.Size = new System.Drawing.Size(48, 30);
             this.throwIntBox.TabIndex = 54;
             this.throwIntBox.Text = "0";
             this.throwIntBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -913,7 +998,7 @@
             // 
             this.throwConstBox.Location = new System.Drawing.Point(154, 384);
             this.throwConstBox.Name = "throwConstBox";
-            this.throwConstBox.Size = new System.Drawing.Size(48, 42);
+            this.throwConstBox.Size = new System.Drawing.Size(48, 30);
             this.throwConstBox.TabIndex = 52;
             this.throwConstBox.Text = "0";
             this.throwConstBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -922,7 +1007,7 @@
             // 
             this.throwDexBox.Location = new System.Drawing.Point(154, 348);
             this.throwDexBox.Name = "throwDexBox";
-            this.throwDexBox.Size = new System.Drawing.Size(48, 42);
+            this.throwDexBox.Size = new System.Drawing.Size(48, 30);
             this.throwDexBox.TabIndex = 50;
             this.throwDexBox.Text = "0";
             this.throwDexBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -931,7 +1016,7 @@
             // 
             this.throwStrBox.Location = new System.Drawing.Point(154, 312);
             this.throwStrBox.Name = "throwStrBox";
-            this.throwStrBox.Size = new System.Drawing.Size(48, 42);
+            this.throwStrBox.Size = new System.Drawing.Size(48, 30);
             this.throwStrBox.TabIndex = 48;
             this.throwStrBox.Text = "0";
             this.throwStrBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -940,7 +1025,7 @@
             // 
             this.survivalBox.Location = new System.Drawing.Point(385, 661);
             this.survivalBox.Name = "survivalBox";
-            this.survivalBox.Size = new System.Drawing.Size(48, 42);
+            this.survivalBox.Size = new System.Drawing.Size(48, 30);
             this.survivalBox.TabIndex = 46;
             this.survivalBox.Text = "0";
             this.survivalBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -949,7 +1034,7 @@
             // 
             this.stealthBox.Location = new System.Drawing.Point(385, 625);
             this.stealthBox.Name = "stealthBox";
-            this.stealthBox.Size = new System.Drawing.Size(48, 42);
+            this.stealthBox.Size = new System.Drawing.Size(48, 30);
             this.stealthBox.TabIndex = 44;
             this.stealthBox.Text = "0";
             this.stealthBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -958,7 +1043,7 @@
             // 
             this.sofhandBox.Location = new System.Drawing.Point(385, 589);
             this.sofhandBox.Name = "sofhandBox";
-            this.sofhandBox.Size = new System.Drawing.Size(48, 42);
+            this.sofhandBox.Size = new System.Drawing.Size(48, 30);
             this.sofhandBox.TabIndex = 42;
             this.sofhandBox.Text = "0";
             this.sofhandBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -967,7 +1052,7 @@
             // 
             this.relBox.Location = new System.Drawing.Point(385, 553);
             this.relBox.Name = "relBox";
-            this.relBox.Size = new System.Drawing.Size(48, 42);
+            this.relBox.Size = new System.Drawing.Size(48, 30);
             this.relBox.TabIndex = 40;
             this.relBox.Text = "0";
             this.relBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -976,7 +1061,7 @@
             // 
             this.persBox.Location = new System.Drawing.Point(385, 517);
             this.persBox.Name = "persBox";
-            this.persBox.Size = new System.Drawing.Size(48, 42);
+            this.persBox.Size = new System.Drawing.Size(48, 30);
             this.persBox.TabIndex = 38;
             this.persBox.Text = "0";
             this.persBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -985,7 +1070,7 @@
             // 
             this.perfBox.Location = new System.Drawing.Point(385, 481);
             this.perfBox.Name = "perfBox";
-            this.perfBox.Size = new System.Drawing.Size(48, 42);
+            this.perfBox.Size = new System.Drawing.Size(48, 30);
             this.perfBox.TabIndex = 36;
             this.perfBox.Text = "0";
             this.perfBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -994,7 +1079,7 @@
             // 
             this.percBox.Location = new System.Drawing.Point(385, 445);
             this.percBox.Name = "percBox";
-            this.percBox.Size = new System.Drawing.Size(48, 42);
+            this.percBox.Size = new System.Drawing.Size(48, 30);
             this.percBox.TabIndex = 34;
             this.percBox.Text = "0";
             this.percBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1003,7 +1088,7 @@
             // 
             this.natureBox.Location = new System.Drawing.Point(385, 409);
             this.natureBox.Name = "natureBox";
-            this.natureBox.Size = new System.Drawing.Size(48, 42);
+            this.natureBox.Size = new System.Drawing.Size(48, 30);
             this.natureBox.TabIndex = 32;
             this.natureBox.Text = "0";
             this.natureBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1012,7 +1097,7 @@
             // 
             this.medBox.Location = new System.Drawing.Point(385, 373);
             this.medBox.Name = "medBox";
-            this.medBox.Size = new System.Drawing.Size(48, 42);
+            this.medBox.Size = new System.Drawing.Size(48, 30);
             this.medBox.TabIndex = 30;
             this.medBox.Text = "0";
             this.medBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1021,7 +1106,7 @@
             // 
             this.inveBox.Location = new System.Drawing.Point(385, 337);
             this.inveBox.Name = "inveBox";
-            this.inveBox.Size = new System.Drawing.Size(48, 42);
+            this.inveBox.Size = new System.Drawing.Size(48, 30);
             this.inveBox.TabIndex = 28;
             this.inveBox.Text = "0";
             this.inveBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1030,7 +1115,7 @@
             // 
             this.intimidBox.Location = new System.Drawing.Point(385, 301);
             this.intimidBox.Name = "intimidBox";
-            this.intimidBox.Size = new System.Drawing.Size(48, 42);
+            this.intimidBox.Size = new System.Drawing.Size(48, 30);
             this.intimidBox.TabIndex = 26;
             this.intimidBox.Text = "0";
             this.intimidBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1039,7 +1124,7 @@
             // 
             this.insightBox.Location = new System.Drawing.Point(385, 265);
             this.insightBox.Name = "insightBox";
-            this.insightBox.Size = new System.Drawing.Size(48, 42);
+            this.insightBox.Size = new System.Drawing.Size(48, 30);
             this.insightBox.TabIndex = 24;
             this.insightBox.Text = "0";
             this.insightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1048,7 +1133,7 @@
             // 
             this.historyBox.Location = new System.Drawing.Point(385, 231);
             this.historyBox.Name = "historyBox";
-            this.historyBox.Size = new System.Drawing.Size(48, 42);
+            this.historyBox.Size = new System.Drawing.Size(48, 30);
             this.historyBox.TabIndex = 22;
             this.historyBox.Text = "0";
             this.historyBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1057,7 +1142,7 @@
             // 
             this.deceptionBox.Location = new System.Drawing.Point(385, 195);
             this.deceptionBox.Name = "deceptionBox";
-            this.deceptionBox.Size = new System.Drawing.Size(48, 42);
+            this.deceptionBox.Size = new System.Drawing.Size(48, 30);
             this.deceptionBox.TabIndex = 20;
             this.deceptionBox.Text = "0";
             this.deceptionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1066,7 +1151,7 @@
             // 
             this.athletBox.Location = new System.Drawing.Point(385, 159);
             this.athletBox.Name = "athletBox";
-            this.athletBox.Size = new System.Drawing.Size(48, 42);
+            this.athletBox.Size = new System.Drawing.Size(48, 30);
             this.athletBox.TabIndex = 18;
             this.athletBox.Text = "0";
             this.athletBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1075,7 +1160,7 @@
             // 
             this.aracanaBox.Location = new System.Drawing.Point(385, 123);
             this.aracanaBox.Name = "aracanaBox";
-            this.aracanaBox.Size = new System.Drawing.Size(48, 42);
+            this.aracanaBox.Size = new System.Drawing.Size(48, 30);
             this.aracanaBox.TabIndex = 16;
             this.aracanaBox.Text = "0";
             this.aracanaBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1084,7 +1169,7 @@
             // 
             this.animHandBox.Location = new System.Drawing.Point(385, 87);
             this.animHandBox.Name = "animHandBox";
-            this.animHandBox.Size = new System.Drawing.Size(48, 42);
+            this.animHandBox.Size = new System.Drawing.Size(48, 30);
             this.animHandBox.TabIndex = 14;
             this.animHandBox.Text = "0";
             this.animHandBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1093,7 +1178,7 @@
             // 
             this.acrobaticsBox.Location = new System.Drawing.Point(385, 51);
             this.acrobaticsBox.Name = "acrobaticsBox";
-            this.acrobaticsBox.Size = new System.Drawing.Size(48, 42);
+            this.acrobaticsBox.Size = new System.Drawing.Size(48, 30);
             this.acrobaticsBox.TabIndex = 12;
             this.acrobaticsBox.Text = "0";
             this.acrobaticsBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1103,7 +1188,7 @@
             this.label43.AutoSize = true;
             this.label43.Location = new System.Drawing.Point(711, 53);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(33, 35);
+            this.label43.Size = new System.Drawing.Size(22, 23);
             this.label43.TabIndex = 85;
             this.label43.Text = "+";
             // 
@@ -1112,7 +1197,7 @@
             this.label44.AutoSize = true;
             this.label44.Location = new System.Drawing.Point(479, 55);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(192, 35);
+            this.label44.Size = new System.Drawing.Size(125, 23);
             this.label44.TabIndex = 83;
             this.label44.Text = "Health Points";
             // 
@@ -1122,7 +1207,7 @@
             this.label39.Font = new System.Drawing.Font("Arial", 18F);
             this.label39.Location = new System.Drawing.Point(553, 17);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(107, 41);
+            this.label39.Size = new System.Drawing.Size(73, 27);
             this.label39.TabIndex = 81;
             this.label39.Text = "Other";
             // 
@@ -1131,7 +1216,7 @@
             this.label40.AutoSize = true;
             this.label40.Location = new System.Drawing.Point(483, 163);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(101, 35);
+            this.label40.Size = new System.Drawing.Size(67, 23);
             this.label40.TabIndex = 80;
             this.label40.Text = "Speed";
             // 
@@ -1140,7 +1225,7 @@
             this.label41.AutoSize = true;
             this.label41.Location = new System.Drawing.Point(483, 127);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(123, 35);
+            this.label41.Size = new System.Drawing.Size(81, 23);
             this.label41.TabIndex = 78;
             this.label41.Text = "Initiative";
             // 
@@ -1149,7 +1234,7 @@
             this.label42.AutoSize = true;
             this.label42.Location = new System.Drawing.Point(483, 91);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(171, 35);
+            this.label42.Size = new System.Drawing.Size(115, 23);
             this.label42.TabIndex = 76;
             this.label42.Text = "Armor class";
             // 
@@ -1158,7 +1243,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(26, 235);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(151, 35);
+            this.label8.Size = new System.Drawing.Size(99, 23);
             this.label8.TabIndex = 73;
             this.label8.Text = "Charisma:";
             // 
@@ -1167,7 +1252,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(26, 199);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 35);
+            this.label7.Size = new System.Drawing.Size(87, 23);
             this.label7.TabIndex = 71;
             this.label7.Text = "Wisdom:";
             // 
@@ -1176,7 +1261,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(26, 163);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(173, 35);
+            this.label6.Size = new System.Drawing.Size(114, 23);
             this.label6.TabIndex = 69;
             this.label6.Text = "Intelligence:";
             // 
@@ -1185,7 +1270,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(26, 127);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(181, 35);
+            this.label5.Size = new System.Drawing.Size(118, 23);
             this.label5.TabIndex = 67;
             this.label5.Text = "Constitution:";
             // 
@@ -1194,7 +1279,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(26, 91);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 35);
+            this.label4.Size = new System.Drawing.Size(94, 23);
             this.label4.TabIndex = 65;
             this.label4.Text = "Dexterity:";
             // 
@@ -1203,7 +1288,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(26, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 35);
+            this.label3.Size = new System.Drawing.Size(90, 23);
             this.label3.TabIndex = 63;
             this.label3.Text = "Strenght:";
             // 
@@ -1213,7 +1298,7 @@
             this.label34.Font = new System.Drawing.Font("Arial", 18F);
             this.label34.Location = new System.Drawing.Point(295, 17);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(100, 41);
+            this.label34.Size = new System.Drawing.Size(69, 27);
             this.label34.TabIndex = 61;
             this.label34.Text = "Skills";
             // 
@@ -1223,7 +1308,7 @@
             this.label33.Font = new System.Drawing.Font("Arial", 18F);
             this.label33.Location = new System.Drawing.Point(22, 273);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(249, 41);
+            this.label33.Size = new System.Drawing.Size(170, 27);
             this.label33.TabIndex = 60;
             this.label33.Text = "Saving Throws";
             // 
@@ -1249,13 +1334,24 @@
             this.charInfoTab.Controls.Add(this.label52);
             this.charInfoTab.Controls.Add(this.charImage);
             this.charInfoTab.Controls.Add(this.tabControl2);
-            this.charInfoTab.Location = new System.Drawing.Point(4, 44);
+            this.charInfoTab.Location = new System.Drawing.Point(4, 32);
             this.charInfoTab.Name = "charInfoTab";
             this.charInfoTab.Padding = new System.Windows.Forms.Padding(3);
-            this.charInfoTab.Size = new System.Drawing.Size(802, 752);
+            this.charInfoTab.Size = new System.Drawing.Size(802, 764);
             this.charInfoTab.TabIndex = 0;
             this.charInfoTab.Text = "Characteristics";
             this.charInfoTab.UseVisualStyleBackColor = true;
+            // 
+            // btn_sel_pic
+            // 
+            this.btn_sel_pic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_sel_pic.Location = new System.Drawing.Point(180, 696);
+            this.btn_sel_pic.Name = "btn_sel_pic";
+            this.btn_sel_pic.Size = new System.Drawing.Size(220, 53);
+            this.btn_sel_pic.TabIndex = 63;
+            this.btn_sel_pic.Text = "Select picture";
+            this.btn_sel_pic.UseVisualStyleBackColor = true;
+            this.btn_sel_pic.Click += new System.EventHandler(this.btn_sel_pic_Click);
             // 
             // label50
             // 
@@ -1263,7 +1359,7 @@
             this.label50.Font = new System.Drawing.Font("Arial", 18F);
             this.label50.Location = new System.Drawing.Point(139, 11);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(190, 41);
+            this.label50.Size = new System.Drawing.Size(127, 27);
             this.label50.TabIndex = 62;
             this.label50.Text = "Apearance";
             // 
@@ -1273,7 +1369,7 @@
             this.label37.Font = new System.Drawing.Font("Arial", 16F);
             this.label37.Location = new System.Drawing.Point(30, 292);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(156, 36);
+            this.label37.Size = new System.Drawing.Size(106, 25);
             this.label37.TabIndex = 43;
             this.label37.Text = "Alignment";
             // 
@@ -1282,7 +1378,7 @@
             this.alignBox.Font = new System.Drawing.Font("Arial", 16F);
             this.alignBox.Location = new System.Drawing.Point(193, 288);
             this.alignBox.Name = "alignBox";
-            this.alignBox.Size = new System.Drawing.Size(162, 44);
+            this.alignBox.Size = new System.Drawing.Size(162, 32);
             this.alignBox.TabIndex = 42;
             this.alignBox.Text = "0";
             // 
@@ -1291,7 +1387,7 @@
             this.hairBox.Font = new System.Drawing.Font("Arial", 16F);
             this.hairBox.Location = new System.Drawing.Point(193, 252);
             this.hairBox.Name = "hairBox";
-            this.hairBox.Size = new System.Drawing.Size(162, 44);
+            this.hairBox.Size = new System.Drawing.Size(162, 32);
             this.hairBox.TabIndex = 40;
             this.hairBox.Text = "0";
             // 
@@ -1300,7 +1396,7 @@
             this.eyeBox.Font = new System.Drawing.Font("Arial", 16F);
             this.eyeBox.Location = new System.Drawing.Point(193, 218);
             this.eyeBox.Name = "eyeBox";
-            this.eyeBox.Size = new System.Drawing.Size(162, 44);
+            this.eyeBox.Size = new System.Drawing.Size(162, 32);
             this.eyeBox.TabIndex = 38;
             this.eyeBox.Text = "0";
             // 
@@ -1309,16 +1405,25 @@
             this.skinBox.Font = new System.Drawing.Font("Arial", 16F);
             this.skinBox.Location = new System.Drawing.Point(193, 182);
             this.skinBox.Name = "skinBox";
-            this.skinBox.Size = new System.Drawing.Size(162, 44);
+            this.skinBox.Size = new System.Drawing.Size(162, 32);
             this.skinBox.TabIndex = 36;
             this.skinBox.Text = "0";
+            // 
+            // weightBox
+            // 
+            weightBox.Font = new System.Drawing.Font("Arial", 16F);
+            weightBox.Location = new System.Drawing.Point(193, 146);
+            weightBox.Name = "weightBox";
+            weightBox.Size = new System.Drawing.Size(162, 32);
+            weightBox.TabIndex = 34;
+            weightBox.Text = "0";
             // 
             // heightBox
             // 
             this.heightBox.Font = new System.Drawing.Font("Arial", 16F);
             this.heightBox.Location = new System.Drawing.Point(193, 110);
             this.heightBox.Name = "heightBox";
-            this.heightBox.Size = new System.Drawing.Size(162, 44);
+            this.heightBox.Size = new System.Drawing.Size(162, 32);
             this.heightBox.TabIndex = 32;
             this.heightBox.Text = "0";
             // 
@@ -1327,7 +1432,7 @@
             this.ageBox.Font = new System.Drawing.Font("Arial", 16F);
             this.ageBox.Location = new System.Drawing.Point(193, 74);
             this.ageBox.Name = "ageBox";
-            this.ageBox.Size = new System.Drawing.Size(162, 44);
+            this.ageBox.Size = new System.Drawing.Size(162, 32);
             this.ageBox.TabIndex = 30;
             this.ageBox.Text = "0";
             // 
@@ -1336,7 +1441,7 @@
             this.backgroundBox.Font = new System.Drawing.Font("Arial", 16F);
             this.backgroundBox.Location = new System.Drawing.Point(193, 38);
             this.backgroundBox.Name = "backgroundBox";
-            this.backgroundBox.Size = new System.Drawing.Size(162, 44);
+            this.backgroundBox.Size = new System.Drawing.Size(162, 32);
             this.backgroundBox.TabIndex = 28;
             this.backgroundBox.Text = "0";
             // 
@@ -1346,7 +1451,7 @@
             this.label46.Font = new System.Drawing.Font("Arial", 16F);
             this.label46.Location = new System.Drawing.Point(30, 256);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(73, 36);
+            this.label46.Size = new System.Drawing.Size(52, 25);
             this.label46.TabIndex = 41;
             this.label46.Text = "Hair";
             // 
@@ -1356,7 +1461,7 @@
             this.label47.Font = new System.Drawing.Font("Arial", 16F);
             this.label47.Location = new System.Drawing.Point(30, 222);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(68, 36);
+            this.label47.Size = new System.Drawing.Size(50, 25);
             this.label47.TabIndex = 39;
             this.label47.Text = "Eye";
             // 
@@ -1366,7 +1471,7 @@
             this.label48.Font = new System.Drawing.Font("Arial", 16F);
             this.label48.Location = new System.Drawing.Point(30, 186);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(77, 36);
+            this.label48.Size = new System.Drawing.Size(53, 25);
             this.label48.TabIndex = 37;
             this.label48.Text = "Skin";
             // 
@@ -1376,7 +1481,7 @@
             this.label49.Font = new System.Drawing.Font("Arial", 16F);
             this.label49.Location = new System.Drawing.Point(30, 150);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(114, 36);
+            this.label49.Size = new System.Drawing.Size(79, 25);
             this.label49.TabIndex = 35;
             this.label49.Text = "Weight";
             // 
@@ -1386,7 +1491,7 @@
             this.label.Font = new System.Drawing.Font("Arial", 16F);
             this.label.Location = new System.Drawing.Point(30, 114);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(106, 36);
+            this.label.Size = new System.Drawing.Size(74, 25);
             this.label.TabIndex = 33;
             this.label.Text = "Height";
             // 
@@ -1396,7 +1501,7 @@
             this.label51.Font = new System.Drawing.Font("Arial", 16F);
             this.label51.Location = new System.Drawing.Point(30, 78);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(70, 36);
+            this.label51.Size = new System.Drawing.Size(51, 25);
             this.label51.TabIndex = 31;
             this.label51.Text = "Age";
             // 
@@ -1406,13 +1511,14 @@
             this.label52.Font = new System.Drawing.Font("Arial", 16F);
             this.label52.Location = new System.Drawing.Point(30, 42);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(183, 36);
+            this.label52.Size = new System.Drawing.Size(126, 25);
             this.label52.TabIndex = 29;
             this.label52.Text = "Background";
             // 
             // charImage
             // 
             this.charImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.charImage.Image = global::sheet.Properties.Resources.icon;
             this.charImage.Location = new System.Drawing.Point(17, 348);
             this.charImage.Name = "charImage";
             this.charImage.Size = new System.Drawing.Size(360, 400);
@@ -1437,10 +1543,10 @@
             this.tabPage6.Controls.Add(this.idealsText);
             this.tabPage6.Controls.Add(this.bondsText);
             this.tabPage6.Controls.Add(this.perTraitText);
-            this.tabPage6.Location = new System.Drawing.Point(4, 44);
+            this.tabPage6.Location = new System.Drawing.Point(4, 32);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(382, 702);
+            this.tabPage6.Size = new System.Drawing.Size(382, 714);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Personality";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1500,10 +1606,10 @@
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.backstoryText);
-            this.tabPage7.Location = new System.Drawing.Point(4, 44);
+            this.tabPage7.Location = new System.Drawing.Point(4, 32);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(382, 702);
+            this.tabPage7.Size = new System.Drawing.Size(382, 714);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Backstory";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1520,10 +1626,10 @@
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.AlliesText);
-            this.tabPage9.Location = new System.Drawing.Point(4, 44);
+            this.tabPage9.Location = new System.Drawing.Point(4, 32);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(382, 702);
+            this.tabPage9.Size = new System.Drawing.Size(382, 714);
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "Other";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1554,122 +1660,16 @@
             // 
             // spellTab
             // 
-            this.spellTab.Location = new System.Drawing.Point(4, 44);
+            this.spellTab.Location = new System.Drawing.Point(4, 32);
             this.spellTab.Name = "spellTab";
-            this.spellTab.Size = new System.Drawing.Size(802, 752);
+            this.spellTab.Size = new System.Drawing.Size(802, 764);
             this.spellTab.TabIndex = 5;
             this.spellTab.Text = "Spells";
             this.spellTab.UseVisualStyleBackColor = true;
             // 
-            // btn_sel_pic
-            // 
-            this.btn_sel_pic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_sel_pic.Location = new System.Drawing.Point(180, 696);
-            this.btn_sel_pic.Name = "btn_sel_pic";
-            this.btn_sel_pic.Size = new System.Drawing.Size(220, 53);
-            this.btn_sel_pic.TabIndex = 63;
-            this.btn_sel_pic.Text = "Select picture";
-            this.btn_sel_pic.UseVisualStyleBackColor = true;
-            this.btn_sel_pic.Click += new System.EventHandler(this.btn_sel_pic_Click);
-            // 
-            // attacksText
-            // 
-            this.attacksText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.attacksText.Location = new System.Drawing.Point(0, 0);
-            this.attacksText.Multiline = true;
-            this.attacksText.Name = "attacksText";
-            this.attacksText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.attacksText.Size = new System.Drawing.Size(782, 702);
-            this.attacksText.TabIndex = 0;
-            // 
-            // cpText
-            // 
-            this.cpText.Location = new System.Drawing.Point(76, 6);
-            this.cpText.Name = "cpText";
-            this.cpText.Size = new System.Drawing.Size(136, 42);
-            this.cpText.TabIndex = 0;
-            this.cpText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 35);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "CP";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 67);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 35);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "SP";
-            // 
-            // spText
-            // 
-            this.spText.Location = new System.Drawing.Point(76, 64);
-            this.spText.Name = "spText";
-            this.spText.Size = new System.Drawing.Size(136, 42);
-            this.spText.TabIndex = 2;
-            this.spText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 127);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 35);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "EP";
-            // 
-            // epText
-            // 
-            this.epText.Location = new System.Drawing.Point(76, 124);
-            this.epText.Name = "epText";
-            this.epText.Size = new System.Drawing.Size(136, 42);
-            this.epText.TabIndex = 4;
-            this.epText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(13, 188);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 35);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "GP";
-            // 
-            // gpText
-            // 
-            this.gpText.Location = new System.Drawing.Point(76, 185);
-            this.gpText.Name = "gpText";
-            this.gpText.Size = new System.Drawing.Size(136, 42);
-            this.gpText.TabIndex = 6;
-            this.gpText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(13, 251);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 35);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "PP";
-            // 
-            // ppText
-            // 
-            this.ppText.Location = new System.Drawing.Point(76, 248);
-            this.ppText.Name = "ppText";
-            this.ppText.Size = new System.Drawing.Size(136, 42);
-            this.ppText.TabIndex = 8;
-            this.ppText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // CharSheet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(834, 911);
@@ -1722,6 +1722,7 @@
         }
 
         #endregion
+        private System.Windows.Forms.TextBox weightBox;
         private System.Windows.Forms.TextBox charNameBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox raceBox;

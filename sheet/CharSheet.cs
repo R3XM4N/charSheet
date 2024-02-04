@@ -89,8 +89,6 @@ namespace sheet
         sounds just like good way to explode.
         Also i would consider this place Hell2
         */
-        //shows the roll value +/-
-
         //HEADER
         void UpdateHeader(bool save)
         {
@@ -110,7 +108,7 @@ namespace sheet
             }
         }
         //PAGE 1
-        void CharInfoLoad(bool save)
+        void CharInfoUpdate(bool save)
         {
             if (save)
             {
@@ -121,6 +119,20 @@ namespace sheet
                 currentChar.personality.personalTraits = perTraitText.Text;
                 currentChar.personality.profLanguages = profnLanguagesText.Text;
                 currentChar.personality.allies = AlliesText.Text;
+
+                currentChar.apearance.background = backgroundBox.Text;
+                currentChar.apearance.age = ageBox.Text;
+                currentChar.apearance.height = heightBox.Text;
+                currentChar.apearance.weight = weightBox.Text;
+                currentChar.apearance.skin = skinBox.Text;
+                currentChar.apearance.eye = eyeBox.Text;
+                currentChar.apearance.hair = hairBox.Text;
+                currentChar.apearance.alignment = alignBox.Text;
+
+                if (charImage.Image != null)
+                {
+                    currentChar.apearance.image = charImage.ImageLocation;
+                }
             }
             else
             {
@@ -131,6 +143,22 @@ namespace sheet
                 perTraitText.Text = currentChar.personality.personalTraits;
                 profnLanguagesText.Text = currentChar.personality.profLanguages;
                 AlliesText.Text = currentChar.personality.allies;
+
+                backgroundBox.Text = currentChar.apearance.background;
+                ageBox.Text = currentChar.apearance.age;
+                heightBox.Text = currentChar.apearance.height;
+                weightBox.Text = currentChar.apearance.weight;
+                skinBox.Text = currentChar.apearance.skin;
+                eyeBox.Text = currentChar.apearance.eye;
+                hairBox.Text = currentChar.apearance.hair;
+                alignBox.Text = currentChar.apearance.alignment;
+
+                if (currentChar.apearance.image != null)
+                {
+                    charImage.ImageLocation = currentChar.apearance.image;
+                    charImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+
             }
         }
         //PAGE 2
@@ -178,7 +206,19 @@ namespace sheet
             }
         }
         //PAGE 3
-
+        void InvUpdate(bool save)
+        {
+            if (save)
+            {
+                currentChar.inventory.treasure = treasureText.Text;
+                currentChar.inventory.equipment = inventoryBox.Text;
+            }
+            else
+            {
+                treasureText.Text = currentChar.inventory.treasure;
+                inventoryBox.Text = currentChar.inventory.equipment;
+            }
+        }
         //PAGE 4
 
         //PAGE 5
@@ -195,11 +235,13 @@ namespace sheet
                 MainStats(false, false);
             }
             UpdateHeader(false);
+            CharInfoUpdate(false);
         }
         void UpdateAllSave()
         {
             UpdateHeader(true);
             MainStats(true, statCheck.Checked);
+            CharInfoUpdate(true);
         }
         void LoadToCurrent()
         {
@@ -401,7 +443,7 @@ namespace sheet
         private void btn_sel_pic_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-            charImage.Image = Image.FromFile(openFileDialog1.FileName);
+            //charImage.Image = Image.FromFile(openFileDialog1.FileName);
             charImage.ImageLocation = openFileDialog1.FileName;
             charImage.SizeMode = PictureBoxSizeMode.StretchImage;
         }

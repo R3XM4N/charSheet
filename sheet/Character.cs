@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
@@ -55,7 +56,6 @@ namespace sheet
             skills.Athletics,skills.Deception,skills.History,skills.Insight,skills.Intimidation,skills.Investigation,skills.Medicine,skills.Nature,skills.Nature,
             skills.Perceprtion,skills.Performance,skills.Persuasion,skills.Religion,skills.SoH,skills.Stealth,skills.Survival};
         }
-
     }
 
     //PAGE 1 Characteristics
@@ -69,6 +69,8 @@ namespace sheet
         public string eye;
         public string hair;
         public string alignment;
+
+        public string image;
     }
 
     public class Personality
@@ -148,7 +150,14 @@ namespace sheet
         //spells
     }
 
-
     //PAGE 5 
+    public class Money
+    {
+        public double copperC;
+        public double silverC;
+        public double electrumC;
+        public double goldC;
+        public double platinumC;
+    }
 
 }
