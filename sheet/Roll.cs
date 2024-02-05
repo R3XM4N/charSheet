@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
+using sheet.Properties;
 
 namespace sheet
 {
@@ -31,7 +32,7 @@ namespace sheet
         {
             Random rnd = new Random();
             int result = rnd.Next(1, sides + 1);
-            string message = "Rolled " + sides + "-sided dice and got " + result + ".";
+            string message = $"{Properties.Settings.Default.pl_name} rolled {sides}-sided dice and got {result}.";
             lbl_roll.Text = result.ToString();
             SendToDiscord(message);
         }
