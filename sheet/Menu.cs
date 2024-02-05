@@ -12,10 +12,20 @@ namespace sheet
 {
     public partial class Menu : Form
     {
-        public Settings settings = new Settings();
         public Menu()
         {
             InitializeComponent();
+            check_Settings();
+        }
+
+        private void check_Settings()
+        {
+            bool skipmenu = Properties.Settings.Default.skipmenu;
+            if(skipmenu)
+            {
+                // načíst hrdiny z databáze
+                changeFormInPanel(new Heroes());
+            }
         }
 
         protected void changeFormInPanel(Form form)
@@ -42,7 +52,7 @@ namespace sheet
         private void btn_settings_Click(object sender, EventArgs e)
         {
             // otevře form "Settings" s nastavením
-            changeFormInPanel(settings);
+            changeFormInPanel(new Settings());
         }
 
         private void btn_exit_Click(object sender, EventArgs e)

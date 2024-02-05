@@ -57,6 +57,7 @@
     <Compile Include="CharSheet.Designer.cs">
       <DependentUpon>CharSheet.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataHandler.cs" />
     <Compile Include="Heroes.cs">
       <SubType>Form</SubType>
     </Compile>

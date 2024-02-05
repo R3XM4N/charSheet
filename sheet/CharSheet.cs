@@ -25,42 +25,82 @@ namespace sheet
         
         XmlSerializer serializer = new XmlSerializer(typeof(Character));
         public Character currentChar;
+
+        bool autosave = false;
         public CharSheet()
         {
             InitializeComponent();
+            setupDialogs();
+            prepareForm();
+        }
+
+        public CharSheet(Character character)
+        {
+            InitializeComponent();
+            setupDialogs();
+            prepareForm();
+            autosave = Properties.Settings.Default.autosave;
+            currentChar = character;
+            LoadToCurrent();
+            if (File.Exists($"{Properties.Settings.Default.path}\\{currentChar.cName.Replace(' ', '_')}.xml"))
+            {
+                autosave = Properties.Settings.Default.autosave;
+                if (autosave)
+                {
+                    autoSavePreparation();
+                }
+            }
+        }
+
+        private void autoSavePreparation()
+        {
+            // set autosave timer
+            Timer autosaveTimer = new Timer();
+            autosaveTimer.Interval = Properties.Settings.Default.as_freq*1000;
+            autosaveTimer.Tick += new EventHandler(autoSave);
+            autosaveTimer.Start();
+        }
+
+        private void setupDialogs()
+        {
+            openFileDialog1.InitialDirectory = Properties.Settings.Default.path;
+            saveFileDialog1.InitialDirectory = Properties.Settings.Default.path;
+            saveFileDialog1.Filter = "XML files (*.xml)|*.xml";
+            openFileDialog1.Filter = "XML files (*.xml)|*.xml";
+            saveFileDialog1.DefaultExt = "xml";
         }
         //save sheet
         private void saveAsFile()
         {
-            StreamWriter streamWriter;
             SaveToCurrent();
             saveFileDialog1.ShowDialog();
-            if (saveFileDialog1.FileName.Contains(".xml"))
+            if (saveFileDialog1.FileName != "")
             {
-                streamWriter = new StreamWriter(saveFileDialog1.FileName);
+                DataHandler.saveCharacter(currentChar, saveFileDialog1.FileName);
             }
-            else
-            {
-                streamWriter = new StreamWriter($"{saveFileDialog1.FileName}.xml");
-            }
-            serializer.Serialize(streamWriter, currentChar);
-            streamWriter.Close();
         }
         //load sheet
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-            FileStream fileStream = new FileStream(openFileDialog1.FileName, FileMode.Open);
-            currentChar = (Character)serializer.Deserialize(fileStream);
-            fileStream.Close();
-            LoadToCurrent();
+            try
+            {
+                FileStream fileStream = new FileStream(openFileDialog1.FileName, FileMode.Open);
+                currentChar = (Character)serializer.Deserialize(fileStream);
+                fileStream.Close();
+                LoadToCurrent();
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Error loading file: " + ex.Message);
+            }
+            
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             saveAsFile();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void prepareForm()
         {
             prof = new List<int>();
 
@@ -82,8 +122,32 @@ namespace sheet
 
             statBoxesThrow = new TextBox[6] { statBox1, statBox2, statBox3, statBox4, statBox5, statBox6 };
             statBoxesSkills = new TextBox[18] { statBox7, statBox8, statBox9, statBox10, statBox11, statBox12, statBox13, statBox14, statBox15, statBox16, statBox17, statBox18, statBox19, statBox20, statBox21, statBox22, statBox23, statBox24 };
-
         }
+
+        private void autoSave(object sender, EventArgs e)
+        {
+            if (autosave)
+            {
+                try
+                {
+                    simulateSaving().ContinueWith((t) => quickSave());
+                } catch (Exception ex)
+                {
+                    return;
+                }
+            }
+        }
+
+        private Task simulateSaving()
+        {
+            return Task.Run(() =>
+            {
+                this.UseWaitCursor = true;
+                System.Threading.Thread.Sleep(1000);
+                this.UseWaitCursor = false;
+            });
+        }
+
         //temp data saving
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
@@ -432,7 +496,7 @@ namespace sheet
             //yay fix for a dumb bug made it -404 for obiousity that its a error
             if (a == null || a == "")
             {
-                MessageBox.Show("Stat is missing a value");
+                //MessageBox.Show("Stat is missing a value");
                 return -404;
             }
             return Convert.ToInt32(a);
@@ -442,7 +506,7 @@ namespace sheet
             //yay fix for a dumb bug made it -404 for obiousity that its a error
             if (a == null || a == "")
             {
-                MessageBox.Show("Stat is missing a value");
+                //MessageBox.Show("Stat is missing a value");
                 return -404.404;
             }
             return Convert.ToDouble(a);
@@ -591,9 +655,9 @@ namespace sheet
 
         private void btn_sel_pic_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
+            openFileDialog2.ShowDialog();
             //charImage.Image = Image.FromFile(openFileDialog1.FileName);
-            charImage.ImageLocation = openFileDialog1.FileName;
+            charImage.ImageLocation = openFileDialog2.FileName;
             charImage.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
@@ -603,8 +667,21 @@ namespace sheet
             DialogResult dialogResult = MessageBox.Show("Do you want to save the sheet?", "Save", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                saveAsFile();
+                quickSave();
             }
+        }
+
+        private void toolStripButton2_Click_1(object sender, EventArgs e)
+        {
+            quickSave();
+            MessageBox.Show("Quick save successful");
+        }
+
+        private void quickSave()
+        {
+            SaveToCurrent();
+            DataHandler.saveCharacter(currentChar, Properties.Settings.Default.path);
+            this.UseWaitCursor = false;
         }
     }
 }
