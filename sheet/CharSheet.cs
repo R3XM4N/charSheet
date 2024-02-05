@@ -596,5 +596,15 @@ namespace sheet
             charImage.ImageLocation = openFileDialog1.FileName;
             charImage.SizeMode = PictureBoxSizeMode.StretchImage;
         }
+
+        private void CharSheet_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // messagebox for saving
+            DialogResult dialogResult = MessageBox.Show("Do you want to save the sheet?", "Save", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                saveAsFile();
+            }
+        }
     }
 }
