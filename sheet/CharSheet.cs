@@ -11,11 +11,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using static sheet.Character;
 
 namespace sheet
 {
     public partial class CharSheet : Form
     {
+        DataHandler dataHandler = new DataHandler();
         #region main
         public List<int> prof;
         CheckBox[] checkBoxesThrow;
@@ -61,30 +63,7 @@ namespace sheet
             saveAsFile();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            prof = new List<int>();
-
-            currentChar = new Character();
-
-            currentChar.apearance = new Apearance();
-            currentChar.personality = new Personality();
-
-            currentChar.mainStats = new mainStats();
-            currentChar.savingThrows = new Sthrows();
-            currentChar.skills = new Skills();
-
-            currentChar.inventory = new Inventory();
-
-            currentChar.money = new Money();
-
-            checkBoxesThrow = new CheckBox[6] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
-            checkBoxesSkills = new CheckBox[18] { checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16, checkBox17, checkBox18, checkBox19, checkBox20, checkBox21, checkBox22, checkBox23, checkBox24 };
-
-            statBoxesThrow = new TextBox[6] { statBox1, statBox2, statBox3, statBox4, statBox5, statBox6 };
-            statBoxesSkills = new TextBox[18] { statBox7, statBox8, statBox9, statBox10, statBox11, statBox12, statBox13, statBox14, statBox15, statBox16, statBox17, statBox18, statBox19, statBox20, statBox21, statBox22, statBox23, statBox24 };
-
-        }
+        
         //temp data saving
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
@@ -104,17 +83,15 @@ namespace sheet
         {
             if (save)
             {
-                currentChar.cName = charNameBox.Text;
-                currentChar.level = ToInt(lvlBox.Text);
-                currentChar.race = raceBox.Text;
-                currentChar._class = classBox.Text;
+                currentChar.AddXP(ToInt(lvlBox.Text));
+                currentChar.SetBase(charNameBox.Text, raceBox.Text, classBox.Text);
             }
             else
             {
                 charNameBox.Text = currentChar.cName;
                 lvlBox.Text = currentChar.level.ToString();
                 raceBox.Text = currentChar.race;
-                classBox.Text = currentChar._class;
+                classBox.Text = currentChar.charClass;
             }
         }
         //PAGE 1
@@ -122,95 +99,68 @@ namespace sheet
         {
             if (save)
             {
-                currentChar.personality.bonds = bondsText.Text;
-                currentChar.personality.backstory = backstoryText.Text;
-                currentChar.personality.ideals = idealsText.Text;
-                currentChar.personality.featuresTraits = featuresText.Text;
-                currentChar.personality.personalTraits = perTraitText.Text;
-                currentChar.personality.profLanguages = profnLanguagesText.Text;
-                currentChar.personality.allies = AlliesText.Text;
+                currentChar.characteristics.bonds = bondsText.Text;
+                currentChar.characteristics.backstory = backstoryText.Text;
+                currentChar.characteristics.ideals = idealsText.Text;
+                currentChar.characteristics.featuresTraits = featuresText.Text;
+                currentChar.characteristics.personalTraits = perTraitText.Text;
+                currentChar.characteristics.profLanguages = profnLanguagesText.Text;
+                currentChar.characteristics.allies = AlliesText.Text;
 
-                currentChar.apearance.background = backgroundBox.Text;
-                currentChar.apearance.age = ageBox.Text;
-                currentChar.apearance.height = heightBox.Text;
-                currentChar.apearance.weight = weightBox.Text;
-                currentChar.apearance.skin = skinBox.Text;
-                currentChar.apearance.eye = eyeBox.Text;
-                currentChar.apearance.hair = hairBox.Text;
-                currentChar.apearance.alignment = alignBox.Text;
-                if (charImage.Image != null)
-                {
-                    currentChar.apearance.image = charImage.ImageLocation;
-                }
+                currentChar.characteristics.background = backgroundBox.Text;
+                currentChar.characteristics.age = ageBox.Text;
+                currentChar.characteristics.height = heightBox.Text;
+                currentChar.characteristics.weight = weightBox.Text;
+                currentChar.characteristics.skin = skinBox.Text;
+                currentChar.characteristics.eye = eyeBox.Text;
+                currentChar.characteristics.hair = hairBox.Text;
+                currentChar.characteristics.alignment = alignBox.Text;
             }
             else
             {
-                bondsText.Text = currentChar.personality.bonds;
-                backstoryText.Text = currentChar.personality.backstory;
-                idealsText.Text = currentChar.personality.ideals;
-                featuresText.Text = currentChar.personality.featuresTraits;
-                perTraitText.Text = currentChar.personality.personalTraits;
-                profnLanguagesText.Text = currentChar.personality.profLanguages;
-                AlliesText.Text = currentChar.personality.allies;
+                bondsText.Text = currentChar.characteristics.bonds;
+                backstoryText.Text = currentChar.characteristics.backstory;
+                idealsText.Text = currentChar.characteristics.ideals;
+                featuresText.Text = currentChar.characteristics.featuresTraits;
+                perTraitText.Text = currentChar.characteristics.personalTraits;
+                profnLanguagesText.Text = currentChar.characteristics.profLanguages;
+                AlliesText.Text = currentChar.characteristics.allies;
 
-                backgroundBox.Text = currentChar.apearance.background;
-                ageBox.Text = currentChar.apearance.age;
-                heightBox.Text = currentChar.apearance.height;
-                weightBox.Text = currentChar.apearance.weight;
-                skinBox.Text = currentChar.apearance.skin;
-                eyeBox.Text = currentChar.apearance.eye;
-                hairBox.Text = currentChar.apearance.hair;
-                alignBox.Text = currentChar.apearance.alignment;
-
-                if (currentChar.apearance.image != null)
-                {
-                    charImage.ImageLocation = currentChar.apearance.image;
-                    charImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
+                backgroundBox.Text = currentChar.characteristics.background;
+                ageBox.Text = currentChar.characteristics.age;
+                heightBox.Text = currentChar.characteristics.height;
+                weightBox.Text = currentChar.characteristics.weight;
+                skinBox.Text = currentChar.characteristics.skin;
+                eyeBox.Text = currentChar.characteristics.eye;
+                hairBox.Text = currentChar.characteristics.hair;
+                alignBox.Text = currentChar.characteristics.alignment;
 
             }
         }
         //PAGE 2
         void MainStatsUpdate(bool save, bool plusState)
         {
-            Dictionary<string, int> stats = new Dictionary<string, int>() {
-                {"str",currentChar.mainStats.Str},{"dex",currentChar.mainStats.Dex},{"const",currentChar.mainStats.Const},
-                {"int",currentChar.mainStats.Int},{"wis",currentChar.mainStats.Wis},{"char",currentChar.mainStats.Char}
-            };
-            Dictionary<string, string> textBoxes = new Dictionary<string, string>{
-                {"str",strBox.Text},{"dex",dexBox.Text},{"const",constBox.Text},
-                {"int",intBox.Text},{"wis",wisdBox.Text},{"char",charBox.Text}
-            };
-
             if (save && plusState == false)
             {
-                currentChar.mainStats.Str = ToInt(textBoxes["str"]);
-                currentChar.mainStats.Dex = ToInt(textBoxes["dex"]);
-                currentChar.mainStats.Const = ToInt(textBoxes["const"]);
-                currentChar.mainStats.Int = ToInt(textBoxes["int"]);
-                currentChar.mainStats.Wis = ToInt(textBoxes["wis"]);
-                currentChar.mainStats.Char = ToInt(textBoxes["char"]);
+                //no saving rn
             }
             else
             {
                 if (plusState)
                 {
-                    strBox.Text = $"{MainToFlat(stats["str"])}";
-                    dexBox.Text = $"{MainToFlat(stats["dex"])}";
-                    constBox.Text = $"{MainToFlat(stats["const"])}";
-                    intBox.Text = $"{MainToFlat(stats["int"])}";
-                    wisdBox.Text = $"{MainToFlat(stats["wis"])}";
-                    charBox.Text = $"{MainToFlat(stats["char"])}";
-
+                    int[] temp = currentChar.stats.Get();
+                    for (int i = 0; i < temp.Length; i++)
+                    {
+                        if (currentChar.bonus[0].Contains(i))
+                        {
+                            temp[i] = temp[i] + currentChar.proefficency;
+                        }
+                    }
+                    dataHandler.FillTextBoxes<int>(temp, new TextBox[6] { strBox, dexBox, constBox, intBox, wisdBox, charBox });
                 }
                 else
                 {
-                    strBox.Text = $"{stats["str"]}";
-                    dexBox.Text = $"{stats["dex"]}";
-                    constBox.Text = $"{stats["const"]}";
-                    intBox.Text = $"{stats["int"]}";
-                    wisdBox.Text = $"{stats["wis"]}";
-                    charBox.Text = $"{stats["char"]}";
+                    dataHandler.FillTextBoxes<int>(currentChar.stats.Get(), new TextBox[6] { strBox, dexBox, constBox, intBox, wisdBox, charBox });
                 }
             }
         }
@@ -225,7 +175,7 @@ namespace sheet
                 {
                     if (prof.Contains(i))
                     {
-                        ints[i-1] = ToInt(box.Text) - currentChar.proeff;
+                        ints[i-1] = ToInt(box.Text) - currentChar.proefficency;
                     }
                     else
                     {
@@ -233,7 +183,7 @@ namespace sheet
                     }
                     i++;
                 }
-                currentChar.savingThrows.throwsSave(ints);
+                currentChar.savingThrows.Set(ints);
             }
             else
             {
@@ -242,11 +192,11 @@ namespace sheet
                 {
                     if (prof.Contains(i))
                     {
-                        box.Text = (currentChar.savingThrows.throwsLoad()[i - 1] + currentChar.proeff).ToString();
+                        box.Text = (currentChar.savingThrows.Get()[i - 1] + currentChar.proefficency).ToString();
                     }
                     else
                     {
-                        box.Text = currentChar.savingThrows.throwsLoad()[i - 1].ToString();
+                        box.Text = currentChar.savingThrows.Get()[i - 1].ToString();
                     }
                     i++;
                 }
@@ -262,7 +212,7 @@ namespace sheet
                 {
                     if (prof.Contains(i + 6))
                     {
-                        ints[i - 1] = ToInt(box.Text) - currentChar.proeff;
+                        ints[i - 1] = ToInt(box.Text) - currentChar.proefficency;
                     }
                     else
                     {
@@ -270,7 +220,7 @@ namespace sheet
                     }
                     i++;
                 }
-                currentChar.skills.skillsSave(ints);
+                currentChar.skills.Set(ints);
             }
             else
             {
@@ -279,11 +229,11 @@ namespace sheet
                 {
                     if (prof.Contains(i + 6))
                     {
-                        box.Text = (currentChar.skills.skillsLoad()[i - 1] + currentChar.proeff).ToString();
+                        box.Text = (currentChar.skills.Get()[i - 1] + currentChar.proefficency).ToString();
                     }
                     else
                     {
-                        box.Text = currentChar.skills.skillsLoad()[i - 1].ToString();
+                        box.Text = currentChar.skills.Get()[i - 1].ToString();
                     }
                     i++;
                 }
@@ -294,13 +244,12 @@ namespace sheet
         {
             if (save)
             {
-                currentChar.inventory.treasure = treasureText.Text;
-                currentChar.inventory.equipment = inventoryBox.Text;
+                
             }
             else
             {
-                treasureText.Text = currentChar.inventory.treasure;
-                inventoryBox.Text = currentChar.inventory.equipment;
+                TextBox[] temp = new TextBox[2] { treasureText, inventoryBox };
+                dataHandler.FillTextBoxes<string>(currentChar.inventory, temp);
             }
         }
         //PAGE 4
@@ -319,11 +268,7 @@ namespace sheet
             }
             else
             {
-                cpText.Text = currentChar.money.copperC.ToString();
-                spText.Text = currentChar.money.silverC.ToString();
-                epText.Text = currentChar.money.electrumC.ToString();
-                gpText.Text = currentChar.money.goldC.ToString();
-                ppText.Text = currentChar.money.platinumC.ToString();
+                dataHandler.FillTextBoxes<double>(currentChar.money.Get(), new TextBox[5] { cpText, spText, epText, gpText, ppText });
             }
         }
 
@@ -340,7 +285,6 @@ namespace sheet
             }
             UpdateHeader(false);
             CharInfoUpdate(false);
-            prof = currentChar.proficiencies;
             ThrowsUpdate(false);
             SkillsUpdate(false);
             int i = 1;
@@ -375,7 +319,6 @@ namespace sheet
             UpdateHeader(true);
             MainStatsUpdate(true, statCheck.Checked);
             CharInfoUpdate(true);
-            currentChar.proficiencies = prof;
             ThrowsUpdate(true);
             SkillsUpdate(true);
             
@@ -471,20 +414,28 @@ namespace sheet
             |_| |_|\___|_|_|
         */
 
-        private void ListHell(CheckBox checkBox,int a)
+        private void ListHell(CheckBox checkBox)
         {
-            if (prof.Contains(a))
+            if (checkBoxesSkills.Contains<CheckBox>(checkBox))
             {
-                if (checkBox.Checked == false)
+                if (checkBox.Checked)
                 {
-                    prof.Remove(a);
+                    currentChar.bonus[1].Add(Array.IndexOf(checkBoxesSkills, checkBox));
+                }
+                else
+                {
+                    currentChar.bonus[1].Remove(Array.IndexOf(checkBoxesSkills, checkBox));
                 }
             }
             else
             {
                 if (checkBox.Checked)
                 {
-                    prof.Add(a);
+                    currentChar.bonus[0].Add(Array.IndexOf(checkBoxesThrow, checkBox));
+                }
+                else
+                {
+                    currentChar.bonus[0].Remove(Array.IndexOf(checkBoxesThrow, checkBox));
                 }
             }
             ThrowsUpdate(false);
@@ -492,99 +443,99 @@ namespace sheet
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox1, 1);
+            ListHell(checkBox1);
         }
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox2, 2);
+            ListHell(checkBox2);
         }
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox3, 3);
+            ListHell(checkBox3);
         }
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox4, 4);
+            ListHell(checkBox4);
         }
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox5, 5);
+            ListHell(checkBox5);
         }
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox6, 6);
+            ListHell(checkBox6);
         }
         private void checkBox7_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox7, 7);
+            ListHell(checkBox7);
         }
         private void checkBox8_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox8, 8);
+            ListHell(checkBox8);
         }
         private void checkBox9_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox9, 9);
+            ListHell(checkBox9);
         }
         private void checkBox10_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox10, 10);
+            ListHell(checkBox10);
         }
         private void checkBox11_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox11, 11);
+            ListHell(checkBox11);
         }
         private void checkBox12_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox12, 12);
+            ListHell(checkBox12);
         }
         private void checkBox13_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox13, 13);
+            ListHell(checkBox13);
         }
         private void checkBox14_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox14, 14);
+            ListHell(checkBox14);
         }
         private void checkBox15_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox15, 15);
+            ListHell(checkBox15);
         }
         private void checkBox16_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox16, 16);
+            ListHell(checkBox16);
         }
         private void checkBox17_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox17, 17);
+            ListHell(checkBox17);
         }
         private void checkBox18_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox18, 18);
+            ListHell(checkBox18);
         }
         private void checkBox19_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox19, 19);
+            ListHell(checkBox19);
         }
         private void checkBox20_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox20, 20);
+            ListHell(checkBox20);
         }
         private void checkBox21_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox21, 21);
+            ListHell(checkBox21);
         }
         private void checkBox22_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox22, 22);
+            ListHell(checkBox22);
         }
         private void checkBox23_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox23, 23);
+            ListHell(checkBox23);
         }
         private void checkBox24_CheckedChanged(object sender, EventArgs e)
         {
-            ListHell(checkBox24, 24);
+            ListHell(checkBox24);
         }
 
         #endregion
@@ -595,6 +546,21 @@ namespace sheet
             //charImage.Image = Image.FromFile(openFileDialog1.FileName);
             charImage.ImageLocation = openFileDialog1.FileName;
             charImage.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            currentChar = new Character();
+            currentChar.characteristics = new Characteristics();
+            currentChar.stats = new Stats();
+            currentChar.savingThrows = new SavingThrows();
+            currentChar.skills = new Skills();
+            currentChar.money = new Money();
+
+            checkBoxesThrow = new CheckBox[6] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
+            checkBoxesSkills = new CheckBox[18] { checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16, checkBox17, checkBox18, checkBox19, checkBox20, checkBox21, checkBox22, checkBox23, checkBox24 };
+            statBoxesThrow = new TextBox[6] { statBox1, statBox2, statBox3, statBox4, statBox5, statBox6 };
+            statBoxesSkills = new TextBox[18] { statBox7, statBox8, statBox9, statBox10, statBox11, statBox12, statBox13, statBox14, statBox15, statBox16, statBox17, statBox18, statBox19, statBox20, statBox21, statBox22, statBox23, statBox24 };
         }
     }
 }

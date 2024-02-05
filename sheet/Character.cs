@@ -24,8 +24,19 @@ namespace sheet
         public string cName { get; private set; }
         public string race { get; private set; }
         public string charClass { get; private set; }
+        public void SetBase(string characterName,string characterRace,string characterClass)
+        {
+            cName = characterName;
+            race = characterRace;
+            charClass = characterClass;
+        }
         public int level { get; private set; }
         public string exp { get; private set; }
+        public void AddXP(int ammmount)
+        {
+            exp += ammmount;
+            level++;
+        }
         //Battle
         public int[] health { get; private set; } = new int[3];//max/current/temp
         public int speed { get; private set; }
@@ -53,7 +64,7 @@ namespace sheet
             }
         }
         //The boring stuff
-        public Characteristics characteristics { get; private set; }
+        public Characteristics characteristics;
         public struct Characteristics
         {
             public string age;
@@ -73,8 +84,8 @@ namespace sheet
             public string featuresTraits;
             public string profLanguages;
         }
-        public Stats stats { get; private set; }
         //Stats/throws/skills
+        public Stats stats;
         public struct Stats
         {
             public int Strength { get; private set; }
@@ -102,7 +113,7 @@ namespace sheet
                 };
             }
         }
-        public SavingThrows savingThrows { get; private set; }
+        public SavingThrows savingThrows;
         public struct SavingThrows
         {
             public int SavingStrength { get; private set; }
@@ -130,7 +141,7 @@ namespace sheet
                 };
             }
         }
-        public Skills skills { get; private set; }
+        public Skills skills;
         public struct Skills
         {
             public int Acrobatics { get; private set; }
@@ -187,7 +198,8 @@ namespace sheet
                 };
             }
         }
-        public Money money { get; private set; }
+        //else
+        public Money money;
         public struct Money
         {
             public double copperC;
@@ -214,5 +226,6 @@ namespace sheet
                 };
             }
         }
+        public string[] inventory = new string[2];
     }
 }
