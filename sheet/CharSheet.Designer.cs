@@ -195,7 +195,11 @@
             this.charNameBox.Font = new System.Drawing.Font("Arial", 22F);
             this.charNameBox.Location = new System.Drawing.Point(12, 53);
             this.charNameBox.Name = "charNameBox";
+<<<<<<< HEAD
             this.charNameBox.Size = new System.Drawing.Size(309, 58);
+=======
+            this.charNameBox.Size = new System.Drawing.Size(309, 50);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.charNameBox.TabIndex = 1;
             this.charNameBox.Text = "Sir tom tommington";
             // 
@@ -205,7 +209,11 @@
             this.label1.Font = new System.Drawing.Font("Arial", 12F);
             this.label1.Location = new System.Drawing.Point(13, 34);
             this.label1.Name = "label1";
+<<<<<<< HEAD
             this.label1.Size = new System.Drawing.Size(191, 27);
+=======
+            this.label1.Size = new System.Drawing.Size(157, 23);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label1.TabIndex = 2;
             this.label1.Text = "Character name:";
             // 
@@ -214,7 +222,11 @@
             this.raceBox.Font = new System.Drawing.Font("Arial", 22F);
             this.raceBox.Location = new System.Drawing.Point(327, 53);
             this.raceBox.Name = "raceBox";
+<<<<<<< HEAD
             this.raceBox.Size = new System.Drawing.Size(187, 58);
+=======
+            this.raceBox.Size = new System.Drawing.Size(187, 50);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.raceBox.TabIndex = 4;
             this.raceBox.Text = "Human";
             // 
@@ -224,7 +236,11 @@
             this.label2.Font = new System.Drawing.Font("Arial", 12F);
             this.label2.Location = new System.Drawing.Point(327, 34);
             this.label2.Name = "label2";
+<<<<<<< HEAD
             this.label2.Size = new System.Drawing.Size(67, 27);
+=======
+            this.label2.Size = new System.Drawing.Size(56, 23);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label2.TabIndex = 5;
             this.label2.Text = "Race";
             // 
@@ -238,7 +254,11 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
+<<<<<<< HEAD
             this.toolStrip1.Size = new System.Drawing.Size(834, 47);
+=======
+            this.toolStrip1.Size = new System.Drawing.Size(834, 39);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -248,7 +268,11 @@
             this.toolStripButton1.Image = global::sheet.Properties.Resources.save;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
+<<<<<<< HEAD
             this.toolStripButton1.Size = new System.Drawing.Size(177, 42);
+=======
+            this.toolStripButton1.Size = new System.Drawing.Size(157, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.toolStripButton1.Text = "Save sheet";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -268,9 +292,15 @@
             this.toolStripButton2.Image = global::sheet.Properties.Resources.load;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
+<<<<<<< HEAD
             this.toolStripButton2.Size = new System.Drawing.Size(181, 42);
             this.toolStripButton2.Text = "Quick Save";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click_1);
+=======
+            this.toolStripButton2.Size = new System.Drawing.Size(158, 36);
+            this.toolStripButton2.Text = "Load sheet";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             // 
             // openFileDialog1
             // 
@@ -282,7 +312,11 @@
             this.label35.Font = new System.Drawing.Font("Arial", 12F);
             this.label35.Location = new System.Drawing.Point(636, 34);
             this.label35.Name = "label35";
+<<<<<<< HEAD
             this.label35.Size = new System.Drawing.Size(72, 27);
+=======
+            this.label35.Size = new System.Drawing.Size(59, 23);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label35.TabIndex = 8;
             this.label35.Text = "Class";
             // 
@@ -291,7 +325,11 @@
             this.classBox.Font = new System.Drawing.Font("Arial", 22F);
             this.classBox.Location = new System.Drawing.Point(639, 53);
             this.classBox.Name = "classBox";
+<<<<<<< HEAD
             this.classBox.Size = new System.Drawing.Size(180, 58);
+=======
+            this.classBox.Size = new System.Drawing.Size(180, 50);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.classBox.TabIndex = 7;
             this.classBox.Text = "test man";
             // 
@@ -301,7 +339,11 @@
             this.label36.Font = new System.Drawing.Font("Arial", 12F);
             this.label36.Location = new System.Drawing.Point(578, 34);
             this.label36.Name = "label36";
+<<<<<<< HEAD
             this.label36.Size = new System.Drawing.Size(51, 27);
+=======
+            this.label36.Size = new System.Drawing.Size(44, 23);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label36.TabIndex = 10;
             this.label36.Text = "LVL";
             // 
@@ -310,7 +352,11 @@
             this.lvlBox.Font = new System.Drawing.Font("Arial", 22F);
             this.lvlBox.Location = new System.Drawing.Point(581, 53);
             this.lvlBox.Name = "lvlBox";
+<<<<<<< HEAD
             this.lvlBox.Size = new System.Drawing.Size(49, 58);
+=======
+            this.lvlBox.Size = new System.Drawing.Size(49, 50);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.lvlBox.TabIndex = 9;
             this.lvlBox.Text = "0";
             // 
@@ -326,10 +372,17 @@
             this.otherTab.Controls.Add(this.spText);
             this.otherTab.Controls.Add(this.label9);
             this.otherTab.Controls.Add(this.cpText);
+<<<<<<< HEAD
             this.otherTab.Location = new System.Drawing.Point(4, 44);
             this.otherTab.Name = "otherTab";
             this.otherTab.Padding = new System.Windows.Forms.Padding(3);
             this.otherTab.Size = new System.Drawing.Size(802, 752);
+=======
+            this.otherTab.Location = new System.Drawing.Point(4, 37);
+            this.otherTab.Name = "otherTab";
+            this.otherTab.Padding = new System.Windows.Forms.Padding(3);
+            this.otherTab.Size = new System.Drawing.Size(802, 759);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.otherTab.TabIndex = 4;
             this.otherTab.Text = "Other";
             this.otherTab.UseVisualStyleBackColor = true;
@@ -339,7 +392,11 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(13, 251);
             this.label13.Name = "label13";
+<<<<<<< HEAD
             this.label13.Size = new System.Drawing.Size(55, 35);
+=======
+            this.label13.Size = new System.Drawing.Size(46, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label13.TabIndex = 9;
             this.label13.Text = "PP";
             // 
@@ -347,7 +404,11 @@
             // 
             this.ppText.Location = new System.Drawing.Point(76, 248);
             this.ppText.Name = "ppText";
+<<<<<<< HEAD
             this.ppText.Size = new System.Drawing.Size(136, 42);
+=======
+            this.ppText.Size = new System.Drawing.Size(136, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.ppText.TabIndex = 8;
             this.ppText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -356,7 +417,11 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(13, 188);
             this.label12.Name = "label12";
+<<<<<<< HEAD
             this.label12.Size = new System.Drawing.Size(58, 35);
+=======
+            this.label12.Size = new System.Drawing.Size(48, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label12.TabIndex = 7;
             this.label12.Text = "GP";
             // 
@@ -364,7 +429,11 @@
             // 
             this.gpText.Location = new System.Drawing.Point(76, 185);
             this.gpText.Name = "gpText";
+<<<<<<< HEAD
             this.gpText.Size = new System.Drawing.Size(136, 42);
+=======
+            this.gpText.Size = new System.Drawing.Size(136, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.gpText.TabIndex = 6;
             this.gpText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -373,7 +442,11 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(13, 127);
             this.label11.Name = "label11";
+<<<<<<< HEAD
             this.label11.Size = new System.Drawing.Size(55, 35);
+=======
+            this.label11.Size = new System.Drawing.Size(46, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label11.TabIndex = 5;
             this.label11.Text = "EP";
             // 
@@ -381,7 +454,11 @@
             // 
             this.epText.Location = new System.Drawing.Point(76, 124);
             this.epText.Name = "epText";
+<<<<<<< HEAD
             this.epText.Size = new System.Drawing.Size(136, 42);
+=======
+            this.epText.Size = new System.Drawing.Size(136, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.epText.TabIndex = 4;
             this.epText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -390,7 +467,11 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(13, 67);
             this.label10.Name = "label10";
+<<<<<<< HEAD
             this.label10.Size = new System.Drawing.Size(55, 35);
+=======
+            this.label10.Size = new System.Drawing.Size(46, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label10.TabIndex = 3;
             this.label10.Text = "SP";
             // 
@@ -398,7 +479,11 @@
             // 
             this.spText.Location = new System.Drawing.Point(76, 64);
             this.spText.Name = "spText";
+<<<<<<< HEAD
             this.spText.Size = new System.Drawing.Size(136, 42);
+=======
+            this.spText.Size = new System.Drawing.Size(136, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.spText.TabIndex = 2;
             this.spText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -407,7 +492,11 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(13, 9);
             this.label9.Name = "label9";
+<<<<<<< HEAD
             this.label9.Size = new System.Drawing.Size(57, 35);
+=======
+            this.label9.Size = new System.Drawing.Size(47, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label9.TabIndex = 1;
             this.label9.Text = "CP";
             // 
@@ -415,17 +504,28 @@
             // 
             this.cpText.Location = new System.Drawing.Point(76, 6);
             this.cpText.Name = "cpText";
+<<<<<<< HEAD
             this.cpText.Size = new System.Drawing.Size(136, 42);
+=======
+            this.cpText.Size = new System.Drawing.Size(136, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.cpText.TabIndex = 0;
             this.cpText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // invTab
             // 
             this.invTab.Controls.Add(this.tabControl3);
+<<<<<<< HEAD
             this.invTab.Location = new System.Drawing.Point(4, 44);
             this.invTab.Name = "invTab";
             this.invTab.Padding = new System.Windows.Forms.Padding(3);
             this.invTab.Size = new System.Drawing.Size(802, 752);
+=======
+            this.invTab.Location = new System.Drawing.Point(4, 37);
+            this.invTab.Name = "invTab";
+            this.invTab.Padding = new System.Windows.Forms.Padding(3);
+            this.invTab.Size = new System.Drawing.Size(802, 759);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.invTab.TabIndex = 3;
             this.invTab.Text = "Inventory";
             this.invTab.UseVisualStyleBackColor = true;
@@ -444,10 +544,17 @@
             // invEquip
             // 
             this.invEquip.Controls.Add(this.inventoryBox);
+<<<<<<< HEAD
             this.invEquip.Location = new System.Drawing.Point(4, 44);
             this.invEquip.Name = "invEquip";
             this.invEquip.Padding = new System.Windows.Forms.Padding(3);
             this.invEquip.Size = new System.Drawing.Size(782, 702);
+=======
+            this.invEquip.Location = new System.Drawing.Point(4, 37);
+            this.invEquip.Name = "invEquip";
+            this.invEquip.Padding = new System.Windows.Forms.Padding(3);
+            this.invEquip.Size = new System.Drawing.Size(782, 709);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.invEquip.TabIndex = 0;
             this.invEquip.Text = "Equipment";
             this.invEquip.UseVisualStyleBackColor = true;
@@ -466,10 +573,17 @@
             // invTreasure
             // 
             this.invTreasure.Controls.Add(this.treasureText);
+<<<<<<< HEAD
             this.invTreasure.Location = new System.Drawing.Point(4, 44);
             this.invTreasure.Name = "invTreasure";
             this.invTreasure.Padding = new System.Windows.Forms.Padding(3);
             this.invTreasure.Size = new System.Drawing.Size(782, 702);
+=======
+            this.invTreasure.Location = new System.Drawing.Point(4, 37);
+            this.invTreasure.Name = "invTreasure";
+            this.invTreasure.Padding = new System.Windows.Forms.Padding(3);
+            this.invTreasure.Size = new System.Drawing.Size(782, 709);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.invTreasure.TabIndex = 1;
             this.invTreasure.Text = "Treasures";
             this.invTreasure.UseVisualStyleBackColor = true;
@@ -488,9 +602,15 @@
             // invAttacks
             // 
             this.invAttacks.Controls.Add(this.attacksText);
+<<<<<<< HEAD
             this.invAttacks.Location = new System.Drawing.Point(4, 44);
             this.invAttacks.Name = "invAttacks";
             this.invAttacks.Size = new System.Drawing.Size(782, 702);
+=======
+            this.invAttacks.Location = new System.Drawing.Point(4, 37);
+            this.invAttacks.Name = "invAttacks";
+            this.invAttacks.Size = new System.Drawing.Size(782, 709);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.invAttacks.TabIndex = 2;
             this.invAttacks.Text = "Attacks";
             this.invAttacks.UseVisualStyleBackColor = true;
@@ -502,7 +622,11 @@
             this.attacksText.Multiline = true;
             this.attacksText.Name = "attacksText";
             this.attacksText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+<<<<<<< HEAD
             this.attacksText.Size = new System.Drawing.Size(782, 702);
+=======
+            this.attacksText.Size = new System.Drawing.Size(782, 709);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.attacksText.TabIndex = 0;
             // 
             // statsTab
@@ -583,10 +707,17 @@
             this.statsTab.Controls.Add(this.label3);
             this.statsTab.Controls.Add(this.label34);
             this.statsTab.Controls.Add(this.label33);
+<<<<<<< HEAD
             this.statsTab.Location = new System.Drawing.Point(4, 44);
             this.statsTab.Name = "statsTab";
             this.statsTab.Padding = new System.Windows.Forms.Padding(3);
             this.statsTab.Size = new System.Drawing.Size(802, 752);
+=======
+            this.statsTab.Location = new System.Drawing.Point(4, 37);
+            this.statsTab.Name = "statsTab";
+            this.statsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.statsTab.Size = new System.Drawing.Size(802, 759);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statsTab.TabIndex = 1;
             this.statsTab.Text = "Stats";
             this.statsTab.UseVisualStyleBackColor = true;
@@ -596,7 +727,11 @@
             this.checkBox24.AutoSize = true;
             this.checkBox24.Location = new System.Drawing.Point(221, 664);
             this.checkBox24.Name = "checkBox24";
+<<<<<<< HEAD
             this.checkBox24.Size = new System.Drawing.Size(148, 39);
+=======
+            this.checkBox24.Size = new System.Drawing.Size(121, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox24.TabIndex = 137;
             this.checkBox24.Text = "Survival";
             this.checkBox24.UseVisualStyleBackColor = true;
@@ -607,7 +742,11 @@
             this.checkBox23.AutoSize = true;
             this.checkBox23.Location = new System.Drawing.Point(221, 628);
             this.checkBox23.Name = "checkBox23";
+<<<<<<< HEAD
             this.checkBox23.Size = new System.Drawing.Size(133, 39);
+=======
+            this.checkBox23.Size = new System.Drawing.Size(113, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox23.TabIndex = 136;
             this.checkBox23.Text = "Stealth";
             this.checkBox23.UseVisualStyleBackColor = true;
@@ -618,7 +757,11 @@
             this.checkBox22.AutoSize = true;
             this.checkBox22.Location = new System.Drawing.Point(221, 592);
             this.checkBox22.Name = "checkBox22";
+<<<<<<< HEAD
             this.checkBox22.Size = new System.Drawing.Size(245, 39);
+=======
+            this.checkBox22.Size = new System.Drawing.Size(207, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox22.TabIndex = 135;
             this.checkBox22.Text = "Sleight of Hand";
             this.checkBox22.UseVisualStyleBackColor = true;
@@ -629,7 +772,11 @@
             this.checkBox21.AutoSize = true;
             this.checkBox21.Location = new System.Drawing.Point(221, 556);
             this.checkBox21.Name = "checkBox21";
+<<<<<<< HEAD
             this.checkBox21.Size = new System.Drawing.Size(150, 39);
+=======
+            this.checkBox21.Size = new System.Drawing.Size(126, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox21.TabIndex = 134;
             this.checkBox21.Text = "Religion";
             this.checkBox21.UseVisualStyleBackColor = true;
@@ -640,7 +787,11 @@
             this.checkBox20.AutoSize = true;
             this.checkBox20.Location = new System.Drawing.Point(221, 520);
             this.checkBox20.Name = "checkBox20";
+<<<<<<< HEAD
             this.checkBox20.Size = new System.Drawing.Size(190, 39);
+=======
+            this.checkBox20.Size = new System.Drawing.Size(161, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox20.TabIndex = 133;
             this.checkBox20.Text = "Persuasion";
             this.checkBox20.UseVisualStyleBackColor = true;
@@ -651,7 +802,11 @@
             this.checkBox19.AutoSize = true;
             this.checkBox19.Location = new System.Drawing.Point(221, 484);
             this.checkBox19.Name = "checkBox19";
+<<<<<<< HEAD
             this.checkBox19.Size = new System.Drawing.Size(210, 39);
+=======
+            this.checkBox19.Size = new System.Drawing.Size(179, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox19.TabIndex = 132;
             this.checkBox19.Text = "Performance";
             this.checkBox19.UseVisualStyleBackColor = true;
@@ -662,7 +817,11 @@
             this.checkBox18.AutoSize = true;
             this.checkBox18.Location = new System.Drawing.Point(221, 448);
             this.checkBox18.Name = "checkBox18";
+<<<<<<< HEAD
             this.checkBox18.Size = new System.Drawing.Size(183, 39);
+=======
+            this.checkBox18.Size = new System.Drawing.Size(155, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox18.TabIndex = 131;
             this.checkBox18.Text = "Perception";
             this.checkBox18.UseVisualStyleBackColor = true;
@@ -673,7 +832,11 @@
             this.checkBox17.AutoSize = true;
             this.checkBox17.Location = new System.Drawing.Point(221, 412);
             this.checkBox17.Name = "checkBox17";
+<<<<<<< HEAD
             this.checkBox17.Size = new System.Drawing.Size(130, 39);
+=======
+            this.checkBox17.Size = new System.Drawing.Size(109, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox17.TabIndex = 130;
             this.checkBox17.Text = "Nature";
             this.checkBox17.UseVisualStyleBackColor = true;
@@ -684,7 +847,11 @@
             this.checkBox16.AutoSize = true;
             this.checkBox16.Location = new System.Drawing.Point(221, 376);
             this.checkBox16.Name = "checkBox16";
+<<<<<<< HEAD
             this.checkBox16.Size = new System.Drawing.Size(161, 39);
+=======
+            this.checkBox16.Size = new System.Drawing.Size(136, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox16.TabIndex = 129;
             this.checkBox16.Text = "Medicine";
             this.checkBox16.UseVisualStyleBackColor = true;
@@ -695,7 +862,11 @@
             this.checkBox15.AutoSize = true;
             this.checkBox15.Location = new System.Drawing.Point(221, 340);
             this.checkBox15.Name = "checkBox15";
+<<<<<<< HEAD
             this.checkBox15.Size = new System.Drawing.Size(207, 39);
+=======
+            this.checkBox15.Size = new System.Drawing.Size(174, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox15.TabIndex = 128;
             this.checkBox15.Text = "Investigation";
             this.checkBox15.UseVisualStyleBackColor = true;
@@ -706,7 +877,11 @@
             this.checkBox14.AutoSize = true;
             this.checkBox14.Location = new System.Drawing.Point(221, 304);
             this.checkBox14.Name = "checkBox14";
+<<<<<<< HEAD
             this.checkBox14.Size = new System.Drawing.Size(193, 39);
+=======
+            this.checkBox14.Size = new System.Drawing.Size(164, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox14.TabIndex = 127;
             this.checkBox14.Text = "Intimidation";
             this.checkBox14.UseVisualStyleBackColor = true;
@@ -717,7 +892,11 @@
             this.checkBox13.AutoSize = true;
             this.checkBox13.Location = new System.Drawing.Point(221, 268);
             this.checkBox13.Name = "checkBox13";
+<<<<<<< HEAD
             this.checkBox13.Size = new System.Drawing.Size(129, 39);
+=======
+            this.checkBox13.Size = new System.Drawing.Size(108, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox13.TabIndex = 126;
             this.checkBox13.Text = "Insight";
             this.checkBox13.UseVisualStyleBackColor = true;
@@ -728,7 +907,11 @@
             this.checkBox12.AutoSize = true;
             this.checkBox12.Location = new System.Drawing.Point(221, 233);
             this.checkBox12.Name = "checkBox12";
+<<<<<<< HEAD
             this.checkBox12.Size = new System.Drawing.Size(134, 39);
+=======
+            this.checkBox12.Size = new System.Drawing.Size(112, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox12.TabIndex = 125;
             this.checkBox12.Text = "History";
             this.checkBox12.UseVisualStyleBackColor = true;
@@ -739,7 +922,11 @@
             this.checkBox11.AutoSize = true;
             this.checkBox11.Location = new System.Drawing.Point(221, 197);
             this.checkBox11.Name = "checkBox11";
+<<<<<<< HEAD
             this.checkBox11.Size = new System.Drawing.Size(175, 39);
+=======
+            this.checkBox11.Size = new System.Drawing.Size(148, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox11.TabIndex = 124;
             this.checkBox11.Text = "Deception";
             this.checkBox11.UseVisualStyleBackColor = true;
@@ -750,7 +937,11 @@
             this.checkBox10.AutoSize = true;
             this.checkBox10.Location = new System.Drawing.Point(221, 161);
             this.checkBox10.Name = "checkBox10";
+<<<<<<< HEAD
             this.checkBox10.Size = new System.Drawing.Size(153, 39);
+=======
+            this.checkBox10.Size = new System.Drawing.Size(131, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox10.TabIndex = 123;
             this.checkBox10.Text = "Athletics";
             this.checkBox10.UseVisualStyleBackColor = true;
@@ -761,7 +952,11 @@
             this.checkBox9.AutoSize = true;
             this.checkBox9.Location = new System.Drawing.Point(221, 125);
             this.checkBox9.Name = "checkBox9";
+<<<<<<< HEAD
             this.checkBox9.Size = new System.Drawing.Size(134, 39);
+=======
+            this.checkBox9.Size = new System.Drawing.Size(114, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox9.TabIndex = 122;
             this.checkBox9.Text = "Arcana";
             this.checkBox9.UseVisualStyleBackColor = true;
@@ -772,7 +967,11 @@
             this.checkBox8.AutoSize = true;
             this.checkBox8.Location = new System.Drawing.Point(221, 89);
             this.checkBox8.Name = "checkBox8";
+<<<<<<< HEAD
             this.checkBox8.Size = new System.Drawing.Size(260, 39);
+=======
+            this.checkBox8.Size = new System.Drawing.Size(220, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox8.TabIndex = 121;
             this.checkBox8.Text = "Animal Handling";
             this.checkBox8.UseVisualStyleBackColor = true;
@@ -783,7 +982,11 @@
             this.checkBox7.AutoSize = true;
             this.checkBox7.Location = new System.Drawing.Point(221, 53);
             this.checkBox7.Name = "checkBox7";
+<<<<<<< HEAD
             this.checkBox7.Size = new System.Drawing.Size(179, 39);
+=======
+            this.checkBox7.Size = new System.Drawing.Size(153, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox7.TabIndex = 120;
             this.checkBox7.Text = "Acrobatics";
             this.checkBox7.UseVisualStyleBackColor = true;
@@ -794,7 +997,11 @@
             this.checkBox6.AutoSize = true;
             this.checkBox6.Location = new System.Drawing.Point(24, 494);
             this.checkBox6.Name = "checkBox6";
+<<<<<<< HEAD
             this.checkBox6.Size = new System.Drawing.Size(169, 39);
+=======
+            this.checkBox6.Size = new System.Drawing.Size(143, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox6.TabIndex = 119;
             this.checkBox6.Text = "Charisma";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -805,7 +1012,11 @@
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(24, 458);
             this.checkBox5.Name = "checkBox5";
+<<<<<<< HEAD
             this.checkBox5.Size = new System.Drawing.Size(151, 39);
+=======
+            this.checkBox5.Size = new System.Drawing.Size(129, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox5.TabIndex = 118;
             this.checkBox5.Text = "Wisdom";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -816,7 +1027,11 @@
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(24, 422);
             this.checkBox4.Name = "checkBox4";
+<<<<<<< HEAD
             this.checkBox4.Size = new System.Drawing.Size(191, 39);
+=======
+            this.checkBox4.Size = new System.Drawing.Size(162, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox4.TabIndex = 117;
             this.checkBox4.Text = "Intelligence";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -827,7 +1042,11 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(24, 386);
             this.checkBox3.Name = "checkBox3";
+<<<<<<< HEAD
             this.checkBox3.Size = new System.Drawing.Size(199, 39);
+=======
+            this.checkBox3.Size = new System.Drawing.Size(168, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox3.TabIndex = 116;
             this.checkBox3.Text = "Constitution";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -838,7 +1057,11 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(24, 350);
             this.checkBox2.Name = "checkBox2";
+<<<<<<< HEAD
             this.checkBox2.Size = new System.Drawing.Size(157, 39);
+=======
+            this.checkBox2.Size = new System.Drawing.Size(131, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox2.TabIndex = 115;
             this.checkBox2.Text = "Dexterity";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -849,7 +1072,11 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(24, 314);
             this.checkBox1.Name = "checkBox1";
+<<<<<<< HEAD
             this.checkBox1.Size = new System.Drawing.Size(154, 39);
+=======
+            this.checkBox1.Size = new System.Drawing.Size(129, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.checkBox1.TabIndex = 114;
             this.checkBox1.Text = "Strenght";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -862,7 +1089,11 @@
             this.statCheck.Font = new System.Drawing.Font("Arial", 20F);
             this.statCheck.Location = new System.Drawing.Point(63, 10);
             this.statCheck.Name = "statCheck";
+<<<<<<< HEAD
             this.statCheck.Size = new System.Drawing.Size(131, 49);
+=======
+            this.statCheck.Size = new System.Drawing.Size(111, 43);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statCheck.TabIndex = 89;
             this.statCheck.Text = "Stats";
             this.statCheck.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -874,7 +1105,11 @@
             this.label45.AutoSize = true;
             this.label45.Location = new System.Drawing.Point(649, 55);
             this.label45.Name = "label45";
+<<<<<<< HEAD
             this.label45.Size = new System.Drawing.Size(23, 35);
+=======
+            this.label45.Size = new System.Drawing.Size(19, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label45.TabIndex = 88;
             this.label45.Text = "/";
             // 
@@ -882,7 +1117,11 @@
             // 
             this.healthTempBox.Location = new System.Drawing.Point(739, 51);
             this.healthTempBox.Name = "healthTempBox";
+<<<<<<< HEAD
             this.healthTempBox.Size = new System.Drawing.Size(32, 42);
+=======
+            this.healthTempBox.Size = new System.Drawing.Size(32, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.healthTempBox.TabIndex = 87;
             this.healthTempBox.Text = "0";
             // 
@@ -890,7 +1129,11 @@
             // 
             this.healthMaxBox.Location = new System.Drawing.Point(671, 50);
             this.healthMaxBox.Name = "healthMaxBox";
+<<<<<<< HEAD
             this.healthMaxBox.Size = new System.Drawing.Size(34, 42);
+=======
+            this.healthMaxBox.Size = new System.Drawing.Size(34, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.healthMaxBox.TabIndex = 86;
             this.healthMaxBox.Text = "0";
             // 
@@ -898,7 +1141,11 @@
             // 
             this.healthBox.Location = new System.Drawing.Point(609, 51);
             this.healthBox.Name = "healthBox";
+<<<<<<< HEAD
             this.healthBox.Size = new System.Drawing.Size(34, 42);
+=======
+            this.healthBox.Size = new System.Drawing.Size(34, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.healthBox.TabIndex = 82;
             this.healthBox.Text = "0";
             // 
@@ -906,7 +1153,11 @@
             // 
             this.speedBox.Location = new System.Drawing.Point(609, 159);
             this.speedBox.Name = "speedBox";
+<<<<<<< HEAD
             this.speedBox.Size = new System.Drawing.Size(34, 42);
+=======
+            this.speedBox.Size = new System.Drawing.Size(34, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.speedBox.TabIndex = 79;
             this.speedBox.Text = "0";
             // 
@@ -914,7 +1165,11 @@
             // 
             this.initiBox.Location = new System.Drawing.Point(609, 123);
             this.initiBox.Name = "initiBox";
+<<<<<<< HEAD
             this.initiBox.Size = new System.Drawing.Size(34, 42);
+=======
+            this.initiBox.Size = new System.Drawing.Size(34, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.initiBox.TabIndex = 77;
             this.initiBox.Text = "0";
             // 
@@ -922,7 +1177,11 @@
             // 
             this.armorClassBox.Location = new System.Drawing.Point(609, 87);
             this.armorClassBox.Name = "armorClassBox";
+<<<<<<< HEAD
             this.armorClassBox.Size = new System.Drawing.Size(34, 42);
+=======
+            this.armorClassBox.Size = new System.Drawing.Size(34, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.armorClassBox.TabIndex = 75;
             this.armorClassBox.Text = "0";
             // 
@@ -930,7 +1189,11 @@
             // 
             this.charBox.Location = new System.Drawing.Point(144, 232);
             this.charBox.Name = "charBox";
+<<<<<<< HEAD
             this.charBox.Size = new System.Drawing.Size(48, 42);
+=======
+            this.charBox.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.charBox.TabIndex = 72;
             this.charBox.Text = "0";
             this.charBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -939,7 +1202,11 @@
             // 
             this.wisdBox.Location = new System.Drawing.Point(144, 196);
             this.wisdBox.Name = "wisdBox";
+<<<<<<< HEAD
             this.wisdBox.Size = new System.Drawing.Size(48, 42);
+=======
+            this.wisdBox.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.wisdBox.TabIndex = 70;
             this.wisdBox.Text = "0";
             this.wisdBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -948,7 +1215,11 @@
             // 
             this.intBox.Location = new System.Drawing.Point(144, 160);
             this.intBox.Name = "intBox";
+<<<<<<< HEAD
             this.intBox.Size = new System.Drawing.Size(48, 42);
+=======
+            this.intBox.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.intBox.TabIndex = 68;
             this.intBox.Text = "0";
             this.intBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -957,7 +1228,11 @@
             // 
             this.constBox.Location = new System.Drawing.Point(144, 124);
             this.constBox.Name = "constBox";
+<<<<<<< HEAD
             this.constBox.Size = new System.Drawing.Size(48, 42);
+=======
+            this.constBox.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.constBox.TabIndex = 66;
             this.constBox.Text = "0";
             this.constBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -966,7 +1241,11 @@
             // 
             this.dexBox.Location = new System.Drawing.Point(144, 88);
             this.dexBox.Name = "dexBox";
+<<<<<<< HEAD
             this.dexBox.Size = new System.Drawing.Size(48, 42);
+=======
+            this.dexBox.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.dexBox.TabIndex = 64;
             this.dexBox.Text = "0";
             this.dexBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -975,7 +1254,11 @@
             // 
             this.strBox.Location = new System.Drawing.Point(144, 52);
             this.strBox.Name = "strBox";
+<<<<<<< HEAD
             this.strBox.Size = new System.Drawing.Size(48, 42);
+=======
+            this.strBox.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.strBox.TabIndex = 62;
             this.strBox.Text = "0";
             this.strBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -984,7 +1267,11 @@
             // 
             this.statBox6.Location = new System.Drawing.Point(154, 492);
             this.statBox6.Name = "statBox6";
+<<<<<<< HEAD
             this.statBox6.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox6.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox6.TabIndex = 58;
             this.statBox6.Text = "0";
             this.statBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -993,7 +1280,11 @@
             // 
             this.statBox5.Location = new System.Drawing.Point(154, 456);
             this.statBox5.Name = "statBox5";
+<<<<<<< HEAD
             this.statBox5.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox5.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox5.TabIndex = 56;
             this.statBox5.Text = "0";
             this.statBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1002,7 +1293,11 @@
             // 
             this.statBox4.Location = new System.Drawing.Point(154, 420);
             this.statBox4.Name = "statBox4";
+<<<<<<< HEAD
             this.statBox4.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox4.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox4.TabIndex = 54;
             this.statBox4.Text = "0";
             this.statBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1011,7 +1306,11 @@
             // 
             this.statBox3.Location = new System.Drawing.Point(154, 384);
             this.statBox3.Name = "statBox3";
+<<<<<<< HEAD
             this.statBox3.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox3.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox3.TabIndex = 52;
             this.statBox3.Text = "0";
             this.statBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1020,7 +1319,11 @@
             // 
             this.statBox2.Location = new System.Drawing.Point(154, 348);
             this.statBox2.Name = "statBox2";
+<<<<<<< HEAD
             this.statBox2.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox2.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox2.TabIndex = 50;
             this.statBox2.Text = "0";
             this.statBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1029,7 +1332,11 @@
             // 
             this.statBox1.Location = new System.Drawing.Point(154, 312);
             this.statBox1.Name = "statBox1";
+<<<<<<< HEAD
             this.statBox1.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox1.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox1.TabIndex = 48;
             this.statBox1.Text = "0";
             this.statBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1038,7 +1345,11 @@
             // 
             this.statBox24.Location = new System.Drawing.Point(385, 661);
             this.statBox24.Name = "statBox24";
+<<<<<<< HEAD
             this.statBox24.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox24.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox24.TabIndex = 46;
             this.statBox24.Text = "0";
             this.statBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1047,7 +1358,11 @@
             // 
             this.statBox23.Location = new System.Drawing.Point(385, 625);
             this.statBox23.Name = "statBox23";
+<<<<<<< HEAD
             this.statBox23.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox23.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox23.TabIndex = 44;
             this.statBox23.Text = "0";
             this.statBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1056,7 +1371,11 @@
             // 
             this.statBox22.Location = new System.Drawing.Point(385, 589);
             this.statBox22.Name = "statBox22";
+<<<<<<< HEAD
             this.statBox22.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox22.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox22.TabIndex = 42;
             this.statBox22.Text = "0";
             this.statBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1065,7 +1384,11 @@
             // 
             this.statBox21.Location = new System.Drawing.Point(385, 553);
             this.statBox21.Name = "statBox21";
+<<<<<<< HEAD
             this.statBox21.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox21.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox21.TabIndex = 40;
             this.statBox21.Text = "0";
             this.statBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1074,7 +1397,11 @@
             // 
             this.statBox20.Location = new System.Drawing.Point(385, 517);
             this.statBox20.Name = "statBox20";
+<<<<<<< HEAD
             this.statBox20.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox20.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox20.TabIndex = 38;
             this.statBox20.Text = "0";
             this.statBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1083,7 +1410,11 @@
             // 
             this.statBox19.Location = new System.Drawing.Point(385, 481);
             this.statBox19.Name = "statBox19";
+<<<<<<< HEAD
             this.statBox19.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox19.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox19.TabIndex = 36;
             this.statBox19.Text = "0";
             this.statBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1092,7 +1423,11 @@
             // 
             this.statBox18.Location = new System.Drawing.Point(385, 445);
             this.statBox18.Name = "statBox18";
+<<<<<<< HEAD
             this.statBox18.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox18.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox18.TabIndex = 34;
             this.statBox18.Text = "0";
             this.statBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1101,7 +1436,11 @@
             // 
             this.statBox17.Location = new System.Drawing.Point(385, 409);
             this.statBox17.Name = "statBox17";
+<<<<<<< HEAD
             this.statBox17.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox17.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox17.TabIndex = 32;
             this.statBox17.Text = "0";
             this.statBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1110,7 +1449,11 @@
             // 
             this.statBox16.Location = new System.Drawing.Point(385, 373);
             this.statBox16.Name = "statBox16";
+<<<<<<< HEAD
             this.statBox16.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox16.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox16.TabIndex = 30;
             this.statBox16.Text = "0";
             this.statBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1119,7 +1462,11 @@
             // 
             this.statBox15.Location = new System.Drawing.Point(385, 337);
             this.statBox15.Name = "statBox15";
+<<<<<<< HEAD
             this.statBox15.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox15.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox15.TabIndex = 28;
             this.statBox15.Text = "0";
             this.statBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1128,7 +1475,11 @@
             // 
             this.statBox14.Location = new System.Drawing.Point(385, 301);
             this.statBox14.Name = "statBox14";
+<<<<<<< HEAD
             this.statBox14.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox14.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox14.TabIndex = 26;
             this.statBox14.Text = "0";
             this.statBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1137,7 +1488,11 @@
             // 
             this.statBox13.Location = new System.Drawing.Point(385, 265);
             this.statBox13.Name = "statBox13";
+<<<<<<< HEAD
             this.statBox13.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox13.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox13.TabIndex = 24;
             this.statBox13.Text = "0";
             this.statBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1146,7 +1501,11 @@
             // 
             this.statBox12.Location = new System.Drawing.Point(385, 231);
             this.statBox12.Name = "statBox12";
+<<<<<<< HEAD
             this.statBox12.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox12.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox12.TabIndex = 22;
             this.statBox12.Text = "0";
             this.statBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1155,7 +1514,11 @@
             // 
             this.statBox11.Location = new System.Drawing.Point(385, 195);
             this.statBox11.Name = "statBox11";
+<<<<<<< HEAD
             this.statBox11.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox11.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox11.TabIndex = 20;
             this.statBox11.Text = "0";
             this.statBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1164,7 +1527,11 @@
             // 
             this.statBox10.Location = new System.Drawing.Point(385, 159);
             this.statBox10.Name = "statBox10";
+<<<<<<< HEAD
             this.statBox10.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox10.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox10.TabIndex = 18;
             this.statBox10.Text = "0";
             this.statBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1173,7 +1540,11 @@
             // 
             this.statBox9.Location = new System.Drawing.Point(385, 123);
             this.statBox9.Name = "statBox9";
+<<<<<<< HEAD
             this.statBox9.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox9.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox9.TabIndex = 16;
             this.statBox9.Text = "0";
             this.statBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1182,7 +1553,11 @@
             // 
             this.statBox8.Location = new System.Drawing.Point(385, 87);
             this.statBox8.Name = "statBox8";
+<<<<<<< HEAD
             this.statBox8.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox8.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox8.TabIndex = 14;
             this.statBox8.Text = "0";
             this.statBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1191,7 +1566,11 @@
             // 
             this.statBox7.Location = new System.Drawing.Point(385, 51);
             this.statBox7.Name = "statBox7";
+<<<<<<< HEAD
             this.statBox7.Size = new System.Drawing.Size(48, 42);
+=======
+            this.statBox7.Size = new System.Drawing.Size(48, 36);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.statBox7.TabIndex = 12;
             this.statBox7.Text = "0";
             this.statBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1201,7 +1580,11 @@
             this.label43.AutoSize = true;
             this.label43.Location = new System.Drawing.Point(711, 53);
             this.label43.Name = "label43";
+<<<<<<< HEAD
             this.label43.Size = new System.Drawing.Size(33, 35);
+=======
+            this.label43.Size = new System.Drawing.Size(27, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label43.TabIndex = 85;
             this.label43.Text = "+";
             // 
@@ -1210,7 +1593,11 @@
             this.label44.AutoSize = true;
             this.label44.Location = new System.Drawing.Point(479, 55);
             this.label44.Name = "label44";
+<<<<<<< HEAD
             this.label44.Size = new System.Drawing.Size(192, 35);
+=======
+            this.label44.Size = new System.Drawing.Size(163, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label44.TabIndex = 83;
             this.label44.Text = "Health Points";
             // 
@@ -1220,7 +1607,11 @@
             this.label39.Font = new System.Drawing.Font("Arial", 18F);
             this.label39.Location = new System.Drawing.Point(553, 17);
             this.label39.Name = "label39";
+<<<<<<< HEAD
             this.label39.Size = new System.Drawing.Size(107, 41);
+=======
+            this.label39.Size = new System.Drawing.Size(89, 35);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label39.TabIndex = 81;
             this.label39.Text = "Other";
             // 
@@ -1229,7 +1620,11 @@
             this.label40.AutoSize = true;
             this.label40.Location = new System.Drawing.Point(483, 163);
             this.label40.Name = "label40";
+<<<<<<< HEAD
             this.label40.Size = new System.Drawing.Size(101, 35);
+=======
+            this.label40.Size = new System.Drawing.Size(85, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label40.TabIndex = 80;
             this.label40.Text = "Speed";
             // 
@@ -1238,7 +1633,11 @@
             this.label41.AutoSize = true;
             this.label41.Location = new System.Drawing.Point(483, 127);
             this.label41.Name = "label41";
+<<<<<<< HEAD
             this.label41.Size = new System.Drawing.Size(123, 35);
+=======
+            this.label41.Size = new System.Drawing.Size(103, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label41.TabIndex = 78;
             this.label41.Text = "Initiative";
             // 
@@ -1247,7 +1646,11 @@
             this.label42.AutoSize = true;
             this.label42.Location = new System.Drawing.Point(483, 91);
             this.label42.Name = "label42";
+<<<<<<< HEAD
             this.label42.Size = new System.Drawing.Size(171, 35);
+=======
+            this.label42.Size = new System.Drawing.Size(147, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label42.TabIndex = 76;
             this.label42.Text = "Armor class";
             // 
@@ -1256,7 +1659,11 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(26, 235);
             this.label8.Name = "label8";
+<<<<<<< HEAD
             this.label8.Size = new System.Drawing.Size(151, 35);
+=======
+            this.label8.Size = new System.Drawing.Size(128, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label8.TabIndex = 73;
             this.label8.Text = "Charisma:";
             // 
@@ -1265,7 +1672,11 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(26, 199);
             this.label7.Name = "label7";
+<<<<<<< HEAD
             this.label7.Size = new System.Drawing.Size(133, 35);
+=======
+            this.label7.Size = new System.Drawing.Size(114, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label7.TabIndex = 71;
             this.label7.Text = "Wisdom:";
             // 
@@ -1274,7 +1685,11 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(26, 163);
             this.label6.Name = "label6";
+<<<<<<< HEAD
             this.label6.Size = new System.Drawing.Size(173, 35);
+=======
+            this.label6.Size = new System.Drawing.Size(147, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label6.TabIndex = 69;
             this.label6.Text = "Intelligence:";
             // 
@@ -1283,7 +1698,11 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(26, 127);
             this.label5.Name = "label5";
+<<<<<<< HEAD
             this.label5.Size = new System.Drawing.Size(181, 35);
+=======
+            this.label5.Size = new System.Drawing.Size(153, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label5.TabIndex = 67;
             this.label5.Text = "Constitution:";
             // 
@@ -1292,7 +1711,11 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(26, 91);
             this.label4.Name = "label4";
+<<<<<<< HEAD
             this.label4.Size = new System.Drawing.Size(139, 35);
+=======
+            this.label4.Size = new System.Drawing.Size(116, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label4.TabIndex = 65;
             this.label4.Text = "Dexterity:";
             // 
@@ -1301,7 +1724,11 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(26, 55);
             this.label3.Name = "label3";
+<<<<<<< HEAD
             this.label3.Size = new System.Drawing.Size(136, 35);
+=======
+            this.label3.Size = new System.Drawing.Size(114, 28);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label3.TabIndex = 63;
             this.label3.Text = "Strenght:";
             // 
@@ -1311,7 +1738,11 @@
             this.label34.Font = new System.Drawing.Font("Arial", 18F);
             this.label34.Location = new System.Drawing.Point(305, 17);
             this.label34.Name = "label34";
+<<<<<<< HEAD
             this.label34.Size = new System.Drawing.Size(100, 41);
+=======
+            this.label34.Size = new System.Drawing.Size(86, 35);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label34.TabIndex = 61;
             this.label34.Text = "Skills";
             // 
@@ -1321,7 +1752,11 @@
             this.label33.Font = new System.Drawing.Font("Arial", 18F);
             this.label33.Location = new System.Drawing.Point(22, 273);
             this.label33.Name = "label33";
+<<<<<<< HEAD
             this.label33.Size = new System.Drawing.Size(249, 41);
+=======
+            this.label33.Size = new System.Drawing.Size(212, 35);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label33.TabIndex = 60;
             this.label33.Text = "Saving Throws";
             // 
@@ -1349,10 +1784,17 @@
             this.charInfoTab.Controls.Add(this.label52);
             this.charInfoTab.Controls.Add(this.charImage);
             this.charInfoTab.Controls.Add(this.tabControl2);
+<<<<<<< HEAD
             this.charInfoTab.Location = new System.Drawing.Point(4, 44);
             this.charInfoTab.Name = "charInfoTab";
             this.charInfoTab.Padding = new System.Windows.Forms.Padding(3);
             this.charInfoTab.Size = new System.Drawing.Size(802, 752);
+=======
+            this.charInfoTab.Location = new System.Drawing.Point(4, 37);
+            this.charInfoTab.Name = "charInfoTab";
+            this.charInfoTab.Padding = new System.Windows.Forms.Padding(3);
+            this.charInfoTab.Size = new System.Drawing.Size(802, 759);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.charInfoTab.TabIndex = 0;
             this.charInfoTab.Text = "Characteristics";
             this.charInfoTab.UseVisualStyleBackColor = true;
@@ -1362,7 +1804,11 @@
             this.weightBox.Font = new System.Drawing.Font("Arial", 16F);
             this.weightBox.Location = new System.Drawing.Point(193, 147);
             this.weightBox.Name = "weightBox";
+<<<<<<< HEAD
             this.weightBox.Size = new System.Drawing.Size(162, 44);
+=======
+            this.weightBox.Size = new System.Drawing.Size(162, 38);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.weightBox.TabIndex = 64;
             this.weightBox.Text = "0";
             // 
@@ -1383,7 +1829,11 @@
             this.label50.Font = new System.Drawing.Font("Arial", 18F);
             this.label50.Location = new System.Drawing.Point(139, 11);
             this.label50.Name = "label50";
+<<<<<<< HEAD
             this.label50.Size = new System.Drawing.Size(190, 41);
+=======
+            this.label50.Size = new System.Drawing.Size(157, 35);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label50.TabIndex = 62;
             this.label50.Text = "Apearance";
             // 
@@ -1393,7 +1843,11 @@
             this.label37.Font = new System.Drawing.Font("Arial", 16F);
             this.label37.Location = new System.Drawing.Point(30, 292);
             this.label37.Name = "label37";
+<<<<<<< HEAD
             this.label37.Size = new System.Drawing.Size(156, 36);
+=======
+            this.label37.Size = new System.Drawing.Size(134, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label37.TabIndex = 43;
             this.label37.Text = "Alignment";
             // 
@@ -1402,7 +1856,11 @@
             this.alignBox.Font = new System.Drawing.Font("Arial", 16F);
             this.alignBox.Location = new System.Drawing.Point(193, 288);
             this.alignBox.Name = "alignBox";
+<<<<<<< HEAD
             this.alignBox.Size = new System.Drawing.Size(162, 44);
+=======
+            this.alignBox.Size = new System.Drawing.Size(162, 38);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.alignBox.TabIndex = 42;
             this.alignBox.Text = "0";
             // 
@@ -1411,7 +1869,11 @@
             this.hairBox.Font = new System.Drawing.Font("Arial", 16F);
             this.hairBox.Location = new System.Drawing.Point(193, 252);
             this.hairBox.Name = "hairBox";
+<<<<<<< HEAD
             this.hairBox.Size = new System.Drawing.Size(162, 44);
+=======
+            this.hairBox.Size = new System.Drawing.Size(162, 38);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.hairBox.TabIndex = 40;
             this.hairBox.Text = "0";
             // 
@@ -1420,7 +1882,11 @@
             this.eyeBox.Font = new System.Drawing.Font("Arial", 16F);
             this.eyeBox.Location = new System.Drawing.Point(193, 218);
             this.eyeBox.Name = "eyeBox";
+<<<<<<< HEAD
             this.eyeBox.Size = new System.Drawing.Size(162, 44);
+=======
+            this.eyeBox.Size = new System.Drawing.Size(162, 38);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.eyeBox.TabIndex = 38;
             this.eyeBox.Text = "0";
             // 
@@ -1429,7 +1895,11 @@
             this.skinBox.Font = new System.Drawing.Font("Arial", 16F);
             this.skinBox.Location = new System.Drawing.Point(193, 182);
             this.skinBox.Name = "skinBox";
+<<<<<<< HEAD
             this.skinBox.Size = new System.Drawing.Size(162, 44);
+=======
+            this.skinBox.Size = new System.Drawing.Size(162, 38);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.skinBox.TabIndex = 36;
             this.skinBox.Text = "0";
             // 
@@ -1438,7 +1908,11 @@
             this.heightBox.Font = new System.Drawing.Font("Arial", 16F);
             this.heightBox.Location = new System.Drawing.Point(193, 110);
             this.heightBox.Name = "heightBox";
+<<<<<<< HEAD
             this.heightBox.Size = new System.Drawing.Size(162, 44);
+=======
+            this.heightBox.Size = new System.Drawing.Size(162, 38);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.heightBox.TabIndex = 32;
             this.heightBox.Text = "0";
             // 
@@ -1447,7 +1921,11 @@
             this.ageBox.Font = new System.Drawing.Font("Arial", 16F);
             this.ageBox.Location = new System.Drawing.Point(193, 74);
             this.ageBox.Name = "ageBox";
+<<<<<<< HEAD
             this.ageBox.Size = new System.Drawing.Size(162, 44);
+=======
+            this.ageBox.Size = new System.Drawing.Size(162, 38);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.ageBox.TabIndex = 30;
             this.ageBox.Text = "0";
             // 
@@ -1456,7 +1934,11 @@
             this.backgroundBox.Font = new System.Drawing.Font("Arial", 16F);
             this.backgroundBox.Location = new System.Drawing.Point(193, 38);
             this.backgroundBox.Name = "backgroundBox";
+<<<<<<< HEAD
             this.backgroundBox.Size = new System.Drawing.Size(162, 44);
+=======
+            this.backgroundBox.Size = new System.Drawing.Size(162, 38);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.backgroundBox.TabIndex = 28;
             this.backgroundBox.Text = "0";
             // 
@@ -1466,7 +1948,11 @@
             this.label46.Font = new System.Drawing.Font("Arial", 16F);
             this.label46.Location = new System.Drawing.Point(30, 256);
             this.label46.Name = "label46";
+<<<<<<< HEAD
             this.label46.Size = new System.Drawing.Size(73, 36);
+=======
+            this.label46.Size = new System.Drawing.Size(63, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label46.TabIndex = 41;
             this.label46.Text = "Hair";
             // 
@@ -1476,7 +1962,11 @@
             this.label47.Font = new System.Drawing.Font("Arial", 16F);
             this.label47.Location = new System.Drawing.Point(30, 222);
             this.label47.Name = "label47";
+<<<<<<< HEAD
             this.label47.Size = new System.Drawing.Size(68, 36);
+=======
+            this.label47.Size = new System.Drawing.Size(61, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label47.TabIndex = 39;
             this.label47.Text = "Eye";
             // 
@@ -1486,7 +1976,11 @@
             this.label48.Font = new System.Drawing.Font("Arial", 16F);
             this.label48.Location = new System.Drawing.Point(30, 186);
             this.label48.Name = "label48";
+<<<<<<< HEAD
             this.label48.Size = new System.Drawing.Size(77, 36);
+=======
+            this.label48.Size = new System.Drawing.Size(67, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label48.TabIndex = 37;
             this.label48.Text = "Skin";
             // 
@@ -1496,7 +1990,11 @@
             this.label49.Font = new System.Drawing.Font("Arial", 16F);
             this.label49.Location = new System.Drawing.Point(30, 150);
             this.label49.Name = "label49";
+<<<<<<< HEAD
             this.label49.Size = new System.Drawing.Size(114, 36);
+=======
+            this.label49.Size = new System.Drawing.Size(101, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label49.TabIndex = 35;
             this.label49.Text = "Weight";
             // 
@@ -1506,7 +2004,11 @@
             this.label.Font = new System.Drawing.Font("Arial", 16F);
             this.label.Location = new System.Drawing.Point(30, 114);
             this.label.Name = "label";
+<<<<<<< HEAD
             this.label.Size = new System.Drawing.Size(106, 36);
+=======
+            this.label.Size = new System.Drawing.Size(92, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label.TabIndex = 33;
             this.label.Text = "Height";
             // 
@@ -1516,7 +2018,11 @@
             this.label51.Font = new System.Drawing.Font("Arial", 16F);
             this.label51.Location = new System.Drawing.Point(30, 78);
             this.label51.Name = "label51";
+<<<<<<< HEAD
             this.label51.Size = new System.Drawing.Size(70, 36);
+=======
+            this.label51.Size = new System.Drawing.Size(62, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label51.TabIndex = 31;
             this.label51.Text = "Age";
             // 
@@ -1526,7 +2032,11 @@
             this.label52.Font = new System.Drawing.Font("Arial", 16F);
             this.label52.Location = new System.Drawing.Point(30, 42);
             this.label52.Name = "label52";
+<<<<<<< HEAD
             this.label52.Size = new System.Drawing.Size(183, 36);
+=======
+            this.label52.Size = new System.Drawing.Size(159, 32);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.label52.TabIndex = 29;
             this.label52.Text = "Background";
             // 
@@ -1558,10 +2068,17 @@
             this.tabPage6.Controls.Add(this.idealsText);
             this.tabPage6.Controls.Add(this.bondsText);
             this.tabPage6.Controls.Add(this.perTraitText);
+<<<<<<< HEAD
             this.tabPage6.Location = new System.Drawing.Point(4, 44);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(382, 702);
+=======
+            this.tabPage6.Location = new System.Drawing.Point(4, 37);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(382, 709);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Personality";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1621,10 +2138,17 @@
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.backstoryText);
+<<<<<<< HEAD
             this.tabPage7.Location = new System.Drawing.Point(4, 44);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(382, 702);
+=======
+            this.tabPage7.Location = new System.Drawing.Point(4, 37);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(382, 709);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Backstory";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1641,10 +2165,17 @@
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.AlliesText);
+<<<<<<< HEAD
             this.tabPage9.Location = new System.Drawing.Point(4, 44);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage9.Size = new System.Drawing.Size(382, 702);
+=======
+            this.tabPage9.Location = new System.Drawing.Point(4, 37);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(382, 709);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "Other";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1666,7 +2197,7 @@
             this.tabControl1.Controls.Add(this.spellTab);
             this.tabControl1.Controls.Add(this.otherTab);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 15F);
-            this.tabControl1.Location = new System.Drawing.Point(13, 100);
+            this.tabControl1.Location = new System.Drawing.Point(13, 102);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(810, 800);
@@ -1675,9 +2206,15 @@
             // 
             // spellTab
             // 
+<<<<<<< HEAD
             this.spellTab.Location = new System.Drawing.Point(4, 44);
             this.spellTab.Name = "spellTab";
             this.spellTab.Size = new System.Drawing.Size(802, 752);
+=======
+            this.spellTab.Location = new System.Drawing.Point(4, 37);
+            this.spellTab.Name = "spellTab";
+            this.spellTab.Size = new System.Drawing.Size(802, 759);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.spellTab.TabIndex = 5;
             this.spellTab.Text = "Spells";
             this.spellTab.UseVisualStyleBackColor = true;
@@ -1688,7 +2225,11 @@
             // 
             // CharSheet
             // 
+<<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+=======
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+>>>>>>> 245c44542fd5e8a539424e0de2cee3df9161c3e0
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(400, 400);
