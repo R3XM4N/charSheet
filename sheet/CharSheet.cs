@@ -59,7 +59,6 @@ namespace sheet
         private void setupToolStrip()
         {
             ToolStripMenuItem ts = spToolStripMenuItem;
-            int i = 0;
             foreach (ToolStripItem item in ts.DropDownItems)
             {
                 item.Click += new EventHandler(spellCreateClick);
