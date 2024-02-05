@@ -52,6 +52,7 @@ namespace sheet
                     autoSavePreparation();
                 }
             }
+            copySpellTabs();
             setupToolStrip();
         }
 
