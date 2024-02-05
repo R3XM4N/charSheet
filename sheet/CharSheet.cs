@@ -25,7 +25,7 @@ namespace sheet
         TextBox[] statBoxesThrow;
         TextBox[] statBoxesSkills;
         
-        XmlSerializer serializer = new XmlSerializer(typeof(Character));
+        //XmlSerializer serializer = new XmlSerializer(typeof(Character));
         public Character currentChar;
         public CharSheet()
         {
@@ -45,25 +45,28 @@ namespace sheet
             {
                 streamWriter = new StreamWriter($"{saveFileDialog1.FileName}.xml");
             }
-            serializer.Serialize(streamWriter, currentChar);
+            //serializer.Serialize(streamWriter, currentChar);
             streamWriter.Close();
         }
         //load sheet
-
+        
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            /*
             openFileDialog1.ShowDialog();
             FileStream fileStream = new FileStream(openFileDialog1.FileName, FileMode.Open);
             currentChar = (Character)serializer.Deserialize(fileStream);
             fileStream.Close();
             LoadToCurrent();
+            */
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            /*
             saveAsFile();
+            */
         }
 
-        
         //temp data saving
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
@@ -167,6 +170,7 @@ namespace sheet
 
         void ThrowsUpdate(bool save)
         {
+            /*
             if (save)
             {
                 int[] ints = new int[6];
@@ -201,9 +205,11 @@ namespace sheet
                     i++;
                 }
             } 
+            */
         }
         void SkillsUpdate(bool save)
         {
+            /*
             if (save)
             {
                 int[] ints = new int[18];
@@ -238,6 +244,7 @@ namespace sheet
                     i++;
                 }
             }
+            */
         }
         //PAGE 3
         void InvUpdate(bool save)
@@ -550,17 +557,22 @@ namespace sheet
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            InitializeCharacter();
+
+            checkBoxesThrow = new CheckBox[6] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
+            checkBoxesSkills = new CheckBox[18] { checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16, checkBox17, checkBox18, checkBox19, checkBox20, checkBox21, checkBox22, checkBox23, checkBox24 };
+            statBoxesThrow = new TextBox[6] { statBox1, statBox2, statBox3, statBox4, statBox5, statBox6 };
+            statBoxesSkills = new TextBox[18] { statBox7, statBox8, statBox9, statBox10, statBox11, statBox12, statBox13, statBox14, statBox15, statBox16, statBox17, statBox18, statBox19, statBox20, statBox21, statBox22, statBox23, statBox24 };
+        }
+
+        private void InitializeCharacter()
+        {
             currentChar = new Character();
             currentChar.characteristics = new Characteristics();
             currentChar.stats = new Stats();
             currentChar.savingThrows = new SavingThrows();
             currentChar.skills = new Skills();
             currentChar.money = new Money();
-
-            checkBoxesThrow = new CheckBox[6] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
-            checkBoxesSkills = new CheckBox[18] { checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16, checkBox17, checkBox18, checkBox19, checkBox20, checkBox21, checkBox22, checkBox23, checkBox24 };
-            statBoxesThrow = new TextBox[6] { statBox1, statBox2, statBox3, statBox4, statBox5, statBox6 };
-            statBoxesSkills = new TextBox[18] { statBox7, statBox8, statBox9, statBox10, statBox11, statBox12, statBox13, statBox14, statBox15, statBox16, statBox17, statBox18, statBox19, statBox20, statBox21, statBox22, statBox23, statBox24 };
         }
     }
 }

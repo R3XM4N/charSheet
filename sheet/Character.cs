@@ -20,7 +20,7 @@ namespace sheet
     {
         //Base
         public int proefficency;
-        public List<int>[] bonus = new List<int>[2];
+        public List<int>[] bonus = new List<int>[2] { new List<int> { }, new List<int> { } };
         public string cName { get; private set; }
         public string race { get; private set; }
         public string charClass { get; private set; }
