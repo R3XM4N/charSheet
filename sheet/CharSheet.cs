@@ -22,7 +22,7 @@ namespace sheet
         CheckBox[] checkBoxesSkills;
         TextBox[] statBoxesThrow;
         TextBox[] statBoxesSkills;
-        
+
         XmlSerializer serializer = new XmlSerializer(typeof(Character));
         public Character currentChar;
 
@@ -32,6 +32,8 @@ namespace sheet
             InitializeComponent();
             setupDialogs();
             prepareForm();
+            copySpellTabs();
+            setupToolStrip();
         }
 
         public CharSheet(Character character)
@@ -50,13 +52,39 @@ namespace sheet
                     autoSavePreparation();
                 }
             }
+            setupToolStrip();
+        }
+
+        private void setupToolStrip()
+        {
+            ToolStripMenuItem ts = spToolStripMenuItem;
+            int i = 0;
+            foreach (ToolStripItem item in ts.DropDownItems)
+            {
+                item.Click += new EventHandler(spellCreateClick);
+            }
+        }
+
+        private void spellCreateClick(object sender, EventArgs e)
+        {
+            ToolStripMenuItem btn = (ToolStripMenuItem)sender;
+            // get level from text
+            if (btn.Text.Contains("Cantrip"))
+            {
+                createSpell(0);
+            }
+            else
+            {
+                int level = Convert.ToInt32(btn.Text.Split(' ')[1]);
+                createSpell(level);
+            }
         }
 
         private void autoSavePreparation()
         {
             // set autosave timer
             Timer autosaveTimer = new Timer();
-            autosaveTimer.Interval = Properties.Settings.Default.as_freq*1000;
+            autosaveTimer.Interval = Properties.Settings.Default.as_freq * 1000;
             autosaveTimer.Tick += new EventHandler(autoSave);
             autosaveTimer.Start();
         }
@@ -89,11 +117,12 @@ namespace sheet
                 currentChar = (Character)serializer.Deserialize(fileStream);
                 fileStream.Close();
                 LoadToCurrent();
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error loading file: " + ex.Message);
             }
-            
+
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -131,7 +160,8 @@ namespace sheet
                 try
                 {
                     simulateSaving().ContinueWith((t) => quickSave());
-                } catch (Exception ex)
+                }
+                catch (Exception)
                 {
                     return;
                 }
@@ -289,7 +319,7 @@ namespace sheet
                 {
                     if (prof.Contains(i))
                     {
-                        ints[i-1] = ToInt(box.Text) - currentChar.pro;
+                        ints[i - 1] = ToInt(box.Text) - currentChar.pro;
                     }
                     else
                     {
@@ -314,7 +344,7 @@ namespace sheet
                     }
                     i++;
                 }
-            } 
+            }
         }
         void SkillsUpdate(bool save)
         {
@@ -423,7 +453,7 @@ namespace sheet
             i = 1;
             foreach (CheckBox check in checkBoxesSkills)
             {
-                if (prof.Contains(i+6))
+                if (prof.Contains(i + 6))
                 {
                     check.Checked = true;
                 }
@@ -442,7 +472,7 @@ namespace sheet
             currentChar.proficiencies = prof;
             ThrowsUpdate(true);
             SkillsUpdate(true);
-            
+
         }
         void LoadToCurrent()
         {
@@ -451,9 +481,27 @@ namespace sheet
         }
         void SaveToCurrent()
         {
+            // fill blank spaces with 0
+            new Task(() => fillBlanks(statBoxesThrow, statBoxesSkills)).Start();
             UpdateAllSave();
+        }
 
-
+        void fillBlanks(TextBox[] t1, TextBox[] t2)
+        {
+            foreach (TextBox box in statBoxesThrow)
+            {
+                if (box.Text == "")
+                {
+                    box.Text = "0";
+                }
+            }
+            foreach (TextBox box in statBoxesSkills)
+            {
+                if (box.Text == "")
+                {
+                    box.Text = "0";
+                }
+            }
         }
         //OTHER
         private string ShowRollStr(int a)
@@ -535,7 +583,7 @@ namespace sheet
             |_| |_|\___|_|_|
         */
 
-        private void ListHell(CheckBox checkBox,int a)
+        private void ListHell(CheckBox checkBox, int a)
         {
             if (prof.Contains(a))
             {
@@ -682,6 +730,140 @@ namespace sheet
             SaveToCurrent();
             DataHandler.saveCharacter(currentChar, Properties.Settings.Default.path);
             this.UseWaitCursor = false;
+        }
+
+        private void copySpellTabs()
+        {
+            // copy all controls from tab_sp1 to tab_sp2-9
+            TabControl tabC = tabC_spells;
+            tab_cantrip.Controls.Add(createSpellDataGrid(0));
+            for (int i = 1; i < 10; i++)
+            {
+                TabPage tab = new TabPage();
+                tab.Text = $"Spells {i}";
+                tab.Name = $"tab_sp{i}";
+                tabC.TabPages.Add(tab);
+
+                Panel p = new Panel();
+                p.Dock = DockStyle.Top;
+                p.Height = 55;
+                p.Controls.AddRange(getSpellTextboxes(p, i));
+                p.Controls.AddRange(getSpellLabels(p, i));
+                tab.Controls.Add(p);
+                tab.Controls.Add(createSpellDataGrid(i));
+            }
+        }
+
+        private TextBox[] getSpellTextboxes(Panel parent, int id)
+        {
+            TextBox b1 = new TextBox();
+            b1.Name = "txt_sp" + id + "to";
+            b1.Text = "0";
+            b1.Parent = parent;
+            b1.Size = new Size(42, 42);
+            b1.Location = new Point(3, 3);
+
+
+            TextBox b2 = new TextBox();
+            b2.Name = "txt_sp" + id + "sp";
+            b2.Text = "0";
+            b2.Parent = parent;
+            b2.Size = new Size(42, 42);
+            b2.Location = new Point(162, 3);
+
+            TextBox b3 = new TextBox();
+            b3.Name = "txt_sp" + id + "level";
+            b3.Text = id.ToString();
+            b3.Parent = parent;
+            b3.Size = new Size(42, 42);
+            b3.Location = new Point(632, 3);
+            b3.Enabled = false;
+
+            return new TextBox[] { b1, b2, b3 };
+        }
+
+        private Label[] getSpellLabels(Panel parent, int id)
+        {
+            Label l1 = new Label();
+            l1.Name = "lbl_sp" + id + "to";
+            l1.Text = "Slots Total";
+            l1.Parent = parent;
+            l1.Font = new Font("Arial", 10);
+            l1.Location = new Point(51, 13);
+
+
+            Label l2 = new Label();
+            l2.Name = "lbl_sp" + id + "sp";
+            l2.Text = "Slots Used";
+            l2.Parent = parent;
+            l2.Font = new Font("Arial", 10);
+            l2.Location = new Point(210, 13);
+
+            Label l3 = new Label();
+            l3.Name = "lbl_sp" + id + "level";
+            l3.Text = "Level";
+            l3.Parent = parent;
+            l3.Font = new Font("Arial", 10);
+            l3.Location = new Point(680, 13);
+
+            return new Label[] { l1, l2, l3 };
+        }
+
+        private DataGridView createSpellDataGrid(int id)
+        {
+            DataGridView dg = new DataGridView();
+            dg.Name = "db_spells" + id;
+            dg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dg.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dg.AllowUserToAddRows = false;
+            dg.AllowUserToDeleteRows = false;
+            dg.AllowUserToOrderColumns = false;
+            dg.AllowUserToResizeColumns = false;
+            dg.AllowUserToResizeRows = false;
+
+            dg.Columns.AddRange(getBaseSpellColumns().ToArray());
+            // fix height of column headers
+            dg.Font = new Font("Arial", 10);
+            dg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dg.AllowUserToResizeColumns = true;
+
+
+            dg.Size = new Size(788, 609);
+            dg.Location = new Point(3, 58);
+            //add scrollbars
+            dg.ScrollBars = ScrollBars.Both;
+            dg.AllowUserToAddRows = false;
+            dg.AllowUserToDeleteRows = false;
+            return dg;
+        }
+
+        private List<DataGridViewColumn> getBaseSpellColumns()
+        {
+            List<DataGridViewColumn> columns = new List<DataGridViewColumn>
+            {
+                new DataGridViewTextBoxColumn() { Name = "Name", HeaderText = "Name", Width=150, Resizable=DataGridViewTriState.True},
+                new DataGridViewTextBoxColumn() { Name = "School", HeaderText = "School", Width=150, Resizable=DataGridViewTriState.True},
+                new DataGridViewTextBoxColumn() { Name = "CastingTime", HeaderText = "Casting Time", Width=150, Resizable=DataGridViewTriState.True},
+                new DataGridViewTextBoxColumn() { Name = "Range", HeaderText = "Range",  Width=150, Resizable=DataGridViewTriState.True},
+                new DataGridViewTextBoxColumn() { Name = "Comp", HeaderText = "Components",  Width=150, Resizable=DataGridViewTriState.True},
+                new DataGridViewTextBoxColumn() { Name = "Duration", HeaderText = "Duration",  Width=150, Resizable=DataGridViewTriState.True},
+                new DataGridViewTextBoxColumn() { Name = "Description", HeaderText = "Description",  Width=150, Resizable=DataGridViewTriState.True}
+            };
+            return columns;
+        }
+
+        private void createSpell(int level)
+        {
+            SpellCreator sc = new SpellCreator();
+            sc.Show();
+            // on sc button click get data and add to datagrid
+            sc.btn_create.Click += (sender, e) =>
+            {
+                String[] data = sc.getSpellData();
+                DataGridView dg = (DataGridView)tabC_spells.Controls.Find("db_spells" + level, true)[0];
+                dg.Rows.Add(data);
+                sc.Close();
+            };
         }
     }
 }

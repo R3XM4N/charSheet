@@ -33,6 +33,10 @@ namespace sheet
 
         public static void saveCharacter(Character c, string folder_path)
         {
+            if (c.cName == null || c.cName == "")
+            {
+                return;
+            }
             System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(Character));
             System.IO.FileStream fileStream = new System.IO.FileStream(folder_path + "\\" + c.cName.Replace(' ', '_') + ".xml", System.IO.FileMode.Create);
             serializer.Serialize(fileStream, c);
@@ -41,6 +45,10 @@ namespace sheet
 
         public static void saveCharacter(Character c, string folder_path, string file_name)
         {
+            if (c.cName == null || c.cName == "")
+            {
+                return;
+            }
             System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(Character));
             System.IO.FileStream fileStream = new System.IO.FileStream(folder_path + "\\" + file_name.Replace(' ', '_') + ".xml", System.IO.FileMode.Create);
             serializer.Serialize(fileStream, c);

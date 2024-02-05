@@ -31,11 +31,15 @@ namespace sheet
             lbl_ep.Text = c.money.electrumC.ToString();
             lbl_gp.Text = c.money.goldC.ToString();
             lbl_pp.Text = c.money.platinumC.ToString();
-            //setPicture(c.apearance.image);
+            setPicture(c.apearance.image);
         }
 
         private void setPicture(string path)
         {
+            if (path == null || path == "")
+            {
+                return;
+            }
             pb_avatar.Image = Image.FromFile(path);
             pb_avatar.ImageLocation = path;
             pb_avatar.SizeMode = PictureBoxSizeMode.StretchImage;

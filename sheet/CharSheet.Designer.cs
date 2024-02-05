@@ -172,6 +172,36 @@
             this.AlliesText = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.spellTab = new System.Windows.Forms.TabPage();
+            this.tabC_spells = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txt_sp_ba = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txt_sp_dc = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txt_sp_ab = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_sp_class = new System.Windows.Forms.TextBox();
+            this.tab_cantrip = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.spToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cantripStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.spell1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spell2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spell3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spell4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spell5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spell6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spell7ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spell8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spell9ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeSpellsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeSelectedSpellsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.toolStrip1.SuspendLayout();
             this.otherTab.SuspendLayout();
@@ -188,6 +218,13 @@
             this.tabPage7.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.spellTab.SuspendLayout();
+            this.tabC_spells.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tab_cantrip.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // charNameBox
@@ -289,7 +326,7 @@
             // toolStripButton2
             // 
             this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.toolStripButton2.Image = global::sheet.Properties.Resources.load;
+            this.toolStripButton2.Image = global::sheet.Properties.Resources.save;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
 <<<<<<< HEAD
@@ -2206,7 +2243,12 @@
             // 
             // spellTab
             // 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+            this.spellTab.Controls.Add(this.tabC_spells);
+            this.spellTab.Controls.Add(this.toolStrip2);
+>>>>>>> Stashed changes
             this.spellTab.Location = new System.Drawing.Point(4, 44);
             this.spellTab.Name = "spellTab";
             this.spellTab.Size = new System.Drawing.Size(802, 752);
@@ -2218,6 +2260,270 @@
             this.spellTab.TabIndex = 5;
             this.spellTab.Text = "Spells";
             this.spellTab.UseVisualStyleBackColor = true;
+            // 
+            // tabC_spells
+            // 
+            this.tabC_spells.Controls.Add(this.tabPage1);
+            this.tabC_spells.Controls.Add(this.tab_cantrip);
+            this.tabC_spells.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabC_spells.Location = new System.Drawing.Point(0, 34);
+            this.tabC_spells.Name = "tabC_spells";
+            this.tabC_spells.SelectedIndex = 0;
+            this.tabC_spells.Size = new System.Drawing.Size(802, 718);
+            this.tabC_spells.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 44);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(794, 670);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Base";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.txt_sp_ba);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.txt_sp_dc);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.txt_sp_ab);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.txt_sp_class);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(788, 157);
+            this.panel1.TabIndex = 0;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.Location = new System.Drawing.Point(505, 111);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(171, 23);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "Spell bonus attack";
+            // 
+            // txt_sp_ba
+            // 
+            this.txt_sp_ba.Location = new System.Drawing.Point(682, 99);
+            this.txt_sp_ba.Name = "txt_sp_ba";
+            this.txt_sp_ba.Size = new System.Drawing.Size(101, 42);
+            this.txt_sp_ba.TabIndex = 6;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(505, 63);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(134, 23);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Spell save DC";
+            // 
+            // txt_sp_dc
+            // 
+            this.txt_sp_dc.Location = new System.Drawing.Point(682, 51);
+            this.txt_sp_dc.Name = "txt_sp_dc";
+            this.txt_sp_dc.Size = new System.Drawing.Size(101, 42);
+            this.txt_sp_dc.TabIndex = 4;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(505, 15);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(171, 23);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Spellcasting ability";
+            // 
+            // txt_sp_ab
+            // 
+            this.txt_sp_ab.Location = new System.Drawing.Point(682, 3);
+            this.txt_sp_ab.Name = "txt_sp_ab";
+            this.txt_sp_ab.Size = new System.Drawing.Size(101, 42);
+            this.txt_sp_ab.TabIndex = 2;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(4, 51);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(159, 23);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Spellcaster class";
+            // 
+            // txt_sp_class
+            // 
+            this.txt_sp_class.Location = new System.Drawing.Point(3, 2);
+            this.txt_sp_class.Name = "txt_sp_class";
+            this.txt_sp_class.Size = new System.Drawing.Size(192, 42);
+            this.txt_sp_class.TabIndex = 0;
+            // 
+            // tab_cantrip
+            // 
+            this.tab_cantrip.Controls.Add(this.panel2);
+            this.tab_cantrip.Location = new System.Drawing.Point(4, 44);
+            this.tab_cantrip.Name = "tab_cantrip";
+            this.tab_cantrip.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_cantrip.Size = new System.Drawing.Size(794, 670);
+            this.tab_cantrip.TabIndex = 1;
+            this.tab_cantrip.Text = "Cantrips";
+            this.tab_cantrip.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(788, 55);
+            this.panel2.TabIndex = 1;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label21.Location = new System.Drawing.Point(680, 14);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(105, 23);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Spell Level";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Enabled = false;
+            this.textBox8.Location = new System.Drawing.Point(632, 3);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(42, 42);
+            this.textBox8.TabIndex = 0;
+            this.textBox8.Text = "0";
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSplitButton1});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(802, 34);
+            this.toolStrip2.TabIndex = 0;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripSplitButton1
+            // 
+            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.spToolStripMenuItem,
+            this.removeSpellsToolStripMenuItem});
+            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
+            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(181, 29);
+            this.toolStripSplitButton1.Text = "Spell Management";
+            // 
+            // spToolStripMenuItem
+            // 
+            this.spToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cantripStripMenuItem1,
+            this.spell1ToolStripMenuItem,
+            this.spell2ToolStripMenuItem,
+            this.spell3ToolStripMenuItem,
+            this.spell4ToolStripMenuItem,
+            this.spell5ToolStripMenuItem,
+            this.spell6ToolStripMenuItem,
+            this.spell7ToolStripMenuItem,
+            this.spell8ToolStripMenuItem,
+            this.spell9ToolStripMenuItem});
+            this.spToolStripMenuItem.Name = "spToolStripMenuItem";
+            this.spToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.spToolStripMenuItem.Text = "Spell Add";
+            // 
+            // cantripStripMenuItem1
+            // 
+            this.cantripStripMenuItem1.Name = "cantripStripMenuItem1";
+            this.cantripStripMenuItem1.Size = new System.Drawing.Size(171, 34);
+            this.cantripStripMenuItem1.Text = "Cantrip";
+            // 
+            // spell1ToolStripMenuItem
+            // 
+            this.spell1ToolStripMenuItem.Name = "spell1ToolStripMenuItem";
+            this.spell1ToolStripMenuItem.Size = new System.Drawing.Size(171, 34);
+            this.spell1ToolStripMenuItem.Text = "Spell 1";
+            // 
+            // spell2ToolStripMenuItem
+            // 
+            this.spell2ToolStripMenuItem.Name = "spell2ToolStripMenuItem";
+            this.spell2ToolStripMenuItem.Size = new System.Drawing.Size(171, 34);
+            this.spell2ToolStripMenuItem.Text = "Spell 2";
+            // 
+            // spell3ToolStripMenuItem
+            // 
+            this.spell3ToolStripMenuItem.Name = "spell3ToolStripMenuItem";
+            this.spell3ToolStripMenuItem.Size = new System.Drawing.Size(171, 34);
+            this.spell3ToolStripMenuItem.Text = "Spell 3";
+            // 
+            // spell4ToolStripMenuItem
+            // 
+            this.spell4ToolStripMenuItem.Name = "spell4ToolStripMenuItem";
+            this.spell4ToolStripMenuItem.Size = new System.Drawing.Size(171, 34);
+            this.spell4ToolStripMenuItem.Text = "Spell 4";
+            // 
+            // spell5ToolStripMenuItem
+            // 
+            this.spell5ToolStripMenuItem.Name = "spell5ToolStripMenuItem";
+            this.spell5ToolStripMenuItem.Size = new System.Drawing.Size(171, 34);
+            this.spell5ToolStripMenuItem.Text = "Spell 5";
+            // 
+            // spell6ToolStripMenuItem
+            // 
+            this.spell6ToolStripMenuItem.Name = "spell6ToolStripMenuItem";
+            this.spell6ToolStripMenuItem.Size = new System.Drawing.Size(171, 34);
+            this.spell6ToolStripMenuItem.Text = "Spell 6";
+            // 
+            // spell7ToolStripMenuItem
+            // 
+            this.spell7ToolStripMenuItem.Name = "spell7ToolStripMenuItem";
+            this.spell7ToolStripMenuItem.Size = new System.Drawing.Size(171, 34);
+            this.spell7ToolStripMenuItem.Text = "Spell 7";
+            // 
+            // spell8ToolStripMenuItem
+            // 
+            this.spell8ToolStripMenuItem.Name = "spell8ToolStripMenuItem";
+            this.spell8ToolStripMenuItem.Size = new System.Drawing.Size(171, 34);
+            this.spell8ToolStripMenuItem.Text = "Spell 8";
+            // 
+            // spell9ToolStripMenuItem
+            // 
+            this.spell9ToolStripMenuItem.Name = "spell9ToolStripMenuItem";
+            this.spell9ToolStripMenuItem.Size = new System.Drawing.Size(171, 34);
+            this.spell9ToolStripMenuItem.Text = "Spell 9";
+            // 
+            // removeSpellsToolStripMenuItem
+            // 
+            this.removeSpellsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.removeSelectedSpellsToolStripMenuItem});
+            this.removeSpellsToolStripMenuItem.Name = "removeSpellsToolStripMenuItem";
+            this.removeSpellsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.removeSpellsToolStripMenuItem.Text = "Remove Spells";
+            // 
+            // removeSelectedSpellsToolStripMenuItem
+            // 
+            this.removeSelectedSpellsToolStripMenuItem.Name = "removeSelectedSpellsToolStripMenuItem";
+            this.removeSelectedSpellsToolStripMenuItem.Size = new System.Drawing.Size(300, 34);
+            this.removeSelectedSpellsToolStripMenuItem.Text = "Remove Selected Spells";
             // 
             // openFileDialog2
             // 
@@ -2278,6 +2584,17 @@
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.spellTab.ResumeLayout(false);
+            this.spellTab.PerformLayout();
+            this.tabC_spells.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tab_cantrip.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2428,6 +2745,36 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
+        private System.Windows.Forms.ToolStripMenuItem spToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cantripStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem spell1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spell2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spell3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spell4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spell5ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spell6ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spell7ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spell8ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spell9ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeSpellsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeSelectedSpellsToolStripMenuItem;
+        private System.Windows.Forms.TabControl tabC_spells;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txt_sp_ba;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txt_sp_dc;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txt_sp_ab;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txt_sp_class;
+        private System.Windows.Forms.TabPage tab_cantrip;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }
 
