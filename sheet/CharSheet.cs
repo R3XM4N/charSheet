@@ -47,6 +47,7 @@ namespace sheet
             streamWriter.Close();
         }
         //load sheet
+
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
@@ -137,7 +138,6 @@ namespace sheet
                 currentChar.apearance.eye = eyeBox.Text;
                 currentChar.apearance.hair = hairBox.Text;
                 currentChar.apearance.alignment = alignBox.Text;
-
                 if (charImage.Image != null)
                 {
                     currentChar.apearance.image = charImage.ImageLocation;
@@ -225,7 +225,7 @@ namespace sheet
                 {
                     if (prof.Contains(i))
                     {
-                        ints[i-1] = ToInt(box.Text) - currentChar.pro;
+                        ints[i-1] = ToInt(box.Text) - currentChar.proeff;
                     }
                     else
                     {
@@ -242,7 +242,7 @@ namespace sheet
                 {
                     if (prof.Contains(i))
                     {
-                        box.Text = (currentChar.savingThrows.throwsLoad()[i - 1] + currentChar.pro).ToString();
+                        box.Text = (currentChar.savingThrows.throwsLoad()[i - 1] + currentChar.proeff).ToString();
                     }
                     else
                     {
@@ -262,7 +262,7 @@ namespace sheet
                 {
                     if (prof.Contains(i + 6))
                     {
-                        ints[i - 1] = ToInt(box.Text) - currentChar.pro;
+                        ints[i - 1] = ToInt(box.Text) - currentChar.proeff;
                     }
                     else
                     {
@@ -279,7 +279,7 @@ namespace sheet
                 {
                     if (prof.Contains(i + 6))
                     {
-                        box.Text = (currentChar.skills.skillsLoad()[i - 1] + currentChar.pro).ToString();
+                        box.Text = (currentChar.skills.skillsLoad()[i - 1] + currentChar.proeff).ToString();
                     }
                     else
                     {
