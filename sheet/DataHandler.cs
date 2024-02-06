@@ -34,6 +34,25 @@ namespace sheet
                 MessageBox.Show($"An error has occured setting the values of {data} into {textBoxes} this can be an issue of types or microsofts error if more descriptive: {e.Message}");
             }
         }
-
+        public T[] FillFromBoxes<T>(TextBox[] textBoxes)
+        {
+            T[] temp = new T[textBoxes.Length]; 
+            try
+            {
+                int i = 0;
+                foreach (TextBox textBox in textBoxes)
+                {
+                    temp[0] = (T)Convert.ChangeType(textBox.Text, typeof(T)); ;  
+                    i++;
+                }
+                return temp;
+            }
+            catch (Exception e)
+            {
+                
+                MessageBox.Show(e.Message);
+                return new T[0];
+            }
+        }
     }
 }
