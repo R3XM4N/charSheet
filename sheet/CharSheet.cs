@@ -19,7 +19,7 @@ namespace sheet
     {
         DataHandler dataHandler = new DataHandler();
         #region main
-        public List<int> prof;
+        public List<int> prof = new List<int> { };
         CheckBox[] checkBoxesThrow;
         CheckBox[] checkBoxesSkills;
         TextBox[] statBoxesThrow;
@@ -52,19 +52,12 @@ namespace sheet
         
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            /*
-            openFileDialog1.ShowDialog();
-            FileStream fileStream = new FileStream(openFileDialog1.FileName, FileMode.Open);
-            currentChar = (Character)serializer.Deserialize(fileStream);
-            fileStream.Close();
-            LoadToCurrent();
-            */
+            //currentChar = dataHandler.FromJsonFile<Character>("");
+            //UpdateAllLoad();
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            /*
-            saveAsFile();
-            */
+            //currentChar.SaveAsFile("");
         }
 
         //temp data saving
@@ -338,7 +331,7 @@ namespace sheet
         void SaveToCurrent()
         {
             UpdateAllSave();
-
+            
 
         }
         //OTHER

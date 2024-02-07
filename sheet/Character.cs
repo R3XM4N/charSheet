@@ -19,7 +19,7 @@ namespace sheet
     public class Character
     {
         //Base
-        public int proefficency;
+        public int proefficency = 0;
         public List<int>[] bonus = new List<int>[2] { new List<int> { }, new List<int> { } };
         public string cName { get; private set; }
         public string race { get; private set; }
@@ -227,5 +227,22 @@ namespace sheet
             }
         }
         public string[] inventory = new string[2];
+
+        public void SaveAsFile(string location)
+        {
+            using (var handler = new DataHandler())
+            {
+                handler.ToJsonFile(this,location);
+            }
+        }
+        /*
+        public void LoadFromFile(string location)
+        {
+            using (var handler = new DataHandler())
+            {
+                this = handler.FromJsonFile<Character>(location);
+            }
+        }
+        */
     }
 }
