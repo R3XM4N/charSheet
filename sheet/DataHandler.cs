@@ -83,34 +83,31 @@ namespace sheet
         }
         public void ToJsonFile<T>(T toserialize,string fileLocation)
         {
-            using (var sw = new StreamWriter(fileLocation))
-            {
-                sw.Write(SerializeToJson<T>(toserialize));
-            }
             try
             {
-
+                using (var sw = new StreamWriter(fileLocation))
+                {
+                    sw.Write(SerializeToJson<T>(toserialize));
+                }
             }
             catch (Exception e)
             {
-
                 MessageBox.Show(e.Message);
             }
         }
         public T FromJsonFile<T>(string filePath)
         {
-            using (var sr = new StreamReader(filePath))
-            {
-                return JsonConvert.DeserializeObject<T>(sr.ReadToEnd());
-            }
             try
             {
-
+                using (var sr = new StreamReader(filePath))
+                {
+                    return JsonConvert.DeserializeObject<T>(sr.ReadToEnd());
+                }
             }
             catch (Exception e)
             {
-
                 MessageBox.Show(e.Message);
+                return default(T);
             }
         }
         #region yoinked
@@ -139,6 +136,5 @@ namespace sheet
             Dispose(false);
         }
         #endregion
-
     }
 }

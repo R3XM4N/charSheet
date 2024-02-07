@@ -21,29 +21,29 @@ namespace sheet
         //Base
         public int proefficency = 0;
         public List<int>[] bonus = new List<int>[2] { new List<int> { }, new List<int> { } };
-        public string cName { get; private set; }
-        public string race { get; private set; }
-        public string charClass { get; private set; }
+        public string cName { get; set; }
+        public string race { get; set; }
+        public string charClass { get; set; }
         public void SetBase(string characterName,string characterRace,string characterClass)
         {
             cName = characterName;
             race = characterRace;
             charClass = characterClass;
         }
-        public int level { get; private set; }
-        public string exp { get; private set; }
+        public int level { get; set; }
+        public string exp { get; set; }
         public void AddXP(int ammmount)
         {
             exp += ammmount;
             level++;
         }
         //Battle
-        public int[] health { get; private set; } = new int[3];//max/current/temp
-        public int speed { get; private set; }
-        public int armorClass { get; private set; }
-        public int deathSaves { get; private set; }
+        public int[] health { get; set; } = new int[3];//max/current/temp
+        public int speed { get; set; }
+        public int armorClass { get; set; }
+        public int deathSaves { get; set; }
         //Rest
-        public string image { get; private set; }
+        public string image { get; set; }
         public void SetImage(Image image)
         {
             //this should work i think
@@ -88,12 +88,12 @@ namespace sheet
         public Stats stats;
         public struct Stats
         {
-            public int Strength { get; private set; }
-            public int Dexterity { get; private set; }
-            public int Constitution { get; private set; }
-            public int Intelligence { get; private set; }
-            public int Wisdom { get; private set; }
-            public int Charisma { get; private set; }
+            public int Strength { get; set; }
+            public int Dexterity { get; set; }
+            public int Constitution { get; set; }
+            public int Intelligence { get; set; }
+            public int Wisdom { get; set; }
+            public int Charisma { get; set; }
             public void Set(int[] throws)
             {
                 if (throws.Length == 6)
@@ -116,12 +116,12 @@ namespace sheet
         public SavingThrows savingThrows;
         public struct SavingThrows
         {
-            public int SavingStrength { get; private set; }
-            public int SavingDexterity{ get; private set; }
-            public int SavingConstitution{ get; private set; }
-            public int SavingIntelligence{ get; private set; }
-            public int SavingWisdom{ get; private set; }
-            public int SavingCharisma{ get; private set; }
+            public int SavingStrength { get; set; }
+            public int SavingDexterity{ get; set; }
+            public int SavingConstitution{ get; set; }
+            public int SavingIntelligence{ get; set; }
+            public int SavingWisdom{ get; set; }
+            public int SavingCharisma{ get; set; }
             public void Set(int[] throws)
             {
                 if (throws.Length == 6)
@@ -144,29 +144,29 @@ namespace sheet
         public Skills skills;
         public struct Skills
         {
-            public int Acrobatics { get; private set; }
-            public int AnimHand { get; private set; }
-            public int Arcana { get; private set; }
+            public int Acrobatics { get; set; }
+            public int AnimHand { get; set; }
+            public int Arcana { get; set; }
 
-            public int Athletics { get; private set; }
-            public int Deception { get; private set; }
-            public int History { get; private set; }
+            public int Athletics { get; set; }
+            public int Deception { get; set; }
+            public int History { get; set; }
 
-            public int Insight { get; private set; }
-            public int Intimidation { get; private set; }
-            public int Investigation { get; private set; }
+            public int Insight { get; set; }
+            public int Intimidation { get; set; }
+            public int Investigation { get; set; }
 
-            public int Medicine { get; private set; }
-            public int Nature { get; private set; }
-            public int Perceprtion { get; private set; }
+            public int Medicine { get; set; }
+            public int Nature { get; set; }
+            public int Perceprtion { get; set; }
 
-            public int Performance { get; private set; }
-            public int Persuasion { get; private set; }
-            public int Religion { get; private set; }
+            public int Performance { get; set; }
+            public int Persuasion { get; set; }
+            public int Religion { get; set; }
 
-            public int SoH { get; private set; }
-            public int Stealth { get; private set; }
-            public int Survival { get; private set; }
+            public int SoH { get; set; }
+            public int Stealth { get; set; }
+            public int Survival { get; set; }
             public void Set(int[] skills)
             {
                 if (skills.Length == 18)

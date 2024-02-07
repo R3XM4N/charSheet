@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,8 +53,8 @@ namespace sheet
         
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            //currentChar = dataHandler.FromJsonFile<Character>("");
-            //UpdateAllLoad();
+            currentChar = dataHandler.FromJsonFile<Character>("C:\\Users\\zzlob\\Music\\test.json");
+            UpdateAllLoad();
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
