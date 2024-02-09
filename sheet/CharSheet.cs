@@ -13,6 +13,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using static sheet.Character;
+using Newtonsoft.Json;
+using sheet.Dialogs;
 
 namespace sheet
 {
@@ -53,12 +55,21 @@ namespace sheet
         
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            currentChar = dataHandler.FromJsonFile<Character>("C:\\Users\\zzlob\\Music\\test.json");
+            //currentChar = dataHandler.FromJsonFile<Character>("C:\\Users\\zzlob\\Music\\test.json");
             UpdateAllLoad();
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            //currentChar.SaveAsFile("");
+            using (var sd = new SaveFileDialog())
+            {
+                sd.Title = "Select a location";
+                sd.AddExtension = true;
+                sd.DefaultExt = "json";
+                sd.Filter = "JSON files (*.json)|*.json";
+                sd.ShowDialog();
+                currentChar.SaveAsFile(sd.FileName);
+            }
+            
         }
 
         //temp data saving
@@ -551,22 +562,35 @@ namespace sheet
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            InitializeCharacter();
-
+            using (var load = new LoadDialog())
+            {
+                load.ShowDialog();
+                currentChar = load.character;
+            }
             checkBoxesThrow = new CheckBox[6] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
             checkBoxesSkills = new CheckBox[18] { checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16, checkBox17, checkBox18, checkBox19, checkBox20, checkBox21, checkBox22, checkBox23, checkBox24 };
             statBoxesThrow = new TextBox[6] { statBox1, statBox2, statBox3, statBox4, statBox5, statBox6 };
             statBoxesSkills = new TextBox[18] { statBox7, statBox8, statBox9, statBox10, statBox11, statBox12, statBox13, statBox14, statBox15, statBox16, statBox17, statBox18, statBox19, statBox20, statBox21, statBox22, statBox23, statBox24 };
+            UpdateAllLoad();
         }
-
-        private void InitializeCharacter()
+        private void setImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            currentChar = new Character();
-            currentChar.characteristics = new Characteristics();
-            currentChar.stats = new Stats();
-            currentChar.savingThrows = new SavingThrows();
-            currentChar.skills = new Skills();
-            currentChar.money = new Money();
+            using (var open = new OpenFileDialog())
+            {
+                open.Title = "Select a file.";
+                open.ShowDialog();
+                if (open.FileName != "" || open.FileName != null)
+                {
+                    currentChar.SetImage(Image.FromFile(open.FileName));
+
+                    charImage.Image = currentChar.GetImage();
+                    littleImageBox.Image = currentChar.GetImage();
+                }
+                else
+                {
+                    MessageBox.Show("An error has occured, this could be a file issue.");
+                }
+            }
         }
     }
 }

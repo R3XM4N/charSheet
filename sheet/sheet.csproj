@@ -61,6 +61,18 @@
       <DependentUpon>CharSheet.cs</DependentUpon>
     </Compile>
     <Compile Include="DataHandler.cs" />
+    <Compile Include="Dialogs\CreateCharacterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CreateCharacterDialog.Designer.cs">
+      <DependentUpon>CreateCharacterDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\LoadDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\LoadDialog.Designer.cs">
+      <DependentUpon>LoadDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Heroes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="CharSheet.resx">
       <DependentUpon>CharSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\LoadDialog.resx">
+      <DependentUpon>LoadDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Heroes.resx">
       <DependentUpon>Heroes.cs</DependentUpon>
