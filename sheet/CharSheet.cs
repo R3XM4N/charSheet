@@ -11,7 +11,6 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 using static sheet.Character;
 using Newtonsoft.Json;
 using sheet.Dialogs;
@@ -27,12 +26,15 @@ namespace sheet
         CheckBox[] checkBoxesSkills;
         TextBox[] statBoxesThrow;
         TextBox[] statBoxesSkills;
-        
-        //XmlSerializer serializer = new XmlSerializer(typeof(Character));
         public Character currentChar;
         public CharSheet()
         {
             InitializeComponent();
+        }
+        public CharSheet(Character character)
+        {
+            InitializeComponent();
+            currentChar = character;
         }
         //save sheet
         private void saveAsFile()
