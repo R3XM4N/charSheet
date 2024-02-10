@@ -26,15 +26,22 @@ namespace sheet
             bool autoload = Properties.Settings.Default.autoload;
             if (autoload)
             {
-                // get all xml files from directory
-                string[] files = Directory.GetFiles(Properties.Settings.Default.path, "*.xml");
-                // load all heroes from files
-                characterList.AddRange(DataHandler.loadCharacterList(Properties.Settings.Default.path));
-                characterList = sortBy();
-                // add all heroes to panel
-                foreach (Character c in characterList)
+                try
                 {
-                    add_miniSheet(p_heroes, c);
+                    // get all xml files from directory
+                    string[] files = Directory.GetFiles(Properties.Settings.Default.path, "*.xml");
+                    // load all heroes from files
+                    characterList.AddRange(DataHandler.loadCharacterList(Properties.Settings.Default.path));
+                    characterList = sortBy();
+                    // add all heroes to panel
+                    foreach (Character c in characterList)
+                    {
+                        add_miniSheet(p_heroes, c);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error: " + e.Message);
                 }
             }
         }

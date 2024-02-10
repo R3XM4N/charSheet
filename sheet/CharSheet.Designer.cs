@@ -203,6 +203,13 @@
             this.removeSpellsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeSelectedSpellsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_add_attack = new System.Windows.Forms.Button();
+            this.btn_delete_attack = new System.Windows.Forms.Button();
+            this.btn_roll_attack = new System.Windows.Forms.Button();
+            this.attack_panel = new System.Windows.Forms.Panel();
+            this.roll_selector = new System.Windows.Forms.ComboBox();
+            this.chb_use_mod = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.otherTab.SuspendLayout();
             this.invTab.SuspendLayout();
@@ -225,6 +232,7 @@
             this.tab_cantrip.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // charNameBox
@@ -524,6 +532,8 @@
             // 
             // invAttacks
             // 
+            this.invAttacks.Controls.Add(this.attack_panel);
+            this.invAttacks.Controls.Add(this.panel3);
             this.invAttacks.Controls.Add(this.attacksText);
             this.invAttacks.Location = new System.Drawing.Point(4, 44);
             this.invAttacks.Name = "invAttacks";
@@ -1465,6 +1475,7 @@
             // 
             this.skinBox.Font = new System.Drawing.Font("Arial", 16F);
             this.skinBox.Location = new System.Drawing.Point(193, 182);
+            this.skinBox.Name = "skinBox";
             this.skinBox.Size = new System.Drawing.Size(162, 44);
             this.skinBox.TabIndex = 36;
             this.skinBox.Text = "0";
@@ -1907,7 +1918,7 @@
             this.spell8ToolStripMenuItem,
             this.spell9ToolStripMenuItem});
             this.spToolStripMenuItem.Name = "spToolStripMenuItem";
-            this.spToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.spToolStripMenuItem.Size = new System.Drawing.Size(229, 34);
             this.spToolStripMenuItem.Text = "Spell Add";
             // 
             // cantripStripMenuItem1
@@ -1975,7 +1986,7 @@
             this.removeSpellsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeSelectedSpellsToolStripMenuItem});
             this.removeSpellsToolStripMenuItem.Name = "removeSpellsToolStripMenuItem";
-            this.removeSpellsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.removeSpellsToolStripMenuItem.Size = new System.Drawing.Size(229, 34);
             this.removeSpellsToolStripMenuItem.Text = "Remove Spells";
             // 
             // removeSelectedSpellsToolStripMenuItem
@@ -1987,6 +1998,90 @@
             // openFileDialog2
             // 
             this.openFileDialog2.FileName = "openFileDialog1";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.chb_use_mod);
+            this.panel3.Controls.Add(this.roll_selector);
+            this.panel3.Controls.Add(this.btn_roll_attack);
+            this.panel3.Controls.Add(this.btn_delete_attack);
+            this.panel3.Controls.Add(this.btn_add_attack);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(526, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(256, 702);
+            this.panel3.TabIndex = 1;
+            // 
+            // btn_add_attack
+            // 
+            this.btn_add_attack.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_add_attack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_attack.Location = new System.Drawing.Point(5, 3);
+            this.btn_add_attack.Name = "btn_add_attack";
+            this.btn_add_attack.Size = new System.Drawing.Size(245, 63);
+            this.btn_add_attack.TabIndex = 0;
+            this.btn_add_attack.Text = "Add";
+            this.btn_add_attack.UseVisualStyleBackColor = true;
+            this.btn_add_attack.Click += new System.EventHandler(this.btn_add_attack_Click);
+            // 
+            // btn_delete_attack
+            // 
+            this.btn_delete_attack.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_delete_attack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete_attack.Location = new System.Drawing.Point(5, 72);
+            this.btn_delete_attack.Name = "btn_delete_attack";
+            this.btn_delete_attack.Size = new System.Drawing.Size(245, 63);
+            this.btn_delete_attack.TabIndex = 1;
+            this.btn_delete_attack.Text = "Delete";
+            this.btn_delete_attack.UseVisualStyleBackColor = true;
+            this.btn_delete_attack.Click += new System.EventHandler(this.btn_delete_attack_Click);
+            // 
+            // btn_roll_attack
+            // 
+            this.btn_roll_attack.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_roll_attack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_roll_attack.Location = new System.Drawing.Point(5, 631);
+            this.btn_roll_attack.Name = "btn_roll_attack";
+            this.btn_roll_attack.Size = new System.Drawing.Size(245, 63);
+            this.btn_roll_attack.TabIndex = 2;
+            this.btn_roll_attack.Text = "Roll Selected";
+            this.btn_roll_attack.UseVisualStyleBackColor = true;
+            this.btn_roll_attack.Click += new System.EventHandler(this.btn_roll_attack_Click);
+            // 
+            // attack_panel
+            // 
+            this.attack_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attack_panel.Location = new System.Drawing.Point(0, 0);
+            this.attack_panel.Name = "attack_panel";
+            this.attack_panel.Size = new System.Drawing.Size(526, 702);
+            this.attack_panel.TabIndex = 2;
+            // 
+            // roll_selector
+            // 
+            this.roll_selector.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.roll_selector.FormattingEnabled = true;
+            this.roll_selector.Items.AddRange(new object[] {
+            "Roll Attack",
+            "Roll Damage"});
+            this.roll_selector.Location = new System.Drawing.Point(5, 594);
+            this.roll_selector.Name = "roll_selector";
+            this.roll_selector.Size = new System.Drawing.Size(245, 31);
+            this.roll_selector.TabIndex = 3;
+            this.roll_selector.Text = "Select what you roll";
+            // 
+            // chb_use_mod
+            // 
+            this.chb_use_mod.AutoSize = true;
+            this.chb_use_mod.Checked = true;
+            this.chb_use_mod.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chb_use_mod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chb_use_mod.Location = new System.Drawing.Point(28, 549);
+            this.chb_use_mod.Name = "chb_use_mod";
+            this.chb_use_mod.Size = new System.Drawing.Size(203, 39);
+            this.chb_use_mod.TabIndex = 4;
+            this.chb_use_mod.Text = "Use modifier";
+            this.chb_use_mod.UseVisualStyleBackColor = true;
             // 
             // CharSheet
             // 
@@ -2050,6 +2145,8 @@
             this.panel2.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2230,6 +2327,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btn_roll_attack;
+        private System.Windows.Forms.Button btn_delete_attack;
+        private System.Windows.Forms.Button btn_add_attack;
+        private System.Windows.Forms.Panel attack_panel;
+        private System.Windows.Forms.ComboBox roll_selector;
+        private System.Windows.Forms.CheckBox chb_use_mod;
     }
 }
 

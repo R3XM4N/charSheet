@@ -701,6 +701,7 @@ namespace sheet
 
         #endregion
 
+        #region David's Shit
         private void btn_sel_pic_Click(object sender, EventArgs e)
         {
             openFileDialog2.ShowDialog();
@@ -728,8 +729,14 @@ namespace sheet
         private void quickSave()
         {
             SaveToCurrent();
-            DataHandler.saveCharacter(currentChar, Properties.Settings.Default.path);
-            this.UseWaitCursor = false;
+            try
+            {
+                DataHandler.saveCharacter(currentChar, Properties.Settings.Default.path);
+                this.UseWaitCursor = false;
+            }catch (Exception)
+            {
+                MessageBox.Show("Error saving file");
+            }
         }
 
         private void copySpellTabs()
@@ -864,6 +871,329 @@ namespace sheet
                 dg.Rows.Add(data);
                 sc.Close();
             };
+        }
+
+
+        #endregion
+
+
+        private void addAttackPanel()
+        {
+            Panel p = new Panel();
+            p.Dock = DockStyle.Top;
+            p.Height = 61;
+            p.BorderStyle = BorderStyle.FixedSingle;
+            
+            p.Controls.AddRange(getAttackData(attack_panel.Controls.Count, p));
+            p.Click += new EventHandler(txt_selectWeapon);
+            
+            attack_panel.Controls.Add(p);
+        }
+
+        private TextBox[] getAttackData(int id, Control parent)
+        {
+            TextBox b1 = new TextBox();
+            b1.Name = "txt_atk_" + id + "_name";
+            b1.Text = "Name";
+            b1.ForeColor = Color.Gray;
+            b1.Parent = parent;
+            b1.Size = new Size(155, 40);
+            b1.Location = new Point(5, 13);
+
+            TextBox b2 = new TextBox();
+            b2.Name = "txt_atk_" + id + "_dmg";
+            b2.Text = "Dmg";
+            b2.ForeColor = Color.Gray;
+            b2.Parent = parent;
+            b2.Size = new Size(90, 40);
+            b2.Location = new Point(185, 13);
+
+            TextBox b3 = new TextBox();
+            b3.Name = "txt_atk_" + id + "_attributes";
+            b3.Text = "Attributes";
+            b3.ForeColor = Color.Gray;
+            b3.Parent = parent;
+            b3.Size = new Size(220, 40);
+            b3.Location = new Point(300, 13);
+
+            TextBox[] textBoxes = new TextBox[] { b1, b2, b3 };
+            foreach (TextBox tb in textBoxes)
+            {
+                tb.Enter += new EventHandler(txt_attack_Enter);
+                tb.Leave += new EventHandler(txt_attack_Leave);
+                tb.Click += new EventHandler(txt_selectWeapon);
+            }
+
+            return textBoxes;
+        }
+
+        private void txt_attack_Enter(object sender, EventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            if (tb.Text == "Name" || tb.Text == "Dmg" || tb.Text == "Attributes")
+            {
+                tb.Text = "";
+                tb.ForeColor = Color.Black;
+            }
+        }
+
+        private void txt_attack_Leave(object sender, EventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            if (tb.Text == "")
+            {
+                tb.Text = tb.Name.Split('_')[3];
+                //make first letter big
+                tb.Text = char.ToUpper(tb.Text[0]) + tb.Text.Substring(1);
+                tb.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txt_selectWeapon(object sender, EventArgs e)
+        {
+            Panel panel;
+            if (sender is Panel)
+            {
+                panel = (Panel)sender;
+            }else
+            {
+                panel = (Panel)((Control)sender).Parent;
+            }
+
+            panel.BackColor = Color.LightGray;
+            panel.BorderStyle = BorderStyle.None;
+
+            foreach (Panel p in attack_panel.Controls)
+            {
+                if (p != panel)
+                {
+                    p.BackColor = Color.White;
+                    p.BorderStyle = BorderStyle.FixedSingle;
+                }
+            }
+        }
+
+        private Panel getSelectedPanel()
+        {
+            foreach (Panel p in attack_panel.Controls)
+            {
+                if (p.BackColor == Color.LightGray)
+                {
+                    return p;
+                }
+            }
+            return null;
+        }
+
+        private int getSelectedPanelId()
+        {
+            for (int i = 0; i < attack_panel.Controls.Count; i++)
+            {
+                if (attack_panel.Controls[i].BackColor == Color.LightGray)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        private void btn_add_attack_Click(object sender, EventArgs e)
+        {
+            addAttackPanel();
+        }
+
+        private void btn_delete_attack_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to delete the selected attack?", "Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                attack_panel.Controls.Remove(getSelectedPanel());
+        }
+
+        private void btn_roll_attack_Click(object sender, EventArgs e)
+        {
+            Panel p = getSelectedPanel();
+            string[] data = new string[2];
+            foreach (Control c in p.Controls)
+            {
+                if (c is TextBox)
+                {
+                    TextBox tb = (TextBox)c;
+                    if (tb.Name.Contains("dmg"))
+                    {
+                        data[0] = tb.Text;
+                    }
+                    else if (tb.Name.Contains("attributes"))
+                    {
+                        data[1] = tb.Text;
+                    }
+                }
+            }
+
+            if (data[0] == null || data[1] == null)
+            {
+                MessageBox.Show("Please fill in all the fields");
+                return;
+            }
+
+            if (roll_selector.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a dice to roll");
+                return;
+            }else if (roll_selector.SelectedIndex == 0)
+            {
+                performAttack("1d20", data[1], false);
+                return;
+            }else if (roll_selector.SelectedIndex == 1)
+            {
+                performAttack(data[0], data[1], true);
+                return;
+            }
+        }
+
+        private void performAttack(string dice, string attributes, bool isDamage)
+        {
+            string modifier_toUse = "";
+            dice = dice.ToLower().Trim();
+            attributes = attributes.ToLower().Trim();
+            if (attributes.Contains("finesse"))
+            {
+                DialogResult dialogResult = MessageBox.Show("Do you want to use STR[Yes] or DEX[No]?", "Finesse", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    modifier_toUse = "str";
+                }
+                else
+                {
+                    modifier_toUse = "dex";
+                }
+            } 
+            else
+                modifier_toUse = "str";
+            
+            if (isDamage)
+            {
+                if (attributes.Contains("versatile"))
+                {
+                    DialogResult dialogResult = MessageBox.Show("Do you want to use 1[Yes] or 2[No] hands?", "Versatile", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        dice = dice.Split(',')[0];
+                    }
+                    else
+                    {
+                        dice = dice.Split(',')[1];
+                    }
+                }
+            }
+            
+            int rolls = int.Parse(dice.Split('d')[0]);
+            int sides = int.Parse(dice.Split('d')[1]);
+
+
+            for (int i = 0; i < rolls; i++)
+            {
+                int roll = iniciateRoll(sides, modifier_toUse,isDamage,false);
+            }
+        }
+        private int iniciateRoll(int sides, string modifier, bool isDamage, bool hasProficiency)
+        {
+            int fin_mod = 0;
+            if (chb_use_mod.Checked)
+            {
+                switch (modifier)
+                {
+                    case "str":
+                        fin_mod = (currentChar.mainStats.Str - 10) / 2;
+                        break;
+                    case "dex":
+                        fin_mod = (currentChar.mainStats.Dex - 10) / 2;
+                        break;
+                    case "const":
+                        fin_mod = (currentChar.mainStats.Const - 10) / 2;
+                        break;
+                    case "int":
+                        fin_mod = (currentChar.mainStats.Int - 10) / 2;
+                        break;
+                    case "wis":
+                        fin_mod = (currentChar.mainStats.Wis - 10) / 2;
+                        break;
+                    case "char":
+                        fin_mod = (currentChar.mainStats.Char - 10) / 2;
+                        break;
+                    default:
+                        fin_mod = Convert.ToInt32(modifier);
+                        break;
+                }
+            }
+
+            if (hasProficiency)
+                fin_mod += currentChar.pro;
+
+            string weapon = "";
+            if (isDamage)
+            {
+                string weapon_name = getSelectedPanel().Controls.Find("txt_atk_" + getSelectedPanelId() + "_name", true)[0].Text;
+                string damage_type = getSelectedPanel().Controls.Find("txt_atk_" + getSelectedPanelId() + "_attributes", true)[0].Text;
+                Random rnd = new Random();
+                foreach (string s in damage_type.Split(','))
+                {
+                    if (s.Contains("bludgeoning"))
+                    {
+                        int r = rnd.Next(0, 5);
+                        if (r == 0)
+                            damage_type = "bludgeoned";
+                        else if (r == 1)
+                            damage_type = "smashed";
+                        else if (r == 2)
+                            damage_type = "crushed";
+                        else if (r == 3)
+                            damage_type = "bashed";
+                        else
+                            damage_type = "pounded";
+                        break;
+                    }
+                    else if (s.Contains("piercing"))
+                    {
+                        int r = rnd.Next(0, 5);
+                        if (r == 0)
+                            damage_type = "pierced";
+                        else if (r == 1)
+                            damage_type = "punctured";
+                        else if (r == 2)
+                            damage_type = "stabbed";
+                        else if (r == 3)
+                            damage_type = "poked";
+                        else
+                            damage_type = "gored";
+                        break;
+                    }
+                    else if (s.Contains("slashing"))
+                    {
+                        int r = rnd.Next(0, 5);
+                        if (r == 0)
+                            damage_type = "cut";
+                        else if (r == 1)
+                            damage_type = "slashed";
+                        else if (r == 2)
+                            damage_type = "gashed";
+                        else if (r == 3)
+                            damage_type = "sliced";
+                        else
+                            damage_type = "chopped";
+                        break;
+                    }
+                }
+                weapon = $"{weapon_name},{damage_type}";
+            }
+
+            Roll roll = new Roll(fin_mod,weapon);
+            if (isDamage)
+                roll.pc_name = currentChar.cName;
+            roll.rollDice(sides);
+            roll.MaximumSize = roll.Size;
+            roll.MinimumSize = roll.Size;
+            roll.ShowDialog();
+            return roll.last_roll;
         }
     }
 }
