@@ -34,6 +34,7 @@ namespace sheet.Dialogs
                     character = dh.FromJsonFile<Character>(fd.FileName);
                 }
             }
+            this.Close();
         }
         private void button2_Click(object sender, EventArgs e)
         {

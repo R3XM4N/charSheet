@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,6 +29,50 @@ namespace sheet
                     foreach (TextBox textBox in textBoxes)
                     {
                         textBox.Text = data[i].ToString();
+                        i++;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"An error has occured setting the values of {data} into {textBoxes} this can be an issue of types or microsofts error if more descriptive: {e.Message}");
+            }
+        }
+        public void FillTextBoxesReadableProf(int[] data, TextBox[] textBoxes,List<int> bonus,int proefficency)
+        {
+            try
+            {
+                if (data.Length != textBoxes.Length)
+                {
+                    MessageBox.Show("An error has occured the data you wanna load cannot fit into the desired place or the other way around");
+                }
+                else
+                {
+                    int i = 0;
+                    foreach (TextBox textBox in textBoxes)
+                    {
+                        if (bonus.Contains(i))
+                        {
+                            if (data[i] + proefficency > 0)
+                            {
+                                textBox.Text = $"+{data[i] + proefficency}";
+                            }
+                            else
+                            {
+                                textBox.Text = $"{data[i] + proefficency}";
+                            }
+                        }
+                        else
+                        {
+                            if (data[i] > 0)
+                            {
+                                textBox.Text = $"+{data[i]}";
+                            }
+                            else
+                            {
+                                textBox.Text = $"{data[i]}";
+                            }
+                        }
                         i++;
                     }
                 }
