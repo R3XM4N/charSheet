@@ -21,7 +21,6 @@ namespace sheet
     {
         DataHandler dataHandler = new DataHandler();
         #region main
-        public List<int> prof = new List<int> { };
         CheckBox[] checkBoxesThrow;
         CheckBox[] checkBoxesSkills;
         public Character currentChar;
@@ -338,6 +337,16 @@ namespace sheet
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             IAintDealingWithThis(true);
+        }
+
+        private void changeBaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var ecb = new EditCharBase(currentChar))
+            {
+                currentChar = ecb.character;
+                ecb.ShowDialog();
+                UpdateHeader();
+            }
         }
     }
 }

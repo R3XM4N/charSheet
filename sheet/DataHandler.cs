@@ -28,7 +28,14 @@ namespace sheet
                     int i = 0;
                     foreach (TextBox textBox in textBoxes)
                     {
-                        textBox.Text = data[i].ToString();
+                        if (data[i] == null)
+                        {
+                            textBox.Text = "NULL";
+                        }
+                        else
+                        {
+                            textBox.Text = data[i].ToString();
+                        }
                         i++;
                     }
                 }

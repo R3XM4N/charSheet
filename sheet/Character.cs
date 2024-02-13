@@ -13,11 +13,13 @@ using System.Xml.Serialization;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Newtonsoft.Json;
+using System.Windows.Forms;
 
 namespace sheet
 {
     public class Character
     {
+        public int[] xpNeeded = new int[] { 0,300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000,120000,140000,165000,192000,225000,265000,305000,355000};
         //Base
         public int proefficency = 0;
         public List<int>[] bonus = new List<int>[2] { new List<int> { }, new List<int> { } };
@@ -31,11 +33,57 @@ namespace sheet
             charClass = characterClass;
         }
         public int level { get; set; }
-        public string exp { get; set; }
+        public int exp = 0;
         public void AddXP(int ammmount)
         {
             exp += ammmount;
-            level++;
+            try
+            {
+                if (exp < xpNeeded[0])
+                {
+                    level = 0;
+                }
+                else if (exp >= xpNeeded[xpNeeded.Length - 1])
+                {
+                    level = xpNeeded.Length - 1;
+                }
+                else
+                {
+                    for (int i = 0; i < xpNeeded.Length + 1; i++)
+                    {
+                        if (exp >= xpNeeded[i] && exp < xpNeeded[i + 1])
+                        {
+                            level = i;
+                            break;
+                        }
+                    }
+                }
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            if (level < 5)
+            {
+                proefficency = 2;
+            }
+            else if(level < 9)
+            {
+                proefficency = 3;
+            }
+            else if (level < 13)
+            {
+                proefficency = 4;
+            }
+            else if (level < 17)
+            {
+                proefficency = 5;
+            }
+            else if (level > 16)
+            {
+                proefficency = 6;
+            } 
         }
         //Battle
         public int[] health { get; set; } = new int[3];//max/current/temp
