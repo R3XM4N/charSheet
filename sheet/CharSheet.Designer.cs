@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CharSheet));
-            this.charNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.raceBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
@@ -42,9 +40,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label35 = new System.Windows.Forms.Label();
-            this.classBox = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.lvlBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.ppText = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -178,6 +174,10 @@
             this.ElseTab = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
             this.saveSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.charNameBox = new System.Windows.Forms.Label();
+            this.raceBox = new System.Windows.Forms.Label();
+            this.classBox = new System.Windows.Forms.Label();
+            this.lvlBox = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.littleImageBox)).BeginInit();
             this.otherTab.SuspendLayout();
@@ -196,15 +196,6 @@
             this.ElseTab.SuspendLayout();
             this.SuspendLayout();
             // 
-            // charNameBox
-            // 
-            this.charNameBox.Font = new System.Drawing.Font("Arial", 22F);
-            this.charNameBox.Location = new System.Drawing.Point(142, 62);
-            this.charNameBox.Name = "charNameBox";
-            this.charNameBox.Size = new System.Drawing.Size(309, 50);
-            this.charNameBox.TabIndex = 1;
-            this.charNameBox.Text = "Sir tom tommington";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -215,20 +206,11 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Character name:";
             // 
-            // raceBox
-            // 
-            this.raceBox.Font = new System.Drawing.Font("Arial", 22F);
-            this.raceBox.Location = new System.Drawing.Point(457, 62);
-            this.raceBox.Name = "raceBox";
-            this.raceBox.Size = new System.Drawing.Size(187, 50);
-            this.raceBox.TabIndex = 4;
-            this.raceBox.Text = "Human";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F);
-            this.label2.Location = new System.Drawing.Point(457, 43);
+            this.label2.Location = new System.Drawing.Point(482, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 23);
             this.label2.TabIndex = 5;
@@ -308,15 +290,6 @@
             this.label35.TabIndex = 8;
             this.label35.Text = "Class";
             // 
-            // classBox
-            // 
-            this.classBox.Font = new System.Drawing.Font("Arial", 22F);
-            this.classBox.Location = new System.Drawing.Point(142, 125);
-            this.classBox.Name = "classBox";
-            this.classBox.Size = new System.Drawing.Size(180, 50);
-            this.classBox.TabIndex = 7;
-            this.classBox.Text = "test man";
-            // 
             // label36
             // 
             this.label36.AutoSize = true;
@@ -326,15 +299,6 @@
             this.label36.Size = new System.Drawing.Size(44, 23);
             this.label36.TabIndex = 10;
             this.label36.Text = "LVL";
-            // 
-            // lvlBox
-            // 
-            this.lvlBox.Font = new System.Drawing.Font("Arial", 22F);
-            this.lvlBox.Location = new System.Drawing.Point(328, 125);
-            this.lvlBox.Name = "lvlBox";
-            this.lvlBox.Size = new System.Drawing.Size(49, 50);
-            this.lvlBox.TabIndex = 9;
-            this.lvlBox.Text = "0";
             // 
             // label13
             // 
@@ -1809,30 +1773,70 @@
             this.saveSessionToolStripMenuItem.Text = "SaveSession";
             this.saveSessionToolStripMenuItem.Click += new System.EventHandler(this.saveSessionToolStripMenuItem_Click);
             // 
+            // charNameBox
+            // 
+            this.charNameBox.AutoSize = true;
+            this.charNameBox.Font = new System.Drawing.Font("Arial", 22F);
+            this.charNameBox.Location = new System.Drawing.Point(142, 62);
+            this.charNameBox.Name = "charNameBox";
+            this.charNameBox.Size = new System.Drawing.Size(331, 42);
+            this.charNameBox.TabIndex = 152;
+            this.charNameBox.Text = "sir tom tommington";
+            // 
+            // raceBox
+            // 
+            this.raceBox.AutoSize = true;
+            this.raceBox.Font = new System.Drawing.Font("Arial", 22F);
+            this.raceBox.Location = new System.Drawing.Point(479, 64);
+            this.raceBox.Name = "raceBox";
+            this.raceBox.Size = new System.Drawing.Size(187, 42);
+            this.raceBox.TabIndex = 153;
+            this.raceBox.Text = "Humanoid";
+            // 
+            // classBox
+            // 
+            this.classBox.AutoSize = true;
+            this.classBox.Font = new System.Drawing.Font("Arial", 22F);
+            this.classBox.Location = new System.Drawing.Point(142, 125);
+            this.classBox.Name = "classBox";
+            this.classBox.Size = new System.Drawing.Size(149, 42);
+            this.classBox.TabIndex = 154;
+            this.classBox.Text = "Terrorist";
+            // 
+            // lvlBox
+            // 
+            this.lvlBox.AutoSize = true;
+            this.lvlBox.Font = new System.Drawing.Font("Arial", 22F);
+            this.lvlBox.Location = new System.Drawing.Point(325, 125);
+            this.lvlBox.Name = "lvlBox";
+            this.lvlBox.Size = new System.Drawing.Size(81, 42);
+            this.lvlBox.TabIndex = 155;
+            this.lvlBox.Text = "400";
+            // 
             // CharSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1334, 811);
+            this.Controls.Add(this.lvlBox);
+            this.Controls.Add(this.classBox);
+            this.Controls.Add(this.raceBox);
+            this.Controls.Add(this.charNameBox);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.tabControl3);
             this.Controls.Add(this.healthMaxBox);
             this.Controls.Add(this.littleImageBox);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.label42);
-            this.Controls.Add(this.lvlBox);
             this.Controls.Add(this.label45);
             this.Controls.Add(this.label35);
-            this.Controls.Add(this.classBox);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.healthTempBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label40);
-            this.Controls.Add(this.raceBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.healthBox);
-            this.Controls.Add(this.charNameBox);
             this.Controls.Add(this.speedBox);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.armorClassBox);
@@ -1879,9 +1883,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox charNameBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox raceBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
@@ -1889,9 +1891,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox classBox;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox lvlBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox spText;
         private System.Windows.Forms.Label label9;
@@ -2028,6 +2028,10 @@
         private System.Windows.Forms.ToolStripMenuItem setImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeBaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveSessionToolStripMenuItem;
+        private System.Windows.Forms.Label charNameBox;
+        private System.Windows.Forms.Label raceBox;
+        private System.Windows.Forms.Label classBox;
+        private System.Windows.Forms.Label lvlBox;
     }
 }
 

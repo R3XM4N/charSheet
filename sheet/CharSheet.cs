@@ -69,7 +69,7 @@ namespace sheet
         }
         void UpdateHeader()
         {
-            charNameBox.Text = currentChar.cName;
+            fdsfs.Text = currentChar.cName;
             lvlBox.Text = currentChar.level.ToString();
             raceBox.Text = currentChar.race;
             classBox.Text = currentChar.charClass;
