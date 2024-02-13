@@ -65,6 +65,7 @@ namespace sheet
             StatsUpdate(true, true, true, statCheck.Checked);
             UpdateHeader();
             IAintDealingWithThis(false);
+            updateInventory(false);
         }
         void UpdateHeader()
         {
@@ -333,7 +334,19 @@ namespace sheet
 
             }
         }
-
+        void updateInventory(bool save)
+        {
+            if (save)
+            {
+                currentChar.inventory[0] = inventoryBox.Text;
+                currentChar.inventory[1] = treasureText.Text;
+            }
+            else
+            {
+                inventoryBox.Text = currentChar.inventory[0];
+                treasureText.Text = currentChar.inventory[1];
+            }
+        }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             IAintDealingWithThis(true);
@@ -347,6 +360,12 @@ namespace sheet
                 ecb.ShowDialog();
                 UpdateHeader();
             }
+        }
+
+        private void saveSessionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            updateInventory(true);
+            IAintDealingWithThis(true);
         }
     }
 }

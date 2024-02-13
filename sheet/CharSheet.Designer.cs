@@ -177,6 +177,7 @@
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.ElseTab = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
+            this.saveSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.littleImageBox)).BeginInit();
             this.otherTab.SuspendLayout();
@@ -251,7 +252,8 @@
             // 
             this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setImageToolStripMenuItem,
-            this.changeBaseToolStripMenuItem});
+            this.changeBaseToolStripMenuItem,
+            this.saveSessionToolStripMenuItem});
             this.toolStripSplitButton1.Image = global::sheet.Properties.Resources.icon;
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
@@ -1800,6 +1802,13 @@
             this.label19.TabIndex = 151;
             this.label19.Text = "Image";
             // 
+            // saveSessionToolStripMenuItem
+            // 
+            this.saveSessionToolStripMenuItem.Name = "saveSessionToolStripMenuItem";
+            this.saveSessionToolStripMenuItem.Size = new System.Drawing.Size(233, 36);
+            this.saveSessionToolStripMenuItem.Text = "SaveSession";
+            this.saveSessionToolStripMenuItem.Click += new System.EventHandler(this.saveSessionToolStripMenuItem_Click);
+            // 
             // CharSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2018,6 +2027,7 @@
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem setImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeBaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveSessionToolStripMenuItem;
     }
 }
 
