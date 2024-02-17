@@ -105,6 +105,12 @@
     <Compile Include="Sheet_short.Designer.cs">
       <DependentUpon>Sheet_short.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpellCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpellCreator.Designer.cs">
+      <DependentUpon>SpellCreator.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CharSheet.resx">
       <DependentUpon>CharSheet.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sheet_short.resx">
       <DependentUpon>Sheet_short.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpellCreator.resx">
+      <DependentUpon>SpellCreator.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
