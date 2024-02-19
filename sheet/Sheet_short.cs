@@ -15,10 +15,10 @@ namespace sheet
         public Sheet_short(Character c)
         {
             InitializeComponent();
-            setupSheet(c);
+            //setupSheet(c);
         }
 
-
+        /*
         private void setupSheet(Character c)
         {
             lbl_bg.Text = c.apearance.background;
@@ -33,6 +33,7 @@ namespace sheet
             lbl_pp.Text = c.money.platinumC.ToString();
             setPicture(c.apearance.image);
         }
+        */
 
         private void setPicture(string path)
         {

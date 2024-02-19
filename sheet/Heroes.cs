@@ -23,6 +23,7 @@ namespace sheet
 
         private void check_Settings()
         {
+            /*
             bool autoload = Properties.Settings.Default.autoload;
             if (autoload)
             {
@@ -44,6 +45,7 @@ namespace sheet
                     MessageBox.Show("Error: " + e.Message);
                 }
             }
+            */
         }
 
         private void Heroes_Load(object sender, EventArgs e)
@@ -61,6 +63,7 @@ namespace sheet
 
         private List<Character> sortBy()
         {
+            /*
             switch (Properties.Settings.Default.sorting_val)
             {
                 case 0:
@@ -74,6 +77,8 @@ namespace sheet
                 default:
                     return characterList;
             }
+            */
+            return characterList;
         }
 
         private void add_miniSheet(Panel p, Character ch)
@@ -188,8 +193,8 @@ namespace sheet
         private void btn_nhero_Click(object sender, EventArgs e)
         {
             // při kliknutí na tlačítko "New Hero" se otevře form "Sheet" s novým hrdinou (předat mu prázdný objekt)
-            CharSheet sheet = new CharSheet();
-            sheet.Show();
+            //CharSheet sheet = new CharSheet();
+            //sheet.Show();
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -210,7 +215,7 @@ namespace sheet
                             // delete hero from panel
                             p_heroes.Controls.Remove(s);
                             characterList.RemoveAt(getSelectedIndex());
-                            DataHandler.deleteCharacter(s.lbl_name.Text);
+                            // DataHandler.deleteCharacter(s.lbl_name.Text);
                             break;
                         }
                     }

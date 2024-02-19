@@ -29,30 +29,15 @@ namespace sheet
         public CharSheet()
         {
             InitializeComponent();
-            setupDialogs();
-            prepareForm();
             copySpellTabs();
             setupToolStrip();
         }
-
         public CharSheet(Character character)
         {
             InitializeComponent();
-            setupDialogs();
-            prepareForm();
-            autosave = Properties.Settings.Default.autosave;
-            currentChar = character;
-            LoadToCurrent();
-            if (File.Exists($"{Properties.Settings.Default.path}\\{currentChar.cName.Replace(' ', '_')}.xml"))
-            {
-                autosave = Properties.Settings.Default.autosave;
-                if (autosave)
-                {
-                    autoSavePreparation();
-                }
-            }
             copySpellTabs();
             setupToolStrip();
+            currentChar = character;
         }
 
         private void setupToolStrip()
@@ -84,22 +69,8 @@ namespace sheet
             // set autosave timer
             Timer autosaveTimer = new Timer();
             autosaveTimer.Interval = Properties.Settings.Default.as_freq * 1000;
-            autosaveTimer.Tick += new EventHandler(autoSave);
+            //autosaveTimer.Tick += new EventHandler(autoSave);
             autosaveTimer.Start();
-        }
-
-        private void setupDialogs()
-        {
-            openFileDialog1.InitialDirectory = Properties.Settings.Default.path;
-            saveFileDialog1.InitialDirectory = Properties.Settings.Default.path;
-            saveFileDialog1.Filter = "XML files (*.xml)|*.xml";
-            openFileDialog1.Filter = "XML files (*.xml)|*.xml";
-            saveFileDialog1.DefaultExt = "xml";
-        }
-        public CharSheet(Character character)
-        {
-            InitializeComponent();
-            currentChar = character;
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -116,13 +87,13 @@ namespace sheet
                 sd.ShowDialog();
                 currentChar.SaveAsFile(sd.FileName);
             }
-            
+
         }
 
         //temp data saving
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
-            
+
         }
         #endregion
 
@@ -136,12 +107,11 @@ namespace sheet
         }
         void UpdateHeader()
         {
-            fdsfs.Text = currentChar.cName;
             lvlBox.Text = currentChar.level.ToString();
             raceBox.Text = currentChar.race;
             classBox.Text = currentChar.charClass;
         }
-        void StatsUpdate(bool updateStats, bool updateThrows,bool updateSkills,bool statsFunctional)
+        void StatsUpdate(bool updateStats, bool updateThrows, bool updateSkills, bool statsFunctional)
         {
             {
                 if (statsFunctional)
@@ -215,7 +185,7 @@ namespace sheet
                 }
                 StatsUpdate(false, true, false, false);
             }
-           
+
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -317,14 +287,6 @@ namespace sheet
         #endregion
 
         #region David's Shit
-        private void btn_sel_pic_Click(object sender, EventArgs e)
-        {
-            openFileDialog2.ShowDialog();
-            //charImage.Image = Image.FromFile(openFileDialog1.FileName);
-            charImage.ImageLocation = openFileDialog2.FileName;
-            charImage.SizeMode = PictureBoxSizeMode.StretchImage;
-        }
-
         private void CharSheet_FormClosing(object sender, FormClosingEventArgs e)
         {/*
             // messagebox for saving
@@ -464,7 +426,7 @@ namespace sheet
             sc.btn_create.Click += (sender, e) =>
             {
                 String[] data = sc.getSpellData();
-                DataGridView dg = (DataGridView)tabC_spells.Controls.Find("db_spells" + level, true)[0];
+                DataGridView dg = (DataGridView)tabSpells.Controls.Find("db_spells" + level, true)[0];
                 dg.Rows.Add(data);
                 sc.Close();
             };
@@ -480,10 +442,10 @@ namespace sheet
             p.Dock = DockStyle.Top;
             p.Height = 61;
             p.BorderStyle = BorderStyle.FixedSingle;
-            
+
             p.Controls.AddRange(getAttackData(attack_panel.Controls.Count, p));
             p.Click += new EventHandler(txt_selectWeapon);
-            
+
             attack_panel.Controls.Add(p);
         }
 
@@ -552,7 +514,7 @@ namespace sheet
             if (sender is Panel)
             {
                 panel = (Panel)sender;
-            }else
+            } else
             {
                 panel = (Panel)((Control)sender).Parent;
             }
@@ -599,54 +561,6 @@ namespace sheet
             addAttackPanel();
         }
 
-        private void btn_delete_attack_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Do you want to delete the selected attack?", "Delete", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                attack_panel.Controls.Remove(getSelectedPanel());
-        }
-
-        private void btn_roll_attack_Click(object sender, EventArgs e)
-        {
-            Panel p = getSelectedPanel();
-            string[] data = new string[2];
-            foreach (Control c in p.Controls)
-            {
-                if (c is TextBox)
-                {
-                    TextBox tb = (TextBox)c;
-                    if (tb.Name.Contains("dmg"))
-                    {
-                        data[0] = tb.Text;
-                    }
-                    else if (tb.Name.Contains("attributes"))
-                    {
-                        data[1] = tb.Text;
-                    }
-                }
-            }
-
-            if (data[0] == null || data[1] == null)
-            {
-                MessageBox.Show("Please fill in all the fields");
-                return;
-            }
-
-            if (roll_selector.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please select a dice to roll");
-                return;
-            }else if (roll_selector.SelectedIndex == 0)
-            {
-                performAttack("1d20", data[1], false);
-                return;
-            }else if (roll_selector.SelectedIndex == 1)
-            {
-                performAttack(data[0], data[1], true);
-                return;
-            }
-        }
-
         private void performAttack(string dice, string attributes, bool isDamage)
         {
             string modifier_toUse = "";
@@ -663,10 +577,10 @@ namespace sheet
                 {
                     modifier_toUse = "dex";
                 }
-            } 
+            }
             else
                 modifier_toUse = "str";
-            
+
             if (isDamage)
             {
                 if (attributes.Contains("versatile"))
@@ -682,49 +596,51 @@ namespace sheet
                     }
                 }
             }
-            
+
             int rolls = int.Parse(dice.Split('d')[0]);
             int sides = int.Parse(dice.Split('d')[1]);
 
 
             for (int i = 0; i < rolls; i++)
             {
-                int roll = iniciateRoll(sides, modifier_toUse,isDamage,false);
+                int roll = iniciateRoll(sides, modifier_toUse, isDamage, false);
             }
         }
         private int iniciateRoll(int sides, string modifier, bool isDamage, bool hasProficiency)
         {
+            /*
             int fin_mod = 0;
             if (chb_use_mod.Checked)
             {
                 switch (modifier)
                 {
                     case "str":
-                        fin_mod = (currentChar.mainStats.Str - 10) / 2;
+                        fin_mod = (currentChar.stats.Strength - 10) / 2;
                         break;
                     case "dex":
-                        fin_mod = (currentChar.mainStats.Dex - 10) / 2;
+                        fin_mod = (currentChar.stats.Dex - 10) / 2;
                         break;
                     case "const":
-                        fin_mod = (currentChar.mainStats.Const - 10) / 2;
+                        fin_mod = (currentChar.stats.Const - 10) / 2;
                         break;
                     case "int":
-                        fin_mod = (currentChar.mainStats.Int - 10) / 2;
+                        fin_mod = (currentChar.stats.Int - 10) / 2;
                         break;
                     case "wis":
-                        fin_mod = (currentChar.mainStats.Wis - 10) / 2;
+                        fin_mod = (currentChar.stats.Wis - 10) / 2;
                         break;
                     case "char":
-                        fin_mod = (currentChar.mainStats.Char - 10) / 2;
+                        fin_mod = (currentChar.stats.Char - 10) / 2;
                         break;
                     default:
                         fin_mod = Convert.ToInt32(modifier);
                         break;
                 }
             }
-
+            */
+            int fin_mod = 0;
             if (hasProficiency)
-                fin_mod += currentChar.pro;
+                fin_mod += currentChar.proefficency;
 
             string weapon = "";
             if (isDamage)
@@ -783,7 +699,7 @@ namespace sheet
                 weapon = $"{weapon_name},{damage_type}";
             }
 
-            Roll roll = new Roll(fin_mod,weapon);
+            Roll roll = new Roll(fin_mod, weapon);
             if (isDamage)
                 roll.pc_name = currentChar.cName;
             roll.rollDice(sides);
@@ -791,19 +707,8 @@ namespace sheet
             roll.MinimumSize = roll.Size;
             roll.ShowDialog();
             return roll.last_roll;
-            }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            using (var load = new LoadDialog())
-            {
-                load.ShowDialog();
-                currentChar = load.character;
-            }
-            checkBoxesThrow = new CheckBox[6] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
-            checkBoxesSkills = new CheckBox[18] { checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16, checkBox17, checkBox18, checkBox19, checkBox20, checkBox21, checkBox22, checkBox23, checkBox24 };
-            UpdateAll();
         }
+    
         private void setImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var open = new OpenFileDialog())
@@ -897,12 +802,85 @@ namespace sheet
                 UpdateHeader();
             }
         }
-
         private void saveSessionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             updateInventory(true);
             IAintDealingWithThis(true);
 
+        }
+        private void CharSheet_Load(object sender, EventArgs e)
+        {
+            using (var load = new LoadDialog())
+            {
+                load.ShowDialog();
+                currentChar = load.character;
+            }
+            if (currentChar == null)
+            {
+                MessageBox.Show("Character was not found.");
+                this.Close();
+            }
+            else
+            {
+                checkBoxesThrow = new CheckBox[6] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
+                checkBoxesSkills = new CheckBox[18] { checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16, checkBox17, checkBox18, checkBox19, checkBox20, checkBox21, checkBox22, checkBox23, checkBox24 };
+                UpdateAll();
+            }
+        }
+
+        private void btn_add_attack_Click_1(object sender, EventArgs e)
+        {
+            addAttackPanel();
+        }
+
+        private void btn_delete_attack_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to delete the selected attack?", "Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                attack_panel.Controls.Remove(getSelectedPanel());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Panel p = getSelectedPanel();
+            string[] data = new string[2];
+            foreach (Control c in p.Controls)
+            {
+                if (c is TextBox)
+                {
+                    TextBox tb = (TextBox)c;
+                    if (tb.Name.Contains("dmg"))
+                    {
+                        data[0] = tb.Text;
+                    }
+                    else if (tb.Name.Contains("attributes"))
+                    {
+                        data[1] = tb.Text;
+                    }
+                }
+            }
+
+            if (data[0] == null || data[1] == null)
+            {
+                MessageBox.Show("Please fill in all the fields");
+                return;
+            }
+
+            if (roll_selector.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a dice to roll");
+                return;
+            }
+            else if (roll_selector.SelectedIndex == 0)
+            {
+                performAttack("1d20", data[1], false);
+                return;
+            }
+            else if (roll_selector.SelectedIndex == 1)
+            {
+                performAttack(data[0], data[1], true);
+                return;
+            }
         }
     }
 }
