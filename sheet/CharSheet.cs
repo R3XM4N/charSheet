@@ -299,6 +299,7 @@ namespace sheet
             */
         }
 
+
         public List<string>[] getSpells()
         {
             List<string>[] spells = new List<string>[10];
@@ -489,7 +490,7 @@ namespace sheet
 
 
         #endregion
-        private List<string> getAttackData()
+        public List<string> getAttackData()
         {
             List<string> data = new List<string>();
             foreach (Panel p in attack_panel.Controls)
