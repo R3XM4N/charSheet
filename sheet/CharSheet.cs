@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using static sheet.Character;
 using Newtonsoft.Json;
 using sheet.Dialogs;
+using System.Collections;
 
 namespace sheet
 {
@@ -298,6 +299,60 @@ namespace sheet
             */
         }
 
+        public List<string>[] getSpells()
+        {
+            List<string>[] spells = new List<string>[10];
+            int i = 0;
+            foreach (TabPage p in tabC_spells.TabPages)
+            {
+                spells[i].Add(getDataFromDataGrid(p));
+                i++;
+            }
+            return spells;
+        }
+
+        private string getDataFromDataGrid(TabPage p)
+        {
+            // get Datagrid from tabpage
+            DataGridView dg = new DataGridView();
+            foreach (Control c in p.Controls)
+            {
+                if (c is DataGridView)
+                    dg = (DataGridView)c;
+            }
+            string data = "";
+            foreach (string[] row in dg.Rows)
+            {
+                data += string.Join("|", row) + "\n";
+            }
+            return data;
+        }
+
+        public void setDataToSpells(List<string>[] data)
+        {
+            int i = 0;
+            foreach (TabPage p in tabC_spells.TabPages)
+            {
+                setDataToDataGrid(p, data[i]);
+                i++;
+            }
+        }
+
+        private void setDataToDataGrid(TabPage p, List<string> list)
+        {
+            DataGridView dg = new DataGridView();
+            foreach (Control c in p.Controls)
+            {
+                if (c is DataGridView)
+                    dg = (DataGridView)c;
+            }
+            foreach (string s in list)
+            {
+                string[] data = s.Split('|');
+                dg.Rows.Add(data);
+            }
+        }
+
         private void copySpellTabs()
         {
             // copy all controls from tab_sp1 to tab_sp2-9
@@ -434,8 +489,39 @@ namespace sheet
 
 
         #endregion
+        private List<string> getAttackData()
+        {
+            List<string> data = new List<string>();
+            foreach (Panel p in attack_panel.Controls)
+            {
+                string[] temp = new string[3];
+                foreach (Control c in p.Controls)
+                {
+                    if (c is TextBox)
+                    {
+                        TextBox tb = (TextBox)c;
+                        if (tb.Name.Contains("name"))
+                        {
+                            temp[0] = tb.Text;
+                        }
+                        else if (tb.Name.Contains("dmg"))
+                        {
+                            temp[1] = tb.Text;
+                        }
+                        else if (tb.Name.Contains("attributes"))
+                        {
+                            temp[2] = tb.Text;
+                        }
+                    }
+                }
+                data.Add(string.Join("|", temp));
+            }
+            return data;
+        }
 
-
+        /// <summary>
+        /// Creates blank weapon panel
+        /// </summary>
         private void addAttackPanel()
         {
             Panel p = new Panel();
@@ -443,13 +529,49 @@ namespace sheet
             p.Height = 61;
             p.BorderStyle = BorderStyle.FixedSingle;
 
-            p.Controls.AddRange(getAttackData(attack_panel.Controls.Count, p));
+            p.Controls.AddRange(getAttackTxtBoxes(attack_panel.Controls.Count, p));
             p.Click += new EventHandler(txt_selectWeapon);
 
             attack_panel.Controls.Add(p);
         }
 
-        private TextBox[] getAttackData(int id, Control parent)
+        /// <summary>
+        /// Adds a panel with the given data
+        /// </summary>
+        /// <param name="data"></param>
+        public void addAttackPanel(List<string> data)
+        {
+            Panel p = new Panel();
+            p.Dock = DockStyle.Top;
+            p.Height = 61;
+            p.BorderStyle = BorderStyle.FixedSingle;
+
+            p.Controls.AddRange(getAttackTxtBoxes(attack_panel.Controls.Count, p));
+            p.Click += new EventHandler(txt_selectWeapon);
+
+            attack_panel.Controls.Add(p);
+            foreach (Control c in p.Controls)
+            {
+                if (c is TextBox)
+                {
+                    TextBox tb = (TextBox)c;
+                    if (tb.Name.Contains("name"))
+                    {
+                        tb.Text = data[0];
+                    }
+                    else if (tb.Name.Contains("dmg"))
+                    {
+                        tb.Text = data[1];
+                    }
+                    else if (tb.Name.Contains("attributes"))
+                    {
+                        tb.Text = data[2];
+                    }
+                }
+            }
+        }
+
+        private TextBox[] getAttackTxtBoxes(int id, Control parent)
         {
             TextBox b1 = new TextBox();
             b1.Name = "txt_atk_" + id + "_name";
