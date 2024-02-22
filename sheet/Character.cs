@@ -19,14 +19,14 @@ namespace sheet
 {
     public class Character
     {
-        public int[] xpNeeded = new int[] { 0,300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000,120000,140000,165000,192000,225000,265000,305000,355000};
+        public int[] xpNeeded = new int[] { 0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 192000, 225000, 265000, 305000, 355000 };
         //Base
         public int proefficency = 0;
         public List<int>[] bonus = new List<int>[2] { new List<int> { }, new List<int> { } };
         public string cName { get; set; }
         public string race { get; set; }
         public string charClass { get; set; }
-        public void SetBase(string characterName,string characterRace,string characterClass)
+        public void SetBase(string characterName, string characterRace, string characterClass)
         {
             cName = characterName;
             race = characterRace;
@@ -58,7 +58,7 @@ namespace sheet
                         }
                     }
                 }
-                
+
             }
             catch (Exception e)
             {
@@ -68,7 +68,7 @@ namespace sheet
             {
                 proefficency = 2;
             }
-            else if(level < 9)
+            else if (level < 9)
             {
                 proefficency = 3;
             }
@@ -83,7 +83,7 @@ namespace sheet
             else if (level > 16)
             {
                 proefficency = 6;
-            } 
+            }
         }
         //Battle
         public int[] health { get; set; } = new int[3];//max/current/temp
@@ -160,16 +160,22 @@ namespace sheet
                     Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma
                 };
             }
+            public int[] GetRollValues()
+            {
+                return new int[6]{
+                    Strength / 2 - 10, Dexterity / 2 - 10, Constitution / 2 - 10, Intelligence / 2 - 10, Wisdom / 2 - 10, Charisma/ 2 - 10
+                };
+            }
         }
         public SavingThrows savingThrows;
         public struct SavingThrows
         {
             public int SavingStrength { get; set; }
-            public int SavingDexterity{ get; set; }
-            public int SavingConstitution{ get; set; }
-            public int SavingIntelligence{ get; set; }
-            public int SavingWisdom{ get; set; }
-            public int SavingCharisma{ get; set; }
+            public int SavingDexterity { get; set; }
+            public int SavingConstitution { get; set; }
+            public int SavingIntelligence { get; set; }
+            public int SavingWisdom { get; set; }
+            public int SavingCharisma { get; set; }
             public void Set(int[] throws)
             {
                 if (throws.Length == 6)
@@ -275,22 +281,14 @@ namespace sheet
             }
         }
         public string[] inventory = new string[2];
-
         public void SaveAsFile(string location)
         {
             using (var handler = new DataHandler())
             {
-                handler.ToJsonFile(this,location);
+                handler.ToJsonFile(this, location);
             }
         }
-        /*
-        public void LoadFromFile(string location)
-        {
-            using (var handler = new DataHandler())
-            {
-                this = handler.FromJsonFile<Character>(location);
-            }
-        }
-        */
+        public List<string>[] spells = new List<string>[10];
+        public List<string> attacks = new List<string>();
     }
 }

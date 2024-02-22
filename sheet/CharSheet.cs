@@ -15,6 +15,7 @@ using static sheet.Character;
 using Newtonsoft.Json;
 using sheet.Dialogs;
 using System.Collections;
+using Newtonsoft.Json.Bson;
 
 namespace sheet
 {
@@ -79,6 +80,7 @@ namespace sheet
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            SaveAll();
             using (var sd = new SaveFileDialog())
             {
                 sd.Title = "Select a location";
@@ -99,18 +101,38 @@ namespace sheet
         #endregion
 
         #region Data-Handle
+        void UpdateSpellsAttacks()
+        {
+            //UpdateAttacks(false);
+            //UpdateSpells(false);
+        }
         void UpdateAll()
         {
             StatsUpdate(true, true, true, statCheck.Checked);
             UpdateHeader();
             IAintDealingWithThis(false);
             updateInventory(false);
+            if (currentChar.image != "" && currentChar.image != null)
+            {
+                charImage.Image = currentChar.GetImage();
+                littleImageBox.Image = currentChar.GetImage();
+            }
+
+            //UpdateSpellsAttacks();
+        }
+        void SaveAll()
+        {
+            IAintDealingWithThis(true);
+            updateInventory(true);
+            UpdateAttacks(true);
+            //UpdateSpells(true);
         }
         void UpdateHeader()
         {
             lvlBox.Text = currentChar.level.ToString();
             raceBox.Text = currentChar.race;
             classBox.Text = currentChar.charClass;
+            charNameBox.Text = currentChar.cName;
         }
         void StatsUpdate(bool updateStats, bool updateThrows, bool updateSkills, bool statsFunctional)
         {
@@ -144,6 +166,28 @@ namespace sheet
             if (updateSkills)
             {
                 dataHandler.FillTextBoxesReadableProf(currentChar.skills.Get(), new TextBox[18] { statBox7, statBox8, statBox9, statBox10, statBox11, statBox12, statBox13, statBox14, statBox15, statBox16, statBox17, statBox18, statBox19, statBox20, statBox21, statBox22, statBox23, statBox24 }, currentChar.bonus[1], currentChar.proefficency);
+            }
+        }
+        void UpdateSpells(bool save)
+        {
+            if (save)
+            {
+                currentChar.spells = getSpells();
+            }
+            else
+            {
+                 setDataToSpells(currentChar.spells);
+            }
+        }
+        void UpdateAttacks(bool save)
+        {
+            if (save)
+            {
+                currentChar.attacks = getAttackData();
+            }
+            else
+            {
+                addAttackPanel(currentChar.attacks);
             }
         }
 
@@ -289,14 +333,22 @@ namespace sheet
 
         #region David's Shit
         private void CharSheet_FormClosing(object sender, FormClosingEventArgs e)
-        {/*
-            // messagebox for saving
+        {
+            //messagebox for saving
             DialogResult dialogResult = MessageBox.Show("Do you want to save the sheet?", "Save", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                quickSave();
+                using (SaveFileDialog sd = new SaveFileDialog())
+                {
+                    SaveAll();
+                    sd.Title = "Select a location";
+                    sd.AddExtension = true;
+                    sd.DefaultExt = "json";
+                    sd.Filter = "JSON files (*.json)|*.json";
+                    sd.ShowDialog();
+                    currentChar.SaveAsFile(sd.FileName);
+                }
             }
-            */
         }
 
 
@@ -731,37 +783,35 @@ namespace sheet
         }
         private int iniciateRoll(int sides, string modifier, bool isDamage, bool hasProficiency)
         {
-            /*
+            
             int fin_mod = 0;
             if (chb_use_mod.Checked)
             {
                 switch (modifier)
                 {
                     case "str":
-                        fin_mod = (currentChar.stats.Strength - 10) / 2;
+                        fin_mod = currentChar.stats.GetRollValues()[0];
                         break;
                     case "dex":
-                        fin_mod = (currentChar.stats.Dex - 10) / 2;
+                        fin_mod = currentChar.stats.GetRollValues()[1];
                         break;
                     case "const":
-                        fin_mod = (currentChar.stats.Const - 10) / 2;
+                        fin_mod = currentChar.stats.GetRollValues()[2];
                         break;
                     case "int":
-                        fin_mod = (currentChar.stats.Int - 10) / 2;
+                        fin_mod = currentChar.stats.GetRollValues()[3];
                         break;
                     case "wis":
-                        fin_mod = (currentChar.stats.Wis - 10) / 2;
+                        fin_mod = currentChar.stats.GetRollValues()[4];
                         break;
                     case "char":
-                        fin_mod = (currentChar.stats.Char - 10) / 2;
+                        fin_mod = currentChar.stats.GetRollValues()[5];
                         break;
                     default:
                         fin_mod = Convert.ToInt32(modifier);
                         break;
                 }
             }
-            */
-            int fin_mod = 0;
             if (hasProficiency)
                 fin_mod += currentChar.proefficency;
 
@@ -838,7 +888,7 @@ namespace sheet
             {
                 open.Title = "Select a file.";
                 open.ShowDialog();
-                if (open.FileName != "" || open.FileName != null)
+                if (open.FileName != "" && open.FileName != null)
                 {
                     currentChar.SetImage(Image.FromFile(open.FileName));
 
