@@ -2,10 +2,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace sheet
@@ -14,7 +10,6 @@ namespace sheet
     {
         private bool disposed = false;
         public DataHandler() { }
-
         public void FillTextBoxes<T>(T[] data, TextBox[] textBoxes)
         {
             try
@@ -160,6 +155,62 @@ namespace sheet
             {
                 MessageBox.Show(e.Message);
                 return default(T);
+            }
+        }
+        public string GetFilePath(bool save,string extension,string initialPath)
+        {
+            extension = extension.ToLower();
+            if (save)
+            {
+                using (SaveFileDialog sd = new SaveFileDialog())
+                {
+                    sd.Title = "Choose a location to save";
+                    if (initialPath != "" && extension != null)
+                    {
+                        sd.InitialDirectory = initialPath;
+                    }
+                    if (extension != "" && extension != null)
+                    {
+                        sd.AddExtension = true;
+                        sd.DefaultExt = extension;
+                        sd.Filter = $"{extension.ToUpper()} files (*.{extension})|*.{extension}";
+                    }
+                    sd.ShowDialog();
+                    if (sd.FileName != null && sd.FileName != "")
+                    {
+                        return sd.FileName;
+                    }
+                    else
+                    {
+                        return "INVALID";
+                    }
+                }
+            }
+            else
+            {
+                using (OpenFileDialog od = new OpenFileDialog())
+                {
+                    od.Title = "Choose a file to open.";
+                    if (initialPath != "" && extension != null)
+                    {
+                        od.InitialDirectory = initialPath;
+                    }
+                    if (extension != "" && extension != null)
+                    {
+                        od.AddExtension = true;
+                        od.DefaultExt = extension;
+                        od.Filter = $"{extension.ToUpper()} files (*.{extension})|*.{extension}";
+                    }
+                    od.ShowDialog();
+                    if (od.FileName != null && od.FileName != "")
+                    {
+                        return od.FileName;
+                    }
+                    else
+                    {
+                        return "INVALID";
+                    }
+                }
             }
         }
         #region yoinked

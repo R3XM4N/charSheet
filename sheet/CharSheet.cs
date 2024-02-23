@@ -985,7 +985,6 @@ namespace sheet
                 eyeBox.Text = currentChar.characteristics.eye;
                 hairBox.Text = currentChar.characteristics.hair;
                 alignBox.Text = currentChar.characteristics.alignment;
-
             }
         }
         void updateInventory(bool save)
