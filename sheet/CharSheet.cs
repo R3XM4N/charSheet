@@ -117,7 +117,6 @@ namespace sheet
                 charImage.Image = currentChar.GetImage();
                 littleImageBox.Image = currentChar.GetImage();
             }
-
             UpdateSpellsAttacks();
         }
         void SaveAll()
@@ -210,7 +209,10 @@ namespace sheet
             {
                 if (checkBox.Checked)
                 {
-                    currentChar.bonus[1].Add(Array.IndexOf(checkBoxesSkills, checkBox));
+                    if (!currentChar.bonus[1].Contains(Array.IndexOf(checkBoxesSkills, checkBox)))
+                    {
+                        currentChar.bonus[1].Add(Array.IndexOf(checkBoxesSkills, checkBox));
+                    }
                 }
                 else
                 {
@@ -222,7 +224,10 @@ namespace sheet
             {
                 if (checkBox.Checked)
                 {
-                    currentChar.bonus[0].Add(Array.IndexOf(checkBoxesThrow, checkBox));
+                    if (!currentChar.bonus[0].Contains(Array.IndexOf(checkBoxesThrow, checkBox)))
+                    {
+                        currentChar.bonus[0].Add(Array.IndexOf(checkBoxesThrow, checkBox));
+                    }
                 }
                 else
                 {
@@ -561,7 +566,6 @@ namespace sheet
             };
             return columns;
         }
-
         private void createSpell(int level)
         {
             SpellCreator sc = new SpellCreator();
@@ -575,8 +579,6 @@ namespace sheet
                 sc.Close();
             };
         }
-
-
         #endregion
         public List<string> getAttackData()
         {
