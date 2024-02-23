@@ -465,7 +465,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(950, 55);
+            this.label43.Location = new System.Drawing.Point(888, 56);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(26, 27);
             this.label43.TabIndex = 147;
@@ -512,7 +512,7 @@
             // healthTempBox
             // 
             this.healthTempBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.healthTempBox.Location = new System.Drawing.Point(978, 53);
+            this.healthTempBox.Location = new System.Drawing.Point(920, 53);
             this.healthTempBox.Name = "healthTempBox";
             this.healthTempBox.Size = new System.Drawing.Size(32, 35);
             this.healthTempBox.TabIndex = 149;
@@ -522,7 +522,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(888, 57);
+            this.label45.Location = new System.Drawing.Point(968, 60);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(19, 27);
             this.label45.TabIndex = 150;
@@ -541,7 +541,7 @@
             // healthMaxBox
             // 
             this.healthMaxBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.healthMaxBox.Location = new System.Drawing.Point(910, 52);
+            this.healthMaxBox.Location = new System.Drawing.Point(993, 53);
             this.healthMaxBox.Name = "healthMaxBox";
             this.healthMaxBox.Size = new System.Drawing.Size(34, 35);
             this.healthMaxBox.TabIndex = 148;

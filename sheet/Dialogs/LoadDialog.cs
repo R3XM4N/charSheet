@@ -40,7 +40,6 @@ namespace sheet.Dialogs
             character.stats = new Stats();
             character.savingThrows = new SavingThrows();
             character.skills = new Skills();
-            character.money = new Money();
             this.Close();
         }
     }

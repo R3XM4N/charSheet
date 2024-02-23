@@ -90,7 +90,7 @@ namespace sheet
                 int i = 0;
                 foreach (TextBox textBox in textBoxes)
                 {
-                    temp[0] = (T)Convert.ChangeType(textBox.Text, typeof(T)); ;
+                    temp[i] = (T)Convert.ChangeType(textBox.Text, typeof(T));
                     i++;
                 }
                 return temp;

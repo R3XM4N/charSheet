@@ -9,7 +9,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Newtonsoft.Json;
@@ -19,6 +18,9 @@ namespace sheet
 {
     public class Character
     {
+        [JsonIgnore]
+        public string VERSION { get; private set; } = "dev-1.1.0";
+
         public int[] xpNeeded = new int[] { 0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 192000, 225000, 265000, 305000, 355000 };
         //Base
         public int proefficency = 0;
@@ -86,7 +88,7 @@ namespace sheet
             }
         }
         //Battle
-        public int[] health { get; set; } = new int[3];//max/current/temp
+        public int[] health { get; set; } = new int[3];//current/temp/max
         public int speed { get; set; }
         public int armorClass { get; set; }
         public int deathSaves { get; set; }
@@ -142,16 +144,16 @@ namespace sheet
             public int Intelligence { get; set; }
             public int Wisdom { get; set; }
             public int Charisma { get; set; }
-            public void Set(int[] throws)
+            public void Set(int[] stats)
             {
-                if (throws.Length == 6)
+                if (stats.Length == 6)
                 {
-                    Strength = throws[0];
-                    Dexterity = throws[1];
-                    Constitution = throws[2];
-                    Intelligence = throws[3];
-                    Wisdom = throws[4];
-                    Charisma = throws[5];
+                    Strength = stats[0];
+                    Dexterity = stats[1];
+                    Constitution = stats[2];
+                    Intelligence = stats[3];
+                    Wisdom = stats[4];
+                    Charisma = stats[5];
                 }
             }
             public int[] Get()
@@ -252,34 +254,8 @@ namespace sheet
                 };
             }
         }
-        //else
-        public Money money;
-        public struct Money
-        {
-            public double copperC;
-            public double silverC;
-            public double electrumC;
-            public double goldC;
-            public double platinumC;
-
-            public void Set(double[] coins)
-            {
-                if (coins.Length == 5)
-                {
-                    copperC = coins[0];
-                    silverC = coins[1];
-                    electrumC = coins[2];
-                    goldC = coins[3];
-                    platinumC = coins[4];
-                }
-            }
-            public double[] Get()
-            {
-                return new double[5]{
-                    copperC, silverC, electrumC, goldC, platinumC
-                };
-            }
-        }
+        //CC,SC,EC,GC,PC
+        public int[] money = new int[5] { 0,0,0,0,0} ;
         public string[] inventory = new string[2];
         public void SaveAsFile(string location)
         {

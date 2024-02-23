@@ -142,11 +142,11 @@ namespace sheet
         {
             if (save)
             {
-                currentChar.money.Set(DataHandler.FillFromBoxes<double>(new TextBox[5] { cpText, gpText, epText, spText, ppText }));
+                currentChar.money = DataHandler.FillFromBoxes<int>(new TextBox[5] { cpText, gpText, epText, spText, ppText });
             }
             else
             {
-                DataHandler.FillTextBoxes(currentChar.money.Get(),new TextBox[5] { cpText, gpText, epText, spText, ppText });
+                DataHandler.FillTextBoxes(currentChar.money,new TextBox[5] { cpText, gpText, epText, spText, ppText });
             }
         }
         void StatsUpdate(bool updateStats, bool updateThrows, bool updateSkills, bool statsFunctional)
