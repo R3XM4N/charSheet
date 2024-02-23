@@ -192,7 +192,7 @@
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.charImage = new System.Windows.Forms.PictureBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.mianTabControl = new System.Windows.Forms.TabControl();
             this.tabAttack = new System.Windows.Forms.TabPage();
             this.attack_panel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -230,7 +230,7 @@
             this.tabPage7.SuspendLayout();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charImage)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.mianTabControl.SuspendLayout();
             this.tabAttack.SuspendLayout();
             this.panel3.SuspendLayout();
             this.invTreasure.SuspendLayout();
@@ -243,7 +243,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F);
-            this.label1.Location = new System.Drawing.Point(142, 41);
+            this.label1.Location = new System.Drawing.Point(140, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 18);
             this.label1.TabIndex = 2;
@@ -253,7 +253,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F);
-            this.label2.Location = new System.Drawing.Point(482, 41);
+            this.label2.Location = new System.Drawing.Point(480, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 18);
             this.label2.TabIndex = 5;
@@ -332,7 +332,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Arial", 12F);
-            this.label35.Location = new System.Drawing.Point(139, 106);
+            this.label35.Location = new System.Drawing.Point(140, 105);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(48, 18);
             this.label35.TabIndex = 8;
@@ -342,7 +342,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Arial", 12F);
-            this.label36.Location = new System.Drawing.Point(328, 106);
+            this.label36.Location = new System.Drawing.Point(350, 105);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(36, 18);
             this.label36.TabIndex = 10;
@@ -445,7 +445,7 @@
             // 
             // littleImageBox
             // 
-            this.littleImageBox.Location = new System.Drawing.Point(16, 62);
+            this.littleImageBox.Location = new System.Drawing.Point(10, 60);
             this.littleImageBox.Name = "littleImageBox";
             this.littleImageBox.Size = new System.Drawing.Size(120, 130);
             this.littleImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -549,6 +549,7 @@
             // 
             // otherTab
             // 
+            this.otherTab.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.otherTab.Controls.Add(this.weightBox);
             this.otherTab.Controls.Add(this.skinBox);
             this.otherTab.Controls.Add(this.label49);
@@ -562,10 +563,9 @@
             this.otherTab.Location = new System.Drawing.Point(4, 36);
             this.otherTab.Name = "otherTab";
             this.otherTab.Padding = new System.Windows.Forms.Padding(3);
-            this.otherTab.Size = new System.Drawing.Size(837, 560);
+            this.otherTab.Size = new System.Drawing.Size(842, 560);
             this.otherTab.TabIndex = 4;
             this.otherTab.Text = "Other";
-            this.otherTab.UseVisualStyleBackColor = true;
             // 
             // weightBox
             // 
@@ -664,14 +664,14 @@
             // 
             // tabSpells
             // 
+            this.tabSpells.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.tabSpells.Controls.Add(this.tabC_spells);
             this.tabSpells.Controls.Add(this.toolStrip2);
             this.tabSpells.Location = new System.Drawing.Point(4, 36);
             this.tabSpells.Name = "tabSpells";
-            this.tabSpells.Size = new System.Drawing.Size(837, 560);
+            this.tabSpells.Size = new System.Drawing.Size(842, 560);
             this.tabSpells.TabIndex = 5;
             this.tabSpells.Text = "Spells";
-            this.tabSpells.UseVisualStyleBackColor = true;
             // 
             // tabC_spells
             // 
@@ -681,19 +681,19 @@
             this.tabC_spells.Location = new System.Drawing.Point(0, 25);
             this.tabC_spells.Name = "tabC_spells";
             this.tabC_spells.SelectedIndex = 0;
-            this.tabC_spells.Size = new System.Drawing.Size(837, 535);
+            this.tabC_spells.Size = new System.Drawing.Size(842, 535);
             this.tabC_spells.TabIndex = 3;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 36);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(829, 495);
+            this.tabPage1.Size = new System.Drawing.Size(834, 495);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Base";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -710,7 +710,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(823, 157);
+            this.panel2.Size = new System.Drawing.Size(828, 157);
             this.panel2.TabIndex = 0;
             // 
             // label20
@@ -783,14 +783,14 @@
             // 
             // tab_cantrip
             // 
+            this.tab_cantrip.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.tab_cantrip.Controls.Add(this.panel4);
             this.tab_cantrip.Location = new System.Drawing.Point(4, 36);
             this.tab_cantrip.Name = "tab_cantrip";
             this.tab_cantrip.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_cantrip.Size = new System.Drawing.Size(829, 495);
+            this.tab_cantrip.Size = new System.Drawing.Size(834, 495);
             this.tab_cantrip.TabIndex = 1;
             this.tab_cantrip.Text = "Cantrips";
-            this.tab_cantrip.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -800,7 +800,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(823, 55);
+            this.panel4.Size = new System.Drawing.Size(828, 55);
             this.panel4.TabIndex = 1;
             // 
             // label24
@@ -830,7 +830,7 @@
             this.toolStripSplitButton2});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(837, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(842, 25);
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -939,6 +939,7 @@
             // 
             // statsTab
             // 
+            this.statsTab.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.statsTab.Controls.Add(this.checkBox24);
             this.statsTab.Controls.Add(this.checkBox23);
             this.statsTab.Controls.Add(this.label39);
@@ -1007,10 +1008,9 @@
             this.statsTab.Location = new System.Drawing.Point(4, 36);
             this.statsTab.Name = "statsTab";
             this.statsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.statsTab.Size = new System.Drawing.Size(837, 560);
+            this.statsTab.Size = new System.Drawing.Size(842, 560);
             this.statsTab.TabIndex = 1;
             this.statsTab.Text = "Stats/Skills";
-            this.statsTab.UseVisualStyleBackColor = true;
             // 
             // checkBox24
             // 
@@ -1706,6 +1706,7 @@
             // 
             // charInfoTab
             // 
+            this.charInfoTab.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.charInfoTab.Controls.Add(this.alignBox);
             this.charInfoTab.Controls.Add(this.ageBox);
             this.charInfoTab.Controls.Add(this.backgroundBox);
@@ -1716,10 +1717,9 @@
             this.charInfoTab.Location = new System.Drawing.Point(4, 36);
             this.charInfoTab.Name = "charInfoTab";
             this.charInfoTab.Padding = new System.Windows.Forms.Padding(3);
-            this.charInfoTab.Size = new System.Drawing.Size(837, 560);
+            this.charInfoTab.Size = new System.Drawing.Size(842, 560);
             this.charInfoTab.TabIndex = 0;
             this.charInfoTab.Text = "Characteristics";
-            this.charInfoTab.UseVisualStyleBackColor = true;
             // 
             // alignBox
             // 
@@ -1957,40 +1957,38 @@
             this.charImage.TabIndex = 18;
             this.charImage.TabStop = false;
             // 
-            // tabControl1
+            // mianTabControl
             // 
-            this.tabControl1.Controls.Add(this.statsTab);
-            this.tabControl1.Controls.Add(this.charInfoTab);
-            this.tabControl1.Controls.Add(this.tabAttack);
-            this.tabControl1.Controls.Add(this.tabSpells);
-            this.tabControl1.Controls.Add(this.otherTab);
-            this.tabControl1.Font = new System.Drawing.Font("Arial", 18F);
-            this.tabControl1.Location = new System.Drawing.Point(20, 199);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(845, 600);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
+            this.mianTabControl.Controls.Add(this.statsTab);
+            this.mianTabControl.Controls.Add(this.charInfoTab);
+            this.mianTabControl.Controls.Add(this.tabAttack);
+            this.mianTabControl.Controls.Add(this.tabSpells);
+            this.mianTabControl.Controls.Add(this.otherTab);
+            this.mianTabControl.Font = new System.Drawing.Font("Arial", 18F);
+            this.mianTabControl.Location = new System.Drawing.Point(10, 200);
+            this.mianTabControl.Name = "mianTabControl";
+            this.mianTabControl.SelectedIndex = 0;
+            this.mianTabControl.Size = new System.Drawing.Size(850, 600);
+            this.mianTabControl.TabIndex = 0;
             // 
             // tabAttack
             // 
+            this.tabAttack.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.tabAttack.Controls.Add(this.attack_panel);
             this.tabAttack.Controls.Add(this.panel3);
             this.tabAttack.Location = new System.Drawing.Point(4, 36);
             this.tabAttack.Name = "tabAttack";
             this.tabAttack.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAttack.Size = new System.Drawing.Size(837, 560);
+            this.tabAttack.Size = new System.Drawing.Size(842, 560);
             this.tabAttack.TabIndex = 6;
             this.tabAttack.Text = "Attacks";
-            this.tabAttack.UseVisualStyleBackColor = true;
             // 
             // attack_panel
             // 
             this.attack_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.attack_panel.Location = new System.Drawing.Point(3, 3);
             this.attack_panel.Name = "attack_panel";
-            this.attack_panel.Size = new System.Drawing.Size(575, 554);
+            this.attack_panel.Size = new System.Drawing.Size(580, 554);
             this.attack_panel.TabIndex = 4;
             // 
             // panel3
@@ -2003,7 +2001,7 @@
             this.panel3.Controls.Add(this.btn_delete_attack);
             this.panel3.Controls.Add(this.btn_add_attack);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(578, 3);
+            this.panel3.Location = new System.Drawing.Point(583, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(256, 554);
             this.panel3.TabIndex = 3;
@@ -2085,6 +2083,7 @@
             // 
             // invTreasure
             // 
+            this.invTreasure.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.invTreasure.Controls.Add(this.treasureText);
             this.invTreasure.Location = new System.Drawing.Point(4, 36);
             this.invTreasure.Name = "invTreasure";
@@ -2092,7 +2091,6 @@
             this.invTreasure.Size = new System.Drawing.Size(452, 560);
             this.invTreasure.TabIndex = 1;
             this.invTreasure.Text = "Treasures";
-            this.invTreasure.UseVisualStyleBackColor = true;
             // 
             // treasureText
             // 
@@ -2107,6 +2105,7 @@
             // 
             // invEquip
             // 
+            this.invEquip.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.invEquip.Controls.Add(this.inventoryBox);
             this.invEquip.Location = new System.Drawing.Point(4, 36);
             this.invEquip.Name = "invEquip";
@@ -2114,7 +2113,6 @@
             this.invEquip.Size = new System.Drawing.Size(452, 560);
             this.invEquip.TabIndex = 0;
             this.invEquip.Text = "Equipment";
-            this.invEquip.UseVisualStyleBackColor = true;
             // 
             // inventoryBox
             // 
@@ -2133,7 +2131,7 @@
             this.tabControl3.Controls.Add(this.invTreasure);
             this.tabControl3.Controls.Add(this.ElseTab);
             this.tabControl3.Font = new System.Drawing.Font("Arial", 18F);
-            this.tabControl3.Location = new System.Drawing.Point(867, 199);
+            this.tabControl3.Location = new System.Drawing.Point(865, 200);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(460, 600);
@@ -2141,6 +2139,7 @@
             // 
             // ElseTab
             // 
+            this.ElseTab.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ElseTab.Controls.Add(this.gpText);
             this.ElseTab.Controls.Add(this.cpText);
             this.ElseTab.Controls.Add(this.label13);
@@ -2158,7 +2157,6 @@
             this.ElseTab.Size = new System.Drawing.Size(452, 560);
             this.ElseTab.TabIndex = 3;
             this.ElseTab.Text = "Else";
-            this.ElseTab.UseVisualStyleBackColor = true;
             // 
             // label19
             // 
@@ -2174,7 +2172,7 @@
             // 
             this.charNameBox.AutoSize = true;
             this.charNameBox.Font = new System.Drawing.Font("Arial", 22F);
-            this.charNameBox.Location = new System.Drawing.Point(142, 62);
+            this.charNameBox.Location = new System.Drawing.Point(140, 60);
             this.charNameBox.Name = "charNameBox";
             this.charNameBox.Size = new System.Drawing.Size(268, 35);
             this.charNameBox.TabIndex = 152;
@@ -2184,7 +2182,7 @@
             // 
             this.raceBox.AutoSize = true;
             this.raceBox.Font = new System.Drawing.Font("Arial", 22F);
-            this.raceBox.Location = new System.Drawing.Point(479, 64);
+            this.raceBox.Location = new System.Drawing.Point(480, 60);
             this.raceBox.Name = "raceBox";
             this.raceBox.Size = new System.Drawing.Size(152, 35);
             this.raceBox.TabIndex = 153;
@@ -2194,7 +2192,7 @@
             // 
             this.classBox.AutoSize = true;
             this.classBox.Font = new System.Drawing.Font("Arial", 22F);
-            this.classBox.Location = new System.Drawing.Point(142, 125);
+            this.classBox.Location = new System.Drawing.Point(140, 125);
             this.classBox.Name = "classBox";
             this.classBox.Size = new System.Drawing.Size(123, 35);
             this.classBox.TabIndex = 154;
@@ -2204,7 +2202,7 @@
             // 
             this.lvlBox.AutoSize = true;
             this.lvlBox.Font = new System.Drawing.Font("Arial", 22F);
-            this.lvlBox.Location = new System.Drawing.Point(325, 125);
+            this.lvlBox.Location = new System.Drawing.Point(350, 125);
             this.lvlBox.Name = "lvlBox";
             this.lvlBox.Size = new System.Drawing.Size(66, 35);
             this.lvlBox.TabIndex = 155;
@@ -2216,8 +2214,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(400, 400);
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.BackgroundImage = global::sheet.Properties.Resources.grey_bg;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1334, 811);
             this.Controls.Add(this.lvlBox);
             this.Controls.Add(this.classBox);
@@ -2238,7 +2235,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.healthBox);
             this.Controls.Add(this.speedBox);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.mianTabControl);
             this.Controls.Add(this.armorClassBox);
             this.Controls.Add(this.label43);
             this.Controls.Add(this.label44);
@@ -2279,7 +2276,7 @@
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charImage)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.mianTabControl.ResumeLayout(false);
             this.tabAttack.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -2420,8 +2417,7 @@
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage invTreasure;
+        private System.Windows.Forms.TabControl mianTabControl;
         private System.Windows.Forms.TextBox treasureText;
         private System.Windows.Forms.TabPage invEquip;
         private System.Windows.Forms.TextBox inventoryBox;
@@ -2480,6 +2476,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TabPage invTreasure;
     }
 }
 

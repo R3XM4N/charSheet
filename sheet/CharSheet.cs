@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using sheet.Dialogs;
 using System.Collections;
 using Newtonsoft.Json.Bson;
+using System.Runtime.InteropServices;
 
 namespace sheet
 {
@@ -91,12 +92,6 @@ namespace sheet
             }
 
         }
-
-        //temp data saving
-        private void tabControl1_Selected(object sender, TabControlEventArgs e)
-        {
-
-        }
         #endregion
 
         #region Data-Handle
@@ -117,6 +112,7 @@ namespace sheet
                 littleImageBox.Image = currentChar.GetImage();
             }
             UpdateSpellsAttacks();
+            UpdateMoney(false);
         }
         void SaveAll()
         {
@@ -124,6 +120,13 @@ namespace sheet
             updateInventory(true);
             UpdateAttacks(true);
             UpdateSpells(true);
+            currentChar.health =  DataHandler.FillFromBoxes<int>(new TextBox[3] { healthBox, healthTempBox, healthMaxBox });
+            UpdateMoney(true);
+            if (Int32.TryParse(speedBox.Text, out int speed) && Int32.TryParse(armorClassBox.Text, out int armor))
+            {
+                currentChar.speed = speed;
+                currentChar.armorClass = armor;
+            }
         }
         void UpdateHeader()
         {
@@ -131,6 +134,20 @@ namespace sheet
             raceBox.Text = currentChar.race;
             classBox.Text = currentChar.charClass;
             charNameBox.Text = currentChar.cName;
+            armorClassBox.Text = currentChar.armorClass.ToString();
+            speedBox.Text = currentChar.speed.ToString();
+            DataHandler.FillTextBoxes<int>(currentChar.health,new TextBox[3] {healthBox,healthTempBox,healthMaxBox});
+        }
+        void UpdateMoney(bool save)
+        {
+            if (save)
+            {
+                currentChar.money.Set(DataHandler.FillFromBoxes<double>(new TextBox[5] { cpText, gpText, epText, spText, ppText }));
+            }
+            else
+            {
+                DataHandler.FillTextBoxes(currentChar.money.Get(),new TextBox[5] { cpText, gpText, epText, spText, ppText });
+            }
         }
         void StatsUpdate(bool updateStats, bool updateThrows, bool updateSkills, bool statsFunctional)
         {
@@ -1001,11 +1018,6 @@ namespace sheet
                 treasureText.Text = currentChar.inventory[1];
             }
         }
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            IAintDealingWithThis(true);
-        }
-
         private void changeBaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var ecb = new EditCharBase(currentChar))
@@ -1095,5 +1107,11 @@ namespace sheet
                 return;
             }
         }
+
+        #region ABYSS
+
+
+
+        #endregion
     }
 }
