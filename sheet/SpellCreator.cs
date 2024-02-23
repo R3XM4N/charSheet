@@ -17,6 +17,18 @@ namespace sheet
             InitializeComponent();
         }
 
+        public SpellCreator(string[] data)
+        {
+            InitializeComponent();
+            txt_name.Text = data[0];
+            txt_school.Text = data[1];
+            txt_ct.Text = data[2];
+            txt_range.Text = data[3];
+            txt_comp.Text = data[4];
+            txt_dur.Text = data[5];
+            txt_desc.Text = data[6];
+        }
+
         public String[] getSpellData()
         {
             String[] data = new String[7];

@@ -103,8 +103,8 @@ namespace sheet
         #region Data-Handle
         void UpdateSpellsAttacks()
         {
-            //UpdateAttacks(false);
-            //UpdateSpells(false);
+            UpdateAttacks(false);
+            UpdateSpells(false);
         }
         void UpdateAll()
         {
@@ -118,14 +118,14 @@ namespace sheet
                 littleImageBox.Image = currentChar.GetImage();
             }
 
-            //UpdateSpellsAttacks();
+            UpdateSpellsAttacks();
         }
         void SaveAll()
         {
             IAintDealingWithThis(true);
             updateInventory(true);
             UpdateAttacks(true);
-            //UpdateSpells(true);
+            UpdateSpells(true);
         }
         void UpdateHeader()
         {
@@ -358,25 +358,36 @@ namespace sheet
             int i = 0;
             foreach (TabPage p in tabC_spells.TabPages)
             {
-                spells[i].Add(getDataFromDataGrid(p));
+                if (p.Text == "Base")
+                    continue;
+                spells[i] = getDataFromDataGrid(p);
                 i++;
             }
             return spells;
         }
 
-        private string getDataFromDataGrid(TabPage p)
+        private List<string> getDataFromDataGrid(TabPage p)
         {
             // get Datagrid from tabpage
             DataGridView dg = new DataGridView();
             foreach (Control c in p.Controls)
             {
                 if (c is DataGridView)
+                {
                     dg = (DataGridView)c;
+                    break;
+                }
             }
-            string data = "";
-            foreach (string[] row in dg.Rows)
+            List<string> data = new List<string>();
+            foreach (DataGridViewRow row in dg.Rows)
             {
-                data += string.Join("|", row) + "\n";
+                DataGridViewCellCollection cells = row.Cells;
+                string spell = "";
+                foreach (DataGridViewCell cell in cells)
+                {
+                    spell += (string)cell.Value+"|";
+                }
+                data.Add(spell);
             }
             return data;
         }
@@ -386,6 +397,10 @@ namespace sheet
             int i = 0;
             foreach (TabPage p in tabC_spells.TabPages)
             {
+                if (p.Text == "Base")
+                {
+                    continue;
+                }
                 setDataToDataGrid(p, data[i]);
                 i++;
             }
@@ -397,7 +412,10 @@ namespace sheet
             foreach (Control c in p.Controls)
             {
                 if (c is DataGridView)
+                {
                     dg = (DataGridView)c;
+                    break;
+                }
             }
             foreach (string s in list)
             {
@@ -508,7 +526,25 @@ namespace sheet
             dg.ScrollBars = ScrollBars.Both;
             dg.AllowUserToAddRows = false;
             dg.AllowUserToDeleteRows = false;
+            dg.AllowUserToAddRows = false;
+            dg.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dg.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dg.CellDoubleClick += cell_doubleclick;
+
             return dg;
+        }
+
+        private void cell_doubleclick(object sender, EventArgs e)
+        {
+            DataGridView view = ((DataGridView)sender);
+            int row_id = view.SelectedCells[0].RowIndex;
+            DataGridViewRow row = view.Rows[row_id];
+            string[] row_data = new string[row.Cells.Count];
+            for (int i = 0; i < row.Cells.Count; i++)
+            {
+                row_data[i] = (string)row.Cells[i].Value;
+            }
+            new SpellCreator(row_data).Show();
         }
 
         private List<DataGridViewColumn> getBaseSpellColumns()
@@ -594,31 +630,36 @@ namespace sheet
         /// <param name="data"></param>
         public void addAttackPanel(List<string> data)
         {
-            Panel p = new Panel();
-            p.Dock = DockStyle.Top;
-            p.Height = 61;
-            p.BorderStyle = BorderStyle.FixedSingle;
-
-            p.Controls.AddRange(getAttackTxtBoxes(attack_panel.Controls.Count, p));
-            p.Click += new EventHandler(txt_selectWeapon);
-
-            attack_panel.Controls.Add(p);
-            foreach (Control c in p.Controls)
+            for (int i = 0; i < data.Count; i++)
             {
-                if (c is TextBox)
+                Panel p = new Panel();
+                p.Dock = DockStyle.Top;
+                p.Height = 61;
+                p.BorderStyle = BorderStyle.FixedSingle;
+
+                p.Controls.AddRange(getAttackTxtBoxes(attack_panel.Controls.Count, p));
+                p.Click += new EventHandler(txt_selectWeapon);
+
+                attack_panel.Controls.Add(p);
+                string[] temp_data = data[i].Split('|');
+                foreach (Control c in p.Controls)
                 {
-                    TextBox tb = (TextBox)c;
-                    if (tb.Name.Contains("name"))
+                    if (c is TextBox)
                     {
-                        tb.Text = data[0];
-                    }
-                    else if (tb.Name.Contains("dmg"))
-                    {
-                        tb.Text = data[1];
-                    }
-                    else if (tb.Name.Contains("attributes"))
-                    {
-                        tb.Text = data[2];
+                        TextBox tb = (TextBox)c;
+                        if (tb.Name.Contains("name"))
+                        {
+                            tb.Text = temp_data[0];                       
+                        }
+                        else if (tb.Name.Contains("dmg"))
+                        {
+                            tb.Text = temp_data[1];
+                        }
+                        else if (tb.Name.Contains("attributes"))
+                        {
+                            tb.Text = temp_data[2];
+                        }
+                        tb.ForeColor = Color.Black;
                     }
                 }
             }
@@ -657,7 +698,6 @@ namespace sheet
                 tb.Leave += new EventHandler(txt_attack_Leave);
                 tb.Click += new EventHandler(txt_selectWeapon);
             }
-
             return textBoxes;
         }
 

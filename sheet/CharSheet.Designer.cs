@@ -175,6 +175,10 @@
             this.label37 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.profnLanguagesText = new System.Windows.Forms.TextBox();
             this.featuresText = new System.Windows.Forms.TextBox();
@@ -209,10 +213,6 @@
             this.raceBox = new System.Windows.Forms.Label();
             this.classBox = new System.Windows.Forms.Label();
             this.lvlBox = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.littleImageBox)).BeginInit();
             this.otherTab.SuspendLayout();
@@ -787,7 +787,7 @@
             this.tab_cantrip.Location = new System.Drawing.Point(4, 36);
             this.tab_cantrip.Name = "tab_cantrip";
             this.tab_cantrip.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_cantrip.Size = new System.Drawing.Size(829, 487);
+            this.tab_cantrip.Size = new System.Drawing.Size(829, 495);
             this.tab_cantrip.TabIndex = 1;
             this.tab_cantrip.Text = "Cantrips";
             this.tab_cantrip.UseVisualStyleBackColor = true;
@@ -1789,6 +1789,42 @@
             this.tabPage6.Text = "Personality";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(396, 168);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(75, 27);
+            this.label16.TabIndex = 37;
+            this.label16.Text = "Flaws";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(15, 168);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(81, 27);
+            this.label17.TabIndex = 36;
+            this.label17.Text = "Bonds";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(396, 14);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(132, 27);
+            this.label15.TabIndex = 35;
+            this.label15.Text = "Languages";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(15, 14);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(76, 27);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Ideals";
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -2173,42 +2209,6 @@
             this.lvlBox.Size = new System.Drawing.Size(66, 35);
             this.lvlBox.TabIndex = 155;
             this.lvlBox.Text = "400";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(396, 168);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(75, 27);
-            this.label16.TabIndex = 37;
-            this.label16.Text = "Flaws";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(15, 168);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(81, 27);
-            this.label17.TabIndex = 36;
-            this.label17.Text = "Bonds";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(396, 14);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(132, 27);
-            this.label15.TabIndex = 35;
-            this.label15.Text = "Languages";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 14);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(76, 27);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Ideals";
             // 
             // CharSheet
             // 
