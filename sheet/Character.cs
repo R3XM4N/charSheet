@@ -261,7 +261,7 @@ namespace sheet
         {
             DataHandler.ToJsonFile(this, location);
         }
-        public List<string>[] spells = new List<string>[10];
+        public List<string>[] spells = new List<string>[10] { new List<string>() { }, new List<string>() { }, new List<string>() { }, new List<string>() { }, new List<string>() { }, new List<string>() { }, new List<string>() { }, new List<string>() { }, new List<string>() { }, new List<string>() { } };
         public List<string> attacks = new List<string>();
     }
 }
