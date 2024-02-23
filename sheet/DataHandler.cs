@@ -6,11 +6,9 @@ using System.Windows.Forms;
 
 namespace sheet
 {
-    public class DataHandler : IDisposable
+    public static class DataHandler
     {
-        private bool disposed = false;
-        public DataHandler() { }
-        public void FillTextBoxes<T>(T[] data, TextBox[] textBoxes)
+        public static void FillTextBoxes<T>(T[] data, TextBox[] textBoxes)
         {
             try
             {
@@ -40,7 +38,7 @@ namespace sheet
                 MessageBox.Show($"An error has occured setting the values of {data} into {textBoxes} this can be an issue of types or microsofts error if more descriptive: {e.Message}");
             }
         }
-        public void FillTextBoxesReadableProf(int[] data, TextBox[] textBoxes,List<int> bonus,int proefficency)
+        public static void FillTextBoxesReadableProf(int[] data, TextBox[] textBoxes, List<int> bonus, int proefficency)
         {
             try
             {
@@ -84,27 +82,27 @@ namespace sheet
                 MessageBox.Show($"An error has occured setting the values of {data} into {textBoxes} this can be an issue of types or microsofts error if more descriptive: {e.Message}");
             }
         }
-        public T[] FillFromBoxes<T>(TextBox[] textBoxes)
+        public static T[] FillFromBoxes<T>(TextBox[] textBoxes)
         {
-            T[] temp = new T[textBoxes.Length]; 
+            T[] temp = new T[textBoxes.Length];
             try
             {
                 int i = 0;
                 foreach (TextBox textBox in textBoxes)
                 {
-                    temp[0] = (T)Convert.ChangeType(textBox.Text, typeof(T)); ;  
+                    temp[0] = (T)Convert.ChangeType(textBox.Text, typeof(T)); ;
                     i++;
                 }
                 return temp;
             }
             catch (Exception e)
             {
-                
+
                 MessageBox.Show(e.Message);
                 return new T[0];
             }
         }
-        public string SerializeToJson<T>(T toserialize)
+        public static string SerializeToJson<T>(T toserialize)
         {
             try
             {
@@ -116,7 +114,7 @@ namespace sheet
                 return "";
             }
         }
-        public T Deserialize<T>(string json)
+        public static T Deserialize<T>(string json)
         {
             try
             {
@@ -128,7 +126,7 @@ namespace sheet
                 return default(T);
             }
         }
-        public void ToJsonFile<T>(T toserialize,string fileLocation)
+        public static void ToJsonFile<T>(T toserialize, string fileLocation)
         {
             try
             {
@@ -142,7 +140,7 @@ namespace sheet
                 MessageBox.Show(e.Message);
             }
         }
-        public T FromJsonFile<T>(string filePath)
+        public static T FromJsonFile<T>(string filePath)
         {
             try
             {
@@ -157,7 +155,7 @@ namespace sheet
                 return default(T);
             }
         }
-        public string GetFilePath(bool save,string extension,string initialPath)
+        public static string GetFilePath(bool save, string extension, string initialPath)
         {
             extension = extension.ToLower();
             if (save)
@@ -214,7 +212,7 @@ namespace sheet
             }
         }
         #region yoinked
-        public void Dispose()
+    /* public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
@@ -238,6 +236,7 @@ namespace sheet
         ~DataHandler() {
             Dispose(false);
         }
+    */
         #endregion
     }
 }

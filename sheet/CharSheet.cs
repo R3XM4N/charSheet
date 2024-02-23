@@ -21,7 +21,6 @@ namespace sheet
 {
     public partial class CharSheet : Form
     {
-        DataHandler dataHandler = new DataHandler();
         #region main
         CheckBox[] checkBoxesThrow;
         CheckBox[] checkBoxesSkills;
@@ -155,16 +154,16 @@ namespace sheet
                 }
                 else
                 {
-                    dataHandler.FillTextBoxes<int>(currentChar.stats.Get(), new TextBox[6] { strBox, dexBox, constBox, intBox, wisdBox, charBox });
+                    DataHandler.FillTextBoxes<int>(currentChar.stats.Get(), new TextBox[6] { strBox, dexBox, constBox, intBox, wisdBox, charBox });
                 }
             }
             if (updateThrows)
             {
-                dataHandler.FillTextBoxesReadableProf(currentChar.savingThrows.Get(), new TextBox[6] { statBox1, statBox2, statBox3, statBox4, statBox5, statBox6 }, currentChar.bonus[0], currentChar.proefficency);
+                DataHandler.FillTextBoxesReadableProf(currentChar.savingThrows.Get(), new TextBox[6] { statBox1, statBox2, statBox3, statBox4, statBox5, statBox6 }, currentChar.bonus[0], currentChar.proefficency);
             }
             if (updateSkills)
             {
-                dataHandler.FillTextBoxesReadableProf(currentChar.skills.Get(), new TextBox[18] { statBox7, statBox8, statBox9, statBox10, statBox11, statBox12, statBox13, statBox14, statBox15, statBox16, statBox17, statBox18, statBox19, statBox20, statBox21, statBox22, statBox23, statBox24 }, currentChar.bonus[1], currentChar.proefficency);
+                DataHandler.FillTextBoxesReadableProf(currentChar.skills.Get(), new TextBox[18] { statBox7, statBox8, statBox9, statBox10, statBox11, statBox12, statBox13, statBox14, statBox15, statBox16, statBox17, statBox18, statBox19, statBox20, statBox21, statBox22, statBox23, statBox24 }, currentChar.bonus[1], currentChar.proefficency);
             }
         }
         void UpdateSpells(bool save)

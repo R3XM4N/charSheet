@@ -283,10 +283,7 @@ namespace sheet
         public string[] inventory = new string[2];
         public void SaveAsFile(string location)
         {
-            using (var handler = new DataHandler())
-            {
-                handler.ToJsonFile(this, location);
-            }
+            DataHandler.ToJsonFile(this, location);
         }
         public List<string>[] spells = new List<string>[10];
         public List<string> attacks = new List<string>();

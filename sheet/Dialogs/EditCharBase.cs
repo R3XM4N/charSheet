@@ -20,10 +20,7 @@ namespace sheet.Dialogs
         }
         private void EditCharBase_Load(object sender, EventArgs e)
         {
-            using (var dh = new DataHandler())
-            {
-                dh.FillTextBoxes(new string[5] {character.cName,character.race,character.charClass,character.level.ToString(),character.exp.ToString() },new TextBox[5] { charNameBox, raceBox, classBox,lvlBox,xpBox});
-            }
+            DataHandler.FillTextBoxes(new string[5] {character.cName,character.race,character.charClass,character.level.ToString(),character.exp.ToString() },new TextBox[5] { charNameBox, raceBox, classBox,lvlBox,xpBox});
         }
 
         private void button1_Click(object sender, EventArgs e)

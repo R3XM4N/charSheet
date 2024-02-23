@@ -24,16 +24,13 @@ namespace sheet.Dialogs
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            using (var dh = new DataHandler())
-            {
                 using (var fd = new OpenFileDialog())
                 {
                     fd.Title = "Select a character file.";
                     fd.Filter = "Json files (*.json)|*.json";
                     fd.ShowDialog();
-                    character = dh.FromJsonFile<Character>(fd.FileName);
+                    character = DataHandler.FromJsonFile<Character>(fd.FileName);
                 }
-            }
             this.Close();
         }
         private void button2_Click(object sender, EventArgs e)
