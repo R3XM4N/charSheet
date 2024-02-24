@@ -1,28 +1,18 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static sheet.Character;
-using Newtonsoft.Json;
 using sheet.Dialogs;
 using System.Collections;
-using Newtonsoft.Json.Bson;
-using System.Runtime.InteropServices;
 
 namespace sheet
 {
     public partial class CharSheet : Form
     {
         #region main
+
+        GUIHandler ghandler;
         CheckBox[] checkBoxesThrow;
         CheckBox[] checkBoxesSkills;
         public Character currentChar;
@@ -81,15 +71,7 @@ namespace sheet
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             SaveAll();
-            using (var sd = new SaveFileDialog())
-            {
-                sd.Title = "Select a location";
-                sd.AddExtension = true;
-                sd.DefaultExt = "json";
-                sd.Filter = "JSON files (*.json)|*.json";
-                sd.ShowDialog();
-                currentChar.SaveAsFile(sd.FileName);
-            }
+            currentChar.SaveAsFile(DataHandler.GetFilePath(true,"json",""));
 
         }
         #endregion
@@ -359,16 +341,7 @@ namespace sheet
             DialogResult dialogResult = MessageBox.Show("Do you want to save the sheet?", "Save", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                using (SaveFileDialog sd = new SaveFileDialog())
-                {
-                    SaveAll();
-                    sd.Title = "Select a location";
-                    sd.AddExtension = true;
-                    sd.DefaultExt = "json";
-                    sd.Filter = "JSON files (*.json)|*.json";
-                    sd.ShowDialog();
-                    currentChar.SaveAsFile(sd.FileName);
-                }
+                currentChar.SaveAsFile(DataHandler.GetFilePath(true, "json", ""));
             }
         }
 
@@ -1051,6 +1024,7 @@ namespace sheet
                 checkBoxesSkills = new CheckBox[18] { checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16, checkBox17, checkBox18, checkBox19, checkBox20, checkBox21, checkBox22, checkBox23, checkBox24 };
                 UpdateAll();
             }
+            INITIALIZE();
         }
 
         private void btn_add_attack_Click_1(object sender, EventArgs e)
@@ -1108,9 +1082,18 @@ namespace sheet
             }
         }
 
-        #region ABYSS
+        #region THE-ABYSS
 
-
+        void INITIALIZE()
+        {
+            /*
+            ghandler = new GUIHandler(this);
+            ghandler.AddTextBox("Labeltest", "hello", 600,60,16,100,statsTab);
+            ghandler.ChangeText("Labeltest", "The abyss is calling");
+            this.Text = ghandler.GetText("Labeltest");
+            ghandler.CreateLabelCollum(new string[3] { "hell", "hell2", "hell3" }, new string[3] { "hell", "hell2", "hell3" }, 600, 60, 16, 5, otherTab);
+            */
+        }
 
         #endregion
     }

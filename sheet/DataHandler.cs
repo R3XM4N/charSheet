@@ -211,32 +211,5 @@ namespace sheet
                 }
             }
         }
-        #region yoinked
-    /* public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposed)
-                return;
-
-            if (disposing)
-            {
-                // Dispose managed state (managed objects).
-                // For example: myManagedResource?.Dispose();
-            }
-
-            // Free unmanaged resources (unmanaged objects) and override a finalizer below.
-            // For example: Marshal.FreeHGlobal(myUnmanagedResource);
-
-            disposed = true;
-        }
-        ~DataHandler() {
-            Dispose(false);
-        }
-    */
-        #endregion
     }
 }

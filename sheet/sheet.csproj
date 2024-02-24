@@ -73,6 +73,7 @@
     <Compile Include="Dialogs\LoadDialog.Designer.cs">
       <DependentUpon>LoadDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIHandler.cs" />
     <Compile Include="Heroes.cs">
       <SubType>Form</SubType>
     </Compile>

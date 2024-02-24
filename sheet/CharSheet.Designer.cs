@@ -37,7 +37,6 @@
             this.changeBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -265,8 +264,7 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButton1,
-            this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1334, 32);
@@ -317,16 +315,6 @@
             this.toolStripButton1.Size = new System.Drawing.Size(129, 29);
             this.toolStripButton1.Text = "Save sheet";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.toolStripButton2.Image = global::sheet.Properties.Resources.save;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(131, 29);
-            this.toolStripButton2.Text = "Load sheet";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // label35
             // 
@@ -455,7 +443,7 @@
             // armorClassBox
             // 
             this.armorClassBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.armorClassBox.Location = new System.Drawing.Point(848, 92);
+            this.armorClassBox.Location = new System.Drawing.Point(1026, 96);
             this.armorClassBox.Name = "armorClassBox";
             this.armorClassBox.Size = new System.Drawing.Size(34, 35);
             this.armorClassBox.TabIndex = 138;
@@ -465,7 +453,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(888, 56);
+            this.label43.Location = new System.Drawing.Point(1066, 60);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(26, 27);
             this.label43.TabIndex = 147;
@@ -475,7 +463,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(686, 56);
+            this.label44.Location = new System.Drawing.Point(864, 60);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(156, 27);
             this.label44.TabIndex = 146;
@@ -484,7 +472,7 @@
             // speedBox
             // 
             this.speedBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.speedBox.Location = new System.Drawing.Point(848, 133);
+            this.speedBox.Location = new System.Drawing.Point(1026, 137);
             this.speedBox.Name = "speedBox";
             this.speedBox.Size = new System.Drawing.Size(34, 35);
             this.speedBox.TabIndex = 142;
@@ -493,7 +481,7 @@
             // healthBox
             // 
             this.healthBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.healthBox.Location = new System.Drawing.Point(848, 53);
+            this.healthBox.Location = new System.Drawing.Point(1026, 57);
             this.healthBox.Name = "healthBox";
             this.healthBox.Size = new System.Drawing.Size(34, 35);
             this.healthBox.TabIndex = 145;
@@ -503,7 +491,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(686, 136);
+            this.label40.Location = new System.Drawing.Point(864, 140);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(82, 27);
             this.label40.TabIndex = 143;
@@ -512,7 +500,7 @@
             // healthTempBox
             // 
             this.healthTempBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.healthTempBox.Location = new System.Drawing.Point(920, 53);
+            this.healthTempBox.Location = new System.Drawing.Point(1098, 57);
             this.healthTempBox.Name = "healthTempBox";
             this.healthTempBox.Size = new System.Drawing.Size(32, 35);
             this.healthTempBox.TabIndex = 149;
@@ -522,7 +510,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(968, 60);
+            this.label45.Location = new System.Drawing.Point(1146, 64);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(19, 27);
             this.label45.TabIndex = 150;
@@ -532,7 +520,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(686, 95);
+            this.label42.Location = new System.Drawing.Point(864, 99);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(138, 27);
             this.label42.TabIndex = 139;
@@ -541,7 +529,7 @@
             // healthMaxBox
             // 
             this.healthMaxBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.healthMaxBox.Location = new System.Drawing.Point(993, 53);
+            this.healthMaxBox.Location = new System.Drawing.Point(1171, 57);
             this.healthMaxBox.Name = "healthMaxBox";
             this.healthMaxBox.Size = new System.Drawing.Size(34, 35);
             this.healthMaxBox.TabIndex = 148;
@@ -2297,7 +2285,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label10;

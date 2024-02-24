@@ -1,16 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.IO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Newtonsoft.Json;
 using System.Windows.Forms;
 
@@ -18,9 +9,8 @@ namespace sheet
 {
     public class Character
     {
-        [JsonIgnore]
-        public string VERSION { get; private set; } = "dev-1.1.0";
-
+        [JsonProperty]
+        private string VERSION = "dev-1.1.0";
         public int[] xpNeeded = new int[] { 0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 192000, 225000, 265000, 305000, 355000 };
         //Base
         public int proefficency = 0;
