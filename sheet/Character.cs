@@ -10,7 +10,7 @@ namespace sheet
     public class Character
     {
         [JsonProperty]
-        private string VERSION = "dev-1.1.0";
+        private string VERSION = "dev-1.2.0";
         public int[] xpNeeded = new int[] { 0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 192000, 225000, 265000, 305000, 355000 };
         //Base
         public int proefficency = 0;
@@ -247,6 +247,7 @@ namespace sheet
         //CC,SC,EC,GC,PC
         public int[] money = new int[5] { 0,0,0,0,0} ;
         public string[] inventory = new string[2];
+        public string notes="";
         public void SaveAsFile(string location)
         {
             DataHandler.ToJsonFile(this, location);

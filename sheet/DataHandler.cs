@@ -1,8 +1,10 @@
 using Newtonsoft.Json;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace sheet
 {
@@ -235,12 +237,54 @@ namespace sheet
             }
             return strings;
         }
-        /*
-        public static int[][] SplitArrayMiddle(int[] array)
+        public static int[][] SplitArrayInTwo(int[] array)
         {
-            int[] temp = 
+            int[] temp1 = new int[array.Length/2];
+            int[] temp2 = new int[array.Length / 2];
+            Array.Copy(array, 0, temp1, 0, array.Length / 2);
+            Array.Copy(array, array.Length / 2, temp2, 0, array.Length - array.Length / 2);
+            return new int[2][] { temp1, temp2 };
         }
-        */
-
+        public static int[] MergeTwoArray(int[][] arrays)
+        {
+             return arrays[1].Concat(arrays[2]).ToArray();
+        }
+        //yonkd
+        public static string[][] SplitArrayInTwo(string[] array)
+        {
+            string[] temp1 = new string[array.Length / 2];
+            string[] temp2 = new string[array.Length - array.Length / 2];
+            Array.Copy(array, 0, temp1, 0, array.Length / 2);
+            Array.Copy(array, array.Length / 2, temp2, 0, array.Length - array.Length / 2);
+            return new string[2][] { temp1, temp2 };
+        }
+        public static string[] MergeTwoArray(string[][] arrays)
+        {
+            string[] combinedArray = new string[arrays[0].Length + arrays[1].Length];
+            Array.Copy(arrays[0], 0, combinedArray, 0, arrays[0].Length);
+            Array.Copy(arrays[1], 0, combinedArray, arrays[0].Length, arrays[1].Length);
+            return combinedArray;
+        }
+        public static string[] RollValue(int[] values)
+        {
+            string[] temp = new string[values.Length];
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (values[i] > 0)
+                {
+                    temp[i] = $"+{values[i].ToString()}";
+                }
+                else if (values[i] == 0)
+                {
+                    temp[i] = $" {values[i].ToString()}";
+                }
+                else
+                {
+                    temp[i] = $"{values[i].ToString()}";
+                }
+                
+            }
+            return temp;
+        }
     }
 }

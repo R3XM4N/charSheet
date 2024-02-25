@@ -15,6 +15,9 @@ namespace sheet
         CheckBox[] checkBoxesThrow;
         CheckBox[] checkBoxesSkills;
         public Character currentChar;
+        string[] skillLabelsNames = new  string[]{"Arobatics", "AnimalHandling","Arcana","Athletics","Deception","History","Insight","Intimidation","Investigation","Medicine","Nature",
+            "Perception","Performance","Persuasion","Religion","SleightOfHand","Stealth","Survival"
+        };
 
         bool autosave = false;
         public CharSheet()
@@ -1075,13 +1078,10 @@ namespace sheet
 
         void INITIALIZE()
         {
-            /*
             ghandler = new GUIHandler(this);
-            ghandler.AddTextBox("Labeltest", "hello", 600,60,16,100,statsTab);
-            ghandler.ChangeText("Labeltest", "The abyss is calling");
-            this.Text = ghandler.GetText("Labeltest");
-            ghandler.CreateLabelCollum(new string[3] { "hell", "hell2", "hell3" }, new string[3] { "hell", "hell2", "hell3" }, 600, 60, 16, 5, otherTab);
-            */
+            ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[0], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0]), 490, 65,18,8,statsTab);
+            ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[1], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[1]), 760, 65, 18,8, statsTab);
+
         }
 
         #endregion
