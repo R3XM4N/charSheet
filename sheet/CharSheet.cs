@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using sheet.Dialogs;
-using System.Collections;
 
 namespace sheet
 {
@@ -655,7 +654,6 @@ namespace sheet
                 }
             }
         }
-
         private TextBox[] getAttackTxtBoxes(int id, Control parent)
         {
             TextBox b1 = new TextBox();
@@ -691,7 +689,6 @@ namespace sheet
             }
             return textBoxes;
         }
-
         private void txt_attack_Enter(object sender, EventArgs e)
         {
             TextBox tb = (TextBox)sender;
@@ -701,7 +698,6 @@ namespace sheet
                 tb.ForeColor = Color.Black;
             }
         }
-
         private void txt_attack_Leave(object sender, EventArgs e)
         {
             TextBox tb = (TextBox)sender;
@@ -713,7 +709,6 @@ namespace sheet
                 tb.ForeColor = Color.Gray;
             }
         }
-
         private void txt_selectWeapon(object sender, EventArgs e)
         {
             Panel panel;
@@ -737,7 +732,6 @@ namespace sheet
                 }
             }
         }
-
         private Panel getSelectedPanel()
         {
             foreach (Panel p in attack_panel.Controls)
@@ -749,7 +743,6 @@ namespace sheet
             }
             return null;
         }
-
         private int getSelectedPanelId()
         {
             for (int i = 0; i < attack_panel.Controls.Count; i++)
@@ -761,12 +754,10 @@ namespace sheet
             }
             return -1;
         }
-
         private void btn_add_attack_Click(object sender, EventArgs e)
         {
             addAttackPanel();
         }
-
         private void performAttack(string dice, string attributes, bool isDamage)
         {
             string modifier_toUse = "";
@@ -912,7 +903,6 @@ namespace sheet
             roll.ShowDialog();
             return roll.last_roll;
         }
-    
         private void setImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var open = new OpenFileDialog())
@@ -932,7 +922,6 @@ namespace sheet
                 }
             }
         }
-
         private void statCheck_CheckedChanged(object sender, EventArgs e)
         {
             StatsUpdate(true,false,false,statCheck.Checked);

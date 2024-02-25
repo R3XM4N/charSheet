@@ -211,5 +211,36 @@ namespace sheet
                 }
             }
         }
+        public static int[] StringArrayToInts(string[] strings)
+        {
+            int[] temp = new int[strings.Length];
+            for (int i = 0; i < strings.Length; i++)
+            {
+                if (int.TryParse(strings[i],out int intiger))
+                {
+                    temp[i] = intiger;
+                }
+                else
+                {
+                    temp[i] = int.MinValue;
+                }
+            }
+            return temp;
+        }
+        public static string[] ArrayToStrings<T>(T[] array)
+        {
+            string[] strings = new string[array.Length];
+            for(int i = 0;i < array.Length;i++) {
+                strings[i] = array[i].ToString();
+            }
+            return strings;
+        }
+        /*
+        public static int[][] SplitArrayMiddle(int[] array)
+        {
+            int[] temp = 
+        }
+        */
+
     }
 }

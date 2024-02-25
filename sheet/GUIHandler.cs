@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace sheet
 {
@@ -36,6 +37,11 @@ namespace sheet
             temp.Width = width;
             form.Controls.Add(temp);
             (contrainer ?? form).Controls.Add(temp);
+        }
+        public void AddLabeledTextBox(string controlName, string labelText,string textBoxText, int x, int y, int fontSize, int TextboxWidth,int spacing, Control contrainer = null)
+        {
+            AddLabel($"{controlName}_Label", labelText, x, y, fontSize, contrainer ?? form);
+            AddTextBox($"{controlName}_TextBox", textBoxText, x+spacing, y, fontSize, TextboxWidth, contrainer ?? form);
         }
         public void DisposeControl(string controlName)
         {
@@ -78,7 +84,7 @@ namespace sheet
             }
             return "NOT A TEXT CONTAINER";
         }
-        public void ChangeBackgroundImage(Image image, Control control = null)
+        public void ChangeBackgroundImage(System.Drawing.Image image, Control control = null)
         {
             (control ?? form).BackgroundImage = image;
         }
@@ -139,31 +145,35 @@ namespace sheet
                 }
             }
         }
-
+        //this is yoinked
         #region disposer
+        // Implement IDisposable.
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
         protected virtual void Dispose(bool disposing)
         {
-            if (disposed)
-                return;
-
-            if (disposing)
+            if (!disposed)
             {
-                // Dispose managed state (managed objects).
-                // For example: myManagedResource?.Dispose();
+                if (disposing)
+                {
+                    // Dispose managed resources.
+                    if (form != null)
+                        form.Dispose();
+                }
+
+                // Dispose unmanaged resources.
+                disposed = true;
             }
-
-            // Free unmanaged resources (unmanaged objects) and override a finalizer below.
-            // For example: Marshal.FreeHGlobal(myUnmanagedResource);
-
-            disposed = true;
         }
+
+        // Use C# destructor syntax for finalization code.
         ~GUIHandler()
         {
+            // Simply call Dispose(false).
             Dispose(false);
         }
         #endregion
