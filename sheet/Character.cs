@@ -10,7 +10,7 @@ namespace sheet
     public class Character
     {
         [JsonProperty]
-        private string VERSION = "dev-1.2.0";
+        private string VERSION = "dev-1.3.0";
         public int[] xpNeeded = new int[] { 0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 192000, 225000, 265000, 305000, 355000 };
         //Base
         public int proefficency = 0;
@@ -26,6 +26,7 @@ namespace sheet
         }
         public int level { get; set; }
         public int exp = 0;
+        public string hitDice="";
         public void AddXP(int ammmount)
         {
             exp += ammmount;
