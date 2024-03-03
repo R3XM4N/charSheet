@@ -28,6 +28,7 @@ namespace sheet.Dialogs
             character.SetBase(charNameBox.Text, raceBox.Text, classBox.Text);
             try
             {
+                character.exp = 0;
                 character.AddXP(Convert.ToInt32(xpBox.Text));
             }
             catch (Exception)

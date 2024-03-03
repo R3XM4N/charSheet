@@ -34,11 +34,11 @@ namespace sheet
             {
                 if (exp < xpNeeded[0])
                 {
-                    level = 0;
+                    level = 1;
                 }
                 else if (exp >= xpNeeded[xpNeeded.Length - 1])
                 {
-                    level = xpNeeded.Length - 1;
+                    level = xpNeeded.Length;
                 }
                 else
                 {

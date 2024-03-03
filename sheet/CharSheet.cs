@@ -1018,19 +1018,16 @@ namespace sheet
             }
             INITIALIZE();
         }
-
         private void btn_add_attack_Click_1(object sender, EventArgs e)
         {
             addAttackPanel();
         }
-
         private void btn_delete_attack_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Do you want to delete the selected attack?", "Delete", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
                 attack_panel.Controls.Remove(getSelectedPanel());
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Panel p = getSelectedPanel();
@@ -1073,9 +1070,7 @@ namespace sheet
                 return;
             }
         }
-
         #region THE-ABYSS
-
         void INITIALIZE()
         {
             ghandler = new GUIHandler(this);
