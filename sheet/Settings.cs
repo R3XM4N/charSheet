@@ -20,6 +20,9 @@ namespace sheet
             chb_autoload.Checked = Properties.Settings.Default.autoload;
             chb_menuskip.Checked = Properties.Settings.Default.skipmenu;
             cb_sort.SelectedIndex = Properties.Settings.Default.sorting_val;
+            chb_autosave.Checked = Properties.Settings.Default.autosave;
+            trackBar1.Value = Properties.Settings.Default.as_freq;
+            label5.Text = Properties.Settings.Default.as_freq.ToString() + "s";
         }
 
         private void textBox2_Click(object sender, EventArgs e)
@@ -53,6 +56,22 @@ namespace sheet
         private void cb_sort_SelectedIndexChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.sorting_val = cb_sort.SelectedIndex;
+            Properties.Settings.Default.Save();
+        }
+
+        private void chb_autosave_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.autosave = chb_autosave.Checked;
+            trackBar1.Visible = chb_autosave.Checked;
+            label4.Visible = chb_autosave.Checked;
+            label5.Visible = chb_autosave.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            label5.Text = trackBar1.Value.ToString() + "s";
+            Properties.Settings.Default.as_freq = trackBar1.Value;
             Properties.Settings.Default.Save();
         }
     }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_settings = new System.Windows.Forms.Button();
             this.btn_roll = new System.Windows.Forms.Button();
             this.btn_heroes = new System.Windows.Forms.Button();
             this.panel_display = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(-1, 156);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 58);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Temporary Sheet Burron";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.DEBUGSHEET);
             // 
             // btn_exit
             // 
@@ -111,16 +123,6 @@
             this.panel_display.Name = "panel_display";
             this.panel_display.Size = new System.Drawing.Size(600, 450);
             this.panel_display.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(37, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 44);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "test sheet button";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.DEBUGSHEET);
             // 
             // Menu
             // 
