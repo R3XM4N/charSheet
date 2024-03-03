@@ -73,6 +73,12 @@
     <Compile Include="Dialogs\LoadDialog.Designer.cs">
       <DependentUpon>LoadDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\StatDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\StatDialog.Designer.cs">
+      <DependentUpon>StatDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUIHandler.cs" />
     <Compile Include="Heroes.cs">
       <SubType>Form</SubType>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\LoadDialog.resx">
       <DependentUpon>LoadDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\StatDialog.resx">
+      <DependentUpon>StatDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Heroes.resx">
       <DependentUpon>Heroes.cs</DependentUpon>
