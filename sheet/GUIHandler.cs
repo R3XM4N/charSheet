@@ -15,7 +15,7 @@ namespace sheet
         public GUIHandler(Form form) {
             this.form = form;
         }
-        public void AddLabel(string controlName,string text,int x, int y,int fontSize,Control contrainer = null)
+        public void AddLabel(string controlName,string text,int x, int y,int fontSize,Control container = null)
         {
             Label temp = new Label();
             temp.Name = controlName;
@@ -24,9 +24,9 @@ namespace sheet
             temp.AutoSize = true;
             temp.Text = text;
             form.Controls.Add(temp);
-            (contrainer ?? form).Controls.Add(temp);
+            (container ?? form).Controls.Add(temp);
         }
-        public void AddTextBox(string controlName, string text, int x, int y, int fontSize, int width, Control contrainer = null)
+        public void AddTextBox(string controlName, string text, int x, int y, int fontSize, int width, Control container = null)
         {
             TextBox temp = new TextBox();
             temp.Name = controlName;
@@ -36,12 +36,12 @@ namespace sheet
             temp.Text = text;
             temp.Width = width;
             form.Controls.Add(temp);
-            (contrainer ?? form).Controls.Add(temp);
+            (container ?? form).Controls.Add(temp);
         }
-        public void AddLabeledTextBox(string controlName, string labelText,string textBoxText, int x, int y, int fontSize, int TextboxWidth,int spacing, Control contrainer = null)
+        public void AddLabeledTextBox(string controlName, string labelText,string textBoxText, int x, int y, int fontSize, int TextboxWidth,int spacing, Control container = null)
         {
-            AddLabel($"{controlName}_Label", labelText, x, y, fontSize, contrainer ?? form);
-            AddTextBox($"{controlName}_TextBox", textBoxText, x+spacing, y, fontSize, TextboxWidth, contrainer ?? form);
+            AddLabel($"{controlName}_Label", labelText, x, y, fontSize, container ?? form);
+            AddTextBox($"{controlName}_TextBox", textBoxText, x+spacing, y, fontSize, TextboxWidth, container ?? form);
         }
         public void DisposeControl(string controlName)
         {
@@ -111,36 +111,36 @@ namespace sheet
             }
             return temp;
         }
-        public void CreateLabelCollum(string[] controlNameArray, string[] textArray, int x, int startY, int fontSize, int spacing, Control contrainer = null)
+        public void CreateLabelCollum(string[] controlNameArray, string[] textArray, int x, int startY, int fontSize, int spacing, Control container = null)
         {
             int currentY = startY;
             for (int i = 0; i < controlNameArray.Length; i++)
             {
                 if (i!=0)
                 {
-                    AddLabel(controlNameArray[i], textArray[i], x, currentY, fontSize, contrainer);
+                    AddLabel(controlNameArray[i], textArray[i], x, currentY, fontSize, container);
                     currentY = form.Controls.Find(controlNameArray[i], true).FirstOrDefault().Height + currentY + spacing;
                 }
                 else
                 {
-                    AddLabel(controlNameArray[i], textArray[i], x, currentY, fontSize, contrainer);
+                    AddLabel(controlNameArray[i], textArray[i], x, currentY, fontSize, container);
                     currentY = form.Controls.Find(controlNameArray[i],true).FirstOrDefault().Height + currentY + spacing;
                 }
             }
         }
-        public void CreateTextBoxCollum(string[] controlNameArray, string[] textArray, int x, int startY, int fontSize,int width, int spacing, Control contrainer = null)
+        public void CreateTextBoxCollum(string[] controlNameArray, string[] textArray, int x, int startY, int fontSize,int width, int spacing, Control container = null)
         {
             int currentY = startY;
             for (int i = 0; i < controlNameArray.Length; i++)
             {
                 if (i != 0)
                 {
-                    AddTextBox(controlNameArray[i], textArray[i], x, currentY, fontSize,width, contrainer);
+                    AddTextBox(controlNameArray[i], textArray[i], x, currentY, fontSize,width, container);
                     currentY = form.Controls.Find(controlNameArray[i], true).FirstOrDefault().Height + currentY + spacing;
                 }
                 else
                 {
-                    AddTextBox(controlNameArray[i], textArray[i], x, currentY, fontSize, width, contrainer);
+                    AddTextBox(controlNameArray[i], textArray[i], x, currentY, fontSize, width, container);
                     currentY = form.Controls.Find(controlNameArray[i], true).FirstOrDefault().Height + currentY + spacing;
                 }
             }

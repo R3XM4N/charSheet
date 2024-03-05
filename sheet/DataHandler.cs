@@ -10,7 +10,7 @@ namespace sheet
 {
     public static class DataHandler
     {
-        public static void FillTextBoxes<T>(T[] data, TextBox[] textBoxes)
+        public static void FillTextBoxes<T>(T[] data, Control[] textBoxes)
         {
             try
             {
