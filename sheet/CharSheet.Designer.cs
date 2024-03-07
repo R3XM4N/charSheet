@@ -35,7 +35,7 @@
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.setImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
@@ -166,24 +166,6 @@
             this.statBox3 = new System.Windows.Forms.TextBox();
             this.statBox2 = new System.Windows.Forms.TextBox();
             this.statBox1 = new System.Windows.Forms.TextBox();
-            this.statBox24 = new System.Windows.Forms.TextBox();
-            this.statBox23 = new System.Windows.Forms.TextBox();
-            this.statBox22 = new System.Windows.Forms.TextBox();
-            this.statBox21 = new System.Windows.Forms.TextBox();
-            this.statBox20 = new System.Windows.Forms.TextBox();
-            this.statBox19 = new System.Windows.Forms.TextBox();
-            this.statBox18 = new System.Windows.Forms.TextBox();
-            this.statBox17 = new System.Windows.Forms.TextBox();
-            this.statBox16 = new System.Windows.Forms.TextBox();
-            this.statBox15 = new System.Windows.Forms.TextBox();
-            this.statBox14 = new System.Windows.Forms.TextBox();
-            this.statBox13 = new System.Windows.Forms.TextBox();
-            this.statBox12 = new System.Windows.Forms.TextBox();
-            this.statBox11 = new System.Windows.Forms.TextBox();
-            this.statBox10 = new System.Windows.Forms.TextBox();
-            this.statBox9 = new System.Windows.Forms.TextBox();
-            this.statBox8 = new System.Windows.Forms.TextBox();
-            this.statBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -212,7 +194,6 @@
             this.raceBox = new System.Windows.Forms.Label();
             this.classBox = new System.Windows.Forms.Label();
             this.lvlBox = new System.Windows.Forms.Label();
-            this.changeStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.littleImageBox)).BeginInit();
             this.tabSpells.SuspendLayout();
@@ -277,8 +258,7 @@
             this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setImageToolStripMenuItem,
             this.changeBaseToolStripMenuItem,
-            this.changeStatsToolStripMenuItem,
-            this.saveSessionToolStripMenuItem});
+            this.changeStatsToolStripMenuItem});
             this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
@@ -300,12 +280,12 @@
             this.changeBaseToolStripMenuItem.Text = "ChangeBase";
             this.changeBaseToolStripMenuItem.Click += new System.EventHandler(this.changeBaseToolStripMenuItem_Click);
             // 
-            // saveSessionToolStripMenuItem
+            // changeStatsToolStripMenuItem
             // 
-            this.saveSessionToolStripMenuItem.Name = "saveSessionToolStripMenuItem";
-            this.saveSessionToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
-            this.saveSessionToolStripMenuItem.Text = "SaveSession";
-            this.saveSessionToolStripMenuItem.Click += new System.EventHandler(this.saveSessionToolStripMenuItem_Click);
+            this.changeStatsToolStripMenuItem.Name = "changeStatsToolStripMenuItem";
+            this.changeStatsToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.changeStatsToolStripMenuItem.Text = "ChangeStats";
+            this.changeStatsToolStripMenuItem.Click += new System.EventHandler(this.changeStatsToolStripMenuItem_Click);
             // 
             // toolStripButton1
             // 
@@ -1234,24 +1214,6 @@
             this.statsTab.Controls.Add(this.statBox3);
             this.statsTab.Controls.Add(this.statBox2);
             this.statsTab.Controls.Add(this.statBox1);
-            this.statsTab.Controls.Add(this.statBox24);
-            this.statsTab.Controls.Add(this.statBox23);
-            this.statsTab.Controls.Add(this.statBox22);
-            this.statsTab.Controls.Add(this.statBox21);
-            this.statsTab.Controls.Add(this.statBox20);
-            this.statsTab.Controls.Add(this.statBox19);
-            this.statsTab.Controls.Add(this.statBox18);
-            this.statsTab.Controls.Add(this.statBox17);
-            this.statsTab.Controls.Add(this.statBox16);
-            this.statsTab.Controls.Add(this.statBox15);
-            this.statsTab.Controls.Add(this.statBox14);
-            this.statsTab.Controls.Add(this.statBox13);
-            this.statsTab.Controls.Add(this.statBox12);
-            this.statsTab.Controls.Add(this.statBox11);
-            this.statsTab.Controls.Add(this.statBox10);
-            this.statsTab.Controls.Add(this.statBox9);
-            this.statsTab.Controls.Add(this.statBox8);
-            this.statsTab.Controls.Add(this.statBox7);
             this.statsTab.Controls.Add(this.label8);
             this.statsTab.Controls.Add(this.label7);
             this.statsTab.Controls.Add(this.label6);
@@ -1700,213 +1662,6 @@
             this.statBox1.Text = "0";
             this.statBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // statBox24
-            // 
-            this.statBox24.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox24.Location = new System.Drawing.Point(761, 360);
-            this.statBox24.Name = "statBox24";
-            this.statBox24.ReadOnly = true;
-            this.statBox24.Size = new System.Drawing.Size(43, 35);
-            this.statBox24.TabIndex = 46;
-            this.statBox24.Text = "0";
-            this.statBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox24.Visible = false;
-            // 
-            // statBox23
-            // 
-            this.statBox23.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox23.Location = new System.Drawing.Point(761, 323);
-            this.statBox23.Name = "statBox23";
-            this.statBox23.ReadOnly = true;
-            this.statBox23.Size = new System.Drawing.Size(43, 35);
-            this.statBox23.TabIndex = 44;
-            this.statBox23.Text = "0";
-            this.statBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox23.Visible = false;
-            // 
-            // statBox22
-            // 
-            this.statBox22.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox22.Location = new System.Drawing.Point(761, 287);
-            this.statBox22.Name = "statBox22";
-            this.statBox22.ReadOnly = true;
-            this.statBox22.Size = new System.Drawing.Size(43, 35);
-            this.statBox22.TabIndex = 42;
-            this.statBox22.Text = "0";
-            this.statBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox22.Visible = false;
-            // 
-            // statBox21
-            // 
-            this.statBox21.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox21.Location = new System.Drawing.Point(761, 249);
-            this.statBox21.Name = "statBox21";
-            this.statBox21.ReadOnly = true;
-            this.statBox21.Size = new System.Drawing.Size(43, 35);
-            this.statBox21.TabIndex = 40;
-            this.statBox21.Text = "0";
-            this.statBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox21.Visible = false;
-            // 
-            // statBox20
-            // 
-            this.statBox20.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox20.Location = new System.Drawing.Point(761, 212);
-            this.statBox20.Name = "statBox20";
-            this.statBox20.ReadOnly = true;
-            this.statBox20.Size = new System.Drawing.Size(43, 35);
-            this.statBox20.TabIndex = 38;
-            this.statBox20.Text = "0";
-            this.statBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox20.Visible = false;
-            // 
-            // statBox19
-            // 
-            this.statBox19.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox19.Location = new System.Drawing.Point(761, 175);
-            this.statBox19.Name = "statBox19";
-            this.statBox19.ReadOnly = true;
-            this.statBox19.Size = new System.Drawing.Size(43, 35);
-            this.statBox19.TabIndex = 36;
-            this.statBox19.Text = "0";
-            this.statBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox19.Visible = false;
-            // 
-            // statBox18
-            // 
-            this.statBox18.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox18.Location = new System.Drawing.Point(761, 138);
-            this.statBox18.Name = "statBox18";
-            this.statBox18.ReadOnly = true;
-            this.statBox18.Size = new System.Drawing.Size(43, 35);
-            this.statBox18.TabIndex = 34;
-            this.statBox18.Text = "0";
-            this.statBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox18.Visible = false;
-            // 
-            // statBox17
-            // 
-            this.statBox17.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox17.Location = new System.Drawing.Point(761, 101);
-            this.statBox17.Name = "statBox17";
-            this.statBox17.ReadOnly = true;
-            this.statBox17.Size = new System.Drawing.Size(43, 35);
-            this.statBox17.TabIndex = 32;
-            this.statBox17.Text = "0";
-            this.statBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox17.Visible = false;
-            // 
-            // statBox16
-            // 
-            this.statBox16.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox16.Location = new System.Drawing.Point(760, 65);
-            this.statBox16.Name = "statBox16";
-            this.statBox16.ReadOnly = true;
-            this.statBox16.Size = new System.Drawing.Size(43, 35);
-            this.statBox16.TabIndex = 30;
-            this.statBox16.Text = "0";
-            this.statBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox16.Visible = false;
-            // 
-            // statBox15
-            // 
-            this.statBox15.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox15.Location = new System.Drawing.Point(493, 359);
-            this.statBox15.Name = "statBox15";
-            this.statBox15.Size = new System.Drawing.Size(43, 35);
-            this.statBox15.TabIndex = 28;
-            this.statBox15.Text = "0";
-            this.statBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox15.Visible = false;
-            // 
-            // statBox14
-            // 
-            this.statBox14.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox14.Location = new System.Drawing.Point(493, 322);
-            this.statBox14.Name = "statBox14";
-            this.statBox14.Size = new System.Drawing.Size(43, 35);
-            this.statBox14.TabIndex = 26;
-            this.statBox14.Text = "0";
-            this.statBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox14.Visible = false;
-            // 
-            // statBox13
-            // 
-            this.statBox13.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox13.Location = new System.Drawing.Point(493, 286);
-            this.statBox13.Name = "statBox13";
-            this.statBox13.Size = new System.Drawing.Size(43, 35);
-            this.statBox13.TabIndex = 24;
-            this.statBox13.Text = "0";
-            this.statBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox13.Visible = false;
-            // 
-            // statBox12
-            // 
-            this.statBox12.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox12.Location = new System.Drawing.Point(493, 250);
-            this.statBox12.Name = "statBox12";
-            this.statBox12.Size = new System.Drawing.Size(43, 35);
-            this.statBox12.TabIndex = 22;
-            this.statBox12.Text = "0";
-            this.statBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox12.Visible = false;
-            // 
-            // statBox11
-            // 
-            this.statBox11.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox11.Location = new System.Drawing.Point(493, 213);
-            this.statBox11.Name = "statBox11";
-            this.statBox11.Size = new System.Drawing.Size(43, 35);
-            this.statBox11.TabIndex = 20;
-            this.statBox11.Text = "0";
-            this.statBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox11.Visible = false;
-            // 
-            // statBox10
-            // 
-            this.statBox10.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox10.Location = new System.Drawing.Point(493, 176);
-            this.statBox10.Name = "statBox10";
-            this.statBox10.Size = new System.Drawing.Size(43, 35);
-            this.statBox10.TabIndex = 18;
-            this.statBox10.Text = "0";
-            this.statBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox10.Visible = false;
-            // 
-            // statBox9
-            // 
-            this.statBox9.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox9.Location = new System.Drawing.Point(493, 139);
-            this.statBox9.Name = "statBox9";
-            this.statBox9.Size = new System.Drawing.Size(43, 35);
-            this.statBox9.TabIndex = 16;
-            this.statBox9.Text = "0";
-            this.statBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox9.Visible = false;
-            // 
-            // statBox8
-            // 
-            this.statBox8.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox8.Location = new System.Drawing.Point(493, 102);
-            this.statBox8.Name = "statBox8";
-            this.statBox8.Size = new System.Drawing.Size(43, 35);
-            this.statBox8.TabIndex = 14;
-            this.statBox8.Text = "0";
-            this.statBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox8.Visible = false;
-            // 
-            // statBox7
-            // 
-            this.statBox7.Font = new System.Drawing.Font("Arial", 18F);
-            this.statBox7.Location = new System.Drawing.Point(490, 65);
-            this.statBox7.Name = "statBox7";
-            this.statBox7.Size = new System.Drawing.Size(43, 35);
-            this.statBox7.TabIndex = 12;
-            this.statBox7.Text = "0";
-            this.statBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statBox7.Visible = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -2224,13 +1979,6 @@
             this.lvlBox.TabIndex = 155;
             this.lvlBox.Text = "400";
             // 
-            // changeStatsToolStripMenuItem
-            // 
-            this.changeStatsToolStripMenuItem.Name = "changeStatsToolStripMenuItem";
-            this.changeStatsToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
-            this.changeStatsToolStripMenuItem.Text = "ChangeStats";
-            this.changeStatsToolStripMenuItem.Click += new System.EventHandler(this.changeStatsToolStripMenuItem_Click);
-            // 
             // CharSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -2373,7 +2121,6 @@
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem setImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeBaseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveSessionToolStripMenuItem;
         private System.Windows.Forms.Label charNameBox;
         private System.Windows.Forms.Label raceBox;
         private System.Windows.Forms.Label classBox;
@@ -2461,24 +2208,6 @@
         private System.Windows.Forms.TextBox statBox3;
         private System.Windows.Forms.TextBox statBox2;
         private System.Windows.Forms.TextBox statBox1;
-        private System.Windows.Forms.TextBox statBox24;
-        private System.Windows.Forms.TextBox statBox23;
-        private System.Windows.Forms.TextBox statBox22;
-        private System.Windows.Forms.TextBox statBox21;
-        private System.Windows.Forms.TextBox statBox20;
-        private System.Windows.Forms.TextBox statBox19;
-        private System.Windows.Forms.TextBox statBox18;
-        private System.Windows.Forms.TextBox statBox17;
-        private System.Windows.Forms.TextBox statBox16;
-        private System.Windows.Forms.TextBox statBox15;
-        private System.Windows.Forms.TextBox statBox14;
-        private System.Windows.Forms.TextBox statBox13;
-        private System.Windows.Forms.TextBox statBox12;
-        private System.Windows.Forms.TextBox statBox11;
-        private System.Windows.Forms.TextBox statBox10;
-        private System.Windows.Forms.TextBox statBox9;
-        private System.Windows.Forms.TextBox statBox8;
-        private System.Windows.Forms.TextBox statBox7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

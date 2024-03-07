@@ -43,7 +43,7 @@ namespace sheet
         public static void FillTextBoxesReadableProf(int[] data, Control[] textBoxes, List<int> bonus, int proefficency)
         {
             try
-            { 
+            {
                 if (data.Length != textBoxes.Length)
                 {
                     MessageBox.Show("An error has occured the data you wanna load cannot fit into the desired place or the other way around");
@@ -218,7 +218,7 @@ namespace sheet
             int[] temp = new int[strings.Length];
             for (int i = 0; i < strings.Length; i++)
             {
-                if (int.TryParse(strings[i],out int intiger))
+                if (int.TryParse(strings[i], out int intiger))
                 {
                     temp[i] = intiger;
                 }
@@ -232,14 +232,15 @@ namespace sheet
         public static string[] ArrayToStrings<T>(T[] array)
         {
             string[] strings = new string[array.Length];
-            for(int i = 0;i < array.Length;i++) {
+            for (int i = 0; i < array.Length; i++)
+            {
                 strings[i] = array[i].ToString();
             }
             return strings;
         }
         public static int[][] SplitArrayInTwo(int[] array)
         {
-            int[] temp1 = new int[array.Length/2];
+            int[] temp1 = new int[array.Length / 2];
             int[] temp2 = new int[array.Length / 2];
             Array.Copy(array, 0, temp1, 0, array.Length / 2);
             Array.Copy(array, array.Length / 2, temp2, 0, array.Length - array.Length / 2);
@@ -247,9 +248,8 @@ namespace sheet
         }
         public static int[] MergeTwoArray(int[][] arrays)
         {
-             return arrays[1].Concat(arrays[2]).ToArray();
+            return arrays[1].Concat(arrays[2]).ToArray();
         }
-        //yonkd
         public static string[][] SplitArrayInTwo(string[] array)
         {
             string[] temp1 = new string[array.Length / 2];
@@ -282,7 +282,7 @@ namespace sheet
                 {
                     temp[i] = $"{values[i].ToString()}";
                 }
-                
+
             }
             return temp;
         }

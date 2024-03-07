@@ -9,16 +9,13 @@ namespace sheet
 {
     public partial class CharSheet : Form
     {
-        #region main
-
         GUIHandler ghandler;
         CheckBox[] checkBoxesThrow;
         CheckBox[] checkBoxesSkills;
         public Character currentChar;
-        string[] skillLabelsNames = new  string[]{"Arobatics", "AnimalHandling","Arcana","Athletics","Deception","History","Insight","Intimidation","Investigation","Medicine","Nature",
-            "Perception","Performance","Persuasion","Religion","SleightOfHand","Stealth","Survival"
+        string[] skillLabelsNames = new  string[]{"Arobatics", "AnimalHandling","Arcana","Athletics","Deception","History","Insight","Intimidation",
+            "Investigation","Medicine","Nature","Perception","Performance","Persuasion","Religion","SleightOfHand","Stealth","Survival"
         };
-
         bool autosave = false;
         public CharSheet()
         {
@@ -33,57 +30,19 @@ namespace sheet
             setupToolStrip();
             currentChar = character;
         }
-
-        private void setupToolStrip()
+        void INITIALIZE()
         {
-            ToolStripMenuItem ts = spToolStripMenuItem;
-            foreach (ToolStripItem item in ts.DropDownItems)
-            {
-                item.Click += new EventHandler(spellCreateClick);
-            }
+            ghandler = new GUIHandler(this);
+            ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[0], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0]), 490, 65,18,8,statsTab);
+            ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[1], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[1]), 760, 65, 18,8, statsTab);
         }
-
-        private void spellCreateClick(object sender, EventArgs e)
-        {
-            ToolStripMenuItem btn = (ToolStripMenuItem)sender;
-            // get level from text
-            if (btn.Text.Contains("Cantrip"))
-            {
-                createSpell(0);
-            }
-            else
-            {
-                int level = Convert.ToInt32(btn.Text.Split(' ')[1]);
-                createSpell(level);
-            }
-        }
-
-        private void autoSavePreparation()
-        {
+        /*private void autoSavePreparation(){
             // set autosave timer
             Timer autosaveTimer = new Timer();
             autosaveTimer.Interval = Properties.Settings.Default.as_freq * 1000;
             //autosaveTimer.Tick += new EventHandler(autoSave);
             autosaveTimer.Start();
-        }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-        }
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            SaveAll();
-            currentChar.SaveAsFile(DataHandler.GetFilePath(true,"json",""));
-
-        }
-        #endregion
-
-        #region Data-Handle
-        void UpdateSpellsAttacks()
-        {
-            UpdateAttacks(false);
-            UpdateSpells(false);
-        }
+        }*/
         void UpdateAll()
         {
             StatsUpdate(true, true, true, statCheck.Checked);
@@ -112,6 +71,17 @@ namespace sheet
                 currentChar.armorClass = armor;
             }
         }
+
+        void UpdateSpellsAttacks()
+        {
+            UpdateAttacks(false);
+            UpdateSpells(false);
+        }
+        void ChangeSkillsDisplay()
+        {
+            ghandler.ChangeControlsText(DataHandler.SplitArrayInTwo(skillLabelsNames)[0], ReadableStats(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0],true));
+            ghandler.ChangeControlsText(DataHandler.SplitArrayInTwo(skillLabelsNames)[1], ReadableStats(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[1], false));
+        }
         void UpdateHeader()
         {
             lvlBox.Text = currentChar.level.ToString();
@@ -121,17 +91,6 @@ namespace sheet
             armorClassBox.Text = currentChar.armorClass.ToString();
             speedBox.Text = currentChar.speed.ToString();
             DataHandler.FillTextBoxes<int>(currentChar.health,new TextBox[3] {healthBox,healthTempBox,healthMaxBox});
-        }
-        void UpdateMoney(bool save)
-        {
-            if (save)
-            {
-                currentChar.money = DataHandler.FillFromBoxes<int>(new TextBox[5] { cpText, gpText, epText, spText, ppText });
-            }
-            else
-            {
-                DataHandler.FillTextBoxes(currentChar.money,new TextBox[5] { cpText, gpText, epText, spText, ppText });
-            }
         }
         void StatsUpdate(bool updateStats, bool updateThrows, bool updateSkills, bool statsFunctional)
         {
@@ -164,18 +123,7 @@ namespace sheet
             }
             if (updateSkills)
             {
-                DataHandler.FillTextBoxesReadableProf(currentChar.skills.Get(), new TextBox[18] { statBox7, statBox8, statBox9, statBox10, statBox11, statBox12, statBox13, statBox14, statBox15, statBox16, statBox17, statBox18, statBox19, statBox20, statBox21, statBox22, statBox23, statBox24 }, currentChar.bonus[1], currentChar.proefficency);
-            }
-        }
-        void UpdateSpells(bool save)
-        {
-            if (save)
-            {
-                currentChar.spells = getSpells();
-            }
-            else
-            {
-                 setDataToSpells(currentChar.spells);
+                ChangeSkillsDisplay();
             }
         }
         void UpdateAttacks(bool save)
@@ -189,20 +137,274 @@ namespace sheet
                 addAttackPanel(currentChar.attacks);
             }
         }
+        void UpdateSpells(bool save)
+        {
+            if (save)
+            {
+                currentChar.spells = getSpells();
+            }
+            else
+            {
+                 setDataToSpells(currentChar.spells);
+            }
+        }
+        void IAintDealingWithThis(bool save)
+        {
+            if (save)
+            {
+                currentChar.characteristics.bonds = bondsText.Text;
+                currentChar.characteristics.backstory = backstoryText.Text;
+                currentChar.characteristics.ideals = idealsText.Text;
+                currentChar.characteristics.featuresTraits = featuresText.Text;
+                currentChar.characteristics.personalTraits = perTraitText.Text;
+                currentChar.characteristics.profLanguages = profnLanguagesText.Text;
+                currentChar.characteristics.allies = AlliesText.Text;
 
-        #endregion
+                currentChar.characteristics.background = backgroundBox.Text;
+                currentChar.characteristics.age = ageBox.Text;
+                currentChar.characteristics.height = heightBox.Text;
+                currentChar.characteristics.weight = weightBox.Text;
+                currentChar.characteristics.skin = skinBox.Text;
+                currentChar.characteristics.eye = eyeBox.Text;
+                currentChar.characteristics.hair = hairBox.Text;
+                currentChar.characteristics.alignment = alignBox.Text;
+            }
+            else
+            {
+                bondsText.Text = currentChar.characteristics.bonds;
+                backstoryText.Text = currentChar.characteristics.backstory;
+                idealsText.Text = currentChar.characteristics.ideals;
+                featuresText.Text = currentChar.characteristics.featuresTraits;
+                perTraitText.Text = currentChar.characteristics.personalTraits;
+                profnLanguagesText.Text = currentChar.characteristics.profLanguages;
+                AlliesText.Text = currentChar.characteristics.allies;
 
+                backgroundBox.Text = currentChar.characteristics.background;
+                ageBox.Text = currentChar.characteristics.age;
+                heightBox.Text = currentChar.characteristics.height;
+                weightBox.Text = currentChar.characteristics.weight;
+                skinBox.Text = currentChar.characteristics.skin;
+                eyeBox.Text = currentChar.characteristics.eye;
+                hairBox.Text = currentChar.characteristics.hair;
+                alignBox.Text = currentChar.characteristics.alignment;
+            }
+        }
+        void updateInventory(bool save)
+        {
+            if (save)
+            {
+                currentChar.inventory[0] = inventoryBox.Text;
+                currentChar.inventory[1] = treasureText.Text;
+            }
+            else
+            {
+                inventoryBox.Text = currentChar.inventory[0];
+                treasureText.Text = currentChar.inventory[1];
+            }
+        }
+        void UpdateMoney(bool save)
+        {
+            if (save)
+            {
+                currentChar.money = DataHandler.FillFromBoxes<int>(new TextBox[5] { cpText, gpText, epText, spText, ppText });
+            }
+            else
+            {
+                DataHandler.FillTextBoxes(currentChar.money,new TextBox[5] { cpText, gpText, epText, spText, ppText });
+            }
+        }
+
+        string[] ReadableStats(int[] data,bool left)
+        {
+            string[] stats = new string[data.Length];
+            if (data.Length != data.Length)
+            {
+                MessageBox.Show("An error has occured the data you wanna load cannot fit into the desired place or the other way around");
+                for (int i = 0; i < stats.Length; i++)
+                {
+                    stats[i] = "NULL";
+                }
+                return stats;
+            }
+            else if(left)
+            {
+                for (int i = 0; i < data.Length; i++)
+                {
+                    if (currentChar.bonus[1].Contains(i))
+                    {
+                        if (data[i] + currentChar.proefficency > 0)
+                        {
+                            stats[i] = $"+{data[i] + currentChar.proefficency}";
+                        }
+                        else
+                        {
+                            stats[i] = $"{data[i] + currentChar.proefficency}";
+                        }
+                    }
+                    else
+                    {
+                        if (data[i] > 0)
+                        {
+                            stats[i] = $"+{data[i]}";
+                        }
+                        else
+                        {
+                            stats[i] = $"{data[i]}";
+                        }
+                    }
+                }
+                return  stats;
+            }
+            else 
+            {
+                for (int i = 0; i < data.Length; i++)
+                {
+                    if (currentChar.bonus[1].Contains(i + 9))
+                    {
+                        if (data[i] + currentChar.proefficency > 0)
+                        {
+                            stats[i] = $"+{data[i] + currentChar.proefficency}";
+                        }
+                        else
+                        {
+                            stats[i] = $"{data[i] + currentChar.proefficency}";
+                        }
+                    }
+                    else
+                    {
+                        if (data[i] > 0)
+                        {
+                            stats[i] = $"+{data[i]}";
+                        }
+                        else
+                        {
+                            stats[i] = $"{data[i]}";
+                        }
+                    }
+                }
+                return stats;
+            }
+        }
+
+        private void CharSheet_Load(object sender, EventArgs e)
+        {
+            using (var load = new LoadDialog())
+            {
+                load.ShowDialog();
+                currentChar = load.character;
+            }
+            if (currentChar == null)
+            {
+                MessageBox.Show("Character was not found.");
+                this.Close();
+                INITIALIZE();
+            }
+            else
+            {
+                INITIALIZE();
+                checkBoxesThrow = new CheckBox[6] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
+                checkBoxesSkills = new CheckBox[18] { checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16, checkBox17, checkBox18, checkBox19, checkBox20, checkBox21, checkBox22, checkBox23, checkBox24 };
+                UpdateAll();
+            }
+        }
+        private void changeStatsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var sdch = new StatDialog(currentChar))
+            {
+                currentChar = sdch.characterlol;
+                sdch.ShowDialog();
+                ChangeSkillsDisplay();
+            }
+        }
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+        }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            SaveAll();
+            currentChar.SaveAsFile(DataHandler.GetFilePath(true, "json", ""));
+
+        }
+        private void changeBaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var ecb = new EditCharBase(currentChar))
+            {
+                currentChar = ecb.character;
+                ecb.ShowDialog();
+                UpdateHeader();
+            }
+        }
+        private void saveSessionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            updateInventory(true);
+            IAintDealingWithThis(true);
+
+        }
+        private void btn_add_attack_Click_1(object sender, EventArgs e)
+        {
+            addAttackPanel();
+        }
+        private void btn_delete_attack_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to delete the selected attack?", "Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                attack_panel.Controls.Remove(getSelectedPanel());
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Panel p = getSelectedPanel();
+            string[] data = new string[2];
+            foreach (Control c in p.Controls)
+            {
+                if (c is TextBox)
+                {
+                    TextBox tb = (TextBox)c;
+                    if (tb.Name.Contains("dmg"))
+                    {
+                        data[0] = tb.Text;
+                    }
+                    else if (tb.Name.Contains("attributes"))
+                    {
+                        data[1] = tb.Text;
+                    }
+                }
+            }
+
+            if (data[0] == null || data[1] == null)
+            {
+                MessageBox.Show("Please fill in all the fields");
+                return;
+            }
+
+            if (roll_selector.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a dice to roll");
+                return;
+            }
+            else if (roll_selector.SelectedIndex == 0)
+            {
+                performAttack("1d20", data[1], false);
+                return;
+            }
+            else if (roll_selector.SelectedIndex == 1)
+            {
+                performAttack(data[0], data[1], true);
+                return;
+            }
+        }
+        private void CharSheet_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //messagebox for saving
+            SaveAll();
+            DialogResult dialogResult = MessageBox.Show("Do you want to save the sheet?", "Save", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                currentChar.SaveAsFile(DataHandler.GetFilePath(true, "json", ""));
+            }
+        }
+        //Rexxi hello reformat this
+        //-Rexxi-
         #region hell
-        /*
-             _          _ _ 
-            | |        | | |
-            | |__   ___| | |
-            | '_ \ / _ \ | |
-            | | | |  __/ | |
-            |_| |_|\___|_|_|
-        */
-
-
         private void ListHell(CheckBox checkBox)
         {
             if (checkBoxesSkills.Contains<CheckBox>(checkBox))
@@ -235,7 +437,6 @@ namespace sheet
                 }
                 StatsUpdate(false, true, false, false);
             }
-
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -333,170 +534,17 @@ namespace sheet
         {
             ListHell(checkBox24);
         }
-
         #endregion
 
         #region David's Shit
-        private void CharSheet_FormClosing(object sender, FormClosingEventArgs e)
+        private void setupToolStrip()
         {
-            //messagebox for saving
-            DialogResult dialogResult = MessageBox.Show("Do you want to save the sheet?", "Save", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            ToolStripMenuItem ts = spToolStripMenuItem;
+            foreach (ToolStripItem item in ts.DropDownItems)
             {
-                currentChar.SaveAsFile(DataHandler.GetFilePath(true, "json", ""));
+                item.Click += new EventHandler(spellCreateClick);
             }
         }
-
-
-        public List<string>[] getSpells()
-        {
-            List<string>[] spells = new List<string>[10];
-            int i = 0;
-            foreach (TabPage p in tabC_spells.TabPages)
-            {
-                if (p.Text == "Base")
-                    continue;
-                spells[i] = getDataFromDataGrid(p);
-                i++;
-            }
-            return spells;
-        }
-
-        private List<string> getDataFromDataGrid(TabPage p)
-        {
-            // get Datagrid from tabpage
-            DataGridView dg = new DataGridView();
-            foreach (Control c in p.Controls)
-            {
-                if (c is DataGridView)
-                {
-                    dg = (DataGridView)c;
-                    break;
-                }
-            }
-            List<string> data = new List<string>();
-            foreach (DataGridViewRow row in dg.Rows)
-            {
-                DataGridViewCellCollection cells = row.Cells;
-                string spell = "";
-                foreach (DataGridViewCell cell in cells)
-                {
-                    spell += (string)cell.Value+"|";
-                }
-                data.Add(spell);
-            }
-            return data;
-        }
-
-        public void setDataToSpells(List<string>[] data)
-        {
-            int i = 0;
-            foreach (TabPage p in tabC_spells.TabPages)
-            {
-                if (p.Text == "Base")
-                {
-                    continue;
-                }
-                setDataToDataGrid(p, data[i]);
-                i++;
-            }
-        }
-
-        private void setDataToDataGrid(TabPage p, List<string> list)
-        {
-            DataGridView dg = new DataGridView();
-            foreach (Control c in p.Controls)
-            {
-                if (c is DataGridView)
-                {
-                    dg = (DataGridView)c;
-                    break;
-                }
-            }
-            foreach (string s in list)
-            {
-                string[] data = s.Split('|');
-                dg.Rows.Add(data);
-            }
-        }
-
-        private void copySpellTabs()
-        {
-            // copy all controls from tab_sp1 to tab_sp2-9
-            TabControl tabC = tabC_spells;
-            tab_cantrip.Controls.Add(createSpellDataGrid(0));
-            for (int i = 1; i < 10; i++)
-            {
-                TabPage tab = new TabPage();
-                tab.Text = $"Spells {i}";
-                tab.Name = $"tab_sp{i}";
-                tabC.TabPages.Add(tab);
-
-                Panel p = new Panel();
-                p.Dock = DockStyle.Top;
-                p.Height = 55;
-                p.Controls.AddRange(getSpellTextboxes(p, i));
-                p.Controls.AddRange(getSpellLabels(p, i));
-                tab.Controls.Add(p);
-                tab.Controls.Add(createSpellDataGrid(i));
-            }
-        }
-
-        private TextBox[] getSpellTextboxes(Panel parent, int id)
-        {
-            TextBox b1 = new TextBox();
-            b1.Name = "txt_sp" + id + "to";
-            b1.Text = "0";
-            b1.Parent = parent;
-            b1.Size = new Size(42, 42);
-            b1.Location = new Point(3, 3);
-
-
-            TextBox b2 = new TextBox();
-            b2.Name = "txt_sp" + id + "sp";
-            b2.Text = "0";
-            b2.Parent = parent;
-            b2.Size = new Size(42, 42);
-            b2.Location = new Point(162, 3);
-
-            TextBox b3 = new TextBox();
-            b3.Name = "txt_sp" + id + "level";
-            b3.Text = id.ToString();
-            b3.Parent = parent;
-            b3.Size = new Size(42, 42);
-            b3.Location = new Point(632, 3);
-            b3.Enabled = false;
-
-            return new TextBox[] { b1, b2, b3 };
-        }
-
-        private Label[] getSpellLabels(Panel parent, int id)
-        {
-            Label l1 = new Label();
-            l1.Name = "lbl_sp" + id + "to";
-            l1.Text = "Slots Total";
-            l1.Parent = parent;
-            l1.Font = new Font("Arial", 10);
-            l1.Location = new Point(51, 13);
-
-
-            Label l2 = new Label();
-            l2.Name = "lbl_sp" + id + "sp";
-            l2.Text = "Slots Used";
-            l2.Parent = parent;
-            l2.Font = new Font("Arial", 10);
-            l2.Location = new Point(210, 13);
-
-            Label l3 = new Label();
-            l3.Name = "lbl_sp" + id + "level";
-            l3.Text = "Level";
-            l3.Parent = parent;
-            l3.Font = new Font("Arial", 10);
-            l3.Location = new Point(680, 13);
-
-            return new Label[] { l1, l2, l3 };
-        }
-
         private DataGridView createSpellDataGrid(int id)
         {
             DataGridView dg = new DataGridView();
@@ -529,7 +577,162 @@ namespace sheet
 
             return dg;
         }
+        private void setDataToDataGrid(TabPage p, List<string> list)
+        {
+            DataGridView dg = new DataGridView();
+            foreach (Control c in p.Controls)
+            {
+                if (c is DataGridView)
+                {
+                    dg = (DataGridView)c;
+                    break;
+                }
+            }
+            foreach (string s in list)
+            {
+                string[] data = s.Split('|');
+                dg.Rows.Add(data);
+            }
+        }
+        public void setDataToSpells(List<string>[] data)
+        {
+            int i = 0;
+            foreach (TabPage p in tabC_spells.TabPages)
+            {
+                if (p.Text == "Base")
+                {
+                    continue;
+                }
+                setDataToDataGrid(p, data[i]);
+                i++;
+            }
+        }
+        private List<string> getDataFromDataGrid(TabPage p)
+        {
+            // get Datagrid from tabpage
+            DataGridView dg = new DataGridView();
+            foreach (Control c in p.Controls)
+            {
+                if (c is DataGridView)
+                {
+                    dg = (DataGridView)c;
+                    break;
+                }
+            }
+            List<string> data = new List<string>();
+            foreach (DataGridViewRow row in dg.Rows)
+            {
+                DataGridViewCellCollection cells = row.Cells;
+                string spell = "";
+                foreach (DataGridViewCell cell in cells)
+                {
+                    spell += (string)cell.Value+"|";
+                }
+                data.Add(spell);
+            }
+            return data;
+        }
+        private void spellCreateClick(object sender, EventArgs e)
+        {
+            ToolStripMenuItem btn = (ToolStripMenuItem)sender;
+            // get level from text
+            if (btn.Text.Contains("Cantrip"))
+            {
+                createSpell(0);
+            }
+            else
+            {
+                int level = Convert.ToInt32(btn.Text.Split(' ')[1]);
+                createSpell(level);
+            }
+        }
+        private void copySpellTabs()
+        {
+            // copy all controls from tab_sp1 to tab_sp2-9
+            TabControl tabC = tabC_spells;
+            tab_cantrip.Controls.Add(createSpellDataGrid(0));
+            for (int i = 1; i < 10; i++)
+            {
+                TabPage tab = new TabPage();
+                tab.Text = $"Spells {i}";
+                tab.Name = $"tab_sp{i}";
+                tabC.TabPages.Add(tab);
 
+                Panel p = new Panel();
+                p.Dock = DockStyle.Top;
+                p.Height = 55;
+                p.Controls.AddRange(getSpellTextboxes(p, i));
+                p.Controls.AddRange(getSpellLabels(p, i));
+                tab.Controls.Add(p);
+                tab.Controls.Add(createSpellDataGrid(i));
+            }
+        }
+        private TextBox[] getSpellTextboxes(Panel parent, int id)
+        {
+            TextBox b1 = new TextBox();
+            b1.Name = "txt_sp" + id + "to";
+            b1.Text = "0";
+            b1.Parent = parent;
+            b1.Size = new Size(42, 42);
+            b1.Location = new Point(3, 3);
+
+
+            TextBox b2 = new TextBox();
+            b2.Name = "txt_sp" + id + "sp";
+            b2.Text = "0";
+            b2.Parent = parent;
+            b2.Size = new Size(42, 42);
+            b2.Location = new Point(162, 3);
+
+            TextBox b3 = new TextBox();
+            b3.Name = "txt_sp" + id + "level";
+            b3.Text = id.ToString();
+            b3.Parent = parent;
+            b3.Size = new Size(42, 42);
+            b3.Location = new Point(632, 3);
+            b3.Enabled = false;
+
+            return new TextBox[] { b1, b2, b3 };
+        }
+        private Label[] getSpellLabels(Panel parent, int id)
+        {
+            Label l1 = new Label();
+            l1.Name = "lbl_sp" + id + "to";
+            l1.Text = "Slots Total";
+            l1.Parent = parent;
+            l1.Font = new Font("Arial", 10);
+            l1.Location = new Point(51, 13);
+
+
+            Label l2 = new Label();
+            l2.Name = "lbl_sp" + id + "sp";
+            l2.Text = "Slots Used";
+            l2.Parent = parent;
+            l2.Font = new Font("Arial", 10);
+            l2.Location = new Point(210, 13);
+
+            Label l3 = new Label();
+            l3.Name = "lbl_sp" + id + "level";
+            l3.Text = "Level";
+            l3.Parent = parent;
+            l3.Font = new Font("Arial", 10);
+            l3.Location = new Point(680, 13);
+
+            return new Label[] { l1, l2, l3 };
+        }
+        public List<string>[] getSpells()
+        {
+            List<string>[] spells = new List<string>[10];
+            int i = 0;
+            foreach (TabPage p in tabC_spells.TabPages)
+            {
+                if (p.Text == "Base")
+                    continue;
+                spells[i] = getDataFromDataGrid(p);
+                i++;
+            }
+            return spells;
+        }
         private void cell_doubleclick(object sender, EventArgs e)
         {
             DataGridView view = ((DataGridView)sender);
@@ -542,7 +745,6 @@ namespace sheet
             }
             new SpellCreator(row_data).Show();
         }
-
         private List<DataGridViewColumn> getBaseSpellColumns()
         {
             List<DataGridViewColumn> columns = new List<DataGridViewColumn>
@@ -928,171 +1130,6 @@ namespace sheet
         private void statCheck_CheckedChanged(object sender, EventArgs e)
         {
             StatsUpdate(true,false,false,statCheck.Checked);
-        }
-        void IAintDealingWithThis(bool save)
-        {
-            if (save)
-            {
-                currentChar.characteristics.bonds = bondsText.Text;
-                currentChar.characteristics.backstory = backstoryText.Text;
-                currentChar.characteristics.ideals = idealsText.Text;
-                currentChar.characteristics.featuresTraits = featuresText.Text;
-                currentChar.characteristics.personalTraits = perTraitText.Text;
-                currentChar.characteristics.profLanguages = profnLanguagesText.Text;
-                currentChar.characteristics.allies = AlliesText.Text;
-
-                currentChar.characteristics.background = backgroundBox.Text;
-                currentChar.characteristics.age = ageBox.Text;
-                currentChar.characteristics.height = heightBox.Text;
-                currentChar.characteristics.weight = weightBox.Text;
-                currentChar.characteristics.skin = skinBox.Text;
-                currentChar.characteristics.eye = eyeBox.Text;
-                currentChar.characteristics.hair = hairBox.Text;
-                currentChar.characteristics.alignment = alignBox.Text;
-            }
-            else
-            {
-                bondsText.Text = currentChar.characteristics.bonds;
-                backstoryText.Text = currentChar.characteristics.backstory;
-                idealsText.Text = currentChar.characteristics.ideals;
-                featuresText.Text = currentChar.characteristics.featuresTraits;
-                perTraitText.Text = currentChar.characteristics.personalTraits;
-                profnLanguagesText.Text = currentChar.characteristics.profLanguages;
-                AlliesText.Text = currentChar.characteristics.allies;
-
-                backgroundBox.Text = currentChar.characteristics.background;
-                ageBox.Text = currentChar.characteristics.age;
-                heightBox.Text = currentChar.characteristics.height;
-                weightBox.Text = currentChar.characteristics.weight;
-                skinBox.Text = currentChar.characteristics.skin;
-                eyeBox.Text = currentChar.characteristics.eye;
-                hairBox.Text = currentChar.characteristics.hair;
-                alignBox.Text = currentChar.characteristics.alignment;
-            }
-        }
-        void updateInventory(bool save)
-        {
-            if (save)
-            {
-                currentChar.inventory[0] = inventoryBox.Text;
-                currentChar.inventory[1] = treasureText.Text;
-            }
-            else
-            {
-                inventoryBox.Text = currentChar.inventory[0];
-                treasureText.Text = currentChar.inventory[1];
-            }
-        }
-        private void changeBaseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (var ecb = new EditCharBase(currentChar))
-            {
-                currentChar = ecb.character;
-                ecb.ShowDialog();
-                UpdateHeader();
-            }
-        }
-        private void saveSessionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            updateInventory(true);
-            IAintDealingWithThis(true);
-
-        }
-        private void CharSheet_Load(object sender, EventArgs e)
-        {
-            using (var load = new LoadDialog())
-            {
-                load.ShowDialog();
-                currentChar = load.character;
-            }
-            if (currentChar == null)
-            {
-                MessageBox.Show("Character was not found.");
-                this.Close();
-            }
-            else
-            {
-                checkBoxesThrow = new CheckBox[6] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
-                checkBoxesSkills = new CheckBox[18] { checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16, checkBox17, checkBox18, checkBox19, checkBox20, checkBox21, checkBox22, checkBox23, checkBox24 };
-                UpdateAll();
-            }
-            INITIALIZE();
-        }
-        private void btn_add_attack_Click_1(object sender, EventArgs e)
-        {
-            addAttackPanel();
-        }
-        private void btn_delete_attack_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Do you want to delete the selected attack?", "Delete", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                attack_panel.Controls.Remove(getSelectedPanel());
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Panel p = getSelectedPanel();
-            string[] data = new string[2];
-            foreach (Control c in p.Controls)
-            {
-                if (c is TextBox)
-                {
-                    TextBox tb = (TextBox)c;
-                    if (tb.Name.Contains("dmg"))
-                    {
-                        data[0] = tb.Text;
-                    }
-                    else if (tb.Name.Contains("attributes"))
-                    {
-                        data[1] = tb.Text;
-                    }
-                }
-            }
-
-            if (data[0] == null || data[1] == null)
-            {
-                MessageBox.Show("Please fill in all the fields");
-                return;
-            }
-
-            if (roll_selector.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please select a dice to roll");
-                return;
-            }
-            else if (roll_selector.SelectedIndex == 0)
-            {
-                performAttack("1d20", data[1], false);
-                return;
-            }
-            else if (roll_selector.SelectedIndex == 1)
-            {
-                performAttack(data[0], data[1], true);
-                return;
-            }
-        }
-        #region THE-ABYSS
-        void INITIALIZE()
-        {
-            ghandler = new GUIHandler(this);
-            ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[0], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0]), 490, 65,18,8,statsTab);
-            ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[1], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[1]), 760, 65, 18,8, statsTab);
-        }
-
-        #endregion
-
-        private void changeStatsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (var sdch = new StatDialog(currentChar))
-            {
-                currentChar = sdch.characterlol;
-                sdch.ShowDialog();
-                ChangeSkillsDisplay();
-            }
-        }
-        void ChangeSkillsDisplay()
-        {
-            ghandler.ChangeControlsText(DataHandler.SplitArrayInTwo(skillLabelsNames)[0], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0]));
-            ghandler.ChangeControlsText(DataHandler.SplitArrayInTwo(skillLabelsNames)[1], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0]));
         }
     }
 }

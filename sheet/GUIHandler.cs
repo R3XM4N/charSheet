@@ -145,6 +145,20 @@ namespace sheet
                 }
             }
         }
+
+        public List<Control> GetControlsByName(string[] controlNames)
+        {
+            List<Control> controls = new List<Control>();
+            foreach (string name in controlNames)
+            {
+                Control control = form.Controls.Find(name, true).FirstOrDefault();
+                if (control != null)
+                {
+                    controls.Add(control);
+                }
+            }
+            return controls;
+        }
         //this is yoinked
         #region disposer
         // Implement IDisposable.
