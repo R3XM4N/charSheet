@@ -40,10 +40,10 @@ namespace sheet
                 MessageBox.Show($"An error has occured setting the values of {data} into {textBoxes} this can be an issue of types or microsofts error if more descriptive: {e.Message}");
             }
         }
-        public static void FillTextBoxesReadableProf(int[] data, TextBox[] textBoxes, List<int> bonus, int proefficency)
+        public static void FillTextBoxesReadableProf(int[] data, Control[] textBoxes, List<int> bonus, int proefficency)
         {
             try
-            {
+            { 
                 if (data.Length != textBoxes.Length)
                 {
                     MessageBox.Show("An error has occured the data you wanna load cannot fit into the desired place or the other way around");

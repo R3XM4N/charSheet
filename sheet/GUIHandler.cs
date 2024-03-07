@@ -88,13 +88,13 @@ namespace sheet
         {
             (control ?? form).BackgroundImage = image;
         }
-        public void ChangeTextArray(string[] controlNameArray, string[] textArray)
+        public void ChangeControlsText(string[] controlNames, string[] texts)
         {
-            if (controlNameArray.Length == textArray.Length)
+            if (controlNames.Length == texts.Length)
             {
-                for (int i = 0; i < controlNameArray.Length; i++)
+                for (int i = 0; i < controlNames.Length; i++)
                 {
-                    ChangeText(controlNameArray[i], textArray[i]);
+                    ChangeText(controlNames[i], texts[i]);
                 }
             }
             else

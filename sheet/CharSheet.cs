@@ -1082,18 +1082,17 @@ namespace sheet
 
         private void changeStatsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (string lbl in skillLabelsNames)
-            {
-                ghandler.DisposeControl(lbl);
-            }
             using (var sdch = new StatDialog(currentChar))
             {
                 currentChar = sdch.characterlol;
                 sdch.ShowDialog();
-                ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[0], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0]), 490, 65, 18, 8, statsTab);
-                ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[1], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[1]), 760, 65, 18, 8, statsTab);
-                
+                ChangeSkillsDisplay();
             }
+        }
+        void ChangeSkillsDisplay()
+        {
+            ghandler.ChangeControlsText(DataHandler.SplitArrayInTwo(skillLabelsNames)[0], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0]));
+            ghandler.ChangeControlsText(DataHandler.SplitArrayInTwo(skillLabelsNames)[1], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0]));
         }
     }
 }
