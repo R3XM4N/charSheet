@@ -19,33 +19,38 @@ namespace sheet
         public Heroes()
         {
             InitializeComponent();
+            check_Settings();
         }
 
         private void check_Settings()
         {
-            /*
-            bool autoload = Properties.Settings.Default.autoload;
-            if (autoload)
+            if (Properties.Settings.Default.path != null)
             {
-                try
+                bool autoload = Properties.Settings.Default.autoload;
+                if (autoload)
                 {
-                    // get all xml files from directory
-                    string[] files = Directory.GetFiles(Properties.Settings.Default.path, "*.xml");
-                    // load all heroes from files
-                    characterList.AddRange(DataHandler.loadCharacterList(Properties.Settings.Default.path));
-                    characterList = sortBy();
-                    // add all heroes to panel
-                    foreach (Character c in characterList)
+                    try
                     {
-                        add_miniSheet(p_heroes, c);
+                        // get all xml files from directory
+                        string[] files = Directory.GetFiles(Properties.Settings.Default.path, "*.json");
+                        // load all heroes from files
+                        foreach (string file in files)
+                        {
+                            characterList.Add(DataHandler.FromJsonFile<Character>(file));
+                        }
+                        characterList = sortBy();
+                        // add all heroes to panel
+                        foreach (Character c in characterList)
+                        {
+                            add_miniSheet(p_heroes, c);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show("Error: " + e.Message);
                     }
                 }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Error: " + e.Message);
-                }
             }
-            */
         }
 
         private void Heroes_Load(object sender, EventArgs e)
@@ -56,9 +61,9 @@ namespace sheet
 
             /*for (int i = 0; i < 10; i++)
             {
-                add_miniSheet(p_heroes);
-            }*/
-            check_Settings();
+                add_miniSheet(p_heroes, characterList[i]);
+            }
+            check_Settings();*/
         }
 
         private List<Character> sortBy()
@@ -111,7 +116,7 @@ namespace sheet
         private void MiniSheet_Subcontrol_DoubleClick(object sender, EventArgs e)
         {
             Sheet_short s = ((Control)sender).Parent as Sheet_short;
-            Character c = characterList[getSelectedIndex()];    
+            Character c = characterList[getSelectedIndex()];
             CharSheet sheet = new CharSheet(c);
             sheet.Show();
         }
@@ -123,7 +128,7 @@ namespace sheet
             // get index of control in panel
             int index = p_heroes.Controls.IndexOf(c);
             // add border to control to show it's selected
-            if(c is Sheet_short)
+            if (c is Sheet_short)
             {
                 Sheet_short s = (Sheet_short)c;
                 s.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -193,8 +198,8 @@ namespace sheet
         private void btn_nhero_Click(object sender, EventArgs e)
         {
             // při kliknutí na tlačítko "New Hero" se otevře form "Sheet" s novým hrdinou (předat mu prázdný objekt)
-            //CharSheet sheet = new CharSheet();
-            //sheet.Show();
+            CharSheet sheet = new CharSheet();
+            sheet.Show();
         }
 
         private void btn_delete_Click(object sender, EventArgs e)

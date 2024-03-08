@@ -13,7 +13,7 @@ namespace sheet
         CheckBox[] checkBoxesThrow;
         CheckBox[] checkBoxesSkills;
         public Character currentChar;
-        string[] skillLabelsNames = new  string[]{"Arobatics", "AnimalHandling","Arcana","Athletics","Deception","History","Insight","Intimidation",
+        string[] skillLabelsNames = new string[]{"Arobatics", "AnimalHandling","Arcana","Athletics","Deception","History","Insight","Intimidation",
             "Investigation","Medicine","Nature","Perception","Performance","Persuasion","Religion","SleightOfHand","Stealth","Survival"
         };
         bool autosave = false;
@@ -33,8 +33,8 @@ namespace sheet
         void INITIALIZE()
         {
             ghandler = new GUIHandler(this);
-            ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[0], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0]), 490, 65,18,8,statsTab);
-            ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[1], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[1]), 760, 65, 18,8, statsTab);
+            ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[0], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0]), 490, 65, 18, 8, statsTab);
+            ghandler.CreateLabelCollum(DataHandler.SplitArrayInTwo(skillLabelsNames)[1], DataHandler.RollValue(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[1]), 760, 65, 18, 8, statsTab);
         }
         /*private void autoSavePreparation(){
             // set autosave timer
@@ -63,7 +63,7 @@ namespace sheet
             updateInventory(true);
             UpdateAttacks(true);
             UpdateSpells(true);
-            currentChar.health =  DataHandler.FillFromBoxes<int>(new TextBox[3] { healthBox, healthTempBox, healthMaxBox });
+            currentChar.health = DataHandler.FillFromBoxes<int>(new TextBox[3] { healthBox, healthTempBox, healthMaxBox });
             UpdateMoney(true);
             if (Int32.TryParse(speedBox.Text, out int speed) && Int32.TryParse(armorClassBox.Text, out int armor))
             {
@@ -79,7 +79,7 @@ namespace sheet
         }
         void ChangeSkillsDisplay()
         {
-            ghandler.ChangeControlsText(DataHandler.SplitArrayInTwo(skillLabelsNames)[0], ReadableStats(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0],true));
+            ghandler.ChangeControlsText(DataHandler.SplitArrayInTwo(skillLabelsNames)[0], ReadableStats(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[0], true));
             ghandler.ChangeControlsText(DataHandler.SplitArrayInTwo(skillLabelsNames)[1], ReadableStats(DataHandler.SplitArrayInTwo(currentChar.skills.Get())[1], false));
         }
         void UpdateHeader()
@@ -90,7 +90,7 @@ namespace sheet
             charNameBox.Text = currentChar.cName;
             armorClassBox.Text = currentChar.armorClass.ToString();
             speedBox.Text = currentChar.speed.ToString();
-            DataHandler.FillTextBoxes<int>(currentChar.health,new TextBox[3] {healthBox,healthTempBox,healthMaxBox});
+            DataHandler.FillTextBoxes<int>(currentChar.health, new TextBox[3] { healthBox, healthTempBox, healthMaxBox });
         }
         void StatsUpdate(bool updateStats, bool updateThrows, bool updateSkills, bool statsFunctional)
         {
@@ -145,7 +145,7 @@ namespace sheet
             }
             else
             {
-                 setDataToSpells(currentChar.spells);
+                setDataToSpells(currentChar.spells);
             }
         }
         void IAintDealingWithThis(bool save)
@@ -210,11 +210,11 @@ namespace sheet
             }
             else
             {
-                DataHandler.FillTextBoxes(currentChar.money,new TextBox[5] { cpText, gpText, epText, spText, ppText });
+                DataHandler.FillTextBoxes(currentChar.money, new TextBox[5] { cpText, gpText, epText, spText, ppText });
             }
         }
 
-        string[] ReadableStats(int[] data,bool left)
+        string[] ReadableStats(int[] data, bool left)
         {
             string[] stats = new string[data.Length];
             if (data.Length != data.Length)
@@ -226,7 +226,7 @@ namespace sheet
                 }
                 return stats;
             }
-            else if(left)
+            else if (left)
             {
                 for (int i = 0; i < data.Length; i++)
                 {
@@ -253,9 +253,9 @@ namespace sheet
                         }
                     }
                 }
-                return  stats;
+                return stats;
             }
-            else 
+            else
             {
                 for (int i = 0; i < data.Length; i++)
                 {
@@ -626,7 +626,7 @@ namespace sheet
                 string spell = "";
                 foreach (DataGridViewCell cell in cells)
                 {
-                    spell += (string)cell.Value+"|";
+                    spell += (string)cell.Value + "|";
                 }
                 data.Add(spell);
             }
@@ -844,7 +844,7 @@ namespace sheet
                         TextBox tb = (TextBox)c;
                         if (tb.Name.Contains("name"))
                         {
-                            tb.Text = temp_data[0];                       
+                            tb.Text = temp_data[0];
                         }
                         else if (tb.Name.Contains("dmg"))
                         {
@@ -920,7 +920,8 @@ namespace sheet
             if (sender is Panel)
             {
                 panel = (Panel)sender;
-            } else
+            }
+            else
             {
                 panel = (Panel)((Control)sender).Parent;
             }
@@ -1010,7 +1011,7 @@ namespace sheet
         }
         private int iniciateRoll(int sides, string modifier, bool isDamage, bool hasProficiency)
         {
-            
+
             int fin_mod = 0;
             if (chb_use_mod.Checked)
             {
@@ -1129,7 +1130,7 @@ namespace sheet
         }
         private void statCheck_CheckedChanged(object sender, EventArgs e)
         {
-            StatsUpdate(true,false,false,statCheck.Checked);
+            StatsUpdate(true, false, false, statCheck.Checked);
         }
     }
 }
