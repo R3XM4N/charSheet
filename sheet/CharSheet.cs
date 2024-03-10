@@ -17,12 +17,6 @@ namespace sheet
             "Investigation","Medicine","Nature","Perception","Performance","Persuasion","Religion","SleightOfHand","Stealth","Survival"
         };
         bool autosave = false;
-        public CharSheet()
-        {
-            InitializeComponent();
-            copySpellTabs();
-            setupToolStrip();
-        }
         public CharSheet(Character character)
         {
             InitializeComponent();
@@ -288,11 +282,6 @@ namespace sheet
 
         private void CharSheet_Load(object sender, EventArgs e)
         {
-            using (var load = new LoadDialog())
-            {
-                load.ShowDialog();
-                currentChar = load.character;
-            }
             if (currentChar == null)
             {
                 MessageBox.Show("Character was not found.");

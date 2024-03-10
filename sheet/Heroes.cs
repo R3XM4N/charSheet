@@ -198,7 +198,7 @@ namespace sheet
         private void btn_nhero_Click(object sender, EventArgs e)
         {
             // při kliknutí na tlačítko "New Hero" se otevře form "Sheet" s novým hrdinou (předat mu prázdný objekt)
-            CharSheet sheet = new CharSheet();
+            CharSheet sheet = new CharSheet( new Character());
             sheet.Show();
         }
 

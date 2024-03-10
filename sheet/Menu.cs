@@ -66,11 +66,5 @@ namespace sheet
             // otevře form "Roll" s kostkami a výsledky
             changeFormInPanel(new Roll());
         }
-        //temporary yoink pro debug :)
-        private void DEBUGSHEET(object sender, EventArgs e)
-        {
-            CharSheet sheeet = new CharSheet();
-            sheeet.Show();
-        }
     }
 }
